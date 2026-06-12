@@ -1,26 +1,29 @@
-# Camera-ready TODO (known items before final CSUR submission)
+# Status & remaining items
 
-The manuscript is review-ready in content. These are the remaining production items,
-stated honestly so a reviewer/coauthor knows what is pending:
+## Ready now (arXiv-postable)
+- Manuscript complete: BCF framework, §3 critical synthesis, §4 action-level metric
+  equations, §5 mitigation map, **§6 pilot bias-audit results** (decision-level parity
+  with score-level MASD rising 1.2→3.4→6.4 across C0/C2/C3; directional, heavily
+  caveated), §7 coverage matrices, §8 governance-anchored agenda, §9 + §9.1 ethics.
+- **202 verified references** (0 arXiv not-found). 168 cited, 0 missing. Em-dash-free.
+- **Figure 1 (taxonomy tree) now rendered** in the PDF (TikZ/forest). Figures 2 and 3
+  render as tables in §7. Tables 0–4 in text.
+- **arXiv bundle ready**: `experiments/`… and the submission source under
+  `arxiv_submission/` (`main.tex` self-contained, compiles with pdflatex; metadata in
+  `00_ARXIV_METADATA.md`: primary cs.CY, cross-list cs.AI/cs.CL/cs.LG).
+- PDF (63 pp) + DOCX exported.
 
-1. **§6 empirical results.** The cross-framework bias audit is specified as a protocol;
-   numerical results are pending execution and will be added. All abstract/intro/§6/§9
-   language is deliberately protocol-only ("we specify", "designed to surface",
-   "Results: pending") — no results are claimed.
+## Gating step (not a production item)
+- **Zhang co-author + arXiv-first sign-off.** Package drafted (`ZHANG_SIGNOFF_EMAIL.md`
+  in the working repo). Target post date June 26; solo-proceed gate 2026-07-15. The
+  manuscript byline carries Zhang, so posting needs his consent — this is the only true
+  blocker. Awesome-list flips public on post day.
 
-2. **Figure instantiation.** Figure 2 (coverage matrix) and Figure 3 (locus × operator
-   grid) appear as rendered tables in §7. **Figure 1 (the taxonomy tree)** is specified
-   in `FIGURES.md` (a LaTeX `forest` diagram + text fallback) and must be instantiated
-   as a float for the typeset version. Tables 0–4 are already rendered in the text.
-
-3. **ACM `acmart` port.** `paper_pdf.tex` is a self-contained article-class LaTeX that
-   compiles to the included PDF (used for review). The final submission should be ported
-   to the ACM `acmart` class with CCS concepts and keywords.
-
-4. **Citation attribution spot-check (done; keep current).** arXiv IDs are
-   machine-verified (`corpus/VERIFY_RESULTS.md`). External review (Codex) flagged a few
-   attribution nuances that have been addressed: `blankenstein2025biasbusters` is now
-   cited only for tool/provider-selection bias (not protected-attribute disparity);
-   `dwork2012fairness` is explicitly placed under individual fairness; the Chu et al.
-   venue is named as SIGKDD Explorations (not CSUR); deployment claims are hedged to
-   "deployed, piloted, and evaluated".
+## Deferred to v2 / CSUR camera-ready (intentionally not done now)
+- Larger **confirmatory audit** (bigger N; name pairs decoupling race/gender; borderline
+  profiles to break the decision ceiling; tool-using configs for tool-invocation and
+  escalation disparity; CIs and significance tests). v2 material; do not delay v1 for it.
+- **ACM `acmart` port** with CCS concepts/keywords — required for CSUR submission, not
+  for arXiv. `arxiv_submission/main.tex` is article-class for the preprint.
+- Figures 2/3 as TikZ heatmaps (currently clean tables); appendix relocation of long
+  tables for CSUR readability.

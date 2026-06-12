@@ -344,6 +344,8 @@ Section 3.0 states the framework: three definitions (the agent loop, component c
 
 > **Figure 1: The agent loop ⟨π, T, M, R⟩ annotated with the five architectural entry loci (C1-C5), the temporal axis (T-axis) on the feedback edge, and the conduction operators on each inter-component edge.** Solid edges carry the within-episode conduction factors φ_e; the dashed feedback edge carries φ_fb across turns, sessions, and retraining cycles. *Takeaway:* bias has six structurally distinct ways into an agent's consequential action, so no single model-level fairness score (however well validated on QA benchmarks) can certify the loop.
 
+<!--FIGURE1-->
+
 ### 3.0 The Framework: Definitions, Operators, Conduction, and Propositions
 
 #### 3.0.1 D1: The agent loop
