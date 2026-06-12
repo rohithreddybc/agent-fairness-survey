@@ -14,10 +14,12 @@
 - PDF (63 pp) + DOCX exported.
 
 ## Gating step (not a production item)
-- **Zhang co-author + arXiv-first sign-off.** Package drafted (`ZHANG_SIGNOFF_EMAIL.md`
-  in the working repo). Target post date June 26; solo-proceed gate 2026-07-15. The
-  manuscript byline carries Zhang, so posting needs his consent — this is the only true
-  blocker. Awesome-list flips public on post day.
+- **Zhang co-author, at Zhang's pace.** Decision: this paper proceeds only with Zhang
+  and on his timeline. **No deadline, no solo-posting.** Collaborative email drafted
+  (`ZHANG_SIGNOFF_EMAIL.md` in the working repo) to share the draft and invite his
+  read; timing and venue are his call. Everything is production-ready so there is no
+  lag whenever he says go. The awesome-list stays private until he is comfortable.
+  Scoop risk is accepted as the cost of the relationship-first approach.
 
 ## Deferred to v2 / CSUR camera-ready (intentionally not done now)
 - Larger **confirmatory audit** (bigger N; name pairs decoupling race/gender; borderline
