@@ -6,12 +6,36 @@
 \settopmatter{printacmref=true}
 
 %% Extra packages (acmart loads hyperref and amsmath automatically)
-%% Do NOT load amsmath/amssymb here — acmart already loads them,
+%% Do NOT load amsmath/amssymb here: acmart already loads them,
 %% and a second load causes \Bbbk conflict with MiKTeX's amssymb.
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{forest}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{matrix,positioning,shapes.geometric,arrows.meta,calc,fit}
+
+%% --- shared style for native-LaTeX data figures (single-hue, colorblind-safe blue) ---
+\definecolor{bcfblue}{RGB}{8,69,148} % deep colorblind-safe blue (ColorBrewer Blues 9)
+%% \bcfcell{x}{y}{count}{maxcount}{w}{h}: draw one heatmap cell at grid (x,y),
+%% filled bcfblue with opacity scaled by count/maxcount, number printed inside.
+\newcommand{\bcfcell}[6]{%
+  \pgfmathsetmacro{\bcffrac}{#3/#4}%
+  \pgfmathsetmacro{\bcfop}{0.12 + 0.83*\bcffrac}%
+  \fill[bcfblue,fill opacity=\bcfop] (#1*#5,#2*#6) rectangle (#1*#5+#5,#2*#6+#6);%
+  \draw[white,line width=0.6pt] (#1*#5,#2*#6) rectangle (#1*#5+#5,#2*#6+#6);%
+  \pgfmathparse{\bcffrac>0.55 ? 1 : 0}%
+  \ifnum\pgfmathresult=1
+    \node[font=\small\bfseries,text=white] at (#1*#5+0.5*#5,#2*#6+0.5*#6) {#3};%
+  \else
+    \ifnum#3=0
+      \node[font=\small,text=black!40] at (#1*#5+0.5*#5,#2*#6+0.5*#6) {0};%
+    \else
+      \node[font=\small,text=black!85] at (#1*#5+0.5*#5,#2*#6+0.5*#6) {#3};%
+    \fi
+  \fi}
 
 %% suppress ACM copyright / price blocks for preprint builds
 \setcopyright{none}
@@ -174,7 +198,7 @@ This survey is written to serve four distinct reader communities. Each path is s
 
 \textbf{Auditor or regulator (assessing compliance or investigating disparate impact).} Read \S{}2.1 (fairness definitions, with their legal analogues) and \S{}2.3, then \S{}3.0 (BCF propositions P1 to P5), then \S{}4 (evaluation metrics, especially \S{}4.3 for action-level disparity metrics and the CFR\_$\tau$/MASD\_$\tau$ formulas). Section 6 describes the audit protocol in full; the four-step auditor recipe in \S{}3.8 operationalizes it. Governance and legal anchoring (EU AI Act, NIST AI RMF, NYC Local Law 144, EEOC guidance) is collected in \S{}8.5.
 
-\textbf{Researcher (contributing to the fairness-of-agents literature).} Read the entire survey. The coverage matrix (Figure 2, \S{}7) visualizes which BCF cells are most underinstrumented, and these are the highest-priority open problems. The BCF propositions in \S{}3.0 are the natural targets for theoretical work; the trajectory-level metric definitions in \S{}4.3 are the natural targets for empirical instantiation; and \S{}8 itemizes concrete open problems with first-step specifications.
+\textbf{Researcher (contributing to the fairness-of-agents literature).} Read the entire survey. The coverage matrix (Figure~\ref{fig:coverage}, \S{}7) visualizes which BCF cells are most underinstrumented, and these are the highest-priority open problems. The BCF propositions in \S{}3.0 are the natural targets for theoretical work; the trajectory-level metric definitions in \S{}4.3 are the natural targets for empirical instantiation; and \S{}8 itemizes concrete open problems with first-step specifications.
 
 \textbf{Benchmark builder (designing the first agent-level fairness benchmark).} Read \S{}4 (evaluation metrics) and \S{}4.4 (Table 2 benchmark inventory) to understand the gap, \S{}3.8 (worked example and auditor recipe) for what an agent-level probe must capture, \S{}6 for the audit protocol your benchmark should instantiate, and \S{}8.1 (the case for a trajectory-level fairness benchmark) for the desiderata. The BCF's D2 definition of $\Delta$\_c via trace-replay gives the formal target your benchmark must operationalize.
 
@@ -296,15 +320,23 @@ Each of the seven taxonomy branches received a dedicated search string construct
 
 \textbf{Table 2.1: Search Protocol by Branch.} \emph{Takeaway: the branch structure maps directly onto the six BCF entry loci plus evaluation and mitigation; no branch has fewer than 10 identified records before deduplication.}
 
-\begin{table*}[htbp]
-\centering\small
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{|p{0.135\textwidth}|p{0.165\textwidth}|p{0.175\textwidth}|p{0.115\textwidth}|p{0.052\textwidth}|p{0.045\textwidth}|p{0.050\textwidth}|p{0.085\textwidth}|}
 \caption{Table 2.1: Search Protocol by Branch. \emph{Takeaway: the branch structure maps directly onto the six BCF entry loci plus evaluation and mitigation; no branch has fewer than 10 identified records before deduplication.}}
-\label{tab:2}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|p{0.113\textwidth}|}
+\label{tab:2}\\
 \toprule
 \textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{Records Identified} & \textbf{After Dedup} & \textbf{After Screen} & \textbf{Included} \\
 \midrule
+\endfirsthead
+\multicolumn{8}{l}{\emph{Table 2.1 (continued)}}\\
+\toprule
+\textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{Records Identified} & \textbf{After Dedup} & \textbf{After Screen} & \textbf{Included} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 Tool/API selection & "tool selection bias" OR "tool use fairness" LLM agent & tool-calling, function-calling, API bias, routing bias & arXiv, ACL, ACM DL & 47 & 34 & 18 & 12 \\
 Memory \& retrieval & RAG fairness OR "retrieval bias" LLM & retrieval-augmented, knowledge store, context accumulation, multi-turn bias & arXiv, ACL, ACM DL, SIGIR & 52 & 38 & 16 & 10 \\
 Multi-agent delegation & "multi-agent bias" OR "role assignment bias" LLM & persona bias, delegation fairness, emergent bias, agent interaction & arXiv, ACL, ACM DL, AAAI & 41 & 31 & 14 & 9 \\
@@ -316,15 +348,14 @@ Mitigation & "LLM debiasing agent" OR "fairness mitigation agentic" & RLHF fairn
 Foundations (backward chase) & n/a & Parent surveys, impossibility results, classical ML fairness & All databases + Google Scholar & 93 & 74 & 61 & 45 \\
 High-stakes domains & "LLM hiring bias" OR "LLM clinical fairness" OR "LLM lending bias" & resume screening, medical decision, credit, education, judicial & arXiv, Nature, EMNLP, PNAS & 48 & 36 & 19 & 13 \\
 Prior-art additions & Neighbor survey search: ranjan2025, binkyte2025, ebrahimi2025 + forward chain & adjacent CSUR trustworthy-AI surveys & ACM DL, arXiv, ResearchGate & 41 & 35 & 31 & 29 \\
+\midrule
 \textbf{Total} &  &  &  & \textbf{548} & \textbf{415} & \textbf{234} & \textbf{173} (by primary branch; 202 unique after multi-tag, see note) \\
-\bottomrule
-\end{tabular}%
-}
-\end{table*}
+\end{longtable}
+\endgroup
 
 \emph{Note: the visible Included column lists each branch's records by primary-branch attribution and sums to 173; it does not sum to 202 because the table omits cross-cutting papers that are counted only in their secondary branches. The full corpus of 202 unique papers is recovered by a separate primary-branch partition (each paper assigned to its single primary locus), which does sum to 202; cross-cutting papers are also counted in secondary branches in the coverage matrix (\S{}7). That primary-branch partition is: foundational/must-cite 46, related-surveys/prior-art 29, foundations 16, evaluation-metrics-benchmarks 16, mitigation 13, high-stakes-domains 13, llm-agents-general 12, tool/API-selection 12, user-modeling/personalization 11, memory/retrieval 10, multi-agent-delegation 9, long-horizon-drift 9, planning/decomposition 6.}
 
-\paragraph{PRISMA Flow (Figure 0)}
+\paragraph{PRISMA Flow (Figure~\ref{fig:prisma})}
 
 The corpus assembly followed four stages:
 
@@ -336,7 +367,38 @@ The corpus assembly followed four stages:
 
 \textbf{Stage 4: Inclusion (n = 202).} Full-text review confirmed inclusion criteria and assigned branch tags. Records excluded at this stage failed criterion (iii), typically single-turn generation studies with no agentic framing, or were superseded by a more recent version of the same work. The final corpus comprises 202 unique papers spanning 2012 to 2026.
 
-\emph{Figure 0: PRISMA Flow Diagram} renders this four-stage funnel with counts at each node and branching reason labels. \emph{Takeaway: the corpus construction is transparent and reproducible; the 202 included papers represent systematic coverage rather than convenience selection.}
+\emph{Figure~\ref{fig:prisma} (PRISMA Flow Diagram)} renders this four-stage funnel with counts at each node and branching reason labels. \emph{Takeaway: the corpus construction is transparent and reproducible; the 202 included papers represent systematic coverage rather than convenience selection.}
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+    node distance=8mm and 14mm,
+    stage/.style={rectangle, draw=bcfblue, line width=0.8pt, fill=bcfblue!12,
+                  rounded corners=2pt, align=center, text width=46mm,
+                  inner sep=4pt, font=\small},
+    excl/.style={rectangle, draw=black!55, line width=0.6pt, fill=black!4,
+                 align=left, text width=44mm, inner sep=4pt, font=\footnotesize},
+    flow/.style={-{Stealth[length=2.4mm]}, line width=0.8pt, draw=bcfblue}]
+  \node[stage] (id)   {\textbf{Identification}\\Records identified across\\10 search branches\\($n=548$)};
+  \node[stage, below=of id]  (dedup) {\textbf{After deduplication}\\Unique records\\($n=415$)};
+  \node[stage, below=of dedup] (screen) {\textbf{Screening}\\Title/abstract screened\\($n=234$)};
+  \node[stage, below=of screen] (incl) {\textbf{Included}\\Full-text confirmed,\\branch-tagged\\($\mathbf{n=202}$)};
+  % exclusion side boxes
+  \node[excl, right=of dedup]  (rmdup) {Removed as cross-branch\\duplicates ($n=133$)};
+  \node[excl, right=of screen] (rmscr) {Excluded at screen:\\non-LLM system (81),\\no fairness content (73),\\duplicate venue (27)};
+  \node[excl, right=of incl]   (rmft)  {Excluded at full text:\\fail agent-component\\criterion (iii) or\\superseded version};
+  \draw[flow] (id) -- (dedup);
+  \draw[flow] (dedup) -- (screen);
+  \draw[flow] (screen) -- (incl);
+  \draw[flow] (dedup.east)  -- (rmdup.west);
+  \draw[flow] (screen.east) -- (rmscr.west);
+  \draw[flow] (incl.east)   -- (rmft.west);
+\end{tikzpicture}%
+}
+\caption{PRISMA flow of corpus assembly. Four-stage funnel from 548 identified records to the 202 included papers, with per-stage exclusion counts ($\S$2.5).}
+\label{fig:prisma}
+\end{figure}
 
 \paragraph{Inclusion/Exclusion Criteria Summary}
 
@@ -368,6 +430,33 @@ Availability & Full text accessible & Extended abstracts only, inaccessible prep
 \paragraph{Publication Trend}
 
 The agent fairness literature is a recent and rapidly growing subfield. Of the 202 corpus papers, \textbf{18 (9\%)} predate 2020 (primarily foundational ML fairness and NLP bias work), \textbf{22 (11\%)} fall in 2020 to 2022, \textbf{31 (15\%)} in 2023, \textbf{78 (39\%)} in 2024, and \textbf{53 (26\%)} in 2025 to 2026 (through June cutoff). The combined 2024 to 2026 cohort constitutes \textbf{65\%} of the corpus (131 papers), reflecting the field's rapid emergence following the widespread deployment of instruction-tuned and tool-augmented LLMs.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=\columnwidth, height=5.2cm,
+    ybar, bar width=15pt,
+    ymin=0, ymax=92,
+    ylabel={Papers},
+    ylabel near ticks,
+    symbolic x coords={{pre-2020}, {2020 to 22}, {2023}, {2024}, {2025 to 26}},
+    xtick=data,
+    x tick label style={font=\small, anchor=north},
+    y tick label style={font=\small},
+    ylabel style={font=\small},
+    nodes near coords, nodes near coords style={font=\footnotesize},
+    enlarge x limits=0.14,
+    axis lines=left,
+    ymajorgrids=true, grid style={black!12},
+]
+\addplot+[draw=bcfblue, fill=bcfblue!75, bar shift=0pt]
+    coordinates {({pre-2020},18) ({2020 to 22},22) ({2023},31) ({2024},78) ({2025 to 26},53)};
+\end{axis}
+\end{tikzpicture}
+\caption{Temporal distribution of the 202-paper corpus by publication-year bucket. The 2024 to 2026 cohort (78 + 53 = 131 papers, 65\%) reflects the field's recent, rapid emergence ($\S$2.6).}
+\label{fig:temporal}
+\end{figure}
 
 Three inflection events are visible in the component-level publication trajectory:
 
@@ -453,7 +542,7 @@ We therefore organize the field around a single formal object, the \textbf{Bias 
 
 Section 3.0 states the framework: three definitions (the agent loop, component counterfactual disparity, conduction operators), one approximation (the conduction equation, with its feedback recurrence), five propositions (P1 to P5), and the component-assignment rules that keep papers from floating between cells. Sections 3.1 to 3.5 then survey the five \emph{architectural} entry loci, and \S{}3.6 the \emph{temporal} axis that cross-cuts them; for each we give a \emph{definition}, the \emph{mechanism of harm}, the \emph{evidence classified by conduction operator}, the \emph{open edge} the field has not yet measured, and a one-line \emph{conduction signature}. Section 3.7 develops Proposition P3 (super-additivity, the formal version of what we informally call the agentic multiplier) and is explicit about which part of it is evidenced and which part is conjecture. Section 3.8 walks a concrete hiring-screener agent through the framework and distills a four-step auditor recipe that the audit protocol of \S{}6 instantiates.
 
-\begin{quote}\textbf{Figure 1: The agent loop $\langle$$\pi$, T, M, R$\rangle$ annotated with the five architectural entry loci (C1-C5), the temporal axis (T-axis) on the feedback edge, and the conduction operators on each inter-component edge.} Solid edges carry the within-episode conduction factors $\varphi$\_e; the dashed feedback edge carries $\varphi$\_fb across turns, sessions, and retraining cycles. \emph{Takeaway:} bias has six structurally distinct ways into an agent's consequential action, so no single model-level fairness score (however well validated on QA benchmarks) can certify the loop.\end{quote}
+\begin{quote}\textbf{Schematic (BCF agent loop): the agent loop $\langle$$\pi$, T, M, R$\rangle$ annotated with the five architectural entry loci (C1-C5), the temporal axis (T-axis) on the feedback edge, and the conduction operators on each inter-component edge.} Solid edges carry the within-episode conduction factors $\varphi$\_e; the dashed feedback edge carries $\varphi$\_fb across turns, sessions, and retraining cycles. \emph{Takeaway:} bias has six structurally distinct ways into an agent's consequential action, so no single model-level fairness score (however well validated on QA benchmarks) can certify the loop.\end{quote}
 
 
 \begin{figure}[ht]
@@ -469,12 +558,12 @@ for tree={
   align=left, inner sep=2pt
 }
 [Fairness in LLM Agents, fill=gray!18
-  [1.\ Tool/API selection -- tool-choice bias; description sensitivity]
-  [2.\ Memory \& retrieval -- RAG fairness; multi-turn accumulation]
-  [3.\ Multi-agent delegation -- persona/role bias; emergent bias]
-  [4.\ Planning / decomposition -- CoT-reasoning bias; task allocation]
-  [5.\ User modeling / personalization -- identity inference; dialect bias]
-  [6.\ Long-horizon drift -- multi-turn compounding; sycophancy decay]
+  [1.\ Tool/API selection: tool-choice bias; description sensitivity]
+  [2.\ Memory \& retrieval: RAG fairness; multi-turn accumulation]
+  [3.\ Multi-agent delegation: persona/role bias; emergent bias]
+  [4.\ Planning / decomposition: CoT-reasoning bias; task allocation]
+  [5.\ User modeling / personalization: identity inference; dialect bias]
+  [6.\ Long-horizon drift: multi-turn compounding; sycophancy decay]
 ]
 \end{forest}
 \caption{Taxonomy of fairness in LLM-based agents, organized by agent component
@@ -931,15 +1020,23 @@ Table\textasciitilde\{\}2 inventories the evaluation resources in the corpus alo
 
 \textbf{Table 2. Fairness evaluation resources and agent capability harnesses.}
 
-\begin{table*}[htbp]
-\centering\small
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|p{0.205\textwidth}|p{0.110\textwidth}|p{0.150\textwidth}|p{0.180\textwidth}|p{0.075\textwidth}|p{0.085\textwidth}|}
 \caption{Table 2. Fairness evaluation resources and agent capability harnesses.}
-\label{tab:9}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|}
+\label{tab:9}\\
 \toprule
 \textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{Code/Data released?} \\
 \midrule
+\endfirsthead
+\multicolumn{6}{l}{\emph{Table 2 (continued)}}\\
+\toprule
+\textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{Code/Data released?} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 BBQ \cite{parrish2022bbq} & QA & General social bias & Accuracy/bias score gap & No & Yes \\
 BOLD \cite{dhamala2021bold} & Generation & Open-ended generation & Sentiment/regard disparity & No & Yes \\
 StereoSet \cite{nadeem2021stereoset} & QA/Gen & General & Stereotype score vs. LM score & No & Yes \\
@@ -971,10 +1068,8 @@ WebArena \cite{zhou2024webarena} & None & Web tasks & Task success rate & No$\te
 Mind2Web \cite{deng2023mind2web} & None & Web tasks & Step/element accuracy & No$\textasciicircum\{\}\{\textbackslash\{\}dagger\}$ & Yes \\
 AgentBench \cite{liu2024agentbench} & None & Eight interactive environments & Task success rate & No$\textasciicircum\{\}\{\textbackslash\{\}dagger\}$ & Yes \\
 SWE-bench \cite{jimenez2024swe} & None & Software engineering & Issue resolution rate & No$\textasciicircum\{\}\{\textbackslash\{\}dagger\}$ & Yes \\
-\bottomrule
-\end{tabular}%
-}
-\end{table*}
+\end{longtable}
+\endgroup
 
 $\textasciicircum\{\}\{\textbackslash\{\}ast\}$ \emph{Partial}: fairness-instrumented beyond a single turn (multi-turn dialogue, multi-agent output, or a deployed agent's scoring emission) but does not instrument tool calls, memory operations, plans, or delegations, i.e., estimates $\textbackslash\{\}Delta\_\textbackslash\{\}tau$ or a single $\textbackslash\{\}Delta\_c$, never the interior of the conduction equation. $\textasciicircum\{\}\{\textbackslash\{\}dagger\}$ Executes genuine multi-step, tool-using trajectories but contains no demographic instrumentation, so it cannot score fairness at any level. n.r. = public code/data release not verified at the time of writing. \emph{Takeaway: no row pairs fairness instrumentation with agentic execution (the Agentic? column contains no "yes") which is the structured, falsifiable form of the measurement gap predicted by Propositions P2 and P5.}
 
@@ -1057,15 +1152,23 @@ The most architecturally integrated tier of mitigation embeds fairness enforceme
 
 \emph{Takeaway: Mitigation evidence is concentrated in the model-level ATTENUATE column; the (AMPLIFY, GENERATE) $\times$ agent-component cells are empty, marking the gap between where interventions act and where agentic harm originates.}
 
-\begin{table*}[htbp]
-\centering\small
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|p{0.150\textwidth}|p{0.155\textwidth}|p{0.130\textwidth}|p{0.150\textwidth}|p{0.140\textwidth}|p{0.075\textwidth}|}
 \caption{Table 3: Mitigation Map: Entry Locus $\times$ Conduction Operator $\times$ Pipeline Stage $\times$ Evidence}
-\label{tab:10}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|}
+\label{tab:10}\\
 \toprule
 \textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{Representative Evidence} & \textbf{Evidence Density} \\
 \midrule
+\endfirsthead
+\multicolumn{6}{l}{\emph{Table 3 (continued)}}\\
+\toprule
+\textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{Representative Evidence} & \textbf{Evidence Density} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 Model / input pre-processing & PRESERVE $\rightarrow$ ATTENUATE & Pre-inference (prompt) & Causal prompting & \cite{li2024prompting}, \cite{zhang2024causal}, \cite{furniturewala2024thinking} & High \\
 Model / input pre-processing & PRESERVE $\rightarrow$ ATTENUATE & Pre-inference (few-shot) & Causal active learning & \cite{du2024causal} & Medium \\
 Model (weights) & PRESERVE $\rightarrow$ ATTENUATE & Training (RLHF) & Alignment / MaxMin-RLHF & \cite{ouyang2022training}, \cite{chakraborty2024maxmin}, \cite{xiao2024algorithmic} & High \\
@@ -1088,35 +1191,39 @@ Tool / API Selection: GENERATE & n/a & n/a & \textbf{(No published intervention)
 Memory \& Retrieval: AMPLIFY (poisoning) & n/a & n/a & \textbf{(No published intervention)} & n/a & \textbf{Empty} \\
 User Modeling / Personalization (\S{}3.5) & n/a & n/a & \textbf{(No published intervention at locus)} & n/a & \textbf{Empty} \\
 Long-horizon Drift (\S{}3.6): AMPLIFY (feedback loop) & n/a & n/a & \textbf{(No published intervention at locus)} & n/a & \textbf{Empty} \\
-\bottomrule
-\end{tabular}%
-}
-\end{table*}
+\end{longtable}
+\endgroup
 
 
 \textbf{Table 4: Challenges $\rightarrow$ Solutions $\rightarrow$ Gaps: Closing the \S{}3 $\rightarrow$ \S{}5 $\rightarrow$ \S{}8 Loop}
 
 \emph{Takeaway: Five of the six agent components have partial or no mitigation coverage; the most consequential operator types (AMPLIFY and GENERATE at agent loci) are the least addressed, and every component's open gap maps directly onto a \S{}8 research agenda item.}
 
-\begin{table*}[htbp]
-\centering\small
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|p{0.150\textwidth}|p{0.205\textwidth}|p{0.195\textwidth}|p{0.110\textwidth}|p{0.190\textwidth}|}
 \caption{Table 4: Challenges $\rightarrow$ Solutions $\rightarrow$ Gaps: Closing the \S{}3 $\rightarrow$ \S{}5 $\rightarrow$ \S{}8 Loop}
-\label{tab:11}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|}
+\label{tab:11}\\
 \toprule
 \textbf{Component (\S{}3.x)} & \textbf{Primary Harm (BCF operator)} & \textbf{Mitigation Evidence} & \textbf{Coverage} & \textbf{Critical Open Gap ($\rightarrow$ \S{}8)} \\
 \midrule
+\endfirsthead
+\multicolumn{5}{l}{\emph{Table 4 (continued)}}\\
+\toprule
+\textbf{Component (\S{}3.x)} & \textbf{Primary Harm (BCF operator)} & \textbf{Mitigation Evidence} & \textbf{Coverage} & \textbf{Critical Open Gap ($\rightarrow$ \S{}8)} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 \textbf{Tool / API Selection} (\S{}3.1) & Discriminatory routing via option-order sensitivity, metadata-driven selection skew; GENERATE on zero user-level input (disparity on zero input is GENERATE by D3) \cite{blankenstein2025biasbusters,sneh2025tooltweak} & Source-selection bias mitigation agents \cite{singh2025bias,singh2025biasb}; bias-aware retrieval routing & \textbf{Partial} (selection fairness addressed at source level; no intervention on discrete tool-routing policy during execution) & No action-level metric or training signal for tool-invocation disparity across demographic counterfactuals; AMPLIFY/GENERATE cells empty ($\rightarrow$ \S{}8.1, \S{}8.6) \\
 \textbf{Memory \& Retrieval} (\S{}3.2) & RAG injects demographic skew even for fairness-vigilant users; GENERATE at embedding and AMPLIFY over multi-turn history \cite{hu2024free,fan2024fairmt,wang2025bias} & Embedder-level bias control \cite{kim2025mitigating}; fair RAG ranking \cite{kim2024fair}; memory audit \cite{ma2026implicit} & \textbf{Partial} (embedder and ranking addressed; knowledge-store poisoning and multi-turn accumulation unaddressed) & No joint intervention on embedding-level GENERATE and history-level AMPLIFY within a unified RAG architecture; no longitudinal retrieval fairness benchmark ($\rightarrow$ \S{}8.1, \S{}8.2) \\
 \textbf{Multi-agent Delegation} (\S{}3.3) & Emergent and amplified bias from role assignment and agent interaction; AMPLIFY at interaction edges, GENERATE at identity-conditioned role seeding \cite{nguyen2025social,madigan2025emergent} & Ensemble debiasing \cite{owens2024multi,xu2024mitigating}; identity anonymization \cite{choi2025identity}; cultural debate \cite{ki2025multiple}; implicit bias monitoring \cite{borah2024implicit} & \textbf{Partial} (several targeted interventions; none covers arbitrary topologies or quantifies the conduction factor $\varphi$ at delegation edges) & No metric for "assignment disparity" across demographic counterfactuals; amplification factor unbounded; no intervention on delegation-graph topology as a fairness variable ($\rightarrow$ \S{}8.3) \\
 \textbf{Planning / Decomposition} (\S{}3.4) & Reasoning-stage demographic bias; plan steps, resource allocation, and task assignments skewed; PRESERVE or AMPLIFY within chain-of-thought \cite{li2025actions,parziale2026once,wu2025reasoning} & Fairness-Reward-Model reweighting of complete reasoning chains at post-generation aggregation \cite{hall2025guiding}; reasoning-guided SFT \cite{kabra2025reasoning} & \textbf{Partial} (aggregation-stage chain reweighting and reasoning-supervised training demonstrated; neither tested in tool-using agentic loop) & No benchmark that scores the \emph{plan itself} for demographic skew independently of the final decision; plan-level disparity metric absent ($\rightarrow$ \S{}8.1) \\
 \textbf{User Modeling / Personalization} (\S{}3.5) & Stereotype activation via inferred identity (names, dialect, usage history); differential quality across demographic groups; GENERATE from inferred attribute \cite{kantharuban2024stereotype,pawar2025presumed,mire2025rejected} & Reward-model dialect-bias mitigation \cite{mire2025rejected} (indirect); no direct user-modeling-locus interventions & \textbf{None} (no corpus paper intervenes at the agent's user-modeling or personalization component) & No mechanism to detect when an agent's inferred user model encodes a protected attribute; no intervention on persistent cross-session user representation; cue-channel inconsistency \cite{tonneau2026different} unaddressed in any debiasing design ($\rightarrow$ \S{}8.1, \S{}8.4) \\
 \textbf{Long-horizon Drift} (\S{}3.6) & Bias accumulation over trajectories via sycophancy and feedback loops; AMPLIFY in recurrence equation; $\varphi$\textbackslash\{\}\_fb > 1 drives compounding \cite{ma2026implicit,wyllie2024fairness,liu2025truth} & Memory hygiene \cite{ma2026implicit} (partial, not validated at scale); sequential fairness theory \cite{xu2024adapting,hu2022achieving} (formal, not yet applied to LLM agents) & \textbf{None} (no deployed mitigation that enforces a long-term fairness criterion over an LLM agent trajectory) & No LLM agent evaluated against a formal long-term fairness criterion (equal long-term benefit rate, etc.); sycophancy-driven drift measurable \cite{hong2025measuring} but not mitigated in agentic settings ($\rightarrow$ \S{}8.2) \\
-\bottomrule
-\end{tabular}%
-}
-\end{table*}
+\end{longtable}
+\endgroup
 
 
 
@@ -1208,34 +1315,56 @@ Two patterns appear, both consistent with the framework and both heavily qualifi
 
 \subsection{Coverage Map and Cross-Analysis}
 
-This section projects the 202-paper corpus onto its two organizing axes simultaneously: the six agent-pipeline components and the four fairness dimensions (group, individual, counterfactual, and unspecified). The projection is Figure 2 (the coverage matrix) and its companion, Figure 3 (the locus $\times$ BCF-operator grid). Read together, they convert the survey's central claim (that the field is well-instrumented where measurement is easy and under-instrumented where agentic deployment makes fairness consequential) from an assertion into a structured, falsifiable coordinate.
+This section projects the 202-paper corpus onto its two organizing axes simultaneously: the six agent-pipeline components and the four fairness dimensions (group, individual, counterfactual, and unspecified). The projection is Figure~\ref{fig:coverage} (the coverage matrix) and its companion, Figure~\ref{fig:operator} (the locus $\times$ BCF-operator grid). Read together, they convert the survey's central claim (that the field is well-instrumented where measurement is easy and under-instrumented where agentic deployment makes fairness consequential) from an assertion into a structured, falsifiable coordinate.
 
-\textbf{Tagging convention.} The corpus comprises \textbf{202 unique papers}. Of these, \textbf{59 papers} are tagged to at least one of the six agent-pipeline component branches in \texttt{corpus\_master.md}. Because a single paper may address more than one component (e.g., a study of RAG-induced bias in a multi-agent pipeline is tagged to both memory-retrieval and multi-agent delegation), the 59 unique component-tagged papers generate \textbf{68 component-branch entries} across the coverage matrix, more entries than papers. All counts in the narrative below follow this multi-tag convention. The remaining 143 papers (foundations, llm-agents-general, evaluation-metrics-benchmarks, mitigation, high-stakes-domains, and prior-art-additions branches) are covered in \S{}\S{}2-5 as contextual and cross-cutting evidence; they inform the taxonomy but do not appear in the six-component rows of Figure 2.
+\textbf{Tagging convention.} The corpus comprises \textbf{202 unique papers}. Of these, \textbf{59 papers} are tagged to at least one of the six agent-pipeline component branches in \texttt{corpus\_master.md}. Because a single paper may address more than one component (e.g., a study of RAG-induced bias in a multi-agent pipeline is tagged to both memory-retrieval and multi-agent delegation), the 59 unique component-tagged papers generate \textbf{68 component-branch entries} across the coverage matrix, more entries than papers. All counts in the narrative below follow this multi-tag convention. The remaining 143 papers (foundations, llm-agents-general, evaluation-metrics-benchmarks, mitigation, high-stakes-domains, and prior-art-additions branches) are covered in \S{}\S{}2-5 as contextual and cross-cutting evidence; they inform the taxonomy but do not appear in the six-component rows of Figure~\ref{fig:coverage}.
 
 \subsubsection{The Counterfactual Column is Essentially Empty}
 
-The headline of Figure 2 is a near-vacant column. Across all six component rows, formal counterfactual fairness is the named measurement framing in \textbf{exactly one paper}: \cite{she2025fairsense}, under long-horizon drift, which simulates demographic-conditioned ML-system trajectories over time. The remaining five components (tool/API selection, memory and retrieval, multi-agent delegation, planning/decomposition, and user modeling/personalization) each register \textbf{zero} counterfactual entries.
+The headline of Figure~\ref{fig:coverage} is a near-vacant column. Across all six component rows, formal counterfactual fairness is the named measurement framing in \textbf{exactly one paper}: \cite{she2025fairsense}, under long-horizon drift, which simulates demographic-conditioned ML-system trajectories over time. The remaining five components (tool/API selection, memory and retrieval, multi-agent delegation, planning/decomposition, and user modeling/personalization) each register \textbf{zero} counterfactual entries.
 
-\textbf{Figure 2: Coverage matrix (agent component $\times$ fairness dimension).}
-
-\begin{table*}[htbp]
-\centering\small
-\label{tab:14}
+\begin{figure*}[htbp]
+\centering
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|p{0.180\textwidth}|}
-\toprule
-\textbf{Component} & \textbf{group} & \textbf{individual} & \textbf{counterfactual} & \textbf{unspecified} \\
-\midrule
-Tool / API selection & 1 & 0 & 0 & 11 \\
-Memory \& retrieval & 0 & 0 & 0 & 12 \\
-Multi-agent delegation & 5 & 1 & 0 & 6 \\
-Planning / decomposition & 4 & 1 & 0 & 5 \\
-User modeling / personalization & 1 & 0 & 0 & 11 \\
-Long-horizon drift & 2 & 0 & 1 & 7 \\
-\bottomrule
-\end{tabular}%
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \def\cw{2.7}  % cell width
+  \def\ch{0.95} % cell height
+  % --- column headers (4 fairness dimensions) ---
+  \foreach \cx/\lab in {0/group, 1/individual, 2/counterfactual, 3/unspecified}{%
+    \node[font=\small\bfseries,anchor=south] at (\cx*\cw+0.5*\cw,6*\ch+0.08) {\lab};}
+  % --- row labels (components), top row r=0 at top => grid y = 5-r ---
+  \foreach \ry/\lab in {5/{Tool / API selection}, 4/{Memory \& retrieval},
+        3/{Multi-agent delegation}, 2/{Planning / decomposition},
+        1/{User modeling / personalization}, 0/{Long-horizon drift}}{%
+    \node[font=\small,anchor=east] at (-0.12,\ry*\ch+0.5*\ch) {\lab};}
+  % --- cells: \bcfcell{col}{gridy}{count}{max}{w}{h}, max=12 ---
+  % Tool/API (gridy 5)
+  \bcfcell{0}{5}{1}{12}{\cw}{\ch}  \bcfcell{1}{5}{0}{12}{\cw}{\ch}  \bcfcell{2}{5}{0}{12}{\cw}{\ch}  \bcfcell{3}{5}{11}{12}{\cw}{\ch}
+  % Memory & retrieval (gridy 4)
+  \bcfcell{0}{4}{0}{12}{\cw}{\ch}  \bcfcell{1}{4}{0}{12}{\cw}{\ch}  \bcfcell{2}{4}{0}{12}{\cw}{\ch}  \bcfcell{3}{4}{12}{12}{\cw}{\ch}
+  % Multi-agent delegation (gridy 3)
+  \bcfcell{0}{3}{5}{12}{\cw}{\ch}  \bcfcell{1}{3}{1}{12}{\cw}{\ch}  \bcfcell{2}{3}{0}{12}{\cw}{\ch}  \bcfcell{3}{3}{6}{12}{\cw}{\ch}
+  % Planning/decomposition (gridy 2)
+  \bcfcell{0}{2}{4}{12}{\cw}{\ch}  \bcfcell{1}{2}{1}{12}{\cw}{\ch}  \bcfcell{2}{2}{0}{12}{\cw}{\ch}  \bcfcell{3}{2}{5}{12}{\cw}{\ch}
+  % User modeling/personalization (gridy 1)
+  \bcfcell{0}{1}{1}{12}{\cw}{\ch}  \bcfcell{1}{1}{0}{12}{\cw}{\ch}  \bcfcell{2}{1}{0}{12}{\cw}{\ch}  \bcfcell{3}{1}{11}{12}{\cw}{\ch}
+  % Long-horizon drift (gridy 0)
+  \bcfcell{0}{0}{2}{12}{\cw}{\ch}  \bcfcell{1}{0}{0}{12}{\cw}{\ch}  \bcfcell{2}{0}{1}{12}{\cw}{\ch}  \bcfcell{3}{0}{7}{12}{\cw}{\ch}
+  % --- legend (sequential shade 0 .. 12) ---
+  \begin{scope}[shift={(0,-1.5*\ch)}]
+    \node[font=\small,anchor=east] at (-0.12,0.5*\ch) {count};
+    \foreach \i in {0,1,...,12}{%
+      \pgfmathsetmacro{\lop}{0.12+0.83*(\i/12)}%
+      \fill[bcfblue,fill opacity=\lop] (\i*0.55,0) rectangle (\i*0.55+0.55,\ch);
+      \draw[white,line width=0.6pt] (\i*0.55,0) rectangle (\i*0.55+0.55,\ch);}
+    \node[font=\footnotesize,anchor=north] at (0.275,-0.05) {0};
+    \node[font=\footnotesize,anchor=north] at (12*0.55+0.275,-0.05) {12};
+  \end{scope}
+\end{tikzpicture}%
 }
-\end{table*}
+\caption{Coverage matrix (agent component $\times$ fairness dimension), cells shaded by paper count (single-hue, colorblind-safe blue). The counterfactual column holds exactly one nonzero cell (long-horizon drift, \cite{she2025fairsense}); the unspecified column dominates with 52 of 68 component-branch entries.}
+\label{fig:coverage}
+\end{figure*}
 
 \emph{Takeaway: the counterfactual column is near-empty, holding exactly one entry (she2025fairsense) across all six components, while 52 of the 68 component-branch entries fall in the unspecified column.}
 
@@ -1243,7 +1372,7 @@ This is a structural inversion of need. The counterfactual flip (re-running the 
 
 The gap is not one of missing methods but of missing application. The counterfactual tooling exists: CFR/MASD in \cite{mayilvaghanan2026counterfactual}; the CAFFE framework for systematic counterfactual evaluation \cite{parziale2025systematic}; the SCOPE stereotyped-prompt dataset \cite{parziale2026scope}; the equal-access counterfactual audit \cite{amirimargavi2026equal}; and intervention-consistency testing \cite{basu2026names}. All five sit in the evaluation-metrics-benchmarks branch; none has been wired through any of the six agent-pipeline components as their primary measurement instrument. The gap is one of application, not invention.
 
-\emph{Takeaway (Figure 2): Across all six agent components, counterfactual fairness (the dimension BCF-based auditing requires for $\Delta$\_c estimation) appears in exactly one of the 68 component-branch entries; GENERATE and AMPLIFY conduction signatures remain empirically uncharted.}
+\emph{Takeaway (Figure~\ref{fig:coverage}): Across all six agent components, counterfactual fairness (the dimension BCF-based auditing requires for $\Delta$\_c estimation) appears in exactly one of the 68 component-branch entries; GENERATE and AMPLIFY conduction signatures remain empirically uncharted.}
 
 \subsubsection{Group Fairness Clusters Only Where Decisions are Explicit}
 
@@ -1255,59 +1384,85 @@ The complementary pattern is a heavily weighted unspecified column. Three compon
 
 Harm that lives outside the formal-fairness vocabulary cannot be benchmarked, tracked across model versions, or compared across systems. Documentation without formalization is the field's modal state for half the agent pipeline, and it is the direct driver of the P5 Measurement-adequacy gap the BCF identifies.
 
-\subsubsection{Figure 3: Locus $\times$ BCF-Operator Grid}
+\subsubsection{The Locus $\times$ BCF-Operator Grid}
 
-Figure 2 cross-tabulates component with fairness \emph{dimension}; Figure 3 cross-tabulates component-as-locus with BCF conduction \emph{operator} (ATTENUATE / PRESERVE / AMPLIFY / GENERATE). The two visualizations are complementary: Figure 2 reveals what formal vocabulary is used; Figure 3 reveals what \emph{transformation} of disparity is being empirically studied versus merely assumed.
+Figure~\ref{fig:coverage} cross-tabulates component with fairness \emph{dimension}; Figure~\ref{fig:operator} cross-tabulates component-as-locus with BCF conduction \emph{operator} (ATTENUATE / PRESERVE / AMPLIFY / GENERATE). The two visualizations are complementary: Figure~\ref{fig:coverage} reveals what formal vocabulary is used; Figure~\ref{fig:operator} reveals what \emph{transformation} of disparity is being empirically studied versus merely assumed.
 
 \textbf{Construction.} Each corpus paper with a component tag is further assigned a conduction operator based on whether it documents disparity attenuation (a debiasing intervention that reduces $\Delta$\_c at that component), preservation (disparity passes through unchanged), amplification (disparity increases), or generation (disparity arises at that component from a nominally zero input, the agentic phenomenon with no single-model analogue). Papers are tagged by the operator their primary finding instantiates; a paper can carry multiple tags.
 
-\begin{table*}[htbp]
-\centering\small
-\label{tab:15}
+\begin{figure*}[htbp]
+\centering
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|p{0.150\textwidth}|}
-\toprule
-\textbf{Component \textbackslash\{\} Operator} & \textbf{ATTENUATE $\varphi$<1} & \textbf{PRESERVE $\varphi$$\approx$1} & \textbf{AMPLIFY $\varphi$>1} & \textbf{GENERATE $\varphi$ (zero$\rightarrow$nonzero)} & \textbf{Uncharacterized} \\
-\midrule
-Tool/API selection & 1 & 3 & 1 & 1 & 6 \\
-Memory \& retrieval & 2 & 2 & 3 & 1 & 4 \\
-Multi-agent delegation & 3 & 1 & 4 & 3 & 1 \\
-Planning/decomposition & 2 & 2 & 2 & 0 & 4 \\
-User modeling/personalization & 1 & 4 & 3 & 1 & 3 \\
-Long-horizon drift & 2 & 1 & 4 & 1 & 2 \\
-\bottomrule
-\end{tabular}%
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \def\cw{2.55} % cell width
+  \def\ch{0.95} % cell height
+  % --- column headers (5 conduction operators) ---
+  \node[font=\small\bfseries,anchor=south,align=center] at (0*\cw+0.5*\cw,6*\ch+0.08) {ATTENUATE\\$\varphi<1$};
+  \node[font=\small\bfseries,anchor=south,align=center] at (1*\cw+0.5*\cw,6*\ch+0.08) {PRESERVE\\$\varphi\approx1$};
+  \node[font=\small\bfseries,anchor=south,align=center] at (2*\cw+0.5*\cw,6*\ch+0.08) {AMPLIFY\\$\varphi>1$};
+  \node[font=\small\bfseries,anchor=south,align=center] at (3*\cw+0.5*\cw,6*\ch+0.08) {GENERATE\\($0\!\rightarrow\!{>}0$)};
+  \node[font=\small\bfseries,anchor=south,align=center] at (4*\cw+0.5*\cw,6*\ch+0.08) {Uncharac-\\terized};
+  % --- row labels (loci) ---
+  \foreach \ry/\lab in {5/{Tool/API selection}, 4/{Memory \& retrieval},
+        3/{Multi-agent delegation}, 2/{Planning/decomposition},
+        1/{User modeling/personalization}, 0/{Long-horizon drift}}{%
+    \node[font=\small,anchor=east] at (-0.12,\ry*\ch+0.5*\ch) {\lab};}
+  % --- cells: \bcfcell{col}{gridy}{count}{max}{w}{h}, max=6 ---
+  % Tool/API (gridy 5): 1 3 1 1 6
+  \bcfcell{0}{5}{1}{6}{\cw}{\ch} \bcfcell{1}{5}{3}{6}{\cw}{\ch} \bcfcell{2}{5}{1}{6}{\cw}{\ch} \bcfcell{3}{5}{1}{6}{\cw}{\ch} \bcfcell{4}{5}{6}{6}{\cw}{\ch}
+  % Memory & retrieval (gridy 4): 2 2 3 1 4
+  \bcfcell{0}{4}{2}{6}{\cw}{\ch} \bcfcell{1}{4}{2}{6}{\cw}{\ch} \bcfcell{2}{4}{3}{6}{\cw}{\ch} \bcfcell{3}{4}{1}{6}{\cw}{\ch} \bcfcell{4}{4}{4}{6}{\cw}{\ch}
+  % Multi-agent delegation (gridy 3): 3 1 4 3 1
+  \bcfcell{0}{3}{3}{6}{\cw}{\ch} \bcfcell{1}{3}{1}{6}{\cw}{\ch} \bcfcell{2}{3}{4}{6}{\cw}{\ch} \bcfcell{3}{3}{3}{6}{\cw}{\ch} \bcfcell{4}{3}{1}{6}{\cw}{\ch}
+  % Planning/decomposition (gridy 2): 2 2 2 0 4
+  \bcfcell{0}{2}{2}{6}{\cw}{\ch} \bcfcell{1}{2}{2}{6}{\cw}{\ch} \bcfcell{2}{2}{2}{6}{\cw}{\ch} \bcfcell{3}{2}{0}{6}{\cw}{\ch} \bcfcell{4}{2}{4}{6}{\cw}{\ch}
+  % User modeling/personalization (gridy 1): 1 4 3 1 3
+  \bcfcell{0}{1}{1}{6}{\cw}{\ch} \bcfcell{1}{1}{4}{6}{\cw}{\ch} \bcfcell{2}{1}{3}{6}{\cw}{\ch} \bcfcell{3}{1}{1}{6}{\cw}{\ch} \bcfcell{4}{1}{3}{6}{\cw}{\ch}
+  % Long-horizon drift (gridy 0): 2 1 4 1 2
+  \bcfcell{0}{0}{2}{6}{\cw}{\ch} \bcfcell{1}{0}{1}{6}{\cw}{\ch} \bcfcell{2}{0}{4}{6}{\cw}{\ch} \bcfcell{3}{0}{1}{6}{\cw}{\ch} \bcfcell{4}{0}{2}{6}{\cw}{\ch}
+  % --- legend (sequential shade 0 .. 6) ---
+  \begin{scope}[shift={(0,-1.5*\ch)}]
+    \node[font=\small,anchor=east] at (-0.12,0.5*\ch) {count};
+    \foreach \i in {0,1,...,6}{%
+      \pgfmathsetmacro{\lop}{0.12+0.83*(\i/6)}%
+      \fill[bcfblue,fill opacity=\lop] (\i*0.7,0) rectangle (\i*0.7+0.7,\ch);
+      \draw[white,line width=0.6pt] (\i*0.7,0) rectangle (\i*0.7+0.7,\ch);
+      \node[font=\footnotesize] at (\i*0.7+0.35,0.5*\ch) {\i};}
+  \end{scope}
+\end{tikzpicture}%
 }
-\end{table*}
+\caption{Locus $\times$ BCF conduction-operator grid, cells shaded by paper count (single-hue, colorblind-safe blue; row sums total 68). The GENERATE and AMPLIFY columns are sparse: planning/decomposition has no GENERATE entry, and tool selection registers a single GENERATE paper, marking the highest-priority measurement gaps.}
+\label{fig:operator}
+\end{figure*}
 
-\emph{Takeaway (Figure 3): GENERATE and AMPLIFY cells (the operators that produce distinctly agentic harm, where pipeline edges produce disparity that was absent at the input or that grows across the trajectory) are the least instrumented; the AMPLIFY/GENERATE column for planning/decomposition and the GENERATE column for tool selection are nearly uncharacterized, pointing to the highest-priority measurement gaps for BCF-guided empirical work.}
+\emph{Takeaway (Figure~\ref{fig:operator}): GENERATE and AMPLIFY cells (the operators that produce distinctly agentic harm, where pipeline edges produce disparity that was absent at the input or that grows across the trajectory) are the least instrumented; the AMPLIFY/GENERATE column for planning/decomposition and the GENERATE column for tool selection are nearly uncharacterized, pointing to the highest-priority measurement gaps for BCF-guided empirical work.}
 
 The most consequential observation is that the \textbf{GENERATE} operator (disparity arising at a pipeline edge from nominally unbiased inputs, the formal signature of the agentic multiplier in P3) has been documented in only a handful of papers. For multi-agent delegation, \cite{nguyen2025social} and \cite{madigan2025emergent} provide the clearest evidence of generation (bias emerging in interaction among individually measured-to-be-unbiased agents); for tool selection, \cite{blankenstein2025biasbusters} documents the selection-skew signature from tool-description surface features alone (the closest single-locus instance, distinct from the amplification \cite{ma2026implicit} documents in the memory accumulation process). Outside these, the GENERATE column is largely empty. The audit of \S{}6 is designed to probe this empirical frontier.
 
 \subsubsection{Synthesis and Differentiation}
 
-Four regularities fall out of the combined Figure 2/Figure 3 analysis.
+Four regularities fall out of the combined Figure~\ref{fig:coverage}/Figure~\ref{fig:operator} analysis.
 
 First, \textbf{formalization tracks decision explicitness, not harm severity}: components that emit a clean decision variable attract formal metrics; diffuse-harm components do not.
 
 Second, \textbf{the formal vocabulary thins toward the counterfactual and toward GENERATE/AMPLIFY} exactly as the evaluation question shifts from "what did the agent output?" toward the distinctively agentic questions: "would it have acted differently?" and "did the pipeline produce disparity it did not inherit?"
 
-Third, \textbf{the modal corpus paper documents disparity without naming a fairness dimension or a conduction operator}: 52 of the 68 component-branch entries sit in the unspecified column of Figure 2, and most of the locus $\times$ operator cells in Figure 3 are under-populated. The field is evidence-rich and formalization-poor.
+Third, \textbf{the modal corpus paper documents disparity without naming a fairness dimension or a conduction operator}: 52 of the 68 component-branch entries sit in the unspecified column of Figure~\ref{fig:coverage}, and most of the locus $\times$ operator cells in Figure~\ref{fig:operator} are under-populated. The field is evidence-rich and formalization-poor.
 
-Fourth, the BCF coordinate system makes the gaps precise and actionable. The empty cells of Figure 3 are specific (component, operator) pairs that can be populated by targeted experiments with the counterfactual-perturbation machinery already available \cite{parziale2025systematic,mayilvaghanan2026counterfactual,basu2026names}.
+Fourth, the BCF coordinate system makes the gaps precise and actionable. The empty cells of Figure~\ref{fig:operator} are specific (component, operator) pairs that can be populated by targeted experiments with the counterfactual-perturbation machinery already available \cite{parziale2025systematic,mayilvaghanan2026counterfactual,basu2026names}.
 
 This analysis also sharpens the differentiation from neighboring work (Table 0 in \S{}1.4). Where \cite{chu2024fairness} organizes single-turn LLM fairness by metric and \cite{gallegos2024bias} by datasets and mitigation, neither resolves \emph{where in an acting pipeline} a disparity originates. Where \cite{mohammadi2025evaluation} treats fairness as one sub-topic of agent evaluation and \cite{vatsal2026agentic} as a subdimension of a seven-dimensional clinical taxonomy, neither makes component coverage its unit of analysis. Where \cite{ranjan2025fairness} proposes a framework for fairness in multi-agent AI broadly, it does not operate at the LLM-agent component level or develop the conduction-operator analysis. By projecting the corpus onto the component $\times$ operator grid, this survey turns the measurement gap from an assertion into a structured coordinate (the empty counterfactual column and the under-populated GENERATE/AMPLIFY cells) and hands \S{}8 a concrete, BCF-keyed research target.
 
 
 \subsection{Open Problems and Research Agenda}
 
-The coverage analysis of \S{}7 converts the measurement gap from an observation into a set of precise coordinates: (component, operator) cells in Figure 3 that are empirically uncharacterized, P5 Measurement-adequacy cells that no existing benchmark populates, and BCF propositions whose empirical grounding is weak. Each problem below opens with its BCF coordinate, states why it matters for consequential deployment, and specifies a concrete first step (a metric definition, a dataset structure, or a system design) that an immediate follow-on could execute.
+The coverage analysis of \S{}7 converts the measurement gap from an observation into a set of precise coordinates: (component, operator) cells in Figure~\ref{fig:operator} that are empirically uncharacterized, P5 Measurement-adequacy cells that no existing benchmark populates, and BCF propositions whose empirical grounding is weak. Each problem below opens with its BCF coordinate, states why it matters for consequential deployment, and specifies a concrete first step (a metric definition, a dataset structure, or a system design) that an immediate follow-on could execute.
 
 A governance thread runs through all six problems. Agents are now deployed in hiring, lending, healthcare, and public-benefits adjudication, domains where disparate treatment across race, gender, socioeconomic status, dialect, and their intersections carries direct legal and regulatory weight. The EU AI Act (Regulation 2024/1689) classifies high-risk AI systems in employment, credit, and essential-service sectors as subject to bias-testing and transparency requirements \cite{parliament2024regulation}; the NIST AI Risk Management Framework specifies bias evaluation as a component of AI governance \cite{nist2023artificial}; New York City Local Law 144 requires automated employment decision tools to undergo annual bias audits before deployment; and EEOC guidance applies Title VII disparate-impact standards to algorithmic hiring tools. None of these frameworks currently specifies what a fairness audit of an \emph{acting agent} must cover, and the measurement infrastructure described in \S{}4.4 is not adequate to discharge those requirements. Every open problem below has a governance correlate: the missing metric, dataset, or system design is also the missing regulatory instrument.
 
 \subsubsection{Unpopulated P5 Cells: Benchmarks for Acting Agents}
 
-\textbf{BCF coordinate.} P5 Measurement-adequacy states that a metric is adequate for component c only if it can detect non-zero $\Delta$\_c at that component independently of all other components. The benchmark inventory in \S{}4.4 shows that no existing benchmark satisfies P5 for any of the six agent-pipeline components at the action level. Figure 3's uncharacterized cells are exactly the P5 cells that no existing instrument populates.
+\textbf{BCF coordinate.} P5 Measurement-adequacy states that a metric is adequate for component c only if it can detect non-zero $\Delta$\_c at that component independently of all other components. The benchmark inventory in \S{}4.4 shows that no existing benchmark satisfies P5 for any of the six agent-pipeline components at the action level. The uncharacterized cells of Figure~\ref{fig:operator} are exactly the P5 cells that no existing instrument populates.
 
 \textbf{The problem.} The dominant fairness benchmarks score answers, not actions. Clinical fairness sets define the ceiling of current practice: FairMedQA evaluates demographic bias in medical QA \cite{xiao2025fairmedqa}; mFARM assembles multi-faceted harm assessment for clinical decision support on static vignettes \cite{adappanavar2025mfarm}; MedEqualQA probes consistency through counterfactual demographic edits to QA questions \cite{ghosh2025medequalqa}; and the health equity toolbox surfaces harms at the level of generated text \cite{pfohl2024toolbox}. Each is methodologically careful; each stops at the QA boundary. None measures what a clinical acting agent does when it selects which guideline tool to invoke, which prior note to retrieve, whether to escalate to a human, or how it sequences a multi-step workup. The few studies that score actions confirm the divergence: agent decisions reveal biases absent from token-level probes \cite{li2025actions}, and decomposing unfairness in a tool-using chest X-ray agent attributes $\Delta$\_c to specific pipeline stages invisible to answer-level scoring \cite{xu2026ducx}. Existing agent evaluation frameworks (AgentBench \cite{liu2024agentbench}, WebArena \cite{zhou2024webarena}, SWE-bench \cite{jimenez2024swe}) are not demographically instrumented; they evaluate capability (task completion) rather than fairness across demographic counterfactuals, so they cannot be repurposed directly without structural additions.
 
@@ -1325,7 +1480,7 @@ A governance thread runs through all six problems. Agents are now deployed in hi
 
 \subsubsection{Unbounded GENERATE: Multi-Agent Fairness Dynamics}
 
-\textbf{BCF coordinate.} The GENERATE operator ($\varphi$ applied to nominally zero-$\Delta$\_c input) is the signature failure mode of multi-agent systems: disparity arises in the interaction among agents that are individually measured as unbiased. Figure 3 shows GENERATE is thinly populated across every locus; multi-agent delegation is the only locus with more than one GENERATE entry, despite the strongest theoretical and empirical motivation.
+\textbf{BCF coordinate.} The GENERATE operator ($\varphi$ applied to nominally zero-$\Delta$\_c input) is the signature failure mode of multi-agent systems: disparity arises in the interaction among agents that are individually measured as unbiased. Figure~\ref{fig:operator} shows GENERATE is thinly populated across every locus; multi-agent delegation is the only locus with more than one GENERATE entry, despite the strongest theoretical and empirical motivation.
 
 \textbf{The problem.} Multi-agent orchestration introduces failure modes with no single-agent analogue: bias can \emph{emerge} from interaction even among agents whose individual outputs are measured as near-parity. \cite{madigan2025emergent} formalizes emergent bias in multi-agent decision systems as a property of the collective rather than any constituent; \cite{nguyen2025social} documents bias emerging, propagating, and amplifying through agent-to-agent communication. Disparity in these settings is a function of communication topology, role-assignment structure, and message-passing dynamics. None of these is observable by a per-agent audit, and none is instrumented by existing benchmarks. The MALIBU benchmark \cite{mirza2025malibu} surfaces implicit bias in multi-agent assignments but does not measure the GENERATE operator specifically (bias arising at zero input to each constituent).
 
@@ -1339,9 +1494,9 @@ A governance thread runs through all six problems. Agents are now deployed in hi
 
 \textbf{Concrete first step.} Extend D2 to an intersectional counterfactual disparity $\textbackslash\{\}Delta\_c\textasciicircum\{\}\{A \textbackslash\{\}times B\}$ defined as the $\Delta$\_c estimated under joint swap of attributes A and B minus the sum of the marginal $\Delta$\_c values, measuring the interaction term. Apply this to the \S{}6 audit's hiring task with a 2$\times$2 race-by-gender counterfactual design; this requires only doubling the profile set and is immediately feasible.
 
-\subsubsection{Empty Operator Rows of Figure 3: Governance and Standardized Auditing}
+\subsubsection{Empty Operator Rows of the Conduction Grid: Governance and Standardized Auditing}
 
-\textbf{BCF coordinate.} The ATTENUATE rows of Figure 3 are partially populated (mitigation papers), but the formal connection between a mitigation's claimed ATTENUATE effect and its BCF-level $\varphi$ value is never made: no paper reports how much $\varphi$\_e decreases at a specific pipeline edge following a given intervention. This is a P4 Mitigation-matching gap.
+\textbf{BCF coordinate.} The ATTENUATE rows of Figure~\ref{fig:operator} are partially populated (mitigation papers), but the formal connection between a mitigation's claimed ATTENUATE effect and its BCF-level $\varphi$ value is never made: no paper reports how much $\varphi$\_e decreases at a specific pipeline edge following a given intervention. This is a P4 Mitigation-matching gap.
 
 \textbf{The problem.} There is no shared standard for what constitutes a fairness audit of an LLM agent, nor a required reporting format for action-level disparity. The ingredients exist: the CAFFE counterfactual framework \cite{parziale2025systematic}, the SCOPE dataset \cite{parziale2026scope}, the LangFair evaluation toolkit \cite{bouchard2024bring}, the intervention-consistency test \cite{basu2026names}, and the dataset survey \cite{zhang2025datasets}. No governance instrument standardizes them into a repeatable, comparable audit of an \emph{acting} system. The regulatory field has outpaced the measurement infrastructure: the EU AI Act \cite{parliament2024regulation} requires bias testing of high-risk employment and credit systems, the NIST AI RMF \cite{nist2023artificial} specifies bias evaluation as a governance requirement, NYC Local Law 144 mandates annual bias audits for automated employment decision tools, and EEOC disparate-impact analysis applies to algorithmic hiring. None specifies what those audits must cover for an acting agent as opposed to a static classifier.
 
@@ -1349,11 +1504,11 @@ A governance thread runs through all six problems. Agents are now deployed in hi
 
 \subsubsection{Mitigation at the Agent Level, Not the Token Level}
 
-\textbf{BCF coordinate.} P4 Mitigation-matching states that an intervention is matched if it operates at the same pipeline locus as the disparity it is meant to correct. The mitigation map in \S{}5 shows that the ATTENUATE column of Figure 3 is populated almost entirely by token-level interventions (prompting, alignment, output filtering), which are mismatched to the six agent-pipeline loci where the AMPLIFY and GENERATE operators are documented.
+\textbf{BCF coordinate.} P4 Mitigation-matching states that an intervention is matched if it operates at the same pipeline locus as the disparity it is meant to correct. The mitigation map in \S{}5 shows that the ATTENUATE column of Figure~\ref{fig:operator} is populated almost entirely by token-level interventions (prompting, alignment, output filtering), which are mismatched to the six agent-pipeline loci where the AMPLIFY and GENERATE operators are documented.
 
 \textbf{The problem.} The mitigation literature overwhelmingly intervenes on model outputs: debiasing prompts \cite{furniturewala2024thinking,li2024prompting}, preference optimization \cite{allam2024biasdpo,bai2022constitutional}, inference-time activation steering \cite{li2025fairsteer}, and output guardrails \cite{dong2024building}. These operate on tokens. But \S{}3 locates agentic harm in actions and architecture: which tool is chosen, what is retrieved into context, how roles are assigned, how a plan is decomposed. Token-level debiasing leaves these channels untouched. The few process-aware interventions point the way: balanced-retrieval agents \cite{singh2025biasb}, bias-aware retrieval agents \cite{singh2025bias}, identity anonymization to neutralize role-induced debate bias \cite{choi2025identity}, and multi-agent debiasing frameworks \cite{owens2024multi,xu2024mitigating}. They are scattered relative to the dominant approach, and no unified framework simultaneously addresses tool-selection, memory-accumulation, and delegation loci.
 
-\textbf{Concrete first step.} Implement a \textbf{component-keyed guardrail layer} as a proof of concept: a wrapper that intercepts the agent's action proposal at each of the three highest-priority AMPLIFY/GENERATE loci identified in Figure 3 (tool selection, multi-agent delegation, long-horizon accumulation) and applies a targeted $\Delta$\_c reduction intervention before action execution. The three interventions are, respectively: a demographic-blind re-ranking of tool candidates, a role-assignment audit against an assignment-disparity threshold, and a memory-hygiene filter. Evaluate the wrapper using the \S{}6 audit's C1 to C3 configurations, reporting per-edge $\varphi$\_e before and after to directly test P4 Mitigation-matching.
+\textbf{Concrete first step.} Implement a \textbf{component-keyed guardrail layer} as a proof of concept: a wrapper that intercepts the agent's action proposal at each of the three highest-priority AMPLIFY/GENERATE loci identified in Figure~\ref{fig:operator} (tool selection, multi-agent delegation, long-horizon accumulation) and applies a targeted $\Delta$\_c reduction intervention before action execution. The three interventions are, respectively: a demographic-blind re-ranking of tool candidates, a role-assignment audit against an assignment-disparity threshold, and a memory-hygiene filter. Evaluate the wrapper using the \S{}6 audit's C1 to C3 configurations, reporting per-edge $\varphi$\_e before and after to directly test P4 Mitigation-matching.
 
 \subsubsection{Synthesis}
 
@@ -1364,7 +1519,7 @@ The autonomy that makes agents valuable (acting, persisting, delegating, self-co
 
 LLM-based agents have crossed a consequential threshold: they select tools, accumulate memories across turns, delegate subtasks across role-assigned subagents, decompose goals into multi-step plans, adapt to inferred user identities, and persist behavior over long horizons \cite{wang2024survey,xi2023rise}. Each of these pipeline stages is a distinct locus at which demographic disparity can enter, propagate, and compound into consequential harm. The Bias Conduction Framework (BCF) introduced in \S{}3.0 formalizes this structure: D1 defines the agent loop $\langle$$\pi$, T, M, R$\rangle$; D2 defines component counterfactual disparity $\Delta$\_c via trace-replay; D3 defines the conduction operators (ATTENUATE $\varphi$<1, PRESERVE $\varphi$$\approx$1, AMPLIFY $\varphi$>1, GENERATE $\varphi$ on zero input); the conduction equation $\Delta$\_$\tau$ $\approx$ $\Sigma$\_c $\Delta$\_c $\cdot$ $\Pi$ $\varphi$\_e with feedback recurrence $\Delta$\textasciicircum\{\}(t+1) = $\varphi$\_fb $\cdot$ $\Delta$\textasciicircum\{\}(t) + $\Delta$\_entry derives the trajectory disparity from its per-component contributions; and five propositions (P1 Locality, P2 Masking, P3 Super-additivity, P4 Mitigation-matching, P5 Measurement-adequacy) characterize the conditions under which component-level auditing is necessary, sufficient, and policy-relevant.
 
-This survey has presented the first dedicated taxonomy of fairness in LLM-based agents organized by this component axis, spanning tool and API selection (\S{}3.1), memory and retrieval (\S{}3.2), multi-agent delegation and role assignment (\S{}3.3), planning and decomposition (\S{}3.4), user modeling and personalization (\S{}3.5), and long-horizon trajectory drift (\S{}3.6), with a cross-cutting account of how component-level harms compound into the agentic multiplier (\S{}3.7, P3). Against this architecture the survey maps the evaluation field (\S{}4), characterizing group, individual, and counterfactual metric families lifted to agent trajectories and generalizing the CFR and MASD statistics of \cite{mayilvaghanan2026counterfactual} across all pipeline components, while Table 2 documents that nearly every existing benchmark (clinical fairness sets \cite{xiao2025fairmedqa,adappanavar2025mfarm,ghosh2025medequalqa}, hiring and lending audits \cite{an2025measuring,azime2025accept}, compositional evaluation suites \cite{wang2024ceb}) scores model outputs rather than agent actions. The mitigation survey (\S{}5) follows the P4 Mitigation-matching principle, distinguishing prompt-level interventions \cite{furniturewala2024thinking,li2024prompting}, alignment-stage approaches \cite{allam2024biasdpo,bai2022constitutional}, architectural guardrails \cite{dong2024building}, and the emerging class of process-level and multi-agent debiasing strategies \cite{owens2024multi,choi2025identity,ki2025multiple}. The coverage analysis (\S{}7) quantifies the gap: 52 of 68 component-branch entries sit in the unspecified column of Figure 2; the counterfactual column (the dimension required to compute D2's $\Delta$\_c) contains exactly one entry across all six components; and the GENERATE/AMPLIFY cells of Figure 3 are the least populated despite being the loci of distinctively agentic harm. A pilot of the cross-framework audit (\S{}6) illustrates the pattern P2 and P3 predict, decision-level parity masking a score-level disparity that grows with agentic scaffolding, though a full confirmatory study remains future work.
+This survey has presented the first dedicated taxonomy of fairness in LLM-based agents organized by this component axis, spanning tool and API selection (\S{}3.1), memory and retrieval (\S{}3.2), multi-agent delegation and role assignment (\S{}3.3), planning and decomposition (\S{}3.4), user modeling and personalization (\S{}3.5), and long-horizon trajectory drift (\S{}3.6), with a cross-cutting account of how component-level harms compound into the agentic multiplier (\S{}3.7, P3). Against this architecture the survey maps the evaluation field (\S{}4), characterizing group, individual, and counterfactual metric families lifted to agent trajectories and generalizing the CFR and MASD statistics of \cite{mayilvaghanan2026counterfactual} across all pipeline components, while Table 2 documents that nearly every existing benchmark (clinical fairness sets \cite{xiao2025fairmedqa,adappanavar2025mfarm,ghosh2025medequalqa}, hiring and lending audits \cite{an2025measuring,azime2025accept}, compositional evaluation suites \cite{wang2024ceb}) scores model outputs rather than agent actions. The mitigation survey (\S{}5) follows the P4 Mitigation-matching principle, distinguishing prompt-level interventions \cite{furniturewala2024thinking,li2024prompting}, alignment-stage approaches \cite{allam2024biasdpo,bai2022constitutional}, architectural guardrails \cite{dong2024building}, and the emerging class of process-level and multi-agent debiasing strategies \cite{owens2024multi,choi2025identity,ki2025multiple}. The coverage analysis (\S{}7) quantifies the gap: 52 of 68 component-branch entries sit in the unspecified column of Figure~\ref{fig:coverage}; the counterfactual column (the dimension required to compute D2's $\Delta$\_c) contains exactly one entry across all six components; and the GENERATE/AMPLIFY cells of Figure~\ref{fig:operator} are the least populated despite being the loci of distinctively agentic harm. A pilot of the cross-framework audit (\S{}6) illustrates the pattern P2 and P3 predict, decision-level parity masking a score-level disparity that grows with agentic scaffolding, though a full confirmatory study remains future work.
 
 The measurement gap documented by this survey is a gap in accountability infrastructure, not in tooling alone. LLMs and LLM-based agents are being deployed, piloted, and evaluated in consequential decision settings, including hiring \cite{veldanda2023emily,wilson2024gender,nghiem2024you}, clinical decision support \cite{poulain2024bias,omar2025sociodemographic}, lending \cite{bowen2024measuring,feng2023empowering}, and education \cite{weissburg2024llms} (much of the cited evidence is audit or evaluation in these settings rather than confirmed operational deployment), subject to regulatory requirements (EU AI Act \cite{parliament2024regulation}, NIST AI RMF \cite{nist2023artificial}, NYC Local Law 144, EEOC disparate-impact guidance) that no current acting-agent fairness benchmark is equipped to satisfy. The long-term fairness risks are compounding: feedback recurrence documented by \cite{wyllie2024fairness} and \cite{wang2026observations}, memory accumulation characterized by \cite{ma2026implicit}, and the sequential fairness theory of \cite{hu2022achieving} and \cite{xu2024adapting} collectively predict that systems fair at any single step can drive divergent cumulative outcomes across groups over deployment cycles.
 
@@ -1401,7 +1556,7 @@ The cross-framework audit of \S{}6 is reported only as a small directional pilot
 
 \begin{itemize}
 \item The BCF propositions P2 and P3 are supported by theoretical derivation, by the multi-paper evidence cited throughout \S{}\S{}3-4, and now by a directional pilot whose MASD trend (1.2, 3.4, 6.4 across C0, C2, C3) is consistent with masking-and-amplification. They are not confirmed: the pilot uses N = 10, a single race-and-gender-conflated name pair, one model, and uniformly strong resumes that produce a decision-level ceiling. Readers should treat P2 and P3 as well-motivated hypotheses with strong indirect support and one small consistent pilot, not as empirically confirmed claims.
-\item The conduction-operator tagging in Figure 3 reflects the survey authors' interpretation of whether each cited paper's finding instantiates ATTENUATE, PRESERVE, AMPLIFY, or GENERATE at the relevant locus, not a standardized classification applied by the original authors. Some cells may be reclassified as the audit methodology is refined.
+\item The conduction-operator tagging in Figure~\ref{fig:operator} reflects the survey authors' interpretation of whether each cited paper's finding instantiates ATTENUATE, PRESERVE, AMPLIFY, or GENERATE at the relevant locus, not a standardized classification applied by the original authors. Some cells may be reclassified as the audit methodology is refined.
 \item The pilot instantiates only the answer-level metrics (CFR, MASD) and the decision-action disparity. The remaining action-level metrics (tool-invocation disparity, escalation disparity, plan-allocation disparity) are specified in \S{}6.2 but require a tool-using deployment and have not been computed; their distributional properties, sensitivity, and test-retest reliability are unknown until the full study.
 \end{itemize}
 
@@ -1414,12 +1569,2169 @@ The corpus cutoff is mid-2026. The LLM-agent field's publication rate has accele
 \begin{itemize}
 \item \textbf{Frontier model capability shifts}: improvements in instruction-following fidelity and tool-calling reliability may change the empirical profile of which pipeline edges are AMPLIFY versus PRESERVE loci, as models become more or less sensitive to demographic cues at each stage.
 \item \textbf{Regulatory enactments}: the EU AI Act's implementing acts specifying audit requirements for high-risk AI systems are expected to issue in 2025 to 2026; these may operationalize bias-testing requirements in ways that alter the alignment between academic fairness metrics and legal compliance requirements.
-\item \textbf{Benchmark releases}: AgentBench \cite{liu2024agentbench}, WebArena \cite{zhou2024webarena}, and $\tau$-bench are actively adding evaluation dimensions; it is possible that demographically instrumented agentic fairness evaluation will be released in these frameworks within the survey's publication window, which would partially populate the empty cells of Figure 2.
+\item \textbf{Benchmark releases}: AgentBench \cite{liu2024agentbench}, WebArena \cite{zhou2024webarena}, and $\tau$-bench are actively adding evaluation dimensions; it is possible that demographically instrumented agentic fairness evaluation will be released in these frameworks within the survey's publication window, which would partially populate the empty cells of Figure~\ref{fig:coverage}.
 \end{itemize}
 
-Readers should treat the coverage matrix as a snapshot of the field as of mid-2026, not as a permanent characterization. The BCF framework and the open-problem agenda of \S{}8 are designed to remain relevant as the empirical field changes; the specific cell counts in Figure 2 and Figure 3 should be updated as new work appears.
+Readers should treat the coverage matrix as a snapshot of the field as of mid-2026, not as a permanent characterization. The BCF framework and the open-problem agenda of \S{}8 are designed to remain relevant as the empirical field changes; the specific cell counts in Figure~\ref{fig:coverage} and Figure~\ref{fig:operator} should be updated as new work appears.
 
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{references}
+%% === BIBLIOGRAPHY INLINED (was: \bibliographystyle{ACM-Reference-Format} + \bibliography{references}) ===
+%% Source: main.bbl (ACM-Reference-Format, 168 bibitems). main.tex now compiles with pdflatex alone.
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{168}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Barocas and Narayanan(2023)]%
+        {barocas2023fairness}
+\bibfield{author}{\bibinfo{person}{Hardt Barocas} {and}
+  \bibinfo{person}{Narayanan}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Fairness and Machine Learning: Limitations and
+  Opportunities}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\urldef\tempurl%
+\url{https://fairmlbook.org}
+\showURL{%
+\tempurl}
+
+\bibitem[Binkyte(2025)]%
+        {binkyte2025interactional}
+\bibfield{author}{\bibinfo{person}{Ruta Binkyte}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Interactional Fairness in LLM Multi-Agent Systems:
+  An Evaluation Framework}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.12001}
+\href{https://doi.org/10.1609/aies.v8i1.36563}{doi:\nolinkurl{10.1609/aies.v8i1.36563}}
+
+\bibitem[Borah and Mihalcea(2024)]%
+        {borah2024implicit}
+\bibfield{author}{\bibinfo{person}{Borah} {and} \bibinfo{person}{Mihalcea}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Implicit Bias Detection and Mitigation in
+  Multi-Agent LLM Interactions}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.02584}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.02584}
+\showURL{%
+\tempurl}
+
+\bibitem[Bouchard(2024)]%
+        {bouchard2024bring}
+\bibfield{author}{\bibinfo{person}{D. Bouchard}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Bring Your Own Prompts: Use-Case-Specific Bias and
+  Fairness Evaluation for LLMs (LangFair)}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.10853}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.10853}
+\showURL{%
+\tempurl}
+
+\bibitem[Buolamwini and Gebru(2018)]%
+        {buolamwini2018gender}
+\bibfield{author}{\bibinfo{person}{Buolamwini} {and} \bibinfo{person}{Gebru}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Gender Shades: Intersectional Accuracy Disparities
+  in Commercial Gender Classification}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v81/buolamwini18a.html}
+\showURL{%
+\tempurl}
+
+\bibitem[Caton and Haas(2024)]%
+        {caton2024fairness}
+\bibfield{author}{\bibinfo{person}{Simon Caton} {and}
+  \bibinfo{person}{Christian Haas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Fairness in Machine Learning: A Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2010.04053}
+\href{https://doi.org/10.1145/3616865}{doi:\nolinkurl{10.1145/3616865}}
+
+\bibitem[Chang et~al\mbox{.}(2024)]%
+        {chang2024survey}
+\bibfield{author}{\bibinfo{person}{Yupeng Chang}, \bibinfo{person}{Xu Wang},
+  \bibinfo{person}{Jindong Wang}, \bibinfo{person}{Yuan Wu},
+  \bibinfo{person}{Linyi Yang}, \bibinfo{person}{Kaijie Zhu},
+  \bibinfo{person}{Hao Chen}, \bibinfo{person}{Xiaoyuan Yi},
+  \bibinfo{person}{Cunxiang Wang}, \bibinfo{person}{Yidong Wang},
+  \bibinfo{person}{Wei Ye}, \bibinfo{person}{Yue Zhang}, \bibinfo{person}{Yi
+  Chang}, \bibinfo{person}{Philip~S. Yu}, \bibinfo{person}{Qiang Yang}, {and}
+  \bibinfo{person}{Xing Xie}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Survey on Evaluation of Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.03109}
+\href{https://doi.org/10.1145/3641289}{doi:\nolinkurl{10.1145/3641289}}
+
+\bibitem[Chouldechova(2017)]%
+        {chouldechova2017fair}
+\bibfield{author}{\bibinfo{person}{Chouldechova}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Fair Prediction with Disparate Impact: A Study of
+  Bias in Recidivism Prediction Instruments}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.00056}
+\href{https://doi.org/10.1089/big.2016.0047}{doi:\nolinkurl{10.1089/big.2016.0047}}
+
+\bibitem[Dai et~al\mbox{.}(2025)]%
+        {dai2025trustworthy}
+\bibfield{author}{\bibinfo{person}{Sunhao Dai}, \bibinfo{person}{Changle Qu},
+  \bibinfo{person}{Sirui Chen}, \bibinfo{person}{Xiao Zhang}, {and}
+  \bibinfo{person}{Jun Xu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Trustworthy Information Retrieval in the LLM Era:
+  Bias, Unfairness, and Hallucination}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\href{https://doi.org/10.1145/3767695.3769670}{doi:\nolinkurl{10.1145/3767695.3769670}}
+
+\bibitem[Ebrahimi and Asudeh(2025)]%
+        {ebrahimi2025survey}
+\bibfield{author}{\bibinfo{person}{Sana Ebrahimi} {and}
+  \bibinfo{person}{Abolfazl Asudeh}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Reliability, Transparency,
+  Accountability, and Fairness in LLM-based Multi-Agent Systems through the
+  Responsibility Lens}.
+\newblock \bibinfo{journal}{\emph{Preprint (ResearchGate/unpublished),
+  University of Illinois Chicago}} (\bibinfo{year}{2025}).
+\newblock
+
+\bibitem[et~al.(2024a)]%
+        {allam2024biasdpo}
+\bibfield{author}{\bibinfo{person}{Allam et al.}}
+  \bibinfo{year}{2024}\natexlab{a}.
+\newblock \showarticletitle{BiasDPO: Mitigating Bias in Language Models through
+  Direct Preference Optimization}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.13928}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.13928}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024b)]%
+        {arzaghi2024understanding}
+\bibfield{author}{\bibinfo{person}{Arzaghi et al.}}
+  \bibinfo{year}{2024}\natexlab{b}.
+\newblock \showarticletitle{Understanding Intrinsic Socioeconomic Biases in
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.18662}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.18662}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025a)]%
+        {azime2025accept}
+\bibfield{author}{\bibinfo{person}{Azime et al.}}
+  \bibinfo{year}{2025}\natexlab{a}.
+\newblock \showarticletitle{Accept or Deny? Evaluating LLM Fairness and
+  Performance in Loan Approval across Table-to-Text Serialization Approaches}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2508.21512}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2508.21512}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025b)]%
+        {an2025measuring}
+\bibfield{author}{\bibinfo{person}{An et al.}}
+  \bibinfo{year}{2025}\natexlab{b}.
+\newblock \showarticletitle{Measuring gender and racial biases in large
+  language models: Intersectional evidence from automated resume evaluation}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2403.15281}
+\href{https://doi.org/10.1093/pnasnexus/pgaf089}{doi:\nolinkurl{10.1093/pnasnexus/pgaf089}}
+
+\bibitem[et~al.(2025c)]%
+        {adappanavar2025mfarm}
+\bibfield{author}{\bibinfo{person}{Adappanavar et al.}}
+  \bibinfo{year}{2025}\natexlab{c}.
+\newblock \showarticletitle{mFARM: Towards Multi-Faceted Fairness Assessment
+  based on HARMs in Clinical Decision Support}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2509.02007}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2509.02007}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026a)]%
+        {amirimargavi2026equal}
+\bibfield{author}{\bibinfo{person}{Amiri-Margavi et al.}}
+  \bibinfo{year}{2026}\natexlab{a}.
+\newblock \showarticletitle{Equal Access, Unequal Interaction: A Counterfactual
+  Audit of LLM Fairness}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.02932}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.02932}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020a)]%
+        {blodgett2020language}
+\bibfield{author}{\bibinfo{person}{Blodgett et al.}}
+  \bibinfo{year}{2020}\natexlab{a}.
+\newblock \showarticletitle{Language (Technology) is Power: A Critical Survey
+  of Bias in NLP}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2005.14050}
+
+\bibitem[et~al.(2021a)]%
+        {blodgett2021stereotyping}
+\bibfield{author}{\bibinfo{person}{Blodgett et al.}}
+  \bibinfo{year}{2021}\natexlab{a}.
+\newblock \showarticletitle{Stereotyping Norwegian Salmon: An Inventory of
+  Pitfalls in Fairness Benchmark Datasets}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\href{https://doi.org/10.18653/v1/2021.acl-long.81}{doi:\nolinkurl{10.18653/v1/2021.acl-long.81}}
+
+\bibitem[et~al.(2022a)]%
+        {bai2022constitutional}
+\bibfield{author}{\bibinfo{person}{Bai et al.}}
+  \bibinfo{year}{2022}\natexlab{a}.
+\newblock \showarticletitle{Constitutional AI: Harmlessness from AI Feedback}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2212.08073}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2212.08073}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024c)]%
+        {bowen2024measuring}
+\bibfield{author}{\bibinfo{person}{Bowen et al.}}
+  \bibinfo{year}{2024}\natexlab{c}.
+\newblock \showarticletitle{Measuring and Mitigating Racial Disparities in
+  LLMs: Evidence from a Mortgage Underwriting Experiment}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.2139/ssrn.4812158}{doi:\nolinkurl{10.2139/ssrn.4812158}}
+
+\bibitem[et~al.(2025d)]%
+        {blankenstein2025biasbusters}
+\bibfield{author}{\bibinfo{person}{Blankenstein et al.}}
+  \bibinfo{year}{2025}\natexlab{d}.
+\newblock \showarticletitle{BiasBusters: Uncovering and Mitigating Tool
+  Selection Bias in Large Language Models}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.00307}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.00307}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026b)]%
+        {basu2026names}
+\bibfield{author}{\bibinfo{person}{Basu et al.}}
+  \bibinfo{year}{2026}\natexlab{b}.
+\newblock \showarticletitle{When Names Change Verdicts: Intervention
+  Consistency Reveals Systematic Bias in LLM Decision-Making}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.18530}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.18530}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2017a)]%
+        {caliskan2017semantics}
+\bibfield{author}{\bibinfo{person}{Caliskan et al.}}
+  \bibinfo{year}{2017}\natexlab{a}.
+\newblock \showarticletitle{Semantics Derived Automatically from Language
+  Corpora Contain Human-Like Biases}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1608.07187}
+\href{https://doi.org/10.1126/science.aal4230}{doi:\nolinkurl{10.1126/science.aal4230}}
+
+\bibitem[et~al.(2024d)]%
+        {chu2024fairness}
+\bibfield{author}{\bibinfo{person}{Chu et al.}}
+  \bibinfo{year}{2024}\natexlab{d}.
+\newblock \showarticletitle{Fairness in Large Language Models: A Taxonomic
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.01349}
+\href{https://doi.org/10.1145/3682112.3682117}{doi:\nolinkurl{10.1145/3682112.3682117}}
+
+\bibitem[et~al.(2024e)]%
+        {campedelli2024want}
+\bibfield{author}{\bibinfo{person}{Campedelli et al.}}
+  \bibinfo{year}{2024}\natexlab{e}.
+\newblock \showarticletitle{I Want to Break Free! Persuasion and Anti-Social
+  Behavior of LLMs in Multi-Agent Settings with Social Hierarchy}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (EACL 2024 Workshop)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.07109}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.07109}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024f)]%
+        {chakraborty2024maxmin}
+\bibfield{author}{\bibinfo{person}{Chakraborty et al.}}
+  \bibinfo{year}{2024}\natexlab{f}.
+\newblock \showarticletitle{MaxMin-RLHF: Alignment with Diverse Human
+  Preferences}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.08925}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.08925}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025e)]%
+        {coppolillo2025unmasking}
+\bibfield{author}{\bibinfo{person}{Coppolillo et al.}}
+  \bibinfo{year}{2025}\natexlab{e}.
+\newblock \showarticletitle{Unmasking Conversational Bias in AI Multiagent
+  Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.14844}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2501.14844}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025f)]%
+        {choi2025identity}
+\bibfield{author}{\bibinfo{person}{Choi et al.}}
+  \bibinfo{year}{2025}\natexlab{f}.
+\newblock \showarticletitle{When Identity Skews Debate: Anonymization for
+  Bias-Reduced Multi-Agent Reasoning}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.07517}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.07517}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026c)]%
+        {cao2026from}
+\bibfield{author}{\bibinfo{person}{Cao et al.}}
+  \bibinfo{year}{2026}\natexlab{c}.
+\newblock \showarticletitle{From Biased Chatbots to Biased Agents: Examining
+  Role Assignment Effects on LLM Agent Robustness}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.12285}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.12285}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2012)]%
+        {dwork2012fairness}
+\bibfield{author}{\bibinfo{person}{Dwork et al.}}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Fairness Through Awareness}.
+\newblock  (\bibinfo{year}{2012}).
+\newblock
+\showeprint[arxiv]{1104.3913}
+\href{https://doi.org/10.1145/2090236.2090255}{doi:\nolinkurl{10.1145/2090236.2090255}}
+
+\bibitem[et~al.(2021b)]%
+        {dhamala2021bold}
+\bibfield{author}{\bibinfo{person}{Dhamala et al.}}
+  \bibinfo{year}{2021}\natexlab{b}.
+\newblock \showarticletitle{BOLD: Dataset and Metrics for Measuring Biases in
+  Open-Ended Language Generation}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2101.11718}
+\href{https://doi.org/10.1145/3442188.3445924}{doi:\nolinkurl{10.1145/3442188.3445924}}
+
+\bibitem[et~al.(2023a)]%
+        {deng2023mind2web}
+\bibfield{author}{\bibinfo{person}{Deng et al.}}
+  \bibinfo{year}{2023}\natexlab{a}.
+\newblock \showarticletitle{Mind2Web: Towards a Generalist Agent for the Web}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.06070}
+
+\bibitem[et~al.(2023b)]%
+        {deshpande2023toxicity}
+\bibfield{author}{\bibinfo{person}{Deshpande et al.}}
+  \bibinfo{year}{2023}\natexlab{b}.
+\newblock \showarticletitle{Toxicity in ChatGPT: Analyzing Persona-assigned
+  Language Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2304.05335}
+
+\bibitem[et~al.(2024g)]%
+        {durante2024agent}
+\bibfield{author}{\bibinfo{person}{Durante et al.}}
+  \bibinfo{year}{2024}\natexlab{g}.
+\newblock \showarticletitle{Agent AI: Surveying the Horizons of Multimodal
+  Interaction}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2401.03568}
+
+\bibitem[et~al.(2024h)]%
+        {dai2024bias}
+\bibfield{author}{\bibinfo{person}{Dai et al.}}
+  \bibinfo{year}{2024}\natexlab{h}.
+\newblock \showarticletitle{Bias and Unfairness in Information Retrieval
+  Systems: New Challenges in the LLM Era}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.11457}
+\href{https://doi.org/10.1145/3637528.3671458}{doi:\nolinkurl{10.1145/3637528.3671458}}
+
+\bibitem[et~al.(2024i)]%
+        {dong2024building}
+\bibfield{author}{\bibinfo{person}{Dong et al.}}
+  \bibinfo{year}{2024}\natexlab{i}.
+\newblock \showarticletitle{Building Guardrails for Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.01822}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.01822}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024j)]%
+        {du2024causal}
+\bibfield{author}{\bibinfo{person}{Du et al.}}
+  \bibinfo{year}{2024}\natexlab{j}.
+\newblock \showarticletitle{Causal-Guided Active Learning for Debiasing Large
+  Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2408.12942}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2408.12942}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024k)]%
+        {deldjoo2024cfairllm}
+\bibfield{author}{\bibinfo{person}{Deldjoo et al.}}
+  \bibinfo{year}{2024}\natexlab{k}.
+\newblock \showarticletitle{CFaiRLLM: Consumer Fairness Evaluation in
+  Large-Language Model Recommender System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.05668}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.05668}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024l)]%
+        {deldjoo2024normative}
+\bibfield{author}{\bibinfo{person}{Deldjoo et al.}}
+  \bibinfo{year}{2024}\natexlab{l}.
+\newblock \showarticletitle{A Normative Framework for Benchmarking Consumer
+  Fairness in Large Language Model Recommender Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.02219}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.02219}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2015)]%
+        {feldman2015certifying}
+\bibfield{author}{\bibinfo{person}{Feldman et al.}}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Certifying and Removing Disparate Impact}.
+\newblock  (\bibinfo{year}{2015}).
+\newblock
+\showeprint[arxiv]{1412.3756}
+\href{https://doi.org/10.1145/2783258.2783311}{doi:\nolinkurl{10.1145/2783258.2783311}}
+
+\bibitem[et~al.(2023c)]%
+        {feng2023empowering}
+\bibfield{author}{\bibinfo{person}{Feng et al.}}
+  \bibinfo{year}{2023}\natexlab{c}.
+\newblock \showarticletitle{Empowering Many, Biasing a Few: Generalist Credit
+  Scoring through Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.00566}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.00566}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024m)]%
+        {fan2024fairmt}
+\bibfield{author}{\bibinfo{person}{Fan et al.}}
+  \bibinfo{year}{2024}\natexlab{m}.
+\newblock \showarticletitle{FairMT-Bench: Benchmarking Fairness for Multi-turn
+  Dialogue in Conversational LLMs}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.19317}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.19317}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024n)]%
+        {furniturewala2024thinking}
+\bibfield{author}{\bibinfo{person}{Furniturewala et al.}}
+  \bibinfo{year}{2024}\natexlab{n}.
+\newblock \showarticletitle{Thinking Fair and Slow: On the Efficacy of
+  Structured Prompts for Debiasing Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.10431}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.10431}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020b)]%
+        {gehman2020realtoxicityprompts}
+\bibfield{author}{\bibinfo{person}{Gehman et al.}}
+  \bibinfo{year}{2020}\natexlab{b}.
+\newblock \showarticletitle{RealToxicityPrompts: Evaluating Neural Toxic
+  Degeneration in Language Models}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2009.11462}
+
+\bibitem[et~al.(2023d)]%
+        {gupta2023bias}
+\bibfield{author}{\bibinfo{person}{Gupta et al.}}
+  \bibinfo{year}{2023}\natexlab{d}.
+\newblock \showarticletitle{Bias Runs Deep: Implicit Reasoning Biases in
+  Persona-Assigned LLMs}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2311.04892}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2311.04892}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024o)]%
+        {gallegos2024bias}
+\bibfield{author}{\bibinfo{person}{Gallegos et al.}}
+  \bibinfo{year}{2024}\natexlab{o}.
+\newblock \showarticletitle{Bias and Fairness in Large Language Models: A
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.00770}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.00770}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024p)]%
+        {guo2024large}
+\bibfield{author}{\bibinfo{person}{Guo et al.}}
+  \bibinfo{year}{2024}\natexlab{p}.
+\newblock \showarticletitle{Large Language Model based Multi-Agents: A Survey
+  of Progress and Challenges}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.01680}
+
+\bibitem[et~al.(2025g)]%
+        {geng2025accumulating}
+\bibfield{author}{\bibinfo{person}{Geng et al.}}
+  \bibinfo{year}{2025}\natexlab{g}.
+\newblock \showarticletitle{Accumulating Context Changes the Beliefs of
+  Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2511.01805}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2511.01805}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025h)]%
+        {ghosh2025medequalqa}
+\bibfield{author}{\bibinfo{person}{Ghosh et al.}}
+  \bibinfo{year}{2025}\natexlab{h}.
+\newblock \showarticletitle{MEDEQUALQA: Evaluating Biases in LLMs with
+  Counterfactual Reasoning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.12818}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.12818}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2016)]%
+        {hardt2016equality}
+\bibfield{author}{\bibinfo{person}{Hardt et al.}}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Equality of Opportunity in Supervised Learning}.
+\newblock  (\bibinfo{year}{2016}).
+\newblock
+\showeprint[arxiv]{1610.02413}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1610.02413}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2022b)]%
+        {hartvigsen2022toxigen}
+\bibfield{author}{\bibinfo{person}{Hartvigsen et al.}}
+  \bibinfo{year}{2022}\natexlab{b}.
+\newblock \showarticletitle{ToxiGen: A Large-Scale Machine-Generated Dataset
+  for Adversarial and Implicit Hate Speech Detection}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2203.09509}
+
+\bibitem[et~al.(2023e)]%
+        {huang2023trustgpt}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2023}\natexlab{e}.
+\newblock \showarticletitle{TrustGPT: A Benchmark for Trustworthy and
+  Responsible Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.11507}
+
+\bibitem[et~al.(2024q)]%
+        {huang2024collective}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2024}\natexlab{q}.
+\newblock \showarticletitle{Collective Constitutional AI: Aligning a Language
+  Model with Public Input}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.07814}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.07814}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024r)]%
+        {hong2024metagpt}
+\bibfield{author}{\bibinfo{person}{Hong et al.}}
+  \bibinfo{year}{2024}\natexlab{r}.
+\newblock \showarticletitle{MetaGPT: Meta Programming for A Multi-Agent
+  Collaborative Framework}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.00352}
+
+\bibitem[et~al.(2024s)]%
+        {hu2024free}
+\bibfield{author}{\bibinfo{person}{Hu et al.}}
+  \bibinfo{year}{2024}\natexlab{s}.
+\newblock \showarticletitle{No Free Lunch: Retrieval-Augmented Generation
+  Undermines Fairness in LLMs, Even for Vigilant Users}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.07589}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.07589}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024t)]%
+        {huang2024trustllm}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2024}\natexlab{t}.
+\newblock \showarticletitle{TrustLLM: Trustworthiness in Large Language
+  Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2401.05561}
+
+\bibitem[et~al.(2025i)]%
+        {hall2025guiding}
+\bibfield{author}{\bibinfo{person}{Hall et al.}}
+  \bibinfo{year}{2025}\natexlab{i}.
+\newblock \showarticletitle{Guiding LLM Decision-Making with Fairness Reward
+  Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.11344}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.11344}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025j)]%
+        {hu2025llms}
+\bibfield{author}{\bibinfo{person}{Hu et al.}}
+  \bibinfo{year}{2025}\natexlab{j}.
+\newblock \showarticletitle{LLMs on Trial: Evaluating Judicial Fairness for
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.10852}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.10852}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025k)]%
+        {hong2025measuring}
+\bibfield{author}{\bibinfo{person}{Hong et al.}}
+  \bibinfo{year}{2025}\natexlab{k}.
+\newblock \showarticletitle{Measuring Sycophancy of Language Models in
+  Multi-turn Dialogues}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.23840}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.23840}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024u)]%
+        {jimenez2024swe}
+\bibfield{author}{\bibinfo{person}{Jimenez et al.}}
+  \bibinfo{year}{2024}\natexlab{u}.
+\newblock \showarticletitle{SWE-bench: Can Language Models Resolve Real-World
+  GitHub Issues?}
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2310.06770}
+
+\bibitem[et~al.(2017b)]%
+        {kusner2017counterfactual}
+\bibfield{author}{\bibinfo{person}{Kusner et al.}}
+  \bibinfo{year}{2017}\natexlab{b}.
+\newblock \showarticletitle{Counterfactual Fairness}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.06856}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1703.06856}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2017c)]%
+        {kleinberg2017inherent}
+\bibfield{author}{\bibinfo{person}{Kleinberg et al.}}
+  \bibinfo{year}{2017}\natexlab{c}.
+\newblock \showarticletitle{Inherent Trade-Offs in the Fair Determination of
+  Risk Scores}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1609.05807}
+
+\bibitem[et~al.(2024v)]%
+        {kantharuban2024stereotype}
+\bibfield{author}{\bibinfo{person}{Kantharuban et al.}}
+  \bibinfo{year}{2024}\natexlab{v}.
+\newblock \showarticletitle{Stereotype or Personalization? User Identity Biases
+  Chatbot Recommendations}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.05613}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.05613}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025l)]%
+        {kim2025mitigating}
+\bibfield{author}{\bibinfo{person}{Kim et al.}}
+  \bibinfo{year}{2025}\natexlab{l}.
+\newblock \showarticletitle{Mitigating Bias in RAG: Controlling the Embedder}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.17390}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.17390}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025m)]%
+        {ki2025multiple}
+\bibfield{author}{\bibinfo{person}{Ki et al.}}
+  \bibinfo{year}{2025}\natexlab{m}.
+\newblock \showarticletitle{Multiple LLM Agents Debate for Equitable Cultural
+  Alignment}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.24671}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.24671}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025n)]%
+        {kabra2025reasoning}
+\bibfield{author}{\bibinfo{person}{Kabra et al.}}
+  \bibinfo{year}{2025}\natexlab{n}.
+\newblock \showarticletitle{Reasoning Towards Fairness: Mitigating Bias in
+  Language Models through Reasoning-Guided Fine-Tuning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2504.05632}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2504.05632}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020c)]%
+        {lewis2020retrieval}
+\bibfield{author}{\bibinfo{person}{Lewis et al.}}
+  \bibinfo{year}{2020}\natexlab{c}.
+\newblock \showarticletitle{Retrieval-Augmented Generation for
+  Knowledge-Intensive NLP Tasks}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2005.11401}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2005.11401}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023f)]%
+        {liang2023holistic}
+\bibfield{author}{\bibinfo{person}{Liang et al.}}
+  \bibinfo{year}{2023}\natexlab{f}.
+\newblock \showarticletitle{Holistic Evaluation of Language Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2211.09110}
+
+\bibitem[et~al.(2023g)]%
+        {liu2023lost}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2023}\natexlab{g}.
+\newblock \showarticletitle{Lost in the Middle: How Language Models Use Long
+  Contexts}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2307.03172}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2307.03172}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024w)]%
+        {liu2024agentbench}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2024}\natexlab{w}.
+\newblock \showarticletitle{AgentBench: Evaluating LLMs as Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.03688}
+
+\bibitem[et~al.(2024x)]%
+        {lin2024assessing}
+\bibfield{author}{\bibinfo{person}{Lin et al.}}
+  \bibinfo{year}{2024}\natexlab{x}.
+\newblock \showarticletitle{Assessing Dialect Fairness and Robustness of Large
+  Language Models in Reasoning Tasks}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.11005}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.11005}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024y)]%
+        {li2024prompting}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2024}\natexlab{y}.
+\newblock \showarticletitle{Prompting Fairness: Integrating Causality to Debias
+  Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.08743}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.08743}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025o)]%
+        {li2025actions}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{o}.
+\newblock \showarticletitle{Actions Speak Louder than Words: Agent Decisions
+  Reveal Implicit Biases in Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.17420}
+\href{https://doi.org/10.48550/arXiv.2501.17420}{doi:\nolinkurl{10.48550/arXiv.2501.17420}}
+
+\bibitem[et~al.(2025p)]%
+        {li2025fairsteer}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{p}.
+\newblock \showarticletitle{FairSteer: Inference Time Debiasing for LLMs with
+  Dynamic Activation Steering}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2504.14492}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2504.14492}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025q)]%
+        {li2025from}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{q}.
+\newblock \showarticletitle{From Single to Societal: Analyzing Persona-Induced
+  Bias in Multi-Agent Interactions}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2511.11789}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2511.11789}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025r)]%
+        {liu2025truth}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2025}\natexlab{r}.
+\newblock \showarticletitle{Truth Decay: Quantifying Multi-Turn Sycophancy in
+  Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.11656}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.11656}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2009)]%
+        {moher2009preferred}
+\bibfield{author}{\bibinfo{person}{Moher et al.}}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Preferred Reporting Items for Systematic Reviews
+  and Meta-Analyses: The PRISMA Statement}.
+\newblock  (\bibinfo{year}{2009}).
+\newblock
+\href{https://doi.org/10.1371/journal.pmed.1000097}{doi:\nolinkurl{10.1371/journal.pmed.1000097}}
+
+\bibitem[et~al.(2020d)]%
+        {mansoury2020feedback}
+\bibfield{author}{\bibinfo{person}{Mansoury et al.}}
+  \bibinfo{year}{2020}\natexlab{d}.
+\newblock \showarticletitle{Feedback Loop and Bias Amplification in Recommender
+  Systems}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2007.13019}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2007.13019}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2021c)]%
+        {makhortykh2021detecting}
+\bibfield{author}{\bibinfo{person}{Makhortykh et al.}}
+  \bibinfo{year}{2021}\natexlab{c}.
+\newblock \showarticletitle{Detecting race and gender bias in visual
+  representation of AI on web search engines}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2106.14072}
+\href{https://doi.org/10.1007/978-3-030-78818-6_5}{doi:\nolinkurl{10.1007/978-3-030-78818-6_5}}
+
+\bibitem[et~al.(2021d)]%
+        {mehrabi2021survey}
+\bibfield{author}{\bibinfo{person}{Mehrabi et al.}}
+  \bibinfo{year}{2021}\natexlab{d}.
+\newblock \showarticletitle{A Survey on Bias and Fairness in Machine Learning}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{1908.09635}
+\href{https://doi.org/10.1145/3457607}{doi:\nolinkurl{10.1145/3457607}}
+
+\bibitem[et~al.(2025s)]%
+        {madigan2025emergent}
+\bibfield{author}{\bibinfo{person}{Madigan et al.}}
+  \bibinfo{year}{2025}\natexlab{s}.
+\newblock \showarticletitle{Emergent Bias and Fairness in Multi-Agent Decision
+  Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2512.16433}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2512.16433}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025t)]%
+        {mohammadi2025evaluation}
+\bibfield{author}{\bibinfo{person}{Mohammadi et al.}}
+  \bibinfo{year}{2025}\natexlab{t}.
+\newblock \showarticletitle{Evaluation and Benchmarking of LLM Agents: A
+  Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.21504}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.21504}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025u)]%
+        {mirza2025malibu}
+\bibfield{author}{\bibinfo{person}{Mirza et al.}}
+  \bibinfo{year}{2025}\natexlab{u}.
+\newblock \showarticletitle{MALIBU Benchmark: Multi-Agent LLM Implicit Bias
+  Uncovered}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.01019}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.01019}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025v)]%
+        {mire2025rejected}
+\bibfield{author}{\bibinfo{person}{Mire et al.}}
+  \bibinfo{year}{2025}\natexlab{v}.
+\newblock \showarticletitle{Rejected Dialects: Biases Against African American
+  Language in Reward Models}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.12858}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.12858}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026d)]%
+        {mayilvaghanan2026counterfactual}
+\bibfield{author}{\bibinfo{person}{Mayilvaghanan et al.}}
+  \bibinfo{year}{2026}\natexlab{d}.
+\newblock \showarticletitle{Counterfactual Fairness Evaluation of LLM-Based
+  Contact Center Agent Quality Assurance System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.14970}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.14970}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026e)]%
+        {ma2026implicit}
+\bibfield{author}{\bibinfo{person}{Ma et al.}}
+  \bibinfo{year}{2026}\natexlab{e}.
+\newblock \showarticletitle{How Implicit Bias Accumulates and Propagates in LLM
+  Long-term Memory}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.01558}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.01558}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020e)]%
+        {nangia2020crows}
+\bibfield{author}{\bibinfo{person}{Nangia et al.}}
+  \bibinfo{year}{2020}\natexlab{e}.
+\newblock \showarticletitle{CrowS-Pairs: A Challenge Dataset for Measuring
+  Social Biases in Masked Language Models}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2010.00133}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2010.00133}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2021e)]%
+        {nadeem2021stereoset}
+\bibfield{author}{\bibinfo{person}{Nadeem et al.}}
+  \bibinfo{year}{2021}\natexlab{e}.
+\newblock \showarticletitle{StereoSet: Measuring Stereotypical Bias in
+  Pretrained Language Models}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2004.09456}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2004.09456}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023h)]%
+        {navigli2023biases}
+\bibfield{author}{\bibinfo{person}{Navigli et al.}}
+  \bibinfo{year}{2023}\natexlab{h}.
+\newblock \showarticletitle{Biases in Large Language Models: Origins,
+  Inventory, and Discussion}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\href{https://doi.org/10.1145/3597307}{doi:\nolinkurl{10.1145/3597307}}
+
+\bibitem[et~al.(2024z)]%
+        {nghiem2024you}
+\bibfield{author}{\bibinfo{person}{Nghiem et al.}}
+  \bibinfo{year}{2024}\natexlab{z}.
+\newblock \showarticletitle{"You Gotta be a Doctor, Lin": An Investigation of
+  Name-Based Bias of Large Language Models in Employment Recommendations}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.12232}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.12232}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025w)]%
+        {nguyen2025social}
+\bibfield{author}{\bibinfo{person}{Nguyen et al.}}
+  \bibinfo{year}{2025}\natexlab{w}.
+\newblock \showarticletitle{The Social Cost of Intelligence: Emergence,
+  Propagation, and Amplification of Stereotypical Bias in Multi-Agent Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.10943}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.10943}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2019a)]%
+        {obermeyer2019dissecting}
+\bibfield{author}{\bibinfo{person}{Obermeyer et al.}}
+  \bibinfo{year}{2019}\natexlab{a}.
+\newblock \showarticletitle{Dissecting Racial Bias in an Algorithm Used to
+  Manage the Health of Populations}.
+\newblock  (\bibinfo{year}{2019}).
+\newblock
+\href{https://doi.org/10.1126/science.aax2342}{doi:\nolinkurl{10.1126/science.aax2342}}
+
+\bibitem[et~al.(2022c)]%
+        {ouyang2022training}
+\bibfield{author}{\bibinfo{person}{Ouyang et al.}}
+  \bibinfo{year}{2022}\natexlab{c}.
+\newblock \showarticletitle{Training language models to follow instructions
+  with human feedback}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2203.02155}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2203.02155}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {owens2024multi}
+\bibfield{author}{\bibinfo{person}{Owens et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Multi-LLM Debiasing Framework}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.13884}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.13884}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025x)]%
+        {omar2025sociodemographic}
+\bibfield{author}{\bibinfo{person}{Omar et al.}}
+  \bibinfo{year}{2025}\natexlab{x}.
+\newblock \showarticletitle{Sociodemographic biases in medical decision making
+  by large language models}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\href{https://doi.org/10.1038/s41591-025-03626-6}{doi:\nolinkurl{10.1038/s41591-025-03626-6}}
+
+\bibitem[et~al.(2022d)]%
+        {parrish2022bbq}
+\bibfield{author}{\bibinfo{person}{Parrish et al.}}
+  \bibinfo{year}{2022}\natexlab{d}.
+\newblock \showarticletitle{BBQ: A Hand-Built Bias Benchmark for Question
+  Answering}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2110.08193}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2110.08193}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023i)]%
+        {park2023generative}
+\bibfield{author}{\bibinfo{person}{Park et al.}}
+  \bibinfo{year}{2023}\natexlab{i}.
+\newblock \showarticletitle{Generative Agents: Interactive Simulacra of Human
+  Behavior}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2304.03442}
+\href{https://doi.org/10.1145/3586183.3606763}{doi:\nolinkurl{10.1145/3586183.3606763}}
+
+\bibitem[et~al.(2023j)]%
+        {pezeshkpour2023large}
+\bibfield{author}{\bibinfo{person}{Pezeshkpour et al.}}
+  \bibinfo{year}{2023}\natexlab{j}.
+\newblock \showarticletitle{Large Language Models Sensitivity to The Order of
+  Options in Multiple-Choice Questions}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2308.11483}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2308.11483}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {poulain2024bias}
+\bibfield{author}{\bibinfo{person}{Poulain et al.}}
+  \bibinfo{year}{2024}\natexlab{|}.
+\newblock \showarticletitle{Bias patterns in the application of LLMs for
+  clinical decision support: A comprehensive study}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.15149}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2404.15149}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {pfohl2024toolbox}
+\bibfield{author}{\bibinfo{person}{Pfohl et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Toolbox for Surfacing Health Equity Harms and
+  Biases in Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.12025}
+\href{https://doi.org/10.1038/s41591-024-03258-2}{doi:\nolinkurl{10.1038/s41591-024-03258-2}}
+
+\bibitem[et~al.(2025y)]%
+        {pawar2025presumed}
+\bibfield{author}{\bibinfo{person}{Pawar et al.}}
+  \bibinfo{year}{2025}\natexlab{y}.
+\newblock \showarticletitle{Presumed Cultural Identity: How Names Shape LLM
+  Responses}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.11995}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.11995}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025z)]%
+        {parziale2025systematic}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2025}\natexlab{z}.
+\newblock \showarticletitle{Toward Systematic Counterfactual Fairness
+  Evaluation of Large Language Models: The CAFFE Framework}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2512.16816}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2512.16816}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026f)]%
+        {parziale2026once}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2026}\natexlab{f}.
+\newblock \showarticletitle{Once Upon a Team: Investigating Bias in LLM-Driven
+  Software Team Composition and Task Allocation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.03857}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.03857}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026g)]%
+        {parziale2026scope}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2026}\natexlab{g}.
+\newblock \showarticletitle{SCOPE: A Dataset of Stereotyped Prompts for
+  Counterfactual Fairness Assessment of LLMs}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2604.05555}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2604.05555}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {qian2024chatdev}
+\bibfield{author}{\bibinfo{person}{Qian et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{ChatDev: Communicative Agents for Software
+  Development}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.07924}
+
+\bibitem[et~al.(2024)]%
+        {qu2024tool}
+\bibfield{author}{\bibinfo{person}{Qu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Tool Learning with Large Language Models: A
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.17935}
+
+\bibitem[et~al.(2018a)]%
+        {rudinger2018gender}
+\bibfield{author}{\bibinfo{person}{Rudinger et al.}}
+  \bibinfo{year}{2018}\natexlab{a}.
+\newblock \showarticletitle{Gender Bias in Coreference Resolution
+  (WinoGender)}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1804.09301}
+
+\bibitem[et~al.(2020f)]%
+        {raghavan2020mitigating}
+\bibfield{author}{\bibinfo{person}{Raghavan et al.}}
+  \bibinfo{year}{2020}\natexlab{f}.
+\newblock \showarticletitle{Mitigating Bias in Algorithmic Hiring: Evaluating
+  Claims and Practices}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\href{https://doi.org/10.1145/3351095.3372828}{doi:\nolinkurl{10.1145/3351095.3372828}}
+
+\bibitem[et~al.(2019b)]%
+        {selbst2019fairness}
+\bibfield{author}{\bibinfo{person}{Selbst et al.}}
+  \bibinfo{year}{2019}\natexlab{b}.
+\newblock \showarticletitle{Fairness and Abstraction in Sociotechnical
+  Systems}.
+\newblock  (\bibinfo{year}{2019}).
+\newblock
+\href{https://doi.org/10.1145/3287560.3287598}{doi:\nolinkurl{10.1145/3287560.3287598}}
+
+\bibitem[et~al.(2022e)]%
+        {smith2022sorry}
+\bibfield{author}{\bibinfo{person}{Smith et al.}}
+  \bibinfo{year}{2022}\natexlab{e}.
+\newblock \showarticletitle{"I'm sorry to hear that": Finding New Biases in
+  Language Models with a Holistic Descriptor Dataset}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2205.09209}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2205.09209}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023k)]%
+        {staab2023memorization}
+\bibfield{author}{\bibinfo{person}{Staab et al.}}
+  \bibinfo{year}{2023}\natexlab{k}.
+\newblock \showarticletitle{Beyond Memorization: Violating Privacy Via
+  Inference with Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2024 submission)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.07298}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.07298}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023l)]%
+        {shinn2023reflexion}
+\bibfield{author}{\bibinfo{person}{Shinn et al.}}
+  \bibinfo{year}{2023}\natexlab{l}.
+\newblock \showarticletitle{Reflexion: Language Agents with Verbal
+  Reinforcement Learning}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2303.11366}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2303.11366}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023m)]%
+        {schick2023toolformer}
+\bibfield{author}{\bibinfo{person}{Schick et al.}}
+  \bibinfo{year}{2023}\natexlab{m}.
+\newblock \showarticletitle{Toolformer: Language Models Can Teach Themselves to
+  Use Tools}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2302.04761}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2302.04761}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023n)]%
+        {santurkar2023whose}
+\bibfield{author}{\bibinfo{person}{Santurkar et al.}}
+  \bibinfo{year}{2023}\natexlab{n}.
+\newblock \showarticletitle{Whose Opinions Do Language Models Reflect?}
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2303.17548}
+
+\bibitem[et~al.(2024)]%
+        {sumers2024cognitive}
+\bibfield{author}{\bibinfo{person}{Sumers et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Cognitive Architectures for Language Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.02427}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.02427}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {sharma2024understanding}
+\bibfield{author}{\bibinfo{person}{Sharma et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Understanding Sycophancy in Language
+  Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2310.13548}
+
+\bibitem[et~al.(2025)]%
+        {singh2025bias}
+\bibfield{author}{\bibinfo{person}{Singh et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Bias-Aware Agent: Enhancing Fairness in AI-Driven
+  Knowledge Retrieval}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.21237}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.21237}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {singh2025biasb}
+\bibfield{author}{\bibinfo{person}{Singh et al.}}
+  \bibinfo{year}{2025}\natexlab{|}.
+\newblock \showarticletitle{Bias Mitigation Agent: Optimizing Source Selection
+  for Fair and Balanced Knowledge Retrieval}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2508.18724}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2508.18724}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {she2025fairsense}
+\bibfield{author}{\bibinfo{person}{She et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{FairSense: Long-Term Fairness Analysis of
+  ML-Enabled Systems}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.01665}
+\href{https://doi.org/10.1109/ICSE55347.2025.00159}{doi:\nolinkurl{10.1109/ICSE55347.2025.00159}}
+
+\bibitem[et~al.(2025)]%
+        {sneh2025tooltweak}
+\bibfield{author}{\bibinfo{person}{Sneh et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{ToolTweak: An Attack on Tool Selection in LLM-based
+  Agents}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.02554}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.02554}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {song2025large}
+\bibfield{author}{\bibinfo{person}{Song et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Towards Large Language Models that Benefit for All:
+  Benchmarking Group Fairness in Reward Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.07806}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.07806}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026h)]%
+        {simhi2026old}
+\bibfield{author}{\bibinfo{person}{Simhi et al.}}
+  \bibinfo{year}{2026}\natexlab{h}.
+\newblock \showarticletitle{Old Habits Die Hard: How Conversational History
+  Geometrically Traps LLMs}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.03308}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.03308}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023o)]%
+        {turpin2023language}
+\bibfield{author}{\bibinfo{person}{Turpin et al.}}
+  \bibinfo{year}{2023}\natexlab{o}.
+\newblock \showarticletitle{Language Models Don't Always Say What They Think:
+  Unfaithful Explanations in Chain-of-Thought Prompting}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2305.04388}
+
+\bibitem[et~al.(2026i)]%
+        {tonneau2026different}
+\bibfield{author}{\bibinfo{person}{Tonneau et al.}}
+  \bibinfo{year}{2026}\natexlab{i}.
+\newblock \showarticletitle{Different Demographic Cues Yield Inconsistent
+  Conclusions About LLM Personalization and Bias}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.18486}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.18486}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026j)]%
+        {tang2026your}
+\bibfield{author}{\bibinfo{person}{Tang et al.}}
+  \bibinfo{year}{2026}\natexlab{j}.
+\newblock \showarticletitle{Is Your LLM-as-a-Recommender Agent Trustable? LLMs'
+  Recommendation is Easily Hacked by Biases (Preferences)}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.17417}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.17417}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023p)]%
+        {veldanda2023emily}
+\bibfield{author}{\bibinfo{person}{Veldanda et al.}}
+  \bibinfo{year}{2023}\natexlab{p}.
+\newblock \showarticletitle{Are Emily and Greg Still More Employable than
+  Lakisha and Jamal? Investigating Algorithmic Hiring Bias in the Era of
+  ChatGPT}.
+\newblock \bibinfo{journal}{\emph{EMNLP 2024 (arXiv preprint 2023)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.05135}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.05135}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {vijjini2024exploring}
+\bibfield{author}{\bibinfo{person}{Vijjini et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Exploring Safety-Utility Trade-Offs in Personalized
+  Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.11107}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.11107}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026k)]%
+        {vatsal2026agentic}
+\bibfield{author}{\bibinfo{person}{Vatsal et al.}}
+  \bibinfo{year}{2026}\natexlab{k}.
+\newblock \showarticletitle{Agentic AI in Healthcare \& Medicine: A
+  Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-based Agents}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.04813}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.04813}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023q)]%
+        {wu2023autogen}
+\bibfield{author}{\bibinfo{person}{Wu et al.}}
+  \bibinfo{year}{2023}\natexlab{q}.
+\newblock \showarticletitle{AutoGen: Enabling Next-Gen LLM Applications via
+  Multi-Agent Conversation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2024 workshop)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2308.08155}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2308.08155}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023r)]%
+        {wang2023decodingtrust}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2023}\natexlab{r}.
+\newblock \showarticletitle{DecodingTrust: A Comprehensive Assessment of
+  Trustworthiness in GPT Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.11698}
+
+\bibitem[et~al.(2024)]%
+        {wang2024ceb}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{CEB: Compositional Evaluation Benchmark for
+  Fairness in Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.02408}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.02408}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wu2024rag}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Does RAG Introduce Unfairness in LLMs? Evaluating
+  Fairness in Retrieval-Augmented Generation Systems}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.19804}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.19804}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wyllie2024fairness}
+\bibfield{author}{\bibinfo{person}{Wyllie et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Fairness Feedback Loops: Training on Synthetic Data
+  Amplifies Bias}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.07857}
+\href{https://doi.org/10.1145/3630106.3659029}{doi:\nolinkurl{10.1145/3630106.3659029}}
+
+\bibitem[et~al.(2024)]%
+        {wu2024fmbench}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{FMBench: Benchmarking Fairness in Multimodal Large
+  Language Models on Medical Tasks}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2025 workshop)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.01089}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.01089}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wilson2024gender}
+\bibfield{author}{\bibinfo{person}{Wilson et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Gender, Race, and Intersectional Bias in Resume
+  Screening via Language Model Retrieval}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.20371}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.20371}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {weissburg2024llms}
+\bibfield{author}{\bibinfo{person}{Weissburg et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{LLMs are Biased Teachers: Evaluating LLM Bias in
+  Personalized Education}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.14012}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.14012}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wang2024survey}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Survey on Large Language Model based Autonomous
+  Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.11432}
+\href{https://doi.org/10.1007/s11704-024-40231-1}{doi:\nolinkurl{10.1007/s11704-024-40231-1}}
+
+\bibitem[et~al.(2025)]%
+        {wang2025bias}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Bias Amplification in RAG: Poisoning Knowledge
+  Retrieval to Steer LLMs}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.11415}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.11415}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {wu2025reasoning}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Does Reasoning Introduce Bias? A Study of Social
+  Bias Evaluation and Mitigation in LLM Reasoning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.15361}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.15361}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026l)]%
+        {wang2026observations}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2026}\natexlab{l}.
+\newblock \showarticletitle{Observations and Remedies for Large Language Model
+  Bias in Self-Consuming Performative Loop}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.05184}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.05184}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023s)]%
+        {xi2023rise}
+\bibfield{author}{\bibinfo{person}{Xi et al.}}
+  \bibinfo{year}{2023}\natexlab{s}.
+\newblock \showarticletitle{The Rise and Potential of Large Language Model
+  Based Agents: A Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2309.07864}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.07864}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xu2024adapting}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Adapting Static Fairness to Sequential
+  Decision-Making: Bias Mitigation Strategies towards Equal Long-term Benefit
+  Rate}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.03426}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.03426}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xu2024mitigating}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Mitigating Social Bias in Large Language Models: A
+  Multi-Objective Approach within a Multi-Agent Framework}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2412.15504}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2412.15504}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xiao2024algorithmic}
+\bibfield{author}{\bibinfo{person}{Xiao et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{On the Algorithmic Bias of Aligning Large Language
+  Models with RLHF: Preference Collapse and Matching Regularization}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.16455}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.16455}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {xiao2025fairmedqa}
+\bibfield{author}{\bibinfo{person}{Xiao et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{FairMedQA: Benchmarking Bias in Large Language
+  Models for Medical Question Answering}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.19562}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.19562}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {xu2025quantifying}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Quantifying Fairness in LLMs Beyond Tokens: A
+  Semantic and Statistical Perspective}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.19028}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.19028}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026m)]%
+        {xu2026ducx}
+\bibfield{author}{\bibinfo{person}{Xu et al.}}
+  \bibinfo{year}{2026}\natexlab{m}.
+\newblock \showarticletitle{DUCX: Decomposing Unfairness in Tool-Using Chest
+  X-ray Agents}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.00777}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.00777}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023t)]%
+        {yao2023react}
+\bibfield{author}{\bibinfo{person}{Yao et al.}}
+  \bibinfo{year}{2023}\natexlab{t}.
+\newblock \showarticletitle{ReAct: Synergizing Reasoning and Acting in Language
+  Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2210.03629}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2210.03629}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {yu2025survey}
+\bibfield{author}{\bibinfo{person}{Yu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Trustworthy LLM Agents: Threats and
+  Countermeasures}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.09648}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.09648}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2018b)]%
+        {zhao2018gender}
+\bibfield{author}{\bibinfo{person}{Zhao et al.}}
+  \bibinfo{year}{2018}\natexlab{b}.
+\newblock \showarticletitle{Gender Bias in Coreference Resolution: Evaluation
+  and Debiasing Methods (WinoBias)}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1804.06876}
+
+\bibitem[et~al.(2022f)]%
+        {zehlike2022fairness}
+\bibfield{author}{\bibinfo{person}{Zehlike et al.}}
+  \bibinfo{year}{2022}\natexlab{f}.
+\newblock \showarticletitle{Fairness in Ranking: A Survey}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2103.14000}
+\href{https://doi.org/10.1145/3533379}{doi:\nolinkurl{10.1145/3533379}}
+
+\bibitem[et~al.(2024)]%
+        {zhang2024causal}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Causal Prompting: Debiasing Large Language Model
+  Prompting based on Front-Door Adjustment}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.02738}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.02738}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {zack2024coding}
+\bibfield{author}{\bibinfo{person}{Zack et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Coding Inequity: Assessing GPT-4's Potential for
+  Perpetuating Racial and Gender Biases in Healthcare}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.1016/S2589-7500(23)00225-X}{doi:\nolinkurl{10.1016/S2589-7500(23)00225-X}}
+
+\bibitem[et~al.(2024)]%
+        {zhou2024webarena}
+\bibfield{author}{\bibinfo{person}{Zhou et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{WebArena: A Realistic Web Environment for Building
+  Autonomous Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.13854}
+
+\bibitem[et~al.(2025)]%
+        {zhang2025datasets}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Datasets for Fairness in Language Models: An
+  In-Depth Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.23411}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.23411}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {zhang2025evaluating}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Evaluating the Effect of Retrieval Augmentation on
+  Social Biases}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.17611}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.17611}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {zhou2025veracity}
+\bibfield{author}{\bibinfo{person}{Zhou et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Veracity Bias and Beyond: Uncovering LLMs' Hidden
+  Beliefs in Problem-Solving Reasoning}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.16128}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.16128}
+\showURL{%
+\tempurl}
+
+\bibitem[Hu and Zhang(2022)]%
+        {hu2022achieving}
+\bibfield{author}{\bibinfo{person}{Hu} {and} \bibinfo{person}{Zhang}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Achieving Long-Term Fairness in Sequential Decision
+  Making}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2204.01819}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2204.01819}
+\showURL{%
+\tempurl}
+
+\bibitem[Kambhampati(2024)]%
+        {kambhampati2024large}
+\bibfield{author}{\bibinfo{person}{Kambhampati}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Can Large Language Models Reason and Plan?}
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.04121}
+\href{https://doi.org/10.1111/nyas.15125}{doi:\nolinkurl{10.1111/nyas.15125}}
+
+\bibitem[Kim and Diaz(2024)]%
+        {kim2024fair}
+\bibfield{author}{\bibinfo{person}{Kim} {and} \bibinfo{person}{Diaz}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Fair RAG: On the Impact of Fair Ranking in
+  Retrieval-Augmented Generation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ACM SIGIR ICTIR 2025)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.11598}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.11598}
+\showURL{%
+\tempurl}
+
+\bibitem[NIST(2023)]%
+        {nist2023artificial}
+\bibfield{author}{\bibinfo{person}{NIST}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Artificial Intelligence Risk Management Framework
+  (AI RMF 1.0)}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\href{https://doi.org/10.6028/NIST.AI.100-1}{doi:\nolinkurl{10.6028/NIST.AI.100-1}}
+
+\bibitem[Parliament and Council(2024)]%
+        {parliament2024regulation}
+\bibfield{author}{\bibinfo{person}{European Parliament} {and}
+  \bibinfo{person}{Council}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Regulation (EU) 2024/1689 (Artificial Intelligence
+  Act)}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\urldef\tempurl%
+\url{https://eur-lex.europa.eu/eli/reg/2024/1689/oj}
+\showURL{%
+\tempurl}
+
+\bibitem[Pessach and Shmueli(2022)]%
+        {pessach2022review}
+\bibfield{author}{\bibinfo{person}{Dana Pessach} {and} \bibinfo{person}{Eytan
+  Shmueli}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A Review on Fairness in Machine Learning}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\href{https://doi.org/10.1145/3494672}{doi:\nolinkurl{10.1145/3494672}}
+
+\bibitem[Ranjan et~al\mbox{.}(2025)]%
+        {ranjan2025fairness}
+\bibfield{author}{\bibinfo{person}{Rajesh Ranjan}, \bibinfo{person}{Shailja
+  Gupta}, {and} \bibinfo{person}{Surya~Narayan Singh}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Fairness in Agentic AI: A Unified Framework for
+  Ethical and Equitable Multi-Agent System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2502.07254}}
+  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.07254}
+
+\bibitem[Tang et~al\mbox{.}(2023)]%
+        {tang2023what}
+\bibfield{author}{\bibinfo{person}{Zeyu Tang}, \bibinfo{person}{Jiji Zhang},
+  {and} \bibinfo{person}{Kun Zhang}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{What-is and How-to for Fairness in Machine
+  Learning: A Survey, Reflection, and Perspective}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2206.04101}
+\href{https://doi.org/10.1145/3597199}{doi:\nolinkurl{10.1145/3597199}}
+
+\bibitem[U.(2018)]%
+        {u2018algorithms}
+\bibfield{author}{\bibinfo{person}{Noble~S. U.}}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Algorithms of Oppression: How Search Engines
+  Reinforce Racism}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\href{https://doi.org/10.2307/j.ctt1pwt9w5}{doi:\nolinkurl{10.2307/j.ctt1pwt9w5}}
+
+\bibitem[Wang et~al\mbox{.}(2023)]%
+        {wang2023survey}
+\bibfield{author}{\bibinfo{person}{Yifan Wang}, \bibinfo{person}{Weizhi Ma},
+  \bibinfo{person}{Min Zhang}, \bibinfo{person}{Yiqun Liu}, {and}
+  \bibinfo{person}{Shaoping Ma}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{A Survey on the Fairness of Recommender Systems}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2206.03761}
+\href{https://doi.org/10.1145/3547333}{doi:\nolinkurl{10.1145/3547333}}
+
+\bibitem[Yehudai et~al\mbox{.}(2025)]%
+        {yehudai2025survey}
+\bibfield{author}{\bibinfo{person}{Asaf Yehudai}, \bibinfo{person}{Lilach
+  Eden}, \bibinfo{person}{Alan Li}, \bibinfo{person}{Guy Uziel},
+  \bibinfo{person}{Yilun Zhao}, \bibinfo{person}{Roy Bar-Haim},
+  \bibinfo{person}{Arman Cohan}, {and} \bibinfo{person}{Michal
+  Shmueli-Scheuer}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Evaluation of LLM-based Agents}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2503.16416 (revised
+  April 2026)}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.16416}
+
+\end{thebibliography}
+
 
 \end{document}
