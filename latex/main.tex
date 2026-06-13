@@ -3,6 +3,10 @@
 %% ACM journal metadata
 \acmJournal{CSUR}
 \acmYear{2026}
+\acmVolume{1}
+\acmNumber{1}
+\acmArticle{1}
+\acmMonth{6}
 \settopmatter{printacmref=true}
 
 %% Extra packages (acmart loads hyperref and amsmath automatically)
@@ -41,7 +45,7 @@
 \setcopyright{none}
 \acmDOI{}
 \acmISBN{}
-\acmConference{}{}{}{}
+%% \acmConference{}{}{}{} %% removed: CSUR is a journal, not a proceedings paper
 
 
 
@@ -138,7 +142,7 @@ This component-by-component view is grounded in the broader recognition that bia
 
 This survey makes five contributions, each traceable to a specific deliverable in the manuscript:
 
-\textbf{Contribution 1: The Bias Conduction Framework (BCF).} We introduce the BCF, a formal framework organizing bias in LLM-based agents along two axes: \emph{entry locus} (the six agent components) and \emph{conduction operator} (ATTENUATE $\varphi$<1 / PRESERVE $\varphi$$\approx$1 / AMPLIFY $\varphi$>1 / GENERATE $\varphi$ on zero input). The formal core (\S{}3.0) defines: D1 the agent loop as the tuple $\langle$$\pi$,T,M,R$\rangle$ (policy, tool registry, memory module, reward/evaluation signal); D2 component counterfactual disparity $\Delta_c$ measured via trace-replay; D3 the set of conduction operators. The conduction equation $\Delta_\tau$ $\approx$ $\Sigma_c$ $\Delta_c$ $\cdot$ $\Pi$ $\varphi_e$ with feedback recurrence $\Delta^{(t+1)}$ = $\varphi_{\mathrm{fb}}$ $\cdot$ $\Delta^{(t)}$ + $\Delta_{\mathrm{entry}}$ predicts trajectory-level disparity from component measurements. The framework is a formal organizing framework yielding five falsifiable propositions, four grounded in existing corpus evidence and one (P3's cross-component form) stated as a falsifiable conjecture: P1 Locality (a disparity at component c is attributable to that component's locus if it vanishes under a component-level counterfactual), P2 Masking (token-level parity can coexist with action-level disparity, the measurement gap as a theorem), P3 Super-additivity (the agentic multiplier: $\Delta_\tau$ can exceed the naive sum $\Sigma_c$ |$\Delta_c$| when at least one AMPLIFY or GENERATE edge lies on a conduction path), P4 Mitigation matching (an intervention reduces $\Delta_\tau$ only if it targets the locus and operator of the dominant $\Delta_c$), and P5 Measurement adequacy (a fairness metric is adequate for an agent only if it surfaces $\Delta_c$ for every component with non-negligible $\varphi$, with adequacy graded in the tiers of \S{}3.0.5). Section 3.8 provides a worked hiring-agent example tracing bias from C0 (base model) through C3 (delegation), and a four-step auditor recipe (instrument trace-replay, estimate $\varphi_e$ per edge, identify dominant locus, match mitigation to operator).
+\textbf{Contribution 1: The Bias Conduction Framework (BCF).} We introduce the BCF, a formal framework organizing bias in LLM-based agents along two axes: \emph{entry locus} (the six agent components) and \emph{conduction operator} (ATTENUATE $\varphi < 1$ / PRESERVE $\varphi \approx 1$ / AMPLIFY $\varphi > 1$ / GENERATE $\varphi$ on zero input). The formal core (\S{}3.0) defines: D1 the agent loop as the tuple $\langle$$\pi$,T,M,R$\rangle$ (policy, tool registry, memory module, reward/evaluation signal); D2 component counterfactual disparity $\Delta_c$ measured via trace-replay; D3 the set of conduction operators. The conduction equation $\Delta_\tau$ $\approx$ $\Sigma_c$ $\Delta_c$ $\cdot$ $\Pi$ $\varphi_e$ with feedback recurrence $\Delta^{(t+1)}$ = $\varphi_{\mathrm{fb}}$ $\cdot$ $\Delta^{(t)}$ + $\Delta_{\mathrm{entry}}$ predicts trajectory-level disparity from component measurements. The framework is a formal organizing framework yielding five falsifiable propositions, four grounded in existing corpus evidence and one (P3's cross-component form) stated as a falsifiable conjecture: P1 Locality (a disparity at component c is attributable to that component's locus if it vanishes under a component-level counterfactual), P2 Masking (token-level parity can coexist with action-level disparity, the measurement gap as a theorem), P3 Super-additivity (the agentic multiplier: $\Delta_\tau$ can exceed the naive sum $\Sigma_c$ |$\Delta_c$| when at least one AMPLIFY or GENERATE edge lies on a conduction path), P4 Mitigation matching (an intervention reduces $\Delta_\tau$ only if it targets the locus and operator of the dominant $\Delta_c$), and P5 Measurement adequacy (a fairness metric is adequate for an agent only if it surfaces $\Delta_c$ for every component with non-negligible $\varphi$, with adequacy graded in the tiers of \S{}3.0.5). Section 3.8 provides a worked hiring-agent example tracing bias from C0 (base model) through C3 (delegation), and a four-step auditor recipe (instrument trace-replay, estimate $\varphi_e$ per edge, identify dominant locus, match mitigation to operator).
 
 \textbf{Contribution 2: Trajectory-level and action-level disparity metrics.} We formalize trajectory-level Counterfactual Flip Rate (CFR\_$\tau$) and Mean Absolute Score Difference (MASD\_$\tau$), generalizing the single-domain metrics of \cite{mayilvaghanan2026counterfactual} to any agent component as instances of D2's $\Delta_c$, and introduce three action-level disparity metrics (tool-invocation disparity $\Delta_{\mathrm{tool}}$, escalation-rate disparity $\Delta_{\mathrm{esc}}$, and plan-allocation disparity $\Delta_{\mathrm{plan}}$) that current benchmarks do not capture (\S{}4.3). These replace the draft's "no canonical formula" with explicit definitions.
 
@@ -174,24 +178,24 @@ Among all surveyed works, this survey is the first to simultaneously: (a) dedica
 \paragraph{Table 0: Survey Comparison}
 
 \begin{table*}[htbp]
-\centering\small
+\centering\footnotesize
 \label{tab:1}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|p{0.090\textwidth}|}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|p{0.110\textwidth}|p{0.060\textwidth}|p{0.115\textwidth}|p{0.105\textwidth}|p{0.085\textwidth}|p{0.075\textwidth}|p{0.070\textwidth}|p{0.070\textwidth}|p{0.085\textwidth}|p{0.080\textwidth}|}
 \toprule
-\textbf{Survey} & \textbf{Year} & \textbf{Venue} & \textbf{Organizing axis} & \textbf{Agent coverage} & \textbf{Fairness-dedicated} & \textbf{Component-level} & \textbf{Corpus size} & \textbf{Original results} & \textbf{Audit/executable metric?} \\
+\textbf{Survey} & \textbf{Year} & \textbf{Venue} & \textbf{Organizing axis} & \textbf{Agent coverage} & \textbf{\shortstack[l]{Fairness-\\dedicated}} & \textbf{\shortstack[l]{Component-\\level}} & \textbf{\shortstack[l]{Corpus\\size}} & \textbf{\shortstack[l]{Original\\results}} & \textbf{\shortstack[l]{Audit/executable\\metric?}} \\
 \midrule
 Mehrabi et al. \cite{mehrabi2021survey} & 2021 & ACM CSUR & Bias source $\times$ ML stage & None & Yes & No & ~150 & No & No \\
-Gallegos et al. \cite{gallegos2024bias} & 2024 & \emph{Computational Linguistics} & Bias type $\times$ LLM task & Peripheral & Yes & No & ~250 & Partial & No \\
+Gallegos et al. \cite{gallegos2024bias} & 2024 & \emph{Computational Lin\-guis\-tics} & Bias type $\times$ LLM task & Peripheral & Yes & No & ~250 & Partial & No \\
 Chu et al. \cite{chu2024fairness} & 2024 & ACM SIGKDD Expl. & Fairness definition $\times$ LLM task & None & Yes & No & ~100 & No & No \\
 Mohammadi et al. \cite{mohammadi2025evaluation} & 2025 & arXiv & Evaluation dimension & Full & No & No & ~200 & No & No \\
 Ranjan et al. \cite{ranjan2025fairness} & 2025 & arXiv (position) & MAS ethical pillars & Classical MAS only & Yes & No & ~30 & No & No \\
 Ebrahimi \& Asudeh \cite{ebrahimi2025survey} & 2025 & Preprint (RTAF) & Trust pillars (RTAF) & LLM-MAS & Partial (1 of 4) & No & ~100 & No & No \\
-Binkyte \cite{binkyte2025interactional} & 2025 & AIES 2025 & Interactional fairness (negotiation) & Narrow & Yes & No & ~40 & Partial & No \\
-Vatsal et al. \cite{vatsal2026agentic} & 2026 & IEEE Access & 7-dimensional taxonomy & Healthcare & Partial (subdim. of Safety \& Ethics) & No & N/A & No & No \\
-Yu et al. \cite{yu2025survey} & 2025 & ACM SIGKDD & Trustworthy AI threats & Full & Partial (1 dim.) & No & ~200 & No & No \\
-Mayilvaghanan et al. \cite{mayilvaghanan2026counterfactual} & 2026 & arXiv & CFR/MASD metric & Single domain & Yes & No & N/A & Yes & Single-domain \\
-\textbf{This survey} & \textbf{2026} & \textbf{ACM CSUR (target)} & \textbf{BCF locus $\times$ operator} & \textbf{Full (all 6 components)} & \textbf{Yes} & \textbf{Yes} & \textbf{202} & \textbf{Protocol specified} & \textbf{Action-level (tool, esc., plan)} \\
+Binkyte \cite{binkyte2025interactional} & 2025 & AIES 2025 & Inter\-actional fairness (negotiation) & Narrow & Yes & No & ~40 & Partial & No \\
+Vatsal et al. \cite{vatsal2026agentic} & 2026 & IEEE Access & 7-dimensional taxonomy & Healthcare & Partial (Safety \& Ethics subdim.) & No & N/A & No & No \\
+Yu et al. \cite{yu2025survey} & 2025 & ACM SIGKDD & Trust\-worthy AI threats & Full & Partial (1 dim.) & No & ~200 & No & No \\
+Mayil\-vaghanan et al. \cite{mayilvaghanan2026counterfactual} & 2026 & arXiv & CFR/MASD metric & Single domain & Yes & No & N/A & Yes & Single-domain \\
+\textbf{This survey} & \textbf{2026} & \textbf{ACM CSUR (target)} & \textbf{BCF locus $\times$ operator} & \textbf{Full (all 6 comp.)} & \textbf{Yes} & \textbf{Yes} & \textbf{202} & \textbf{Protocol specified} & \textbf{Action-level (tool, esc., plan)} \\
 \bottomrule
 \end{tabular}%
 }
@@ -326,7 +330,7 @@ These six components form the organizing axis of the taxonomy in Section 3. The 
 
 \paragraph{Search Protocol}
 
-The corpus was assembled through a systematic multi-branch search following PRISMA-style conventions \cite{moher2009preferred}. Search queries were issued across the following databases: arXiv (cs.AI, cs.CL, cs.LG, cs.IR), ACL Anthology, ACM Digital Library, NeurIPS/ICML/ICLR proceedings archives, FAccT proceedings, AAAI proceedings, and IEEE Xplore, supplemented by forward and backward citation chasing from anchor papers. Searches were conducted between January 2026 and June 2026; the literature cutoff date is \textbf{June 10, 2026}. Papers published after that date are not included.
+The corpus was assembled through a systematic multi-branch search following PRISMA-style conventions \cite{moher2009preferred}. Search queries were issued across the following databases: arXiv (cs.AI, cs.CL, cs.LG, cs.IR), ACL Anthology, ACM Digital Library, NeurIPS\allowbreak/\allowbreak ICML\allowbreak/\allowbreak ICLR proceedings archives, FAccT proceedings, AAAI proceedings, and IEEE Xplore, supplemented by forward and backward citation chasing from anchor papers. Searches were conducted between January 2026 and June 2026; the literature cutoff date is \textbf{June 10, 2026}. Papers published after that date are not included.
 
 Ten of the eleven branches received a dedicated search string constructed from the intersection of (a) an agent/agentic qualifier and (b) a fairness/bias qualifier, with branch-specific terms (the six component branches, plus evaluation, mitigation, high-stakes domains, and a prior-art neighbor-survey search). The remaining branch (foundations and adjacent evidence) was populated by backward citation chasing from the agent-fairness corpus rather than independent search.
 
@@ -335,25 +339,25 @@ Ten of the eleven branches received a dedicated search string constructed from t
 \begingroup
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{longtable}{|p{0.135\textwidth}|p{0.165\textwidth}|p{0.175\textwidth}|p{0.115\textwidth}|p{0.052\textwidth}|p{0.045\textwidth}|p{0.050\textwidth}|p{0.085\textwidth}|}
+\begin{longtable}{|p{0.125\textwidth}|p{0.145\textwidth}|p{0.155\textwidth}|p{0.105\textwidth}|p{0.080\textwidth}|p{0.070\textwidth}|p{0.075\textwidth}|p{0.085\textwidth}|}
 \caption*{Table 2.1: Search Protocol by Branch. \emph{Takeaway: the branch structure maps directly onto the six BCF entry loci plus evaluation and mitigation; no branch has fewer than 10 identified records before deduplication.}}
 \label{tab:2}\\
 \toprule
-\textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{Records Identified} & \textbf{After Dedup} & \textbf{After Screen} & \textbf{Included} \\
+\textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{\shortstack[l]{Records\\Identified}} & \textbf{\shortstack[l]{After\\Dedup}} & \textbf{\shortstack[l]{After\\Screen}} & \textbf{Included} \\
 \midrule
 \endfirsthead
 \multicolumn{8}{l}{\emph{Table 2.1 (continued)}}\\
 \toprule
-\textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{Records Identified} & \textbf{After Dedup} & \textbf{After Screen} & \textbf{Included} \\
+\textbf{Branch} & \textbf{Primary Search String} & \textbf{Supplementary Terms} & \textbf{Databases} & \textbf{\shortstack[l]{Records\\Identified}} & \textbf{\shortstack[l]{After\\Dedup}} & \textbf{\shortstack[l]{After\\Screen}} & \textbf{Included} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-Tool/API selection & "tool selection bias" OR "tool use fairness" LLM agent & tool-calling, function-calling, API bias, routing bias & arXiv, ACL, ACM DL & 47 & 34 & 18 & 12 \\
+Tool\allowbreak/\allowbreak API selection & "tool selection bias" OR "tool use fairness" LLM agent & tool-calling, function-calling, API bias, routing bias & arXiv, ACL, ACM DL & 47 & 34 & 18 & 12 \\
 Memory \& retrieval & RAG fairness OR "retrieval bias" LLM & retrieval-augmented, knowledge store, context accumulation, multi-turn bias & arXiv, ACL, ACM DL, SIGIR & 52 & 38 & 16 & 10 \\
 Multi-agent delegation & "multi-agent bias" OR "role assignment bias" LLM & persona bias, delegation fairness, emergent bias, agent interaction & arXiv, ACL, ACM DL, AAAI & 41 & 31 & 14 & 9 \\
-Planning/decomposition & "reasoning bias" LLM agent OR "planning fairness" & chain-of-thought bias, task allocation, decomposition disparity & arXiv, ACL, ICML & 28 & 21 & 9 & 6 \\
-User modeling/personalization & "personalization bias" LLM OR "user modeling fairness" & name-based bias, dialect fairness, stereotype personalization & arXiv, ACL, ACM DL & 44 & 33 & 15 & 11 \\
+Planning\allowbreak/\allowbreak decomposition & "reasoning bias" LLM agent OR "planning fairness" & chain-of-thought bias, task allocation, decomposition disparity & arXiv, ACL, ICML & 28 & 21 & 9 & 6 \\
+User modeling\allowbreak/\allowbreak personalization & "personalization bias" LLM OR "user modeling fairness" & name-based bias, dialect fairness, stereotype personalization & arXiv, ACL, ACM DL & 44 & 33 & 15 & 11 \\
 Long-horizon drift & "long-term fairness" LLM OR "feedback loop bias" agent & sycophancy drift, memory accumulation, sequential fairness & arXiv, AAAI, ICML, FAccT & 38 & 29 & 12 & 9 \\
 Evaluation \& benchmarks & "agent fairness benchmark" OR "fairness evaluation LLM agent" & counterfactual evaluation, action-level disparity, audit & arXiv, ACL, ACM DL, NeurIPS & 61 & 44 & 22 & 16 \\
 Mitigation & "LLM debiasing agent" OR "fairness mitigation agentic" & RLHF fairness, RAG debiasing, prompt debiasing, constitutional AI & arXiv, ACL, NeurIPS, AAAI & 55 & 40 & 17 & 13 \\
@@ -447,7 +451,7 @@ The agent fairness literature is a recent and rapidly growing subfield. Of the 2
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    width=\columnwidth, height=5.2cm,
+    width=0.96\columnwidth, height=5.2cm,
     ybar, bar width=15pt,
     ymin=0, ymax=92,
     ylabel={Papers},
@@ -488,7 +492,7 @@ The long-horizon drift and memory components are the \emph{latest} to receive em
 
 \paragraph{Venue Distribution}
 
-The corpus spans twelve venue categories. The five largest are: arXiv preprints (62 papers, 31\%), ACL-family venues (ACL, EMNLP, NAACL, Findings) (41 papers, 20\%), NeurIPS/ICML/ICLR (28 papers, 14\%), ACM venues (FAccT, SIGKDD, SIGIR, CIKM, DL proceedings) (24 papers, 12\%), and domain-specific venues (Nature Medicine, PNAS Nexus, The Lancet Digital Health, AAAI, ICSE) (19 papers, 9\%). The remaining 28 papers (14\%) appear in IEEE venues, TMLR, Frontiers, and preprint archives (ResearchGate, TechRxiv).
+The corpus spans twelve venue categories. The five largest are: arXiv preprints (62 papers, 31\%), ACL-family venues (ACL, EMNLP, NAACL, Findings) (41 papers, 20\%), NeurIPS, ICML, and ICLR (28 papers, 14\%), ACM venues (FAccT, SIGKDD, SIGIR, CIKM, DL proceedings) (24 papers, 12\%), and domain-specific venues (Nature Medicine, PNAS Nexus, The Lancet Digital Health, AAAI, ICSE) (19 papers, 9\%). The remaining 28 papers (14\%) appear in IEEE venues, TMLR, Frontiers, and preprint archives (ResearchGate, TechRxiv).
 
 Several observations follow. The arXiv share is high (31\%), reflecting the recency of the field: many 2025 to 2026 papers are under review or in proceedings preparation. The ACM FAccT representation (9 papers) is lower than the field's importance would suggest, indicating that agent fairness has not yet been fully claimed by the accountability community; it currently sits across NLP venues, systems venues, and domain journals. Ten papers appear in CSUR or ACM Computing Surveys directly, indicating that the survey genre has begun to engage this territory, and the differentiation analysis in \S{}1.4 and Table 0 is therefore essential to establishing the present survey's novelty.
 
@@ -501,7 +505,7 @@ The following terms and notation are used throughout this survey. Terms coined o
 
 \textbf{Bias Conduction Framework (BCF)$\dagger$}: the organizing framework of this survey (\S{}3.0), which analyzes fairness as a property of how demographic disparity is \emph{conducted} (attenuated, preserved, amplified, or generated) across pipeline edges in an agent loop.
 
-\textbf{Conduction operator $\phi$$\dagger$}: the scalar multiplier describing how a pipeline edge transforms component-level disparity. $\phi < 1$ = ATTENUATE; $\phi \approx 1$ = PRESERVE; $\phi > 1$ = AMPLIFY; $\phi$ acting on zero input = GENERATE.
+\textbf{Conduction operator $\varphi$$\dagger$}: the scalar multiplier describing how a pipeline edge transforms component-level disparity. $\varphi < 1$ = ATTENUATE; $\varphi \approx 1$ = PRESERVE; $\varphi > 1$ = AMPLIFY; $\varphi$ acting on zero input = GENERATE.
 
 \textbf{Counterfactual Flip Rate (CFR)}: the fraction of agent evaluations that reverse when the input is perturbed by a demographic swap alone \cite{mayilvaghanan2026counterfactual}. Generalized to any agent component in \S{}4.2.
 
@@ -509,7 +513,7 @@ The following terms and notation are used throughout this survey. Terms coined o
 
 \textbf{Component counterfactual disparity $\Delta_c$$\dagger$}: the counterfactual disparity attributable to component $c$ alone, measured via trace-replay (Definition D2, \S{}3.0).
 
-\textbf{Trajectory disparity $\Delta_\tau$$\dagger$}: the total counterfactual disparity observed over a complete agent trajectory, approximated by the conduction equation $\Delta_\tau \approx \sum_c \Delta_c \cdot \prod_{e > c} \phi_e$ with feedback recurrence $\Delta^{(t+1)} = \phi_{\text{fb}} \cdot \Delta^{(t)} + \Delta_{\text{entry}}$.
+\textbf{Trajectory disparity $\Delta_\tau$$\dagger$}: the total counterfactual disparity observed over a complete agent trajectory, approximated by the conduction equation $\Delta_\tau \approx \sum_c \Delta_c \cdot \prod_{e \in \mathrm{path}(c \to O)} \varphi_e$ with feedback recurrence $\Delta^{(t+1)} = \varphi_{\mathrm{fb}} \cdot \Delta^{(t)} + \Delta_{\mathrm{entry}}$.
 
 \textbf{Agentic multiplier (P3, Super-additivity)$\dagger$}: the BCF proposition that trajectory disparity can exceed the sum of component disparities when amplifying conduction operators compose; equivalently, the agent pipeline is a super-additive bias transformer.
 
@@ -777,7 +781,7 @@ A parallel ambiguity runs through the accumulation evidence. \cite{fan2024fairmt
 
 \textbf{Open edge.} Even with the amplification mechanism established, the \emph{delegation policy} as a controllable fairness object remains unmeasured. There is no metric for assignment disparity in the sense of D2: does $\pi_{\mathrm{ctrl}}$ systematically route sensitive subtasks to lower-capability or more-biased sub-agents as a function of the subject's demographics, holding the task fixed under a counterfactual swap? The amplification coefficient $\varphi$ at this locus is real, but without a delegation-matrix disparity metric it cannot be decomposed into the share attributable to the initial assignment versus the share produced by the subsequent interaction dynamics. This is precisely the $\Delta_c$ gap that \S{}4.3 formalizes and that the MALIBU benchmark only partially addresses, since MALIBU measures outcome disparity per role but not the assignment distribution itself. The BCF conduction signature at this locus therefore has a measurable observable (the role/subtask assignment matrix across counterfactual pairs) that no published benchmark yet collects.
 
-\textbf{Conduction signature.} \emph{Entry:} the $\pi_{\mathrm{ctrl}}$$\rightarrow$\{A\_i\} assignment interface. \emph{Observable:} the role/subtask assignment matrix across counterfactual pairs, plus inter-agent message content. \emph{Dominant outbound operators:} GENERATE (persona injection) followed by AMPLIFY (interaction). C3 is the only locus where both agentic operators are corpus-evidenced together. \emph{Metric:} assignment disparity over the delegation matrix (\S{}4.3).
+\textbf{Conduction signature.} \emph{Entry:} the $\pi_{\mathrm{ctrl}}$$\rightarrow$$\{A_i\}$ assignment interface. \emph{Observable:} the role/subtask assignment matrix across counterfactual pairs, plus inter-agent message content. \emph{Dominant outbound operators:} GENERATE (persona injection) followed by AMPLIFY (interaction). C3 is the only locus where both agentic operators are corpus-evidenced together. \emph{Metric:} assignment disparity over the delegation matrix (\S{}4.3).
 
 \subsubsection{Locus C4: Planning / Decomposition Disparities}
 
@@ -904,7 +908,7 @@ Here an endpoint-only audit reads $\Delta_\tau$ $\approx$ 0 and certifies parity
 \toprule
 \textbf{Locus} & \textbf{signed $\Delta_c$} & \textbf{edge operator} & \textbf{$\varphi_e$} & \textbf{endpoint contribution} \\
 \midrule
-Delegation/assignment & +0.15 & AMPLIFY & 1.6 & 0.24 \\
+Delegation\allowbreak/\allowbreak assignment & +0.15 & AMPLIFY & 1.6 & 0.24 \\
 \textbf{Endpoint $\Delta_\tau$} &  &  &  & \textbf{$\approx$ 0.24} ($> \Sigma_c |\Delta_c| = 0.15$) \\
 \bottomrule
 \end{tabular}%
@@ -1003,7 +1007,7 @@ The sharpest edge of the measurement gap has been the absence of \emph{defined} 
 \mathrm{TID}_{\mathrm{cf}}(\mathcal{A}) \;=\; \mathbb{E}_{x \sim \mathcal{X}} \left[ \tfrac{1}{2} \sum_{t \in T} \big| \, p_{\tau_{\mathcal{A}}(x)}(t) - p_{\tau_{\mathcal{A}}(\sigma(x))}(t) \, \big| \right],
 \end{equation*}
 
-and the group form compares group-conditional mean invocation distributions, $\mathrm{TID}_{\mathrm{grp}} = \tfrac{1}{2} \sum_{t \in T} \big| \mathbb{E}[\, p_\tau(t) \mid a{=}1 \,] - \mathbb{E}[\, p_\tau(t) \mid a{=}0 \,] \big|$. TID answers the question \S{}3.1 left open: does swapping a subject's demographics change \emph{which} API the agent calls, holding the query fixed? The existence evidence is layered: that selection skew is measurable and manipulable at all is established by the provider- and ordering-preference results of \cite{blankenstein2025biasbusters,sneh2025tooltweak}, which ride on the same surface-form sensitivities as option-order bias \cite{pezeshkpour2023large} but involve no sensitive attributes; the existence evidence for the demographic question itself rests on \cite{xu2026ducx}, where the tool stages account for an attributable share of total disparity in the one clinical agent where the decomposition has been run. No benchmark computes TID under demographic counterfactuals.
+and the group form compares group-conditional mean invocation distributions, \begin{sloppypar}$\mathrm{TID}_{\mathrm{grp}} = \tfrac{1}{2} \sum_{t \in T} \big| \mathbb{E}[\, p_\tau(t) \mid a{=}1 \,] - \mathbb{E}[\, p_\tau(t) \mid a{=}0 \,] \big|$.\end{sloppypar} TID answers the question \S{}3.1 left open: does swapping a subject's demographics change \emph{which} API the agent calls, holding the query fixed? The existence evidence is layered: that selection skew is measurable and manipulable at all is established by the provider- and ordering-preference results of \cite{blankenstein2025biasbusters,sneh2025tooltweak}, which ride on the same surface-form sensitivities as option-order bias \cite{pezeshkpour2023large} but involve no sensitive attributes; the existence evidence for the demographic question itself rests on \cite{xu2026ducx}, where the tool stages account for an attributable share of total disparity in the one clinical agent where the decomposition has been run. No benchmark computes TID under demographic counterfactuals.
 
 \textbf{Definition 4.4 (Escalation Disparity, ESD).} Let $e(\tau) \in \{0, 1\}$ indicate that the trajectory escalates: defers to a human reviewer, requests additional documentation, refuses, or routes to a higher-scrutiny queue. The group form is a parity gap, with a companion ratio form aligned with the four-fifths convention of disparate-impact doctrine \cite{feldman2015certifying}:
 
@@ -1013,7 +1017,7 @@ and the group form compares group-conditional mean invocation distributions, $\m
 \mathrm{ESD}_{\mathrm{ratio}} \;=\; \frac{\min_a \Pr(e(\tau){=}1 \mid a)}{\max_a \Pr(e(\tau){=}1 \mid a)},
 \end{equation*}
 
-and the counterfactual form is the escalation-specific flip rate, $\mathrm{ESD}_{\mathrm{cf}} = \mathbb{E}_x \big[ \, | e(\tau_{\mathcal{A}}(x)) - e(\tau_{\mathcal{A}}(\sigma(x))) | \, \big]$, i.e., $\mathrm{CFR}_c$ with $z_c = e$. Escalation is the margin where differential treatment hides behind identical verdicts: two counterfactual twins may both be approved, but one only after demands for extra documentation that impose cost and attrition. Clinical evidence that management and referral behavior shifts with sociodemographic cues \cite{omar2025sociodemographic}, and the safety-utility asymmetries of personalized refusal behavior \cite{vijjini2024exploring}, indicate this margin is live; no benchmark instruments it.
+and the counterfactual form is the escalation-specific flip rate, \begin{sloppypar}$\mathrm{ESD}_{\mathrm{cf}} = \mathbb{E}_x \big[ \, | e(\tau_{\mathcal{A}}(x)) - e(\tau_{\mathcal{A}}(\sigma(x))) | \, \big]$,\end{sloppypar} i.e., $\mathrm{CFR}_c$ with $z_c = e$. Escalation is the margin where differential treatment hides behind identical verdicts: two counterfactual twins may both be approved, but one only after demands for extra documentation that impose cost and attrition. Clinical evidence that management and referral behavior shifts with sociodemographic cues \cite{omar2025sociodemographic}, and the safety-utility asymmetries of personalized refusal behavior \cite{vijjini2024exploring}, indicate this margin is live; no benchmark instruments it.
 
 \textbf{Definition 4.5 (Plan-Allocation Disparity, PAD).} Let $\mathbf{r}(\tau) \in \mathbb{R}^m$ be the plan's resource vector, e.g., number of plan steps, tool-call budget consumed, retrieval depth, deliberation tokens, count of verification actions. The counterfactual form is $\Delta_c$ at the planning locus under a weighted $\ell_1$ metric:
 
@@ -1035,16 +1039,16 @@ Table~2 inventories the evaluation resources in the corpus alongside the agent-c
 \begingroup
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{longtable}{|p{0.205\textwidth}|p{0.110\textwidth}|p{0.150\textwidth}|p{0.180\textwidth}|p{0.075\textwidth}|p{0.085\textwidth}|}
+\begin{longtable}{|p{0.200\textwidth}|p{0.110\textwidth}|p{0.145\textwidth}|p{0.175\textwidth}|p{0.080\textwidth}|p{0.090\textwidth}|}
 \caption*{Table 2. Fairness evaluation resources and agent capability harnesses.}
 \label{tab:9}\\
 \toprule
-\textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{Code/Data released?} \\
+\textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{\shortstack[l]{Code/\\Data\\released?}} \\
 \midrule
 \endfirsthead
 \multicolumn{6}{l}{\emph{Table 2 (continued)}}\\
 \toprule
-\textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{Code/Data released?} \\
+\textbf{Benchmark / resource} & \textbf{Fairness level} & \textbf{Domain} & \textbf{Primary metric} & \textbf{Agentic?} & \textbf{\shortstack[l]{Code/\\Data\\released?}} \\
 \midrule
 \endhead
 \bottomrule
@@ -1056,7 +1060,7 @@ CrowS-Pairs \cite{nangia2020crows} & Generation & General & Paired pseudo-likeli
 HolisticBias \cite{smith2022sorry} & Generation & General (600+ descriptors) & Perplexity/regard disparity & No & Yes \\
 DecodingTrust \cite{wang2023decodingtrust} & QA/Gen & Trustworthiness (fairness subset) & Stereotype agreement; DP/EO gaps & No & Yes \\
 TrustLLM \cite{huang2024trustllm} & QA/Gen & Trustworthiness & Fairness subscores & No & Yes \\
-TrustGPT \cite{huang2023trustgpt} & Generation & Toxicity/bias/value & Toxicity and bias gaps & No & n.r. \\
+TrustGPT \cite{huang2023trustgpt} & Generation & Toxicity\allowbreak/\allowbreak bias\allowbreak/\allowbreak value & Toxicity and bias gaps & No & n.r. \\
 HELM \cite{liang2023holistic} & QA/Gen & Broad capability & Bias/fairness slice metrics & No & Yes \\
 FairMedQA \cite{xiao2025fairmedqa} & QA & Clinical & Group response disparity & No & n.r. \\
 MedEqualQA \cite{ghosh2025medequalqa} & QA & Clinical & Counterfactual consistency & No & n.r. \\
@@ -1066,7 +1070,7 @@ Health-equity toolbox \cite{pfohl2024toolbox} & QA/Gen & Clinical & Rubric-rated
 Accept-or-Deny \cite{azime2025accept} & QA (decision) & Lending & Approval-parity gap & No & n.r. \\
 LLMs on Trial \cite{hu2025llms} & QA (decision) & Judicial & Verdict disparity & No & n.r. \\
 Name-intervention audit \cite{basu2026names} & QA (decision) & Clinical/judicial & Intervention consistency (flip rate) & No & n.r. \\
-CEB \cite{wang2024ceb} & QA/Gen & General (compositional) & Composite stereotype/toxicity/performance & No & Yes \\
+CEB \cite{wang2024ceb} & QA/Gen & General (compositional) & Composite stereotype\allowbreak/\allowbreak toxicity\allowbreak/\allowbreak performance & No & Yes \\
 CAFFE \cite{parziale2025systematic} & QA/Gen & General & Multi-attribute flip metrics & No & n.r. \\
 SCOPE \cite{parziale2026scope} & QA/Gen & General & Counterfactual flip rate & No & n.r. \\
 LangFair \cite{bouchard2024bring} & QA/Gen & Use-case-specific toolkit & Configurable group + counterfactual & No & Yes \\
@@ -1167,16 +1171,16 @@ The most architecturally integrated tier of mitigation embeds fairness enforceme
 \begingroup
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{longtable}{|p{0.150\textwidth}|p{0.155\textwidth}|p{0.130\textwidth}|p{0.150\textwidth}|p{0.140\textwidth}|p{0.075\textwidth}|}
+\begin{longtable}{|p{0.145\textwidth}|p{0.155\textwidth}|p{0.125\textwidth}|p{0.145\textwidth}|p{0.140\textwidth}|p{0.085\textwidth}|}
 \caption*{Table 3: Mitigation Map: Entry Locus $\times$ Conduction Operator $\times$ Pipeline Stage $\times$ Evidence}
 \label{tab:10}\\
 \toprule
-\textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{Representative Evidence} & \textbf{Evidence Density} \\
+\textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{\shortstack[l]{Representative\\Evidence}} & \textbf{\shortstack[l]{Evid.\\Density}} \\
 \midrule
 \endfirsthead
 \multicolumn{6}{l}{\emph{Table 3 (continued)}}\\
 \toprule
-\textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{Representative Evidence} & \textbf{Evidence Density} \\
+\textbf{Entry Locus} & \textbf{Conduction Operator Targeted} & \textbf{Pipeline Stage} & \textbf{Intervention Class} & \textbf{\shortstack[l]{Representative\\Evidence}} & \textbf{\shortstack[l]{Evid.\\Density}} \\
 \midrule
 \endhead
 \bottomrule
@@ -1281,7 +1285,7 @@ C3 & Two-agent delegation/debate \cite{wu2023autogen} & $\varphi$ at delegation 
 \begin{itemize}
 \item \emph{Tool-invocation disparity} ($\Delta_c$ at tool-selection): differential distribution over invoked tools across counterfactual conditions, extending the selection-skew measurement of \cite{blankenstein2025biasbusters} to the demographic-conditioned setting studied by \cite{xu2026ducx}.
 \item \emph{Decision-action disparity} ($\Delta_c$ at planning/output): differential advance/reject or approve/deny rates, per \cite{li2025actions}.
-\item \emph{Escalation/deferral disparity} ($\Delta_c$ at routing): differential rates of human escalation or information-request, a channel where P2 Masking operates at the routing level.
+\item \begin{sloppypar}\emph{Escalation/deferral disparity} ($\Delta_c$ at routing): differential rates of human escalation or information-request, a channel where P2 Masking operates at the routing level.\end{sloppypar}
 \end{itemize}
 
 All six quantities are reported on a comparable counterfactual-pair footing in a single results table, making the P2-Masking gap directly quantifiable.
@@ -1480,7 +1484,7 @@ A governance thread runs through all six problems. Agents are now deployed in hi
 
 \textbf{Why it matters.} A system can be near-parity on FairMedQA and still route, escalate, or order differently across demographic counterfactuals once it acts, because $\Delta_c$ enters through tool routing and retrieval rather than the final string. Certifying agents with QA benchmarks licenses deployment on evidence that does not bind the deployed behavior, precisely the accountability gap EU AI Act Article 10 (data quality) and NIST AI RMF Measure 2.5 (bias testing) are meant to close.
 
-\textbf{Concrete first step.} A minimal acting-agent fairness benchmark requires: (i) a set of consequential-task environments (e.g., clinical triage, hiring screening, loan underwriting) in which an agent can take multiple discrete actions; (ii) counterfactual profile pairs that differ only in a demographic signal, following the CAFFE/SCOPE design \cite{parziale2025systematic,parziale2026scope}; (iii) logging of all intermediate actions (tool invocations, retrieval queries, routing decisions) per counterfactual pair; and (iv) reporting of per-edge $\Delta_c$ alongside the final-verdict CFR/MASD. FairMedAgent, described in \S{}6.4, represents one instantiation for the clinical domain; comparable instruments are needed for hiring and lending, where legal audit requirements are already in force.
+\begin{sloppypar}\textbf{Concrete first step.} A minimal acting-agent fairness benchmark requires: (i) a set of consequential-task environments (e.g., clinical triage, hiring screening, loan underwriting) in which an agent can take multiple discrete actions; (ii) counterfactual profile pairs that differ only in a demographic signal, following the CAFFE/SCOPE design \cite{parziale2025systematic,parziale2026scope}; (iii) logging of all intermediate actions (tool invocations, retrieval queries, routing decisions) per counterfactual pair; and (iv) reporting of per-edge $\Delta_c$ alongside the final-verdict CFR/MASD. FairMedAgent, described in \S{}6.4, represents one instantiation for the clinical domain; comparable instruments are needed for hiring and lending, where legal audit requirements are already in force.\end{sloppypar}
 
 \subsubsection{Unmeasured $\varphi_{\mathrm{fb}}$ Recurrence: Long-Horizon and Compounding Fairness}
 
@@ -1529,7 +1533,7 @@ The autonomy that makes agents valuable (acting, persisting, delegating, self-co
 
 \subsection{Conclusion}
 
-LLM-based agents have crossed a consequential threshold: they select tools, accumulate memories across turns, delegate subtasks across role-assigned subagents, decompose goals into multi-step plans, adapt to inferred user identities, and persist behavior over long horizons \cite{wang2024survey,xi2023rise}. Each of these pipeline stages is a distinct locus at which demographic disparity can enter, propagate, and compound into consequential harm. The Bias Conduction Framework (BCF) introduced in \S{}3.0 formalizes this structure: D1 defines the agent loop $\langle$$\pi$, T, M, R$\rangle$; D2 defines component counterfactual disparity $\Delta_c$ via trace-replay; D3 defines the conduction operators (ATTENUATE $\varphi$<1, PRESERVE $\varphi$$\approx$1, AMPLIFY $\varphi$>1, GENERATE $\varphi$ on zero input); the conduction equation $\Delta_\tau$ $\approx$ $\Sigma_c$ $\Delta_c$ $\cdot$ $\Pi$ $\varphi_e$ with feedback recurrence $\Delta^{(t+1)}$ = $\varphi_{\mathrm{fb}}$ $\cdot$ $\Delta^{(t)}$ + $\Delta_{\mathrm{entry}}$ derives the trajectory disparity from its per-component contributions; and five propositions (P1 Locality, P2 Masking, P3 Super-additivity, P4 Mitigation-matching, P5 Measurement-adequacy) characterize the conditions under which component-level auditing is necessary, sufficient, and policy-relevant.
+LLM-based agents have crossed a consequential threshold: they select tools, accumulate memories across turns, delegate subtasks across role-assigned subagents, decompose goals into multi-step plans, adapt to inferred user identities, and persist behavior over long horizons \cite{wang2024survey,xi2023rise}. Each of these pipeline stages is a distinct locus at which demographic disparity can enter, propagate, and compound into consequential harm. The Bias Conduction Framework (BCF) introduced in \S{}3.0 formalizes this structure: D1 defines the agent loop $\langle$$\pi$, T, M, R$\rangle$; D2 defines component counterfactual disparity $\Delta_c$ via trace-replay; D3 defines the conduction operators (ATTENUATE $\varphi < 1$, PRESERVE $\varphi \approx 1$, AMPLIFY $\varphi > 1$, GENERATE $\varphi$ on zero input); the conduction equation $\Delta_\tau$ $\approx$ $\Sigma_c$ $\Delta_c$ $\cdot$ $\Pi$ $\varphi_e$ with feedback recurrence $\Delta^{(t+1)}$ = $\varphi_{\mathrm{fb}}$ $\cdot$ $\Delta^{(t)}$ + $\Delta_{\mathrm{entry}}$ derives the trajectory disparity from its per-component contributions; and five propositions (P1 Locality, P2 Masking, P3 Super-additivity, P4 Mitigation-matching, P5 Measurement-adequacy) characterize the conditions under which component-level auditing is necessary, sufficient, and policy-relevant.
 
 This survey has presented the first dedicated taxonomy of fairness in LLM-based agents organized by this component axis, spanning tool and API selection (\S{}3.1), memory and retrieval (\S{}3.2), multi-agent delegation and role assignment (\S{}3.3), planning and decomposition (\S{}3.4), user modeling and personalization (\S{}3.5), and long-horizon trajectory drift (\S{}3.6), with a cross-cutting account of how component-level harms compound into the agentic multiplier (\S{}3.7, P3). Against this architecture the survey maps the evaluation field (\S{}4), characterizing group, individual, and counterfactual metric families lifted to agent trajectories and generalizing the CFR and MASD statistics of \cite{mayilvaghanan2026counterfactual} across all pipeline components, while Table 2 documents that nearly every existing benchmark (clinical fairness sets \cite{xiao2025fairmedqa,adappanavar2025mfarm,ghosh2025medequalqa}, hiring and lending audits \cite{an2025measuring,azime2025accept}, compositional evaluation suites \cite{wang2024ceb}) scores model outputs rather than agent actions. The mitigation survey (\S{}5) follows the P4 Mitigation-matching principle, distinguishing prompt-level interventions \cite{furniturewala2024thinking,li2024prompting}, alignment-stage approaches \cite{allam2024biasdpo,bai2022constitutional}, architectural guardrails \cite{dong2024building}, and the emerging class of process-level and multi-agent debiasing strategies \cite{owens2024multi,choi2025identity,ki2025multiple}. The coverage analysis (\S{}7) quantifies the gap: 52 of 68 component-branch entries sit in the unspecified column of Figure~\ref{fig:coverage}; the counterfactual column (the dimension required to compute D2's $\Delta_c$) contains exactly one entry across all six components; and the GENERATE/AMPLIFY cells of Figure~\ref{fig:operator} are the least populated despite being the loci of distinctively agentic harm. A pilot of the cross-framework audit (\S{}6) illustrates the pattern P2 and P3 predict, decision-level parity masking a score-level disparity that grows with agentic scaffolding, though a full confirmatory study remains future work.
 
@@ -1552,7 +1556,7 @@ The fairness criteria formalized in \S{}2.1 and operationalized throughout the s
 
 \subsubsection{English- and US/EU-Centric Corpus Positionality}
 
-The 202-paper corpus was assembled from English-language academic venues (arXiv, ACL Anthology, ACM DL, NeurIPS/ICML/ICLR, FAccT, Nature), all of which have geographic and linguistic concentrations in the United States and Western Europe. Several structural biases follow from this:
+The 202-paper corpus was assembled from English-language academic venues (arXiv, ACL Anthology, ACM DL, NeurIPS\allowbreak/\allowbreak ICML\allowbreak/\allowbreak ICLR, FAccT, Nature), all of which have geographic and linguistic concentrations in the United States and Western Europe. Several structural biases follow from this:
 
 \begin{itemize}
 \item \textbf{Language bias}: nearly all benchmark datasets and evaluation prompts are in English; dialect bias findings (e.g., \cite{mire2025rejected} on African American Language; \cite{lin2024assessing} on non-standard dialects) are primarily US-context findings. Bias patterns in Arabic, Hindi, Swahili, and other high-speaker-count languages are substantially underrepresented.
