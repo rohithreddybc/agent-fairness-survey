@@ -1,26 +1,28 @@
 # Fairness and Equity in LLM-Based Agents: A Taxonomic Survey
 
-Manuscript and supporting materials. Target venue: **ACM Computing Surveys (CSUR)**.
+Target venue: **ACM Computing Surveys (CSUR)**.
+Authors: Rohith (first & corresponding) · Wenbin Zhang (Florida International University).
 
-**Authors:** Rohith (first & corresponding) · Wenbin Zhang (Florida International University)
+## Canonical source: LaTeX
+The paper is maintained in **LaTeX** (ACM `acmart`). The single source of truth is:
 
-## Contents
-- `AGENT_FAIRNESS_SURVEY.md` — the manuscript (source).
-- `AGENT_FAIRNESS_SURVEY.pdf` — compiled PDF (56 pp).
-- `AGENT_FAIRNESS_SURVEY.docx` — Word version.
-- `references.bib` — 201-entry bibliography; every arXiv ID machine-verified against the arXiv API (see `corpus/VERIFY_RESULTS.md`).
-- `main.tex` — ACM `acmart` submission scaffold.
-- `paper_pdf.tex` — self-contained LaTeX used to compile the PDF.
-- `FIGURES.md` — figure/table specifications (taxonomy tree, coverage matrices, tables).
-- `OUTLINE.md` — section outline.
-- `corpus/` — verified paper corpus, citation-verification results, and coverage matrix.
+- **`latex/main.tex`** — the manuscript (self-contained: TikZ Figure 1, tables for
+  Figures 2-3 and Tables 0-4, the Bias Conduction Framework, §6 pilot).
+- `latex/references.bib` — 202 entries (168 cited).
+- `latex/main.bbl` — pre-built (ACM-Reference-Format, patched), so it compiles without BibTeX.
+- `latex/main.pdf` — current output (~67 pp).
 
-## Summary
-The first dedicated survey of fairness in LLM-based **agents**, organized by the
-**Bias Conduction Framework (BCF)**: a two-axis model (entry locus × conduction
-operator) with formal definitions, a conduction equation, and five propositions
-characterizing where bias enters an agent pipeline, how it transforms across pipeline
-edges, and why answer-level fairness measurement misses action-level disparity.
+Compile (prose edits): `pdflatex main` twice. See `latex/README.md` for the full
+instructions and the BibTeX path when citations change.
 
-> Note: the §6 cross-framework bias audit is specified as a protocol; numerical
-> results are pending execution and will be added in the camera-ready version.
+## Other contents
+- `corpus/` — the verified 202-paper corpus (`corpus_master.md`) and the arXiv
+  citation-verification log (`VERIFY_RESULTS.md`).
+- `experiments/section6_audit/` — the §6 pilot bias-audit harness + raw results.
+- `CAMERA_READY_TODO.md` — remaining items before final submission.
+- `_backup/` — retired artifacts (the old markdown source, Word export, the
+  article-class arXiv bundle, intermediate files). Not part of the live paper.
+
+## Status
+Complete, reviewed (minor-revision / accept-oriented), citation-clean (168 cited, 0
+missing). Proceeding at Dr. Zhang's pace; nothing posted unilaterally.
