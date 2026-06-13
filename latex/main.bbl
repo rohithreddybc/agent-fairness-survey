@@ -1,0 +1,2156 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{168}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Barocas and Narayanan(2023)]%
+        {barocas2023fairness}
+\bibfield{author}{\bibinfo{person}{Hardt Barocas} {and}
+  \bibinfo{person}{Narayanan}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Fairness and Machine Learning: Limitations and
+  Opportunities}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\urldef\tempurl%
+\url{https://fairmlbook.org}
+\showURL{%
+\tempurl}
+
+\bibitem[Binkyte(2025)]%
+        {binkyte2025interactional}
+\bibfield{author}{\bibinfo{person}{Ruta Binkyte}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Interactional Fairness in LLM Multi-Agent Systems:
+  An Evaluation Framework}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.12001}
+\href{https://doi.org/10.1609/aies.v8i1.36563}{doi:\nolinkurl{10.1609/aies.v8i1.36563}}
+
+\bibitem[Borah and Mihalcea(2024)]%
+        {borah2024implicit}
+\bibfield{author}{\bibinfo{person}{Borah} {and} \bibinfo{person}{Mihalcea}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Implicit Bias Detection and Mitigation in
+  Multi-Agent LLM Interactions}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.02584}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.02584}
+\showURL{%
+\tempurl}
+
+\bibitem[Bouchard(2024)]%
+        {bouchard2024bring}
+\bibfield{author}{\bibinfo{person}{D. Bouchard}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Bring Your Own Prompts: Use-Case-Specific Bias and
+  Fairness Evaluation for LLMs (LangFair)}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.10853}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.10853}
+\showURL{%
+\tempurl}
+
+\bibitem[Buolamwini and Gebru(2018)]%
+        {buolamwini2018gender}
+\bibfield{author}{\bibinfo{person}{Buolamwini} {and} \bibinfo{person}{Gebru}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Gender Shades: Intersectional Accuracy Disparities
+  in Commercial Gender Classification}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v81/buolamwini18a.html}
+\showURL{%
+\tempurl}
+
+\bibitem[Caton and Haas(2024)]%
+        {caton2024fairness}
+\bibfield{author}{\bibinfo{person}{Simon Caton} {and}
+  \bibinfo{person}{Christian Haas}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Fairness in Machine Learning: A Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2010.04053}
+\href{https://doi.org/10.1145/3616865}{doi:\nolinkurl{10.1145/3616865}}
+
+\bibitem[Chang et~al\mbox{.}(2024)]%
+        {chang2024survey}
+\bibfield{author}{\bibinfo{person}{Yupeng Chang}, \bibinfo{person}{Xu Wang},
+  \bibinfo{person}{Jindong Wang}, \bibinfo{person}{Yuan Wu},
+  \bibinfo{person}{Linyi Yang}, \bibinfo{person}{Kaijie Zhu},
+  \bibinfo{person}{Hao Chen}, \bibinfo{person}{Xiaoyuan Yi},
+  \bibinfo{person}{Cunxiang Wang}, \bibinfo{person}{Yidong Wang},
+  \bibinfo{person}{Wei Ye}, \bibinfo{person}{Yue Zhang}, \bibinfo{person}{Yi
+  Chang}, \bibinfo{person}{Philip~S. Yu}, \bibinfo{person}{Qiang Yang}, {and}
+  \bibinfo{person}{Xing Xie}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Survey on Evaluation of Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.03109}
+\href{https://doi.org/10.1145/3641289}{doi:\nolinkurl{10.1145/3641289}}
+
+\bibitem[Chouldechova(2017)]%
+        {chouldechova2017fair}
+\bibfield{author}{\bibinfo{person}{Chouldechova}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Fair Prediction with Disparate Impact: A Study of
+  Bias in Recidivism Prediction Instruments}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.00056}
+\href{https://doi.org/10.1089/big.2016.0047}{doi:\nolinkurl{10.1089/big.2016.0047}}
+
+\bibitem[Dai et~al\mbox{.}(2025)]%
+        {dai2025trustworthy}
+\bibfield{author}{\bibinfo{person}{Sunhao Dai}, \bibinfo{person}{Changle Qu},
+  \bibinfo{person}{Sirui Chen}, \bibinfo{person}{Xiao Zhang}, {and}
+  \bibinfo{person}{Jun Xu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Trustworthy Information Retrieval in the LLM Era:
+  Bias, Unfairness, and Hallucination}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\href{https://doi.org/10.1145/3767695.3769670}{doi:\nolinkurl{10.1145/3767695.3769670}}
+
+\bibitem[Ebrahimi and Asudeh(2025)]%
+        {ebrahimi2025survey}
+\bibfield{author}{\bibinfo{person}{Sana Ebrahimi} {and}
+  \bibinfo{person}{Abolfazl Asudeh}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Reliability, Transparency,
+  Accountability, and Fairness in LLM-based Multi-Agent Systems through the
+  Responsibility Lens}.
+\newblock \bibinfo{journal}{\emph{Preprint (ResearchGate/unpublished),
+  University of Illinois Chicago}} (\bibinfo{year}{2025}).
+\newblock
+
+\bibitem[et~al.(2024a)]%
+        {allam2024biasdpo}
+\bibfield{author}{\bibinfo{person}{Allam et al.}}
+  \bibinfo{year}{2024}\natexlab{a}.
+\newblock \showarticletitle{BiasDPO: Mitigating Bias in Language Models through
+  Direct Preference Optimization}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.13928}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.13928}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024b)]%
+        {arzaghi2024understanding}
+\bibfield{author}{\bibinfo{person}{Arzaghi et al.}}
+  \bibinfo{year}{2024}\natexlab{b}.
+\newblock \showarticletitle{Understanding Intrinsic Socioeconomic Biases in
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.18662}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.18662}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025a)]%
+        {azime2025accept}
+\bibfield{author}{\bibinfo{person}{Azime et al.}}
+  \bibinfo{year}{2025}\natexlab{a}.
+\newblock \showarticletitle{Accept or Deny? Evaluating LLM Fairness and
+  Performance in Loan Approval across Table-to-Text Serialization Approaches}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2508.21512}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2508.21512}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025b)]%
+        {an2025measuring}
+\bibfield{author}{\bibinfo{person}{An et al.}}
+  \bibinfo{year}{2025}\natexlab{b}.
+\newblock \showarticletitle{Measuring gender and racial biases in large
+  language models: Intersectional evidence from automated resume evaluation}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2403.15281}
+\href{https://doi.org/10.1093/pnasnexus/pgaf089}{doi:\nolinkurl{10.1093/pnasnexus/pgaf089}}
+
+\bibitem[et~al.(2025c)]%
+        {adappanavar2025mfarm}
+\bibfield{author}{\bibinfo{person}{Adappanavar et al.}}
+  \bibinfo{year}{2025}\natexlab{c}.
+\newblock \showarticletitle{mFARM: Towards Multi-Faceted Fairness Assessment
+  based on HARMs in Clinical Decision Support}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2509.02007}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2509.02007}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026a)]%
+        {amirimargavi2026equal}
+\bibfield{author}{\bibinfo{person}{Amiri-Margavi et al.}}
+  \bibinfo{year}{2026}\natexlab{a}.
+\newblock \showarticletitle{Equal Access, Unequal Interaction: A Counterfactual
+  Audit of LLM Fairness}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.02932}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.02932}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020a)]%
+        {blodgett2020language}
+\bibfield{author}{\bibinfo{person}{Blodgett et al.}}
+  \bibinfo{year}{2020}\natexlab{a}.
+\newblock \showarticletitle{Language (Technology) is Power: A Critical Survey
+  of Bias in NLP}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2005.14050}
+
+\bibitem[et~al.(2021a)]%
+        {blodgett2021stereotyping}
+\bibfield{author}{\bibinfo{person}{Blodgett et al.}}
+  \bibinfo{year}{2021}\natexlab{a}.
+\newblock \showarticletitle{Stereotyping Norwegian Salmon: An Inventory of
+  Pitfalls in Fairness Benchmark Datasets}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\href{https://doi.org/10.18653/v1/2021.acl-long.81}{doi:\nolinkurl{10.18653/v1/2021.acl-long.81}}
+
+\bibitem[et~al.(2022a)]%
+        {bai2022constitutional}
+\bibfield{author}{\bibinfo{person}{Bai et al.}}
+  \bibinfo{year}{2022}\natexlab{a}.
+\newblock \showarticletitle{Constitutional AI: Harmlessness from AI Feedback}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2212.08073}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2212.08073}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024c)]%
+        {bowen2024measuring}
+\bibfield{author}{\bibinfo{person}{Bowen et al.}}
+  \bibinfo{year}{2024}\natexlab{c}.
+\newblock \showarticletitle{Measuring and Mitigating Racial Disparities in
+  LLMs: Evidence from a Mortgage Underwriting Experiment}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.2139/ssrn.4812158}{doi:\nolinkurl{10.2139/ssrn.4812158}}
+
+\bibitem[et~al.(2025d)]%
+        {blankenstein2025biasbusters}
+\bibfield{author}{\bibinfo{person}{Blankenstein et al.}}
+  \bibinfo{year}{2025}\natexlab{d}.
+\newblock \showarticletitle{BiasBusters: Uncovering and Mitigating Tool
+  Selection Bias in Large Language Models}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.00307}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.00307}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026b)]%
+        {basu2026names}
+\bibfield{author}{\bibinfo{person}{Basu et al.}}
+  \bibinfo{year}{2026}\natexlab{b}.
+\newblock \showarticletitle{When Names Change Verdicts: Intervention
+  Consistency Reveals Systematic Bias in LLM Decision-Making}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.18530}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.18530}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2017a)]%
+        {caliskan2017semantics}
+\bibfield{author}{\bibinfo{person}{Caliskan et al.}}
+  \bibinfo{year}{2017}\natexlab{a}.
+\newblock \showarticletitle{Semantics Derived Automatically from Language
+  Corpora Contain Human-Like Biases}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1608.07187}
+\href{https://doi.org/10.1126/science.aal4230}{doi:\nolinkurl{10.1126/science.aal4230}}
+
+\bibitem[et~al.(2024d)]%
+        {chu2024fairness}
+\bibfield{author}{\bibinfo{person}{Chu et al.}}
+  \bibinfo{year}{2024}\natexlab{d}.
+\newblock \showarticletitle{Fairness in Large Language Models: A Taxonomic
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.01349}
+\href{https://doi.org/10.1145/3682112.3682117}{doi:\nolinkurl{10.1145/3682112.3682117}}
+
+\bibitem[et~al.(2024e)]%
+        {campedelli2024want}
+\bibfield{author}{\bibinfo{person}{Campedelli et al.}}
+  \bibinfo{year}{2024}\natexlab{e}.
+\newblock \showarticletitle{I Want to Break Free! Persuasion and Anti-Social
+  Behavior of LLMs in Multi-Agent Settings with Social Hierarchy}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (EACL 2024 Workshop)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.07109}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.07109}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024f)]%
+        {chakraborty2024maxmin}
+\bibfield{author}{\bibinfo{person}{Chakraborty et al.}}
+  \bibinfo{year}{2024}\natexlab{f}.
+\newblock \showarticletitle{MaxMin-RLHF: Alignment with Diverse Human
+  Preferences}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.08925}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.08925}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025e)]%
+        {coppolillo2025unmasking}
+\bibfield{author}{\bibinfo{person}{Coppolillo et al.}}
+  \bibinfo{year}{2025}\natexlab{e}.
+\newblock \showarticletitle{Unmasking Conversational Bias in AI Multiagent
+  Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.14844}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2501.14844}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025f)]%
+        {choi2025identity}
+\bibfield{author}{\bibinfo{person}{Choi et al.}}
+  \bibinfo{year}{2025}\natexlab{f}.
+\newblock \showarticletitle{When Identity Skews Debate: Anonymization for
+  Bias-Reduced Multi-Agent Reasoning}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.07517}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.07517}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026c)]%
+        {cao2026from}
+\bibfield{author}{\bibinfo{person}{Cao et al.}}
+  \bibinfo{year}{2026}\natexlab{c}.
+\newblock \showarticletitle{From Biased Chatbots to Biased Agents: Examining
+  Role Assignment Effects on LLM Agent Robustness}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.12285}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.12285}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2012)]%
+        {dwork2012fairness}
+\bibfield{author}{\bibinfo{person}{Dwork et al.}}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Fairness Through Awareness}.
+\newblock  (\bibinfo{year}{2012}).
+\newblock
+\showeprint[arxiv]{1104.3913}
+\href{https://doi.org/10.1145/2090236.2090255}{doi:\nolinkurl{10.1145/2090236.2090255}}
+
+\bibitem[et~al.(2021b)]%
+        {dhamala2021bold}
+\bibfield{author}{\bibinfo{person}{Dhamala et al.}}
+  \bibinfo{year}{2021}\natexlab{b}.
+\newblock \showarticletitle{BOLD: Dataset and Metrics for Measuring Biases in
+  Open-Ended Language Generation}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2101.11718}
+\href{https://doi.org/10.1145/3442188.3445924}{doi:\nolinkurl{10.1145/3442188.3445924}}
+
+\bibitem[et~al.(2023a)]%
+        {deng2023mind2web}
+\bibfield{author}{\bibinfo{person}{Deng et al.}}
+  \bibinfo{year}{2023}\natexlab{a}.
+\newblock \showarticletitle{Mind2Web: Towards a Generalist Agent for the Web}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.06070}
+
+\bibitem[et~al.(2023b)]%
+        {deshpande2023toxicity}
+\bibfield{author}{\bibinfo{person}{Deshpande et al.}}
+  \bibinfo{year}{2023}\natexlab{b}.
+\newblock \showarticletitle{Toxicity in ChatGPT: Analyzing Persona-assigned
+  Language Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2304.05335}
+
+\bibitem[et~al.(2024g)]%
+        {durante2024agent}
+\bibfield{author}{\bibinfo{person}{Durante et al.}}
+  \bibinfo{year}{2024}\natexlab{g}.
+\newblock \showarticletitle{Agent AI: Surveying the Horizons of Multimodal
+  Interaction}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2401.03568}
+
+\bibitem[et~al.(2024h)]%
+        {dai2024bias}
+\bibfield{author}{\bibinfo{person}{Dai et al.}}
+  \bibinfo{year}{2024}\natexlab{h}.
+\newblock \showarticletitle{Bias and Unfairness in Information Retrieval
+  Systems: New Challenges in the LLM Era}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.11457}
+\href{https://doi.org/10.1145/3637528.3671458}{doi:\nolinkurl{10.1145/3637528.3671458}}
+
+\bibitem[et~al.(2024i)]%
+        {dong2024building}
+\bibfield{author}{\bibinfo{person}{Dong et al.}}
+  \bibinfo{year}{2024}\natexlab{i}.
+\newblock \showarticletitle{Building Guardrails for Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.01822}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2402.01822}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024j)]%
+        {du2024causal}
+\bibfield{author}{\bibinfo{person}{Du et al.}}
+  \bibinfo{year}{2024}\natexlab{j}.
+\newblock \showarticletitle{Causal-Guided Active Learning for Debiasing Large
+  Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2408.12942}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2408.12942}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024k)]%
+        {deldjoo2024cfairllm}
+\bibfield{author}{\bibinfo{person}{Deldjoo et al.}}
+  \bibinfo{year}{2024}\natexlab{k}.
+\newblock \showarticletitle{CFaiRLLM: Consumer Fairness Evaluation in
+  Large-Language Model Recommender System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.05668}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.05668}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024l)]%
+        {deldjoo2024normative}
+\bibfield{author}{\bibinfo{person}{Deldjoo et al.}}
+  \bibinfo{year}{2024}\natexlab{l}.
+\newblock \showarticletitle{A Normative Framework for Benchmarking Consumer
+  Fairness in Large Language Model Recommender Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.02219}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.02219}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2015)]%
+        {feldman2015certifying}
+\bibfield{author}{\bibinfo{person}{Feldman et al.}}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Certifying and Removing Disparate Impact}.
+\newblock  (\bibinfo{year}{2015}).
+\newblock
+\showeprint[arxiv]{1412.3756}
+\href{https://doi.org/10.1145/2783258.2783311}{doi:\nolinkurl{10.1145/2783258.2783311}}
+
+\bibitem[et~al.(2023c)]%
+        {feng2023empowering}
+\bibfield{author}{\bibinfo{person}{Feng et al.}}
+  \bibinfo{year}{2023}\natexlab{c}.
+\newblock \showarticletitle{Empowering Many, Biasing a Few: Generalist Credit
+  Scoring through Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.00566}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.00566}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024m)]%
+        {fan2024fairmt}
+\bibfield{author}{\bibinfo{person}{Fan et al.}}
+  \bibinfo{year}{2024}\natexlab{m}.
+\newblock \showarticletitle{FairMT-Bench: Benchmarking Fairness for Multi-turn
+  Dialogue in Conversational LLMs}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.19317}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.19317}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024n)]%
+        {furniturewala2024thinking}
+\bibfield{author}{\bibinfo{person}{Furniturewala et al.}}
+  \bibinfo{year}{2024}\natexlab{n}.
+\newblock \showarticletitle{Thinking Fair and Slow: On the Efficacy of
+  Structured Prompts for Debiasing Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.10431}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.10431}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020b)]%
+        {gehman2020realtoxicityprompts}
+\bibfield{author}{\bibinfo{person}{Gehman et al.}}
+  \bibinfo{year}{2020}\natexlab{b}.
+\newblock \showarticletitle{RealToxicityPrompts: Evaluating Neural Toxic
+  Degeneration in Language Models}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2009.11462}
+
+\bibitem[et~al.(2023d)]%
+        {gupta2023bias}
+\bibfield{author}{\bibinfo{person}{Gupta et al.}}
+  \bibinfo{year}{2023}\natexlab{d}.
+\newblock \showarticletitle{Bias Runs Deep: Implicit Reasoning Biases in
+  Persona-Assigned LLMs}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2311.04892}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2311.04892}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024o)]%
+        {gallegos2024bias}
+\bibfield{author}{\bibinfo{person}{Gallegos et al.}}
+  \bibinfo{year}{2024}\natexlab{o}.
+\newblock \showarticletitle{Bias and Fairness in Large Language Models: A
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.00770}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.00770}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024p)]%
+        {guo2024large}
+\bibfield{author}{\bibinfo{person}{Guo et al.}}
+  \bibinfo{year}{2024}\natexlab{p}.
+\newblock \showarticletitle{Large Language Model based Multi-Agents: A Survey
+  of Progress and Challenges}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2402.01680}
+
+\bibitem[et~al.(2025g)]%
+        {geng2025accumulating}
+\bibfield{author}{\bibinfo{person}{Geng et al.}}
+  \bibinfo{year}{2025}\natexlab{g}.
+\newblock \showarticletitle{Accumulating Context Changes the Beliefs of
+  Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2511.01805}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2511.01805}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025h)]%
+        {ghosh2025medequalqa}
+\bibfield{author}{\bibinfo{person}{Ghosh et al.}}
+  \bibinfo{year}{2025}\natexlab{h}.
+\newblock \showarticletitle{MEDEQUALQA: Evaluating Biases in LLMs with
+  Counterfactual Reasoning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.12818}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.12818}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2016)]%
+        {hardt2016equality}
+\bibfield{author}{\bibinfo{person}{Hardt et al.}}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Equality of Opportunity in Supervised Learning}.
+\newblock  (\bibinfo{year}{2016}).
+\newblock
+\showeprint[arxiv]{1610.02413}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1610.02413}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2022b)]%
+        {hartvigsen2022toxigen}
+\bibfield{author}{\bibinfo{person}{Hartvigsen et al.}}
+  \bibinfo{year}{2022}\natexlab{b}.
+\newblock \showarticletitle{ToxiGen: A Large-Scale Machine-Generated Dataset
+  for Adversarial and Implicit Hate Speech Detection}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2203.09509}
+
+\bibitem[et~al.(2023e)]%
+        {huang2023trustgpt}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2023}\natexlab{e}.
+\newblock \showarticletitle{TrustGPT: A Benchmark for Trustworthy and
+  Responsible Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.11507}
+
+\bibitem[et~al.(2024q)]%
+        {huang2024collective}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2024}\natexlab{q}.
+\newblock \showarticletitle{Collective Constitutional AI: Aligning a Language
+  Model with Public Input}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.07814}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.07814}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024r)]%
+        {hong2024metagpt}
+\bibfield{author}{\bibinfo{person}{Hong et al.}}
+  \bibinfo{year}{2024}\natexlab{r}.
+\newblock \showarticletitle{MetaGPT: Meta Programming for A Multi-Agent
+  Collaborative Framework}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.00352}
+
+\bibitem[et~al.(2024s)]%
+        {hu2024free}
+\bibfield{author}{\bibinfo{person}{Hu et al.}}
+  \bibinfo{year}{2024}\natexlab{s}.
+\newblock \showarticletitle{No Free Lunch: Retrieval-Augmented Generation
+  Undermines Fairness in LLMs, Even for Vigilant Users}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.07589}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.07589}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024t)]%
+        {huang2024trustllm}
+\bibfield{author}{\bibinfo{person}{Huang et al.}}
+  \bibinfo{year}{2024}\natexlab{t}.
+\newblock \showarticletitle{TrustLLM: Trustworthiness in Large Language
+  Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2401.05561}
+
+\bibitem[et~al.(2025i)]%
+        {hall2025guiding}
+\bibfield{author}{\bibinfo{person}{Hall et al.}}
+  \bibinfo{year}{2025}\natexlab{i}.
+\newblock \showarticletitle{Guiding LLM Decision-Making with Fairness Reward
+  Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.11344}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.11344}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025j)]%
+        {hu2025llms}
+\bibfield{author}{\bibinfo{person}{Hu et al.}}
+  \bibinfo{year}{2025}\natexlab{j}.
+\newblock \showarticletitle{LLMs on Trial: Evaluating Judicial Fairness for
+  Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.10852}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.10852}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025k)]%
+        {hong2025measuring}
+\bibfield{author}{\bibinfo{person}{Hong et al.}}
+  \bibinfo{year}{2025}\natexlab{k}.
+\newblock \showarticletitle{Measuring Sycophancy of Language Models in
+  Multi-turn Dialogues}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.23840}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.23840}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024u)]%
+        {jimenez2024swe}
+\bibfield{author}{\bibinfo{person}{Jimenez et al.}}
+  \bibinfo{year}{2024}\natexlab{u}.
+\newblock \showarticletitle{SWE-bench: Can Language Models Resolve Real-World
+  GitHub Issues?}
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2310.06770}
+
+\bibitem[et~al.(2017b)]%
+        {kusner2017counterfactual}
+\bibfield{author}{\bibinfo{person}{Kusner et al.}}
+  \bibinfo{year}{2017}\natexlab{b}.
+\newblock \showarticletitle{Counterfactual Fairness}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1703.06856}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/1703.06856}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2017c)]%
+        {kleinberg2017inherent}
+\bibfield{author}{\bibinfo{person}{Kleinberg et al.}}
+  \bibinfo{year}{2017}\natexlab{c}.
+\newblock \showarticletitle{Inherent Trade-Offs in the Fair Determination of
+  Risk Scores}.
+\newblock  (\bibinfo{year}{2017}).
+\newblock
+\showeprint[arxiv]{1609.05807}
+
+\bibitem[et~al.(2024v)]%
+        {kantharuban2024stereotype}
+\bibfield{author}{\bibinfo{person}{Kantharuban et al.}}
+  \bibinfo{year}{2024}\natexlab{v}.
+\newblock \showarticletitle{Stereotype or Personalization? User Identity Biases
+  Chatbot Recommendations}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.05613}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.05613}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025l)]%
+        {kim2025mitigating}
+\bibfield{author}{\bibinfo{person}{Kim et al.}}
+  \bibinfo{year}{2025}\natexlab{l}.
+\newblock \showarticletitle{Mitigating Bias in RAG: Controlling the Embedder}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.17390}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.17390}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025m)]%
+        {ki2025multiple}
+\bibfield{author}{\bibinfo{person}{Ki et al.}}
+  \bibinfo{year}{2025}\natexlab{m}.
+\newblock \showarticletitle{Multiple LLM Agents Debate for Equitable Cultural
+  Alignment}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.24671}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.24671}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025n)]%
+        {kabra2025reasoning}
+\bibfield{author}{\bibinfo{person}{Kabra et al.}}
+  \bibinfo{year}{2025}\natexlab{n}.
+\newblock \showarticletitle{Reasoning Towards Fairness: Mitigating Bias in
+  Language Models through Reasoning-Guided Fine-Tuning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2504.05632}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2504.05632}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020c)]%
+        {lewis2020retrieval}
+\bibfield{author}{\bibinfo{person}{Lewis et al.}}
+  \bibinfo{year}{2020}\natexlab{c}.
+\newblock \showarticletitle{Retrieval-Augmented Generation for
+  Knowledge-Intensive NLP Tasks}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2005.11401}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2005.11401}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023f)]%
+        {liang2023holistic}
+\bibfield{author}{\bibinfo{person}{Liang et al.}}
+  \bibinfo{year}{2023}\natexlab{f}.
+\newblock \showarticletitle{Holistic Evaluation of Language Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2211.09110}
+
+\bibitem[et~al.(2023g)]%
+        {liu2023lost}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2023}\natexlab{g}.
+\newblock \showarticletitle{Lost in the Middle: How Language Models Use Long
+  Contexts}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2307.03172}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2307.03172}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024w)]%
+        {liu2024agentbench}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2024}\natexlab{w}.
+\newblock \showarticletitle{AgentBench: Evaluating LLMs as Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.03688}
+
+\bibitem[et~al.(2024x)]%
+        {lin2024assessing}
+\bibfield{author}{\bibinfo{person}{Lin et al.}}
+  \bibinfo{year}{2024}\natexlab{x}.
+\newblock \showarticletitle{Assessing Dialect Fairness and Robustness of Large
+  Language Models in Reasoning Tasks}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.11005}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.11005}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024y)]%
+        {li2024prompting}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2024}\natexlab{y}.
+\newblock \showarticletitle{Prompting Fairness: Integrating Causality to Debias
+  Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.08743}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.08743}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025o)]%
+        {li2025actions}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{o}.
+\newblock \showarticletitle{Actions Speak Louder than Words: Agent Decisions
+  Reveal Implicit Biases in Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.17420}
+\href{https://doi.org/10.48550/arXiv.2501.17420}{doi:\nolinkurl{10.48550/arXiv.2501.17420}}
+
+\bibitem[et~al.(2025p)]%
+        {li2025fairsteer}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{p}.
+\newblock \showarticletitle{FairSteer: Inference Time Debiasing for LLMs with
+  Dynamic Activation Steering}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2504.14492}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2504.14492}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025q)]%
+        {li2025from}
+\bibfield{author}{\bibinfo{person}{Li et al.}}
+  \bibinfo{year}{2025}\natexlab{q}.
+\newblock \showarticletitle{From Single to Societal: Analyzing Persona-Induced
+  Bias in Multi-Agent Interactions}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2511.11789}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2511.11789}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025r)]%
+        {liu2025truth}
+\bibfield{author}{\bibinfo{person}{Liu et al.}}
+  \bibinfo{year}{2025}\natexlab{r}.
+\newblock \showarticletitle{Truth Decay: Quantifying Multi-Turn Sycophancy in
+  Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.11656}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.11656}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2009)]%
+        {moher2009preferred}
+\bibfield{author}{\bibinfo{person}{Moher et al.}}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Preferred Reporting Items for Systematic Reviews
+  and Meta-Analyses: The PRISMA Statement}.
+\newblock  (\bibinfo{year}{2009}).
+\newblock
+\href{https://doi.org/10.1371/journal.pmed.1000097}{doi:\nolinkurl{10.1371/journal.pmed.1000097}}
+
+\bibitem[et~al.(2020d)]%
+        {mansoury2020feedback}
+\bibfield{author}{\bibinfo{person}{Mansoury et al.}}
+  \bibinfo{year}{2020}\natexlab{d}.
+\newblock \showarticletitle{Feedback Loop and Bias Amplification in Recommender
+  Systems}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2007.13019}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2007.13019}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2021c)]%
+        {makhortykh2021detecting}
+\bibfield{author}{\bibinfo{person}{Makhortykh et al.}}
+  \bibinfo{year}{2021}\natexlab{c}.
+\newblock \showarticletitle{Detecting race and gender bias in visual
+  representation of AI on web search engines}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2106.14072}
+\href{https://doi.org/10.1007/978-3-030-78818-6_5}{doi:\nolinkurl{10.1007/978-3-030-78818-6_5}}
+
+\bibitem[et~al.(2021d)]%
+        {mehrabi2021survey}
+\bibfield{author}{\bibinfo{person}{Mehrabi et al.}}
+  \bibinfo{year}{2021}\natexlab{d}.
+\newblock \showarticletitle{A Survey on Bias and Fairness in Machine Learning}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{1908.09635}
+\href{https://doi.org/10.1145/3457607}{doi:\nolinkurl{10.1145/3457607}}
+
+\bibitem[et~al.(2025s)]%
+        {madigan2025emergent}
+\bibfield{author}{\bibinfo{person}{Madigan et al.}}
+  \bibinfo{year}{2025}\natexlab{s}.
+\newblock \showarticletitle{Emergent Bias and Fairness in Multi-Agent Decision
+  Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2512.16433}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2512.16433}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025t)]%
+        {mohammadi2025evaluation}
+\bibfield{author}{\bibinfo{person}{Mohammadi et al.}}
+  \bibinfo{year}{2025}\natexlab{t}.
+\newblock \showarticletitle{Evaluation and Benchmarking of LLM Agents: A
+  Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.21504}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.21504}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025u)]%
+        {mirza2025malibu}
+\bibfield{author}{\bibinfo{person}{Mirza et al.}}
+  \bibinfo{year}{2025}\natexlab{u}.
+\newblock \showarticletitle{MALIBU Benchmark: Multi-Agent LLM Implicit Bias
+  Uncovered}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2507.01019}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2507.01019}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025v)]%
+        {mire2025rejected}
+\bibfield{author}{\bibinfo{person}{Mire et al.}}
+  \bibinfo{year}{2025}\natexlab{v}.
+\newblock \showarticletitle{Rejected Dialects: Biases Against African American
+  Language in Reward Models}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.12858}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.12858}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026d)]%
+        {mayilvaghanan2026counterfactual}
+\bibfield{author}{\bibinfo{person}{Mayilvaghanan et al.}}
+  \bibinfo{year}{2026}\natexlab{d}.
+\newblock \showarticletitle{Counterfactual Fairness Evaluation of LLM-Based
+  Contact Center Agent Quality Assurance System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.14970}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.14970}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026e)]%
+        {ma2026implicit}
+\bibfield{author}{\bibinfo{person}{Ma et al.}}
+  \bibinfo{year}{2026}\natexlab{e}.
+\newblock \showarticletitle{How Implicit Bias Accumulates and Propagates in LLM
+  Long-term Memory}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.01558}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.01558}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2020e)]%
+        {nangia2020crows}
+\bibfield{author}{\bibinfo{person}{Nangia et al.}}
+  \bibinfo{year}{2020}\natexlab{e}.
+\newblock \showarticletitle{CrowS-Pairs: A Challenge Dataset for Measuring
+  Social Biases in Masked Language Models}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\showeprint[arxiv]{2010.00133}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2010.00133}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2021e)]%
+        {nadeem2021stereoset}
+\bibfield{author}{\bibinfo{person}{Nadeem et al.}}
+  \bibinfo{year}{2021}\natexlab{e}.
+\newblock \showarticletitle{StereoSet: Measuring Stereotypical Bias in
+  Pretrained Language Models}.
+\newblock  (\bibinfo{year}{2021}).
+\newblock
+\showeprint[arxiv]{2004.09456}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2004.09456}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023h)]%
+        {navigli2023biases}
+\bibfield{author}{\bibinfo{person}{Navigli et al.}}
+  \bibinfo{year}{2023}\natexlab{h}.
+\newblock \showarticletitle{Biases in Large Language Models: Origins,
+  Inventory, and Discussion}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\href{https://doi.org/10.1145/3597307}{doi:\nolinkurl{10.1145/3597307}}
+
+\bibitem[et~al.(2024z)]%
+        {nghiem2024you}
+\bibfield{author}{\bibinfo{person}{Nghiem et al.}}
+  \bibinfo{year}{2024}\natexlab{z}.
+\newblock \showarticletitle{"You Gotta be a Doctor, Lin": An Investigation of
+  Name-Based Bias of Large Language Models in Employment Recommendations}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.12232}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.12232}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025w)]%
+        {nguyen2025social}
+\bibfield{author}{\bibinfo{person}{Nguyen et al.}}
+  \bibinfo{year}{2025}\natexlab{w}.
+\newblock \showarticletitle{The Social Cost of Intelligence: Emergence,
+  Propagation, and Amplification of Stereotypical Bias in Multi-Agent Systems}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.10943}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.10943}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2019a)]%
+        {obermeyer2019dissecting}
+\bibfield{author}{\bibinfo{person}{Obermeyer et al.}}
+  \bibinfo{year}{2019}\natexlab{a}.
+\newblock \showarticletitle{Dissecting Racial Bias in an Algorithm Used to
+  Manage the Health of Populations}.
+\newblock  (\bibinfo{year}{2019}).
+\newblock
+\href{https://doi.org/10.1126/science.aax2342}{doi:\nolinkurl{10.1126/science.aax2342}}
+
+\bibitem[et~al.(2022c)]%
+        {ouyang2022training}
+\bibfield{author}{\bibinfo{person}{Ouyang et al.}}
+  \bibinfo{year}{2022}\natexlab{c}.
+\newblock \showarticletitle{Training language models to follow instructions
+  with human feedback}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2203.02155}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2203.02155}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {owens2024multi}
+\bibfield{author}{\bibinfo{person}{Owens et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Multi-LLM Debiasing Framework}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.13884}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.13884}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025x)]%
+        {omar2025sociodemographic}
+\bibfield{author}{\bibinfo{person}{Omar et al.}}
+  \bibinfo{year}{2025}\natexlab{x}.
+\newblock \showarticletitle{Sociodemographic biases in medical decision making
+  by large language models}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\href{https://doi.org/10.1038/s41591-025-03626-6}{doi:\nolinkurl{10.1038/s41591-025-03626-6}}
+
+\bibitem[et~al.(2022d)]%
+        {parrish2022bbq}
+\bibfield{author}{\bibinfo{person}{Parrish et al.}}
+  \bibinfo{year}{2022}\natexlab{d}.
+\newblock \showarticletitle{BBQ: A Hand-Built Bias Benchmark for Question
+  Answering}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2110.08193}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2110.08193}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023i)]%
+        {park2023generative}
+\bibfield{author}{\bibinfo{person}{Park et al.}}
+  \bibinfo{year}{2023}\natexlab{i}.
+\newblock \showarticletitle{Generative Agents: Interactive Simulacra of Human
+  Behavior}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2304.03442}
+\href{https://doi.org/10.1145/3586183.3606763}{doi:\nolinkurl{10.1145/3586183.3606763}}
+
+\bibitem[et~al.(2023j)]%
+        {pezeshkpour2023large}
+\bibfield{author}{\bibinfo{person}{Pezeshkpour et al.}}
+  \bibinfo{year}{2023}\natexlab{j}.
+\newblock \showarticletitle{Large Language Models Sensitivity to The Order of
+  Options in Multiple-Choice Questions}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2308.11483}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2308.11483}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {poulain2024bias}
+\bibfield{author}{\bibinfo{person}{Poulain et al.}}
+  \bibinfo{year}{2024}\natexlab{|}.
+\newblock \showarticletitle{Bias patterns in the application of LLMs for
+  clinical decision support: A comprehensive study}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2404.15149}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2404.15149}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {pfohl2024toolbox}
+\bibfield{author}{\bibinfo{person}{Pfohl et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Toolbox for Surfacing Health Equity Harms and
+  Biases in Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.12025}
+\href{https://doi.org/10.1038/s41591-024-03258-2}{doi:\nolinkurl{10.1038/s41591-024-03258-2}}
+
+\bibitem[et~al.(2025y)]%
+        {pawar2025presumed}
+\bibfield{author}{\bibinfo{person}{Pawar et al.}}
+  \bibinfo{year}{2025}\natexlab{y}.
+\newblock \showarticletitle{Presumed Cultural Identity: How Names Shape LLM
+  Responses}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.11995}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.11995}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025z)]%
+        {parziale2025systematic}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2025}\natexlab{z}.
+\newblock \showarticletitle{Toward Systematic Counterfactual Fairness
+  Evaluation of Large Language Models: The CAFFE Framework}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2512.16816}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2512.16816}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026f)]%
+        {parziale2026once}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2026}\natexlab{f}.
+\newblock \showarticletitle{Once Upon a Team: Investigating Bias in LLM-Driven
+  Software Team Composition and Task Allocation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.03857}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.03857}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026g)]%
+        {parziale2026scope}
+\bibfield{author}{\bibinfo{person}{Parziale et al.}}
+  \bibinfo{year}{2026}\natexlab{g}.
+\newblock \showarticletitle{SCOPE: A Dataset of Stereotyped Prompts for
+  Counterfactual Fairness Assessment of LLMs}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2604.05555}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2604.05555}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {qian2024chatdev}
+\bibfield{author}{\bibinfo{person}{Qian et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{ChatDev: Communicative Agents for Software
+  Development}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.07924}
+
+\bibitem[et~al.(2024)]%
+        {qu2024tool}
+\bibfield{author}{\bibinfo{person}{Qu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Tool Learning with Large Language Models: A
+  Survey}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.17935}
+
+\bibitem[et~al.(2018a)]%
+        {rudinger2018gender}
+\bibfield{author}{\bibinfo{person}{Rudinger et al.}}
+  \bibinfo{year}{2018}\natexlab{a}.
+\newblock \showarticletitle{Gender Bias in Coreference Resolution
+  (WinoGender)}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1804.09301}
+
+\bibitem[et~al.(2020f)]%
+        {raghavan2020mitigating}
+\bibfield{author}{\bibinfo{person}{Raghavan et al.}}
+  \bibinfo{year}{2020}\natexlab{f}.
+\newblock \showarticletitle{Mitigating Bias in Algorithmic Hiring: Evaluating
+  Claims and Practices}.
+\newblock  (\bibinfo{year}{2020}).
+\newblock
+\href{https://doi.org/10.1145/3351095.3372828}{doi:\nolinkurl{10.1145/3351095.3372828}}
+
+\bibitem[et~al.(2019b)]%
+        {selbst2019fairness}
+\bibfield{author}{\bibinfo{person}{Selbst et al.}}
+  \bibinfo{year}{2019}\natexlab{b}.
+\newblock \showarticletitle{Fairness and Abstraction in Sociotechnical
+  Systems}.
+\newblock  (\bibinfo{year}{2019}).
+\newblock
+\href{https://doi.org/10.1145/3287560.3287598}{doi:\nolinkurl{10.1145/3287560.3287598}}
+
+\bibitem[et~al.(2022e)]%
+        {smith2022sorry}
+\bibfield{author}{\bibinfo{person}{Smith et al.}}
+  \bibinfo{year}{2022}\natexlab{e}.
+\newblock \showarticletitle{"I'm sorry to hear that": Finding New Biases in
+  Language Models with a Holistic Descriptor Dataset}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2205.09209}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2205.09209}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023k)]%
+        {staab2023memorization}
+\bibfield{author}{\bibinfo{person}{Staab et al.}}
+  \bibinfo{year}{2023}\natexlab{k}.
+\newblock \showarticletitle{Beyond Memorization: Violating Privacy Via
+  Inference with Large Language Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2024 submission)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.07298}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.07298}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023l)]%
+        {shinn2023reflexion}
+\bibfield{author}{\bibinfo{person}{Shinn et al.}}
+  \bibinfo{year}{2023}\natexlab{l}.
+\newblock \showarticletitle{Reflexion: Language Agents with Verbal
+  Reinforcement Learning}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2303.11366}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2303.11366}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023m)]%
+        {schick2023toolformer}
+\bibfield{author}{\bibinfo{person}{Schick et al.}}
+  \bibinfo{year}{2023}\natexlab{m}.
+\newblock \showarticletitle{Toolformer: Language Models Can Teach Themselves to
+  Use Tools}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2302.04761}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2302.04761}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023n)]%
+        {santurkar2023whose}
+\bibfield{author}{\bibinfo{person}{Santurkar et al.}}
+  \bibinfo{year}{2023}\natexlab{n}.
+\newblock \showarticletitle{Whose Opinions Do Language Models Reflect?}
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2303.17548}
+
+\bibitem[et~al.(2024)]%
+        {sumers2024cognitive}
+\bibfield{author}{\bibinfo{person}{Sumers et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Cognitive Architectures for Language Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.02427}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.02427}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {sharma2024understanding}
+\bibfield{author}{\bibinfo{person}{Sharma et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Understanding Sycophancy in Language
+  Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2310.13548}
+
+\bibitem[et~al.(2025)]%
+        {singh2025bias}
+\bibfield{author}{\bibinfo{person}{Singh et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Bias-Aware Agent: Enhancing Fairness in AI-Driven
+  Knowledge Retrieval}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.21237}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.21237}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {singh2025biasb}
+\bibfield{author}{\bibinfo{person}{Singh et al.}}
+  \bibinfo{year}{2025}\natexlab{|}.
+\newblock \showarticletitle{Bias Mitigation Agent: Optimizing Source Selection
+  for Fair and Balanced Knowledge Retrieval}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2508.18724}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2508.18724}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {she2025fairsense}
+\bibfield{author}{\bibinfo{person}{She et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{FairSense: Long-Term Fairness Analysis of
+  ML-Enabled Systems}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2501.01665}
+\href{https://doi.org/10.1109/ICSE55347.2025.00159}{doi:\nolinkurl{10.1109/ICSE55347.2025.00159}}
+
+\bibitem[et~al.(2025)]%
+        {sneh2025tooltweak}
+\bibfield{author}{\bibinfo{person}{Sneh et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{ToolTweak: An Attack on Tool Selection in LLM-based
+  Agents}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2510.02554}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.02554}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {song2025large}
+\bibfield{author}{\bibinfo{person}{Song et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Towards Large Language Models that Benefit for All:
+  Benchmarking Group Fairness in Reward Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.07806}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.07806}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026h)]%
+        {simhi2026old}
+\bibfield{author}{\bibinfo{person}{Simhi et al.}}
+  \bibinfo{year}{2026}\natexlab{h}.
+\newblock \showarticletitle{Old Habits Die Hard: How Conversational History
+  Geometrically Traps LLMs}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.03308}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.03308}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023o)]%
+        {turpin2023language}
+\bibfield{author}{\bibinfo{person}{Turpin et al.}}
+  \bibinfo{year}{2023}\natexlab{o}.
+\newblock \showarticletitle{Language Models Don't Always Say What They Think:
+  Unfaithful Explanations in Chain-of-Thought Prompting}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2305.04388}
+
+\bibitem[et~al.(2026i)]%
+        {tonneau2026different}
+\bibfield{author}{\bibinfo{person}{Tonneau et al.}}
+  \bibinfo{year}{2026}\natexlab{i}.
+\newblock \showarticletitle{Different Demographic Cues Yield Inconsistent
+  Conclusions About LLM Personalization and Bias}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.18486}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.18486}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026j)]%
+        {tang2026your}
+\bibfield{author}{\bibinfo{person}{Tang et al.}}
+  \bibinfo{year}{2026}\natexlab{j}.
+\newblock \showarticletitle{Is Your LLM-as-a-Recommender Agent Trustable? LLMs'
+  Recommendation is Easily Hacked by Biases (Preferences)}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.17417}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.17417}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023p)]%
+        {veldanda2023emily}
+\bibfield{author}{\bibinfo{person}{Veldanda et al.}}
+  \bibinfo{year}{2023}\natexlab{p}.
+\newblock \showarticletitle{Are Emily and Greg Still More Employable than
+  Lakisha and Jamal? Investigating Algorithmic Hiring Bias in the Era of
+  ChatGPT}.
+\newblock \bibinfo{journal}{\emph{EMNLP 2024 (arXiv preprint 2023)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2310.05135}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2310.05135}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {vijjini2024exploring}
+\bibfield{author}{\bibinfo{person}{Vijjini et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Exploring Safety-Utility Trade-Offs in Personalized
+  Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2406.11107}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2406.11107}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026k)]%
+        {vatsal2026agentic}
+\bibfield{author}{\bibinfo{person}{Vatsal et al.}}
+  \bibinfo{year}{2026}\natexlab{k}.
+\newblock \showarticletitle{Agentic AI in Healthcare \& Medicine: A
+  Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-based Agents}.
+\newblock  (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2602.04813}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.04813}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023q)]%
+        {wu2023autogen}
+\bibfield{author}{\bibinfo{person}{Wu et al.}}
+  \bibinfo{year}{2023}\natexlab{q}.
+\newblock \showarticletitle{AutoGen: Enabling Next-Gen LLM Applications via
+  Multi-Agent Conversation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2024 workshop)}}
+  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2308.08155}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2308.08155}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023r)]%
+        {wang2023decodingtrust}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2023}\natexlab{r}.
+\newblock \showarticletitle{DecodingTrust: A Comprehensive Assessment of
+  Trustworthiness in GPT Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2306.11698}
+
+\bibitem[et~al.(2024)]%
+        {wang2024ceb}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{CEB: Compositional Evaluation Benchmark for
+  Fairness in Large Language Models}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.02408}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.02408}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wu2024rag}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Does RAG Introduce Unfairness in LLMs? Evaluating
+  Fairness in Retrieval-Augmented Generation Systems}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.19804}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.19804}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wyllie2024fairness}
+\bibfield{author}{\bibinfo{person}{Wyllie et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Fairness Feedback Loops: Training on Synthetic Data
+  Amplifies Bias}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.07857}
+\href{https://doi.org/10.1145/3630106.3659029}{doi:\nolinkurl{10.1145/3630106.3659029}}
+
+\bibitem[et~al.(2024)]%
+        {wu2024fmbench}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{FMBench: Benchmarking Fairness in Multimodal Large
+  Language Models on Medical Tasks}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ICLR 2025 workshop)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.01089}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.01089}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wilson2024gender}
+\bibfield{author}{\bibinfo{person}{Wilson et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Gender, Race, and Intersectional Bias in Resume
+  Screening via Language Model Retrieval}.
+\newblock \bibinfo{journal}{\emph{arXiv}} (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2407.20371}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2407.20371}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {weissburg2024llms}
+\bibfield{author}{\bibinfo{person}{Weissburg et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{LLMs are Biased Teachers: Evaluating LLM Bias in
+  Personalized Education}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2410.14012}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2410.14012}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {wang2024survey}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{A Survey on Large Language Model based Autonomous
+  Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2308.11432}
+\href{https://doi.org/10.1007/s11704-024-40231-1}{doi:\nolinkurl{10.1007/s11704-024-40231-1}}
+
+\bibitem[et~al.(2025)]%
+        {wang2025bias}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Bias Amplification in RAG: Poisoning Knowledge
+  Retrieval to Steer LLMs}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.11415}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.11415}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {wu2025reasoning}
+\bibfield{author}{\bibinfo{person}{Wu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Does Reasoning Introduce Bias? A Study of Social
+  Bias Evaluation and Mitigation in LLM Reasoning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.15361}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.15361}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026l)]%
+        {wang2026observations}
+\bibfield{author}{\bibinfo{person}{Wang et al.}}
+  \bibinfo{year}{2026}\natexlab{l}.
+\newblock \showarticletitle{Observations and Remedies for Large Language Model
+  Bias in Self-Consuming Performative Loop}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2601.05184}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2601.05184}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023s)]%
+        {xi2023rise}
+\bibfield{author}{\bibinfo{person}{Xi et al.}}
+  \bibinfo{year}{2023}\natexlab{s}.
+\newblock \showarticletitle{The Rise and Potential of Large Language Model
+  Based Agents: A Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2309.07864}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.07864}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xu2024adapting}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Adapting Static Fairness to Sequential
+  Decision-Making: Bias Mitigation Strategies towards Equal Long-term Benefit
+  Rate}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2309.03426}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2309.03426}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xu2024mitigating}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Mitigating Social Bias in Large Language Models: A
+  Multi-Objective Approach within a Multi-Agent Framework}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2412.15504}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2412.15504}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {xiao2024algorithmic}
+\bibfield{author}{\bibinfo{person}{Xiao et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{On the Algorithmic Bias of Aligning Large Language
+  Models with RLHF: Preference Collapse and Matching Regularization}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2405.16455}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.16455}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {xiao2025fairmedqa}
+\bibfield{author}{\bibinfo{person}{Xiao et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{FairMedQA: Benchmarking Bias in Large Language
+  Models for Medical Question Answering}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.19562}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.19562}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {xu2025quantifying}
+\bibfield{author}{\bibinfo{person}{Xu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Quantifying Fairness in LLMs Beyond Tokens: A
+  Semantic and Statistical Perspective}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.19028}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.19028}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2026m)]%
+        {xu2026ducx}
+\bibfield{author}{\bibinfo{person}{Xu et al.}}
+  \bibinfo{year}{2026}\natexlab{m}.
+\newblock \showarticletitle{DUCX: Decomposing Unfairness in Tool-Using Chest
+  X-ray Agents}.
+\newblock \bibinfo{journal}{\emph{ArXiv preprint}} (\bibinfo{year}{2026}).
+\newblock
+\showeprint[arxiv]{2603.00777}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.00777}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2023t)]%
+        {yao2023react}
+\bibfield{author}{\bibinfo{person}{Yao et al.}}
+  \bibinfo{year}{2023}\natexlab{t}.
+\newblock \showarticletitle{ReAct: Synergizing Reasoning and Acting in Language
+  Models}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2210.03629}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2210.03629}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {yu2025survey}
+\bibfield{author}{\bibinfo{person}{Yu et al.}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Trustworthy LLM Agents: Threats and
+  Countermeasures}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.09648}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2503.09648}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2018b)]%
+        {zhao2018gender}
+\bibfield{author}{\bibinfo{person}{Zhao et al.}}
+  \bibinfo{year}{2018}\natexlab{b}.
+\newblock \showarticletitle{Gender Bias in Coreference Resolution: Evaluation
+  and Debiasing Methods (WinoBias)}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\showeprint[arxiv]{1804.06876}
+
+\bibitem[et~al.(2022f)]%
+        {zehlike2022fairness}
+\bibfield{author}{\bibinfo{person}{Zehlike et al.}}
+  \bibinfo{year}{2022}\natexlab{f}.
+\newblock \showarticletitle{Fairness in Ranking: A Survey}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2103.14000}
+\href{https://doi.org/10.1145/3533379}{doi:\nolinkurl{10.1145/3533379}}
+
+\bibitem[et~al.(2024)]%
+        {zhang2024causal}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Causal Prompting: Debiasing Large Language Model
+  Prompting based on Front-Door Adjustment}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.02738}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2403.02738}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2024)]%
+        {zack2024coding}
+\bibfield{author}{\bibinfo{person}{Zack et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Coding Inequity: Assessing GPT-4's Potential for
+  Perpetuating Racial and Gender Biases in Healthcare}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.1016/S2589-7500(23)00225-X}{doi:\nolinkurl{10.1016/S2589-7500(23)00225-X}}
+
+\bibitem[et~al.(2024)]%
+        {zhou2024webarena}
+\bibfield{author}{\bibinfo{person}{Zhou et al.}}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{WebArena: A Realistic Web Environment for Building
+  Autonomous Agents}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2307.13854}
+
+\bibitem[et~al.(2025)]%
+        {zhang2025datasets}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Datasets for Fairness in Language Models: An
+  In-Depth Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2506.23411}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2506.23411}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {zhang2025evaluating}
+\bibfield{author}{\bibinfo{person}{Zhang et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Evaluating the Effect of Retrieval Augmentation on
+  Social Biases}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.17611}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2502.17611}
+\showURL{%
+\tempurl}
+
+\bibitem[et~al.(2025)]%
+        {zhou2025veracity}
+\bibfield{author}{\bibinfo{person}{Zhou et al.}}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Veracity Bias and Beyond: Uncovering LLMs' Hidden
+  Beliefs in Problem-Solving Reasoning}.
+\newblock  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2505.16128}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2505.16128}
+\showURL{%
+\tempurl}
+
+\bibitem[Hu and Zhang(2022)]%
+        {hu2022achieving}
+\bibfield{author}{\bibinfo{person}{Hu} {and} \bibinfo{person}{Zhang}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Achieving Long-Term Fairness in Sequential Decision
+  Making}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\showeprint[arxiv]{2204.01819}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2204.01819}
+\showURL{%
+\tempurl}
+
+\bibitem[Kambhampati(2024)]%
+        {kambhampati2024large}
+\bibfield{author}{\bibinfo{person}{Kambhampati}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Can Large Language Models Reason and Plan?}
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2403.04121}
+\href{https://doi.org/10.1111/nyas.15125}{doi:\nolinkurl{10.1111/nyas.15125}}
+
+\bibitem[Kim and Diaz(2024)]%
+        {kim2024fair}
+\bibfield{author}{\bibinfo{person}{Kim} {and} \bibinfo{person}{Diaz}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Towards Fair RAG: On the Impact of Fair Ranking in
+  Retrieval-Augmented Generation}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint (ACM SIGIR ICTIR 2025)}}
+  (\bibinfo{year}{2024}).
+\newblock
+\showeprint[arxiv]{2409.11598}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2409.11598}
+\showURL{%
+\tempurl}
+
+\bibitem[NIST(2023)]%
+        {nist2023artificial}
+\bibfield{author}{\bibinfo{person}{NIST}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Artificial Intelligence Risk Management Framework
+  (AI RMF 1.0)}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\href{https://doi.org/10.6028/NIST.AI.100-1}{doi:\nolinkurl{10.6028/NIST.AI.100-1}}
+
+\bibitem[Parliament and Council(2024)]%
+        {parliament2024regulation}
+\bibfield{author}{\bibinfo{person}{European Parliament} {and}
+  \bibinfo{person}{Council}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Regulation (EU) 2024/1689 (Artificial Intelligence
+  Act)}.
+\newblock  (\bibinfo{year}{2024}).
+\newblock
+\urldef\tempurl%
+\url{https://eur-lex.europa.eu/eli/reg/2024/1689/oj}
+\showURL{%
+\tempurl}
+
+\bibitem[Pessach and Shmueli(2022)]%
+        {pessach2022review}
+\bibfield{author}{\bibinfo{person}{Dana Pessach} {and} \bibinfo{person}{Eytan
+  Shmueli}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{A Review on Fairness in Machine Learning}.
+\newblock  (\bibinfo{year}{2022}).
+\newblock
+\href{https://doi.org/10.1145/3494672}{doi:\nolinkurl{10.1145/3494672}}
+
+\bibitem[Ranjan et~al\mbox{.}(2025)]%
+        {ranjan2025fairness}
+\bibfield{author}{\bibinfo{person}{Rajesh Ranjan}, \bibinfo{person}{Shailja
+  Gupta}, {and} \bibinfo{person}{Surya~Narayan Singh}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Fairness in Agentic AI: A Unified Framework for
+  Ethical and Equitable Multi-Agent System}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2502.07254}}
+  (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2502.07254}
+
+\bibitem[Tang et~al\mbox{.}(2023)]%
+        {tang2023what}
+\bibfield{author}{\bibinfo{person}{Zeyu Tang}, \bibinfo{person}{Jiji Zhang},
+  {and} \bibinfo{person}{Kun Zhang}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{What-is and How-to for Fairness in Machine
+  Learning: A Survey, Reflection, and Perspective}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2206.04101}
+\href{https://doi.org/10.1145/3597199}{doi:\nolinkurl{10.1145/3597199}}
+
+\bibitem[U.(2018)]%
+        {u2018algorithms}
+\bibfield{author}{\bibinfo{person}{Noble~S. U.}}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Algorithms of Oppression: How Search Engines
+  Reinforce Racism}.
+\newblock  (\bibinfo{year}{2018}).
+\newblock
+\href{https://doi.org/10.2307/j.ctt1pwt9w5}{doi:\nolinkurl{10.2307/j.ctt1pwt9w5}}
+
+\bibitem[Wang et~al\mbox{.}(2023)]%
+        {wang2023survey}
+\bibfield{author}{\bibinfo{person}{Yifan Wang}, \bibinfo{person}{Weizhi Ma},
+  \bibinfo{person}{Min Zhang}, \bibinfo{person}{Yiqun Liu}, {and}
+  \bibinfo{person}{Shaoping Ma}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{A Survey on the Fairness of Recommender Systems}.
+\newblock  (\bibinfo{year}{2023}).
+\newblock
+\showeprint[arxiv]{2206.03761}
+\href{https://doi.org/10.1145/3547333}{doi:\nolinkurl{10.1145/3547333}}
+
+\bibitem[Yehudai et~al\mbox{.}(2025)]%
+        {yehudai2025survey}
+\bibfield{author}{\bibinfo{person}{Asaf Yehudai}, \bibinfo{person}{Lilach
+  Eden}, \bibinfo{person}{Alan Li}, \bibinfo{person}{Guy Uziel},
+  \bibinfo{person}{Yilun Zhao}, \bibinfo{person}{Roy Bar-Haim},
+  \bibinfo{person}{Arman Cohan}, {and} \bibinfo{person}{Michal
+  Shmueli-Scheuer}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{A Survey on Evaluation of LLM-based Agents}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2503.16416 (revised
+  April 2026)}} (\bibinfo{year}{2025}).
+\newblock
+\showeprint[arxiv]{2503.16416}
+
+\end{thebibliography}
