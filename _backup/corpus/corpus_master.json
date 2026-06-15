@@ -1,0 +1,3692 @@
+[
+  {
+    "title": "Bias and Fairness in Large Language Models: A Survey",
+    "authors": "Gallegos et al.",
+    "year": 2024,
+    "venue": "Computational Linguistics",
+    "arxiv_id": "2309.00770",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2309.00770",
+    "contribution": "Provides three taxonomies—for bias evaluation metrics (embedding/probability/generated-text level), evaluation datasets, and mitigation techniques—synthesizing the evaluation landscape for LLM fairness and identifying open challenges.",
+    "branches": [
+      "foundations",
+      "llm-agents-general",
+      "evaluation-metrics-benchmarks",
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias evaluation and mitigation survey",
+      "Fairness / bias evaluation and mitigation",
+      "evaluation-metrics / fairness-metrics-survey",
+      "mitigation / survey of mitigation approaches"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "gallegos2024bias"
+  },
+  {
+    "title": "Towards Implicit Bias Detection and Mitigation in Multi-Agent LLM Interactions",
+    "authors": "Borah and Mihalcea",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2410.02584",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.02584",
+    "contribution": "Finds that LLMs generate gender-biased outputs in over 50% of multi-agent interactions, and that biases intensify through agent conversations; proposes self-reflection with in-context examples and supervised fine-tuning as effective mitigation strategies.",
+    "branches": [
+      "memory-retrieval-bias",
+      "multiagent-delegation-bias",
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / multi-agent bias accumulation",
+      "implicit bias in multi-agent interaction / mitigation",
+      "mitigation / multi-agent debiasing / fine-tuning"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "borah2024implicit"
+  },
+  {
+    "title": "FairMT-Bench: Benchmarking Fairness for Multi-turn Dialogue in Conversational LLMs",
+    "authors": "Fan et al.",
+    "year": 2024,
+    "venue": "ICLR 2025 (spotlight)",
+    "arxiv_id": "2410.19317",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.19317",
+    "contribution": "First fairness benchmark for multi-turn dialogue, with FairMT-10K dataset covering context understanding, user interaction, and instruction trade-off tasks, finding LLMs are significantly more biased in multi-turn settings than single-turn baselines.",
+    "branches": [
+      "memory-retrieval-bias",
+      "longhorizon-fairness-drift",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / multi-turn bias accumulation",
+      "Multi-turn fairness evaluation / bias accumulation across interaction turns",
+      "evaluation-benchmarks / multi-turn-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "fan2024fairmt"
+  },
+  {
+    "title": "Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs",
+    "authors": "Gupta et al.",
+    "year": 2023,
+    "venue": "ICLR 2024 (submitted Nov 2023)",
+    "arxiv_id": "2311.04892",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2311.04892",
+    "contribution": "Shows that assigning demographic personas to LLMs (e.g., ChatGPT-3.5) triggers implicit stereotyping across 24 reasoning datasets: 80% of personas degrade performance, with drops exceeding 70% on some datasets, even when models openly reject stereotypes when asked directly.",
+    "branches": [
+      "multiagent-delegation-bias",
+      "planning-decomposition-bias",
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "persona-induced bias / role assignment harms",
+      "planning-decomposition-bias / chain-of-thought reasoning fairness",
+      "persona-based-disparities / demographic-stereotyping-in-personalized-responses"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "gupta2023bias"
+  },
+  {
+    "title": "Emergent Bias and Fairness in Multi-Agent Decision Systems",
+    "authors": "Madigan et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2512.16433",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2512.16433",
+    "contribution": "Through large-scale simulations of multi-agent LLM systems on financial decision-making tasks (10 frontier models, 5 providers), shows that bias can emerge at the system level from agent interactions and communication patterns even when individual components appear fair, requiring holistic evaluation.",
+    "branches": [
+      "llm-agents-general",
+      "multiagent-delegation-bias",
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "Fairness evaluation / multi-agent emergent bias",
+      "emergent bias in multi-agent collaboration / system-level fairness evaluation",
+      "planning-decomposition-bias / sequential decision fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "madigan2025emergent"
+  },
+  {
+    "title": "BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models",
+    "authors": "Blankenstein et al.",
+    "year": 2025,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2510.00307",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.00307",
+    "contribution": "Benchmarks tool-selection bias in seven LLMs across functionally equivalent tool providers, finding models fixate on single providers or favor earlier-listed tools, and proposes a filter-then-sample mitigation strategy.",
+    "branches": [
+      "tool-api-selection-bias",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — agent tool choice",
+      "evaluation-metrics / agentic-action-disparity"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "blankenstein2025biasbusters"
+  },
+  {
+    "title": "From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness",
+    "authors": "Cao et al.",
+    "year": 2026,
+    "venue": "AAAI 2026 TrustAgent Workshop",
+    "arxiv_id": "2602.12285",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2602.12285",
+    "contribution": "Demonstrates that demographic persona assignments to autonomous LLM agents cause up to 26.2% performance degradation across strategic reasoning, planning, and technical benchmarks, driven solely by task-irrelevant identity cues.",
+    "branches": [
+      "multiagent-delegation-bias",
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "role assignment bias / agentic performance fairness",
+      "planning-decomposition-bias / planning quality disparities across demographic groups"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "cao2026from"
+  },
+  {
+    "title": "Fairness in Large Language Models: A Taxonomic Survey",
+    "authors": "Chu et al.",
+    "year": 2024,
+    "venue": "ACM SIGKDD Explorations Newsletter",
+    "arxiv_id": "2404.01349",
+    "doi": "10.1145/3682112.3682117",
+    "url": "https://arxiv.org/abs/2404.01349",
+    "contribution": "Systematically surveys algorithmic bias sources, fairness evaluation metrics, and mitigation algorithms in LLMs with coverage of toolkits and datasets, published in the target venue for this survey.",
+    "branches": [
+      "foundations",
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "foundations / survey anchor",
+      "Fairness taxonomy / LLM bias mitigation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "chu2024fairness"
+  },
+  {
+    "title": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
+    "authors": "Dhamala et al.",
+    "year": 2021,
+    "venue": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT)",
+    "arxiv_id": "2101.11718",
+    "doi": "10.1145/3442188.3445924",
+    "url": "https://arxiv.org/abs/2101.11718",
+    "contribution": "Provides 23,679 text generation prompts across five demographic domains plus automated bias metrics for open-ended LLM generation, filling a gap not addressed by classification-focused benchmarks.",
+    "branches": [
+      "foundations",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias benchmark",
+      "evaluation-benchmarks / open-ended-generation-bias"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "dhamala2021bold"
+  },
+  {
+    "title": "Counterfactual Fairness",
+    "authors": "Kusner et al.",
+    "year": 2017,
+    "venue": "Advances in Neural Information Processing Systems (NeurIPS)",
+    "arxiv_id": "1703.06856",
+    "doi": "",
+    "url": "https://arxiv.org/abs/1703.06856",
+    "contribution": "Foundational causal definition of counterfactual fairness: a decision is fair if identical across the actual world and a counterfactual world where the individual belonged to a different demographic group, grounding evaluation in Pearl's causal framework.",
+    "branches": [
+      "foundations",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "foundations / counterfactual fairness definition",
+      "evaluation-metrics / counterfactual-fairness-foundations"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "kusner2017counterfactual"
+  },
+  {
+    "title": "Counterfactual Fairness Evaluation of LLM-Based Contact Center Agent Quality Assurance System",
+    "authors": "Mayilvaghanan et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2602.14970",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2602.14970",
+    "contribution": "Introduces CFR (Counterfactual Flip Rate) and MASD (Mean Absolute Score Difference) as metrics for agent QA fairness, evaluating 18 LLMs on 3,000 contact-center transcripts across 13 identity/context/behavioral dimensions.",
+    "branches": [
+      "llm-agents-general",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "Fairness evaluation / LLM-agent deployment bias",
+      "evaluation-metrics / counterfactual-fairness-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mayilvaghanan2026counterfactual"
+  },
+  {
+    "title": "StereoSet: Measuring Stereotypical Bias in Pretrained Language Models",
+    "authors": "Nadeem et al.",
+    "year": 2021,
+    "venue": "Proceedings of ACL-IJCNLP 2021",
+    "arxiv_id": "2004.09456",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2004.09456",
+    "contribution": "Defines the iCAT score combining a Language Modeling Score and Stereotype Score to jointly assess fluency and stereotype preference in LLMs across gender, profession, race, and religion domains.",
+    "branches": [
+      "foundations",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias benchmark",
+      "evaluation-metrics / stereotype-bias-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "nadeem2021stereoset"
+  },
+  {
+    "title": "A Multi-LLM Debiasing Framework",
+    "authors": "Owens et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2409.13884",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2409.13884",
+    "contribution": "Proposes centralized and decentralized multi-LLM dialogue strategies for bias reduction, showing that coordinated multi-agent interaction significantly outperforms single-model debiasing baselines across multiple protected social groups.",
+    "branches": [
+      "multiagent-delegation-bias",
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "multi-agent debiasing framework / bias mitigation in LLM collaboration",
+      "mitigation / multi-agent debate debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "owens2024multi"
+  },
+  {
+    "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+    "authors": "Park et al.",
+    "year": 2023,
+    "venue": "UIST 2023",
+    "arxiv_id": "2304.03442",
+    "doi": "10.1145/3586183.3606763",
+    "url": "https://arxiv.org/abs/2304.03442",
+    "contribution": "Seminal work introducing LLM-powered social simulation agents with persistent memory and persona, establishing the foundational architecture for role-based multi-agent societies and raising questions about emergent group-level biases in persona-driven agent systems.",
+    "branches": [
+      "llm-agents-general",
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / memory and planning",
+      "multi-agent social simulation / persona and role design for agents"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "park2023generative"
+  },
+  {
+    "title": "BBQ: A Hand-Built Bias Benchmark for Question Answering",
+    "authors": "Parrish et al.",
+    "year": 2022,
+    "venue": "Findings of ACL 2022",
+    "arxiv_id": "2110.08193",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2110.08193",
+    "contribution": "Introduces a 58,492-question benchmark testing stereotype reliance in ambiguous vs. disambiguated QA contexts across nine social dimensions, providing group-bias metrics as the difference in accuracy between stereotype-aligned and stereotype-conflicting correct answers.",
+    "branches": [
+      "foundations",
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias benchmark",
+      "evaluation-benchmarks / social-bias-QA"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "parrish2022bbq"
+  },
+  {
+    "title": "A Survey on Large Language Model based Autonomous Agents",
+    "authors": "Wang et al.",
+    "year": 2024,
+    "venue": "Frontiers of Computer Science",
+    "arxiv_id": "2308.11432",
+    "doi": "10.1007/s11704-024-40231-1",
+    "url": "https://arxiv.org/abs/2308.11432",
+    "contribution": "Provides a comprehensive systematic review of LLM-based autonomous agents covering architecture (memory, planning, action), applications, and evaluation, serving as a primary agent-structure reference for this survey.",
+    "branches": [
+      "foundations",
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "foundations / LLM-agent survey",
+      "LLM-agent general survey / foundational reference"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wang2024survey"
+  },
+  {
+    "title": "Bias Amplification in RAG: Poisoning Knowledge Retrieval to Steer LLMs",
+    "authors": "Wang et al.",
+    "year": 2025,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2506.11415",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2506.11415",
+    "contribution": "Proposes BRRA framework showing that adversarially poisoned retrieval corpora amplify demographic stereotypes in LLM outputs, establishing a direct link between retrieval security and model fairness.",
+    "branches": [
+      "tool-api-selection-bias",
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — retrieval source bias propagated through agents",
+      "memory-retrieval-bias / retrieval bias amplification / adversarial memory"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wang2025bias"
+  },
+  {
+    "title": "LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education",
+    "authors": "Weissburg et al.",
+    "year": 2024,
+    "venue": "NAACL Findings 2025",
+    "arxiv_id": "2410.14012",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.14012",
+    "contribution": "Evaluates nine LLMs across 17,000+ educational explanations and finds that models generate demographically biased content differentiated by race, gender, income, and disability status, with income-related bias highest.",
+    "branches": [
+      "user-modeling-personalization-harms",
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "personalization-bias / demographic-stereotyping-in-personalized-responses",
+      "agent-deployment / education-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "weissburg2024llms"
+  },
+  {
+    "title": "Does RAG Introduce Unfairness in LLMs? Evaluating Fairness in Retrieval-Augmented Generation Systems",
+    "authors": "Wu et al.",
+    "year": 2024,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2409.19804",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2409.19804",
+    "contribution": "Proposes a scenario-based fairness evaluation framework for RAG pipelines and empirically shows that fairness issues persist in both the retrieval and generation stages across gender and geographic demographics.",
+    "branches": [
+      "tool-api-selection-bias",
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — retrieval source selection fairness (adjacent: RAG)",
+      "memory-retrieval-bias / RAG fairness evaluation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wu2024rag"
+  },
+  {
+    "title": "The Rise and Potential of Large Language Model Based Agents: A Survey",
+    "authors": "Xi et al.",
+    "year": 2023,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2309.07864",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2309.07864",
+    "contribution": "Surveys LLM-based agents in single-agent, multi-agent, and human-agent settings, characterising perception, memory, and action components and discussing safety concerns, anchoring the agent-architecture background of this survey.",
+    "branches": [
+      "foundations",
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "foundations / LLM-agent survey",
+      "LLM-agent general survey / architecture overview"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xi2023rise"
+  },
+  {
+    "title": "DUCX: Decomposing Unfairness in Tool-Using Chest X-ray Agents",
+    "authors": "Xu et al.",
+    "year": 2026,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2603.00777",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2603.00777",
+    "contribution": "Identifies three agent-specific fairness failure modes in tool-using medical agents — tool exposure bias, tool transition (routing) bias, and model reasoning bias — with demographic subgroup gaps exceeding 50% conditioned on tool availability.",
+    "branches": [
+      "tool-api-selection-bias",
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — demographic disparities in tool routing",
+      "planning-decomposition-bias / planning quality disparities across demographic groups"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xu2026ducx"
+  },
+  {
+    "title": "Persistent Anti-Muslim Bias in Large Language Models",
+    "authors": "Abid et al.",
+    "year": 2021,
+    "venue": "AIES",
+    "arxiv_id": "2101.05783",
+    "doi": "10.1145/3461702.3462624",
+    "url": "",
+    "contribution": "Shows religion-based bias persists after fine-tuning; relevant to multi-group fairness.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / religion bias"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "abid2021persistent"
+  },
+  {
+    "title": "mFARM: Towards Multi-Faceted Fairness Assessment based on HARMs in Clinical Decision Support",
+    "authors": "Adappanavar et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2509.02007",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2509.02007",
+    "contribution": "Proposes a multi-metric mFARM score combining Allocational, Stability, and Latent disparity sub-metrics into a single clinical-readiness score, paired with two MIMIC-IV-derived benchmarks of over 50,000 demographically varied prompts.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / clinical-medical-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "adappanavar2025mfarm"
+  },
+  {
+    "title": "BiasDPO: Mitigating Bias in Language Models through Direct Preference Optimization",
+    "authors": "Allam et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2407.13928",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2407.13928",
+    "contribution": "Applies DPO with a curated dataset of biased/unbiased response pairs to train Phi-2, achieving substantial reductions in biased outputs on standard bias benchmarks without standard RLHF infrastructure.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / DPO for fairness/debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "allam2024biasdpo"
+  },
+  {
+    "title": "Equal Access, Unequal Interaction: A Counterfactual Audit of LLM Fairness",
+    "authors": "Amiri-Margavi et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2602.02932",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2602.02932",
+    "contribution": "Conducts a controlled counterfactual audit of GPT-4 and LLaMA-3.1-70B over career-advice tasks, showing zero refusal disparity but significant interaction-quality disparities (sentiment, politeness, hedging) across age, gender, and nationality.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / counterfactual-fairness-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "amirimargavi2026equal"
+  },
+  {
+    "title": "Concrete Problems in AI Safety",
+    "authors": "Amodei et al.",
+    "year": 2016,
+    "venue": "arXiv preprint",
+    "arxiv_id": "1606.06565",
+    "doi": "",
+    "url": "",
+    "contribution": "Foundational AI-safety framing; reward hacking/side effects are fairness-adjacent.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / AI safety"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "amodei2016concrete"
+  },
+  {
+    "title": "Measuring gender and racial biases in large language models: Intersectional evidence from automated resume evaluation",
+    "authors": "An et al.",
+    "year": 2025,
+    "venue": "PNAS Nexus",
+    "arxiv_id": "2403.15281",
+    "doi": "10.1093/pnasnexus/pgaf089",
+    "url": "https://arxiv.org/abs/2403.15281",
+    "contribution": "Scores ~361,000 randomized resumes across five LLMs and finds pro-female but anti-Black-male bias that would shift hiring probabilities by 1-3 percentage points.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / hiring-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "an2025measuring"
+  },
+  {
+    "title": "Machine Bias (COMPAS investigation)",
+    "authors": "Angwin et al.",
+    "year": 2016,
+    "venue": "ProPublica",
+    "arxiv_id": "",
+    "doi": "",
+    "url": "https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing",
+    "contribution": "Investigation that triggered the COMPAS fairness debate; widely cited.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "high-stakes / criminal justice"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "angwin2016machine"
+  },
+  {
+    "title": "Understanding Intrinsic Socioeconomic Biases in Large Language Models",
+    "authors": "Arzaghi et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2405.18662",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.18662",
+    "contribution": "Creates a 1M-sentence dataset showing LLMs (GPT-2, Llama 2, Falcon) extract demographic attributes from names and correlate them with socioeconomic stereotypes, amplified by intersectionality.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "user-attribute-inference / demographic-stereotyping-in-personalized-responses"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "arzaghi2024understanding"
+  },
+  {
+    "title": "Intrinsic Meets Extrinsic Fairness: Assessing the Downstream Impact of Bias Mitigation in Large Language Models",
+    "authors": "Arzaghi et al.",
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "arxiv_id": "2509.16462",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2509.16462",
+    "contribution": "Provides a unified evaluation framework comparing intrinsic (concept unlearning) vs. extrinsic (counterfactual data augmentation) bias mitigation, measuring Demographic Parity, Accuracy Parity, and Equality of Odds on financial classification tasks.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / group-fairness-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "arzaghi2025intrinsic"
+  },
+  {
+    "title": "Accept or Deny? Evaluating LLM Fairness and Performance in Loan Approval across Table-to-Text Serialization Approaches",
+    "authors": "Azime et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2508.21512",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2508.21512",
+    "contribution": "Benchmarks LLM fairness in loan-approval decisions across three countries and multiple serialization formats, showing certain formats improve accuracy while exacerbating fairness disparities, highlighting the need for context-specific fairness metrics.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / hiring-lending-decisions"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "azime2025accept"
+  },
+  {
+    "title": "Constitutional AI: Harmlessness from AI Feedback",
+    "authors": "Bai et al.",
+    "year": 2022,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2212.08073",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2212.08073",
+    "contribution": "Proposes Constitutional AI, training LLMs to critique and revise their own outputs guided by a written set of principles (RLHF-from-AI-feedback), a process-level constitutional intervention for reducing harmful and biased outputs.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / constitutional/process-level intervention"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "bai2022constitutional"
+  },
+  {
+    "title": "Fairness and Machine Learning: Limitations and Opportunities",
+    "authors": "Barocas, Hardt, and Narayanan",
+    "year": 2023,
+    "venue": "MIT Press",
+    "arxiv_id": "",
+    "doi": "",
+    "url": "https://fairmlbook.org",
+    "contribution": "Standard textbook reference for formal fairness definitions.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / textbook"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "barocas2023fairness"
+  },
+  {
+    "title": "Preserving the Fairness Guarantees of Classifiers in Changing Environments: A Survey",
+    "authors": "A. Barrainkua, P. Gordaliza, J. A. Lozano, N. Quadrianto",
+    "year": 2025,
+    "venue": "ACM Computing Surveys, vol. 57, no. 6, pp. 1-31",
+    "arxiv_id": "",
+    "doi": "10.1145/3637438",
+    "url": "",
+    "contribution": "CSUR survey on fair classification under distribution shift — maintaining fairness when training and test distributions differ. Covers temporal and covariate shift. Tangentially relevant to our §3.6 (long-horizon drift) where deployment feedback loops shift data distributions. | DIFF: Barrainkua et al. address static classifier fairness under distributional shift. We address dynamic agent fairness",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "barrainkua2025preserving"
+  },
+  {
+    "title": "When Names Change Verdicts: Intervention Consistency Reveals Systematic Bias in LLM Decision-Making",
+    "authors": "Basu et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2603.18530",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2603.18530",
+    "contribution": "Introduces ICE-Guard, a framework measuring demographic, authority, and framing flip rates in LLM decisions, finding authority/framing biases exceed demographic bias and that structured decomposition reduces flip rates by up to 100%.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / counterfactual-flip-rate"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "basu2026names"
+  },
+  {
+    "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
+    "authors": "Bender et al.",
+    "year": 2021,
+    "venue": "Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT)",
+    "arxiv_id": "",
+    "doi": "10.1145/3442188.3445922",
+    "url": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+    "contribution": "Identifies environmental, financial, and social harms of large LMs including bias amplification from uncurated training data, influencing the framing of responsible LLM development and fairness discourse.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / LLM risks and societal harms"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "bender2021dangers"
+  },
+  {
+    "title": "How Can We Diagnose and Treat Bias in Large Language Models for Clinical Decision-Making?",
+    "authors": "Benkirane et al.",
+    "year": 2024,
+    "venue": "arXiv",
+    "arxiv_id": "2410.16574",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.16574",
+    "contribution": "Introduces the Counterfactual Patient Variations (CPV) dataset from JAMA Clinical Challenge and shows that debiasing one demographic dimension (gender) can introduce bias along another (ethnicity), revealing multi-dimensional bias interactions.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / healthcare-domain / bias-mitigation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "benkirane2024diagnose"
+  },
+  {
+    "title": "Interactional Fairness in LLM Multi-Agent Systems: An Evaluation Framework",
+    "authors": "Ruta Binkyte",
+    "year": 2025,
+    "venue": "AAAI/ACM AIES 2025 (Proceedings, Vol. 8, pp. 457-468)",
+    "arxiv_id": "2505.12001",
+    "doi": "10.1609/aies.v8i1.36563",
+    "url": "",
+    "contribution": "Introduces interactional fairness evaluation (interpersonal + informational fairness) for LLM multi-agent negotiation tasks, drawing on organizational psychology. Addresses how agent communication tone and justification quality affect fairness outcomes. | DIFF: Narrow scope: covers only inter-agent communication fairness in resource negotiation, not demographic/protected-group fairness in LLM agen",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / empirical"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "binkyte2025interactional"
+  },
+  {
+    "title": "Language (Technology) is Power: A Critical Survey of Bias in NLP",
+    "authors": "Blodgett et al.",
+    "year": 2020,
+    "venue": "ACL",
+    "arxiv_id": "2005.14050",
+    "doi": "",
+    "url": "",
+    "contribution": "Foundational critical survey of how bias is conceptualized in NLP.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias conceptualization"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "blodgett2020language"
+  },
+  {
+    "title": "Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets",
+    "authors": "Blodgett et al.",
+    "year": 2021,
+    "venue": "ACL-IJCNLP",
+    "arxiv_id": "",
+    "doi": "10.18653/v1/2021.acl-long.81",
+    "url": "",
+    "contribution": "Canonical critique of bias benchmarks (StereoSet, CrowS-Pairs, WinoBias).",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / benchmark critique"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "blodgett2021stereotyping"
+  },
+  {
+    "title": "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings",
+    "authors": "Bolukbasi et al.",
+    "year": 2016,
+    "venue": "NeurIPS",
+    "arxiv_id": "1607.06520",
+    "doi": "",
+    "url": "",
+    "contribution": "Standard reference for word-embedding debiasing; companion to WEAT.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / embedding debiasing"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "bolukbasi2016man"
+  },
+  {
+    "title": "On the Opportunities and Risks of Foundation Models",
+    "authors": "Bommasani et al.",
+    "year": 2021,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2108.07258",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2108.07258",
+    "contribution": "Coins the term 'foundation models' and comprehensively analyses their capabilities and risks including fairness, inequity, and misuse, establishing the paradigm within which LLM fairness research operates.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / foundation model risks"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "bommasani2021opportunities"
+  },
+  {
+    "title": "Bring Your Own Prompts: Use-Case-Specific Bias and Fairness Evaluation for LLMs (LangFair)",
+    "authors": "Bouchard, D.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2407.10853",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2407.10853",
+    "contribution": "Maps deployment contexts to appropriate fairness metrics (toxicity, stereotyping, counterfactual unfairness, allocational harm) via a decision framework and releases the LangFair open-source Python library for practical use-case-grounded evaluation.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / use-case-fairness-framework"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "bouchard2024bring"
+  },
+  {
+    "title": "Measuring and Mitigating Racial Disparities in LLMs: Evidence from a Mortgage Underwriting Experiment",
+    "authors": "Bowen et al.",
+    "year": 2024,
+    "venue": "SSRN Working Paper",
+    "arxiv_id": "",
+    "doi": "10.2139/ssrn.4812158",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4812158",
+    "contribution": "Audit study using real loan applications and manipulated race signals finds LLMs deny more loans and charge higher interest rates to Black applicants; simple anti-bias prompts substantially reduce the disparity.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / lending-domain / empirical-bias-audit"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "bowen2024measuring"
+  },
+  {
+    "title": "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification",
+    "authors": "Buolamwini and Gebru",
+    "year": 2018,
+    "venue": "FAccT (PMLR v81)",
+    "arxiv_id": "",
+    "doi": "",
+    "url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
+    "contribution": "Landmark intersectional accuracy-disparity audit; essential for any intersectionality discussion.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / intersectionality"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "buolamwini2018gender"
+  },
+  {
+    "title": "Semantics Derived Automatically from Language Corpora Contain Human-Like Biases",
+    "authors": "Caliskan et al.",
+    "year": 2017,
+    "venue": "Science",
+    "arxiv_id": "1608.07187",
+    "doi": "10.1126/science.aal4230",
+    "url": "",
+    "contribution": "Introduces WEAT; first proof word embeddings encode social biases.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / embedding bias"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "caliskan2017semantics"
+  },
+  {
+    "title": "I Want to Break Free! Persuasion and Anti-Social Behavior of LLMs in Multi-Agent Settings with Social Hierarchy",
+    "authors": "Campedelli et al.",
+    "year": 2024,
+    "venue": "arXiv preprint (EACL 2024 Workshop)",
+    "arxiv_id": "2410.07109",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.07109",
+    "contribution": "Examines 2,400 LLM conversations in a Stanford Prison Experiment-inspired hierarchy (guard/prisoner roles), finding that assigned social roles significantly shape persuasion success and anti-social behavior, and that harmful conduct emerges even without explicit negative persona prompts.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "social-role hierarchy bias / role-play harms in multi-agent settings"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "campedelli2024want"
+  },
+  {
+    "title": "Fairness in Machine Learning: A Survey",
+    "authors": "Simon Caton, Christian Haas",
+    "year": 2024,
+    "venue": "ACM Computing Surveys, vol. 56, no. 7, Article 144",
+    "arxiv_id": "2010.04053",
+    "doi": "10.1145/3616865",
+    "url": "",
+    "contribution": "CSUR survey organising ML fairness into pre/in/post-processing. Covers group fairness, individual fairness, and mitigation. No LLM or agent content. Likely cited by CSUR reviewers as adjacent CSUR prior art our survey should engage. | DIFF: Caton and Haas scope to classical supervised learning. Ours is entirely focused on LLM-based agents and the new fairness failure modes (tool routing, RAG injec",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "caton2024fairness"
+  },
+  {
+    "title": "MaxMin-RLHF: Alignment with Diverse Human Preferences",
+    "authors": "Chakraborty et al.",
+    "year": 2024,
+    "venue": "ICML 2024",
+    "arxiv_id": "2402.08925",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2402.08925",
+    "contribution": "Introduces a MaxMin RLHF objective inspired by social-choice egalitarianism that learns a mixture of reward functions, improving minority-group win-rates by 33% over standard RLHF while preserving majority performance.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / RLHF/DPO for fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "chakraborty2024maxmin"
+  },
+  {
+    "title": "Visibility into AI Agents",
+    "authors": "Alan Chan, Carson Ezell, Max Kaufmann, Kevin Wei, Lewis Hammond, Herbie Bradley, Emma Bluemke, Nitarshan Rajkumar, David Krueger, Noam Kolt, Lennart Heim, Markus Anderljung",
+    "year": 2024,
+    "venue": "Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency (FAccT '24)",
+    "arxiv_id": "2401.13138",
+    "doi": "10.1145/3630106.3658948",
+    "url": "",
+    "contribution": "FAccT position paper arguing that delegation of complex goals to AI agents exacerbates societal risks. Proposes transparency mechanisms: unique agent tags, real-time monitoring, activity logging. Touches accountability infrastructure relevant to our §8 research agenda. | DIFF: Chan et al. address AI agent visibility and governance mechanisms (what information should be disclosed). We address fairn",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / position"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "chan2024visibility"
+  },
+  {
+    "title": "A Survey on Evaluation of Large Language Models",
+    "authors": "Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen, Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, Wei Ye, Yue Zhang, Yi Chang, Philip S. Yu, Qiang Yang, Xing Xie",
+    "year": 2024,
+    "venue": "ACM Transactions on Intelligent Systems and Technology (TIST), vol. 15, no. 3, Article 39",
+    "arxiv_id": "2307.03109",
+    "doi": "10.1145/3641289",
+    "url": "",
+    "contribution": "Major ACM TIST survey on LLM evaluation covering what to evaluate (knowledge, reasoning, fairness, safety), where to evaluate (datasets, benchmarks), and how to evaluate. Fairness is one evaluation dimension. No agentic evaluation framework. | DIFF: Chang et al. evaluate LLMs as text generators; fairness is one of many capabilities to benchmark. Our §4 constructs an evaluation framework specifical",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "chang2024survey"
+  },
+  {
+    "title": "When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning",
+    "authors": "Choi et al.",
+    "year": 2025,
+    "venue": "ACL 2026",
+    "arxiv_id": "2510.07517",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.07517",
+    "contribution": "Shows that LLM agents in multi-agent debate exhibit identity-driven sycophancy (following peer opinions over content merit) and self-bias; proposes response anonymization and the Identity Bias Coefficient metric to achieve content-based rather than identity-based reasoning.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "identity-driven sycophancy in multi-agent debate / bias mitigation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "choi2025identity"
+  },
+  {
+    "title": "Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments",
+    "authors": "Chouldechova",
+    "year": 2017,
+    "venue": "Big Data",
+    "arxiv_id": "1703.00056",
+    "doi": "10.1089/big.2016.0047",
+    "url": "",
+    "contribution": "Second canonical impossibility result (COMPAS); paired with Kleinberg et al.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / impossibility"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "chouldechova2017fair"
+  },
+  {
+    "title": "Unmasking Conversational Bias in AI Multiagent Systems",
+    "authors": "Coppolillo et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2501.14844",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2501.14844",
+    "contribution": "Creates controlled echo-chamber experiments with paired LLMs and finds significant stance shifts aligned with liberal model bias that current questionnaire-based bias detectors fail to identify.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / conversational bias accumulation in multi-agent systems"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "coppolillo2025unmasking"
+  },
+  {
+    "title": "Bias and Unfairness in Information Retrieval Systems: New Challenges in the LLM Era",
+    "authors": "Dai et al.",
+    "year": 2024,
+    "venue": "Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+    "arxiv_id": "2404.11457",
+    "doi": "10.1145/3637528.3671458",
+    "url": "https://arxiv.org/abs/2404.11457",
+    "contribution": "Surveys how LLM integration into IR systems (search engines, recommenders) creates novel bias and unfairness challenges across data collection, model development, and evaluation, framing them as distribution mismatch problems.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — adjacent: LLM-era IR bias survey covering retrieval tools agents rely on"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "dai2024bias"
+  },
+  {
+    "title": "Trustworthy Information Retrieval in the LLM Era: Bias, Unfairness, and Hallucination",
+    "authors": "Sunhao Dai, Changle Qu, Sirui Chen, Xiao Zhang, Jun Xu",
+    "year": 2025,
+    "venue": "Proceedings of the 2025 Annual International ACM SIGIR Conference (SIGIR-AP '25)",
+    "arxiv_id": "",
+    "doi": "10.1145/3767695.3769670",
+    "url": "",
+    "contribution": "ACM SIGIR tutorial unifying bias, unfairness, and hallucination in LLM-era IR under a distribution-mismatch framework. Directly relevant to our §3.2 (retrieval bias) and §3.1 (tool selection as an IR problem). | DIFF: Dai et al. frame IR trustworthiness as distribution alignment within a retrieval pipeline. We situate retrieval as one of six agent components and focus on demographic fairness speci",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / other"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "dai2025trustworthy"
+  },
+  {
+    "title": "CFaiRLLM: Consumer Fairness Evaluation in Large-Language Model Recommender System",
+    "authors": "Deldjoo et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2403.05668",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2403.05668",
+    "contribution": "Proposes an evaluation framework distinguishing genuine personalization from unfair demographic bias in LLM recommenders, incorporating intersectional fairness across overlapping sensitive attributes.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "recommender-assistant-fairness / fairness-in-conversational-recommenders"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "deldjoo2024cfairllm"
+  },
+  {
+    "title": "A Normative Framework for Benchmarking Consumer Fairness in Large Language Model Recommender Systems",
+    "authors": "Deldjoo et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2405.02219",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.02219",
+    "contribution": "Proposes a principled evaluation framework revealing statistically significant age-based fairness deviations in LLM recommenders and arguing conventional collaborative-filtering metrics are insufficient for LLM-based systems.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "recommender-assistant-fairness / fairness-in-conversational-recommenders"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "deldjoo2024normative"
+  },
+  {
+    "title": "Mind2Web: Towards a Generalist Agent for the Web",
+    "authors": "Deng et al.",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "arxiv_id": "2306.06070",
+    "doi": "",
+    "url": "",
+    "contribution": "Companion generalist web-agent benchmark.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / web-agent benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "deng2023mind2web"
+  },
+  {
+    "title": "Toxicity in ChatGPT: Analyzing Persona-assigned Language Models",
+    "authors": "Deshpande et al.",
+    "year": 2023,
+    "venue": "EMNLP Findings",
+    "arxiv_id": "2304.05335",
+    "doi": "",
+    "url": "",
+    "contribution": "Persona assignment increases toxicity up to 6x; foundational for delegation/persona bias.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "multi-agent / persona bias"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "deshpande2023toxicity"
+  },
+  {
+    "title": "Building Guardrails for Large Language Models",
+    "authors": "Dong et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2402.01822",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2402.01822",
+    "contribution": "Surveys existing open-source safeguarding tools and proposes a systematic guardrail construction approach combining neural-symbolic methods and input/output filtering to prevent harmful, biased content in LLM deployments.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / guardrails and safety filters"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "dong2024building"
+  },
+  {
+    "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
+    "authors": "Du et al.",
+    "year": 2024,
+    "venue": "ACL 2024 (Outstanding Paper)",
+    "arxiv_id": "2408.12942",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2408.12942",
+    "contribution": "Combines active learning with causal mechanisms to autonomously identify biased samples and induce bias patterns, then uses in-context learning to prevent models from relying on identified biases.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / in-context debiasing / causal intervention"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "du2024causal"
+  },
+  {
+    "title": "A Survey on the Optimization of Large Language Model-based Agents",
+    "authors": "Shangheng Du, Jiabao Zhao, Jinxin Shi, Zhentao Xie, Xin Jiang, Yanhong Bai, Liang He",
+    "year": 2026,
+    "venue": "ACM Computing Surveys, vol. 58, no. 9, Article 223",
+    "arxiv_id": "2503.12434",
+    "doi": "10.1145/3789261",
+    "url": "",
+    "contribution": "CSUR survey on LLM agent optimization covering parameter-driven (fine-tuning, RL) and parameter-free (prompt engineering, retrieval) methods. Agent components covered include planning, memory, tool use. No fairness content. | DIFF: Du et al. optimise for performance (task success, efficiency). We optimise for fairness (demographic parity, counterfactual invariance) — a fundamentally different targ",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "du2026survey"
+  },
+  {
+    "title": "Agent AI: Surveying the Horizons of Multimodal Interaction",
+    "authors": "Durante et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2401.03568",
+    "doi": "",
+    "url": "",
+    "contribution": "Comprehensive multimodal agent survey; expected alongside Xi and Wang surveys.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / survey"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "durante2024agent"
+  },
+  {
+    "title": "Fairness Through Awareness",
+    "authors": "Dwork et al.",
+    "year": 2012,
+    "venue": "Proceedings of the 3rd Innovations in Theoretical Computer Science Conference (ITCS)",
+    "arxiv_id": "1104.3913",
+    "doi": "10.1145/2090236.2090255",
+    "url": "https://arxiv.org/abs/1104.3913",
+    "contribution": "Introduces the metric-based individual fairness definition requiring that similar individuals be treated similarly, establishing a foundational fairness concept adopted throughout algorithmic fairness literature.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / individual fairness definition"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "dwork2012fairness"
+  },
+  {
+    "title": "A Survey on Reliability, Transparency, Accountability, and Fairness in LLM-based Multi-Agent Systems through the Responsibility Lens",
+    "authors": "Sana Ebrahimi, Abolfazl Asudeh",
+    "year": 2025,
+    "venue": "Preprint (ResearchGate/unpublished), University of Illinois Chicago",
+    "arxiv_id": "",
+    "doi": "",
+    "url": "",
+    "contribution": "39-page survey examining LLM-based Multi-Agent Systems through four pillars: Reliability, Transparency, Accountability, and Fairness and Ethics. Covers coordination patterns (debate, critique, aggregation, routing), governance, logging, and fairness mechanisms across 60+ works from 2023-2025. | DIFF: Fairness is one of four RTAF pillars, not the organizing axis. The paper covers LLM-MAS broadly th",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "web-multiple",
+    "bibkey": "ebrahimi2025survey"
+  },
+  {
+    "title": "Certifying and Removing Disparate Impact",
+    "authors": "Feldman et al.",
+    "year": 2015,
+    "venue": "ACM KDD",
+    "arxiv_id": "1412.3756",
+    "doi": "10.1145/2783258.2783311",
+    "url": "",
+    "contribution": "Canonical formalization of disparate impact in ML; expected in any fairness survey's foundations.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / disparate impact"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "feldman2015certifying"
+  },
+  {
+    "title": "Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models",
+    "authors": "Feng et al.",
+    "year": 2023,
+    "venue": "arXiv",
+    "arxiv_id": "2310.00566",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2310.00566",
+    "contribution": "Proposes CALM, the first LLM-based credit scoring framework with a 9-dataset benchmark, empirically documenting demographic bias risks in LLM-driven credit decisions alongside performance gains over classical models.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / lending-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "feng2023empowering"
+  },
+  {
+    "title": "Towards Trustworthy AI: A Review of Ethical and Robust Large Language Models",
+    "authors": "Md Meftahul Ferdaus, Mahdi Abdelguerfi, Elias Ioup, Kendall N. Niles, Ken Pathak, Steven Sloan",
+    "year": 2026,
+    "venue": "ACM Computing Surveys, vol. 58, no. 7",
+    "arxiv_id": "2407.13934",
+    "doi": "10.1145/3777382",
+    "url": "",
+    "contribution": "CSUR survey on ethical and robust LLMs covering unintended harms (including bias/fairness), transparency, adversarial vulnerability, value alignment, and environmental impact. Covers fairness in LLMs. Does NOT cover agentic systems or agent-pipeline components. | DIFF: Ferdaus et al. review trustworthiness of LLMs as text generators across five ethical dimensions; they do not analyse the agent pip",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "ferdaus2026trustworthy"
+  },
+  {
+    "title": "Thinking Fair and Slow: On the Efficacy of Structured Prompts for Debiasing Language Models",
+    "authors": "Furniturewala et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2405.10431",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.10431",
+    "contribution": "Systematically evaluates System-2-inspired structured prompting strategies (implicative, role-based, multi-step) for debiasing LLMs without retraining, showing implicative prompts achieve the lowest mean bias on downstream tasks.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / prompting-based debiasing / in-context"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "furniturewala2024thinking"
+  },
+  {
+    "title": "Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents",
+    "authors": "Yuyou Gan, Yong Yang, Zhe Ma, Ping He, Rui Zeng, Yiming Wang, Qingming Li, Chunyi Zhou, Songze Li, Ting Wang, Yunjun Gao, Yingcai Wu, Shouling Ji",
+    "year": 2024,
+    "venue": "arXiv preprint arXiv:2411.09523",
+    "arxiv_id": "2411.09523",
+    "doi": "",
+    "url": "",
+    "contribution": "Surveys security, privacy, and ethics threats in LLM agents via a taxonomy based on sources and impacts. Ethics section includes bias. Notes that bias in LLM-based agents involves the LLM-based controller and multi-modal inputs/outputs. | DIFF: Organizing axis is security/privacy/ethics threats, not fairness. Bias receives brief treatment within a broad 'ethics' category alongside many other threa",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "gan2024navigating"
+  },
+  {
+    "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models",
+    "authors": "Gehman et al.",
+    "year": 2020,
+    "venue": "EMNLP Findings",
+    "arxiv_id": "2009.11462",
+    "doi": "",
+    "url": "",
+    "contribution": "Standard toxicity-degeneration benchmark for LMs.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / toxicity benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "gehman2020realtoxicityprompts"
+  },
+  {
+    "title": "Accumulating Context Changes the Beliefs of Language Models",
+    "authors": "Geng et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2511.01805",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2511.01805",
+    "contribution": "Quantifies how accumulated conversational context causes substantial belief drift in LLMs (up to 54.7% shift after 10 rounds) and shows these belief changes translate into behavioral changes in agentic tool-use tasks.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / context-window history effects on fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "geng2025accumulating"
+  },
+  {
+    "title": "MEDEQUALQA: Evaluating Biases in LLMs with Counterfactual Reasoning",
+    "authors": "Ghosh et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2510.12818",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.12818",
+    "contribution": "Builds a 69,000-item QA-level counterfactual benchmark that perturbs only patient pronouns across clinical vignettes, isolating reasoning-level gender bias in medical LLMs while holding symptoms constant.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / clinical-medical-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "ghosh2025medequalqa"
+  },
+  {
+    "title": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges",
+    "authors": "Guo et al.",
+    "year": 2024,
+    "venue": "IJCAI",
+    "arxiv_id": "2402.01680",
+    "doi": "",
+    "url": "",
+    "contribution": "Key multi-agent LLM survey; expected alongside AutoGen/MetaGPT/CAMEL.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / multi-agent survey"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "guo2024large"
+  },
+  {
+    "title": "Guiding LLM Decision-Making with Fairness Reward Models",
+    "authors": "Hall et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2507.11344",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2507.11344",
+    "contribution": "Shows naive chain-of-thought sampling amplifies demographic bias in high-stakes decisions; introduces a transferable Fairness Reward Model that down-weights biased reasoning trajectories to improve equitable outcomes.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / decision-making bias in agentic planning"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hall2025guiding"
+  },
+  {
+    "title": "Equality of Opportunity in Supervised Learning",
+    "authors": "Hardt et al.",
+    "year": 2016,
+    "venue": "Advances in Neural Information Processing Systems (NeurIPS)",
+    "arxiv_id": "1610.02413",
+    "doi": "",
+    "url": "https://arxiv.org/abs/1610.02413",
+    "contribution": "Proposes the equalized odds and equal opportunity group fairness criteria and shows how to post-process any classifier to satisfy them, a canonical group fairness definition referenced in LLM fairness work.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / group fairness definition"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hardt2016equality"
+  },
+  {
+    "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection",
+    "authors": "Hartvigsen et al.",
+    "year": 2022,
+    "venue": "ACL",
+    "arxiv_id": "2203.09509",
+    "doi": "",
+    "url": "",
+    "contribution": "Large-scale implicit hate-speech/toxicity benchmark.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / toxicity benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "hartvigsen2022toxigen"
+  },
+  {
+    "title": "The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies",
+    "authors": "Feng He, Tianqing Zhu, Dayong Ye, Bo Liu, Wanlei Zhou, Philip S. Yu",
+    "year": 2025,
+    "venue": "ACM Computing Surveys, vol. 58, no. 6",
+    "arxiv_id": "2407.19354",
+    "doi": "10.1145/3773080",
+    "url": "",
+    "contribution": "CSUR survey specifically on LLM agents, organized around security and privacy threats and defenses across agent components (brain, memory, tool, user, agent, environment). Covers the same six-component agent anatomy we use but through a security/privacy lens. | DIFF: He et al. organize by threat type (privacy leakage, adversarial attacks, jailbreaking) not by fairness. They do not cover demographi",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "he2025emerged"
+  },
+  {
+    "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+    "authors": "Hong et al.",
+    "year": 2024,
+    "venue": "ICLR",
+    "arxiv_id": "2308.00352",
+    "doi": "",
+    "url": "",
+    "contribution": "Canonical multi-agent software-team system; relevant to task-allocation bias.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / multi-agent framework"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "hong2024metagpt"
+  },
+  {
+    "title": "Measuring Sycophancy of Language Models in Multi-turn Dialogues",
+    "authors": "Hong et al.",
+    "year": 2025,
+    "venue": "EMNLP 2025 Findings",
+    "arxiv_id": "2505.23840",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2505.23840",
+    "contribution": "Introduces SYCON Bench to measure stance-flip dynamics across multi-turn conversations in 17 models, finding that alignment tuning amplifies sycophantic bias drift while model scaling and reasoning optimization resist it.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Multi-turn fairness drift / sycophancy and bias accumulation over dialogue turns"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hong2025measuring"
+  },
+  {
+    "title": "Achieving Long-Term Fairness in Sequential Decision Making",
+    "authors": "Hu and Zhang",
+    "year": 2022,
+    "venue": "AAAI 2022",
+    "arxiv_id": "2204.01819",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2204.01819",
+    "contribution": "Introduces a causal path-specific effects framework on time-lagged causal graphs to measure long-term fairness in sequential decisions, recasting the problem as constrained performative risk minimization with convergence guarantees.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Longitudinal fairness in sequential decisions / temporal causal drift"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hu2022achieving"
+  },
+  {
+    "title": "No Free Lunch: Retrieval-Augmented Generation Undermines Fairness in LLMs, Even for Vigilant Users",
+    "authors": "Hu et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2410.07589",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.07589",
+    "contribution": "Introduces a three-tier threat framework showing that RAG can undermine fairness alignment without fine-tuning, even when users actively curate retrieved corpora.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / RAG fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hu2024free"
+  },
+  {
+    "title": "LLMs on Trial: Evaluating Judicial Fairness for Large Language Models",
+    "authors": "Hu et al.",
+    "year": 2025,
+    "venue": "arXiv",
+    "arxiv_id": "2507.10852",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2507.10852",
+    "contribution": "Tests 16 LLMs on 177,100 judicial case scenarios across 65 labels and finds pervasive demographic bias, inconsistency, and an accuracy-fairness tradeoff in LLM judicial decision-making.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / legal-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "hu2025llms"
+  },
+  {
+    "title": "TrustGPT: A Benchmark for Trustworthy and Responsible Large Language Models",
+    "authors": "Huang et al.",
+    "year": 2023,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2306.11507",
+    "doi": "",
+    "url": "",
+    "contribution": "Benchmarks toxicity, bias, and value-alignment across LLMs.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / trustworthiness benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "huang2023trustgpt"
+  },
+  {
+    "title": "Collective Constitutional AI: Aligning a Language Model with Public Input",
+    "authors": "Huang et al.",
+    "year": 2024,
+    "venue": "FAccT 2024",
+    "arxiv_id": "2406.07814",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2406.07814",
+    "contribution": "Fine-tunes an LLM using a publicly-sourced constitution derived from citizen input, achieving lower bias scores across nine social dimensions while maintaining benchmark performance.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / constitutional/process-level intervention"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "huang2024collective"
+  },
+  {
+    "title": "TrustLLM: Trustworthiness in Large Language Models",
+    "authors": "Huang et al.",
+    "year": 2024,
+    "venue": "ICML",
+    "arxiv_id": "2401.05561",
+    "doi": "",
+    "url": "",
+    "contribution": "Comprehensive trustworthiness benchmark (incl. fairness) across 16 LLMs.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / trustworthiness benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "huang2024trustllm"
+  },
+  {
+    "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+    "authors": "Jimenez et al.",
+    "year": 2024,
+    "venue": "ICLR",
+    "arxiv_id": "2310.06770",
+    "doi": "",
+    "url": "",
+    "contribution": "Standard coding-agent benchmark; relevant to agentic task evaluation.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / coding-agent benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "jimenez2024swe"
+  },
+  {
+    "title": "Reasoning Towards Fairness: Mitigating Bias in Language Models through Reasoning-Guided Fine-Tuning",
+    "authors": "Kabra et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2504.05632",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2504.05632",
+    "contribution": "Establishes that stronger reasoning capability correlates with lower stereotypical bias; proposes ReGiFT to transfer reasoning patterns from advanced models to weaker ones, improving fairness without fairness-specific training data.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / chain-of-thought reasoning fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "kabra2025reasoning"
+  },
+  {
+    "title": "Can Large Language Models Reason and Plan?",
+    "authors": "Kambhampati",
+    "year": 2024,
+    "venue": "Annals of the New York Academy of Sciences",
+    "arxiv_id": "2403.04121",
+    "doi": "10.1111/nyas.15125",
+    "url": "",
+    "contribution": "Foundational critique of LLM planning capability; relevant to planning-decomposition.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "planning / capability critique"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "kambhampati2024large"
+  },
+  {
+    "title": "Stereotype or Personalization? User Identity Biases Chatbot Recommendations",
+    "authors": "Kantharuban et al.",
+    "year": 2024,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2410.05613",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.05613",
+    "contribution": "Shows that chatbots produce racially stereotypical recommendations based on both explicit and implicit user identity cues, while concealing this fact from users when asked.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "personalization-bias / demographic-stereotyping-in-personalized-responses"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "kantharuban2024stereotype"
+  },
+  {
+    "title": "Trustworthy Artificial Intelligence: A Review",
+    "authors": "Davinder Kaur, Suleyman Uslu, Kaley J. Rittichier, Arjan Durresi",
+    "year": 2022,
+    "venue": "ACM Computing Surveys, vol. 55, no. 2, Article 39",
+    "arxiv_id": "",
+    "doi": "10.1145/3491209",
+    "url": "",
+    "contribution": "Earlier CSUR trustworthy AI survey covering fairness, explainability, accountability, reliability. No LLM or agent content. Provides the trustworthy-AI vocabulary that CSUR reviewers will expect engagement with. | DIFF: Kaur et al. predate the LLM agent era and address trustworthiness at the model/system level. Our scope is specifically LLM-based agents and the agent-component loci where fairness ",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "kaur2022trustworthy"
+  },
+  {
+    "title": "Towards a Better Understanding of Evaluating Trustworthiness in AI Systems",
+    "authors": "Nils Kemmerzell, Annika Schreiner, Haroon Khalid, Michael Schalk, Letizia Bordoli",
+    "year": 2025,
+    "venue": "ACM Computing Surveys, vol. 57, pp. 1-38",
+    "arxiv_id": "",
+    "doi": "10.1145/3721976",
+    "url": "",
+    "contribution": "CSUR survey on evaluation strategies for trustworthy AI, deriving an evaluation framework for operationalizing trustworthiness. Fairness is one of the trustworthiness dimensions evaluated. No specific LLM-agent content. | DIFF: Kemmerzell et al. provide a general trustworthiness evaluation framework. Our paper contributes the fairness-specific evaluation infrastructure for LLM-based agents: trajec",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "kemmerzell2025better"
+  },
+  {
+    "title": "Multiple LLM Agents Debate for Equitable Cultural Alignment",
+    "authors": "Ki et al.",
+    "year": 2025,
+    "venue": "ACL 2025 (Oral)",
+    "arxiv_id": "2505.24671",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2505.24671",
+    "contribution": "Proposes a two-agent debate framework for cultural norm alignment tested across 75 countries and 21 model combinations; demonstrates that multi-agent debate improves both accuracy and cross-cultural fairness, enabling smaller models to match larger ones.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "multi-agent debate for cultural fairness / bias mitigation across groups"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "ki2025multiple"
+  },
+  {
+    "title": "Towards Fair RAG: On the Impact of Fair Ranking in Retrieval-Augmented Generation",
+    "authors": "Kim and Diaz",
+    "year": 2024,
+    "venue": "arXiv preprint (ACM SIGIR ICTIR 2025)",
+    "arxiv_id": "2409.11598",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2409.11598",
+    "contribution": "Across 12 RAG models and 7 tasks, demonstrates that fairness-aware retrieval ranking maintains or improves generation quality while producing more balanced source attribution.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / RAG fairness / fair ranking mitigation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "kim2024fair"
+  },
+  {
+    "title": "Mitigating Bias in RAG: Controlling the Embedder",
+    "authors": "Kim et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2502.17390",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.17390",
+    "contribution": "Identifies a linear bias-conflict relationship between LLM, embedder, and corpus components in RAG, and shows that tuning embedder bias is more effective than naive fairness maximisation for achieving equitable RAG output.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / RAG retrieval bias / component-level mitigation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "kim2025mitigating"
+  },
+  {
+    "title": "Inherent Trade-Offs in the Fair Determination of Risk Scores",
+    "authors": "Kleinberg et al.",
+    "year": 2017,
+    "venue": "ITCS",
+    "arxiv_id": "1609.05807",
+    "doi": "",
+    "url": "",
+    "contribution": "Proves impossibility of jointly satisfying calibration, demographic parity, and equalized odds.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / impossibility"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "kleinberg2017inherent"
+  },
+  {
+    "title": "LLLMs: A Data-Driven Survey of Evolving Research on Limitations of Large Language Models",
+    "authors": "Aida Kostikova, Zhipin Wang, Deidamea Bajri, Ole Putz, Benjamin Paassen, Steffen Eger",
+    "year": 2026,
+    "venue": "ACM Computing Surveys, published April 17, 2026",
+    "arxiv_id": "2505.19240",
+    "doi": "10.1145/3801096",
+    "url": "",
+    "contribution": "CSUR data-driven meta-survey of 14,648 papers on LLM limitations (2022-2025), covering reasoning, generalization, hallucination, bias, and security. Bias/fairness is the fourth most studied limitation category. | DIFF: Kostikova et al. survey LLM limitations at the static-model level with bibliometric methods; their bias category covers QA-era findings. Our survey is scoped exclusively to the agen",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "kostikova2026lllms"
+  },
+  {
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": "Lewis et al.",
+    "year": 2020,
+    "venue": "NeurIPS 2020",
+    "arxiv_id": "2005.11401",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2005.11401",
+    "contribution": "Introduces RAG, combining parametric language model memory with a non-parametric dense retrieval index to produce more factual, specific, and diverse outputs on knowledge-intensive tasks.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / memory and knowledge retrieval"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "lewis2020retrieval"
+  },
+  {
+    "title": "CAMEL: Communicative Agents for Mind Exploration of Large Language Model Society",
+    "authors": "Li et al.",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "arxiv_id": "2303.17760",
+    "doi": "",
+    "url": "",
+    "contribution": "First role-playing multi-agent framework; relevant to persona/delegation bias.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / role-play multi-agent"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "li2023camel"
+  },
+  {
+    "title": "Fairness of ChatGPT",
+    "authors": "Li et al.",
+    "year": 2023,
+    "venue": "arXiv",
+    "arxiv_id": "2305.18569",
+    "doi": "10.48550/arXiv.2305.18569",
+    "url": "https://arxiv.org/abs/2305.18569",
+    "contribution": "Provides the first systematic cross-domain fairness evaluation of ChatGPT covering education, criminology, finance, and healthcare, measuring both group and individual fairness under biased and unbiased prompts.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "eval / multi-domain / fairness-benchmark"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "li2023fairness"
+  },
+  {
+    "title": "Trustworthy AI: From Principles to Practices",
+    "authors": "Bo Li, Peng Qi, Bo Liu, Shuai Di, Jingen Liu, Jiquan Pei, Jinfeng Yi, Bowen Zhou",
+    "year": 2023,
+    "venue": "ACM Computing Surveys, vol. 55, no. 9, Article 177",
+    "arxiv_id": "2110.01167",
+    "doi": "10.1145/3555803",
+    "url": "",
+    "contribution": "CSUR survey covering the full trustworthy AI stack: robustness, generalization, explainability, transparency, fairness, privacy, and accountability. Fairness is one of seven+ dimensions; no agentic or LLM-agent content. CSUR reviewers will expect engagement as prior CSUR art. | DIFF: Li et al. treat fairness as one dimension among many in a broad trustworthy-AI review covering the full model lifec",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "li2023trustworthy"
+  },
+  {
+    "title": "Prompting Fairness: Integrating Causality to Debias Large Language Models",
+    "authors": "Li et al.",
+    "year": 2024,
+    "venue": "ICLR 2025",
+    "arxiv_id": "2403.08743",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2403.08743",
+    "contribution": "Proposes a causality-guided prompting framework that identifies how social information flows through causal pathways in LLMs and applies prompting strategies to regulate those pathways, unifying existing prompt-based debiasing methods.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / prompting-based debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "li2024prompting"
+  },
+  {
+    "title": "Actions Speak Louder than Words: Agent Decisions Reveal Implicit Biases in Language Models",
+    "authors": "Li et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2501.17420",
+    "doi": "10.48550/arXiv.2501.17420",
+    "url": "https://arxiv.org/abs/2501.17420",
+    "contribution": "Proposes measuring implicit bias through LLM agent decision disparities under sociodemographically-informed personas, finding significant disparities across six LLMs with advanced models exhibiting greater implicit biases despite reduced explicit biases.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / decision-making bias in agentic planning"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "li2025actions"
+  },
+  {
+    "title": "FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering",
+    "authors": "Li et al.",
+    "year": 2025,
+    "venue": "ACL 2025",
+    "arxiv_id": "2504.14492",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2504.14492",
+    "contribution": "Proposes an inference-time debiasing method exploiting linear separability of bias signatures in hidden activations (>90%), dynamically steering activations via contrastive debiasing vectors without model retraining or prompt customization.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / activation steering / inference-time debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "li2025fairsteer"
+  },
+  {
+    "title": "From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions",
+    "authors": "Li et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2511.11789",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2511.11789",
+    "contribution": "Reveals that in multi-agent LLM systems, assigned personas create measurable in-group favoritism (conformity bias toward same-persona agents) and differential trust based on demographic privilege, persisting across different LLMs and interaction configurations.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "persona-induced bias / in-group favoritism in multi-agent collaboration"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "li2025from"
+  },
+  {
+    "title": "Triangular Trade-off between Robustness, Accuracy, and Fairness in Deep Neural Networks: A Survey",
+    "authors": "J. Li, G. Li",
+    "year": 2025,
+    "venue": "ACM Computing Surveys, vol. 57, no. 6, Article 140",
+    "arxiv_id": "",
+    "doi": "10.1145/3645088",
+    "url": "",
+    "contribution": "CSUR survey on the three-way trade-off between accuracy, robustness, and fairness in deep networks. Relevant as background for our §5 (mitigation) discussion of the safety-utility trade-off in debiasing. | DIFF: Li and Li address the trade-off in static DNN training. Our survey addresses mitigation in acting agents where the trade-off is more complex: component-level interventions can resolve a fa",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "li2025triangular"
+  },
+  {
+    "title": "Holistic Evaluation of Language Models",
+    "authors": "Liang et al.",
+    "year": 2023,
+    "venue": "TMLR",
+    "arxiv_id": "2211.09110",
+    "doi": "",
+    "url": "",
+    "contribution": "HELM; large-scale multi-metric LM evaluation including fairness.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / holistic benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "liang2023holistic"
+  },
+  {
+    "title": "Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks",
+    "authors": "Lin et al.",
+    "year": 2024,
+    "venue": "ACL 2025",
+    "arxiv_id": "2410.11005",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.11005",
+    "contribution": "Introduces ReDial, a benchmark of 1,200+ parallel Standard English / AAVE reasoning query pairs, showing significant brittleness and unfairness in GPT, Claude, Llama, Mistral, and Phi families.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "dialect-sociolect-bias / fairness-evaluation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "lin2024assessing"
+  },
+  {
+    "title": "Lost in the Middle: How Language Models Use Long Contexts",
+    "authors": "Liu et al.",
+    "year": 2023,
+    "venue": "Transactions of the Association for Computational Linguistics (TACL)",
+    "arxiv_id": "2307.03172",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2307.03172",
+    "contribution": "Establishes that LLM retrieval performance degrades for information in the middle of long contexts, creating systematic positional bias that differentially disadvantages documents by rank position.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / retrieval position bias / context-window effects"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "liu2023lost"
+  },
+  {
+    "title": "AgentBench: Evaluating LLMs as Agents",
+    "authors": "Liu et al.",
+    "year": 2024,
+    "venue": "ICLR",
+    "arxiv_id": "2308.03688",
+    "doi": "",
+    "url": "",
+    "contribution": "Multi-environment LLM-agent benchmark; relevant to evaluation discussion.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / agent benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "liu2024agentbench"
+  },
+  {
+    "title": "Truth Decay: Quantifying Multi-Turn Sycophancy in Language Models",
+    "authors": "Liu et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2503.11656",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2503.11656",
+    "contribution": "Quantifies how sycophantic bias compounds across multi-turn conversations, showing that accuracy systematically decreases and models increasingly align with user input rather than reassessing prior errors.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Multi-turn fairness drift / sycophancy compounding across interaction turns"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "liu2025truth"
+  },
+  {
+    "title": "How Implicit Bias Accumulates and Propagates in LLM Long-term Memory",
+    "authors": "Ma et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2602.01558",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2602.01558",
+    "contribution": "Shows that implicit bias in memory-augmented LLMs intensifies over long-term interactions and propagates across unrelated social domains; proposes Dynamic Memory Tagging (DMT) as mitigation.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Long-horizon bias drift in LLM memory / multi-turn compounding"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "ma2026implicit"
+  },
+  {
+    "title": "Detecting race and gender bias in visual representation of AI on web search engines",
+    "authors": "Makhortykh et al.",
+    "year": 2021,
+    "venue": "Advances in Bias-Free Computing (Springer, LNCS 12817)",
+    "arxiv_id": "2106.14072",
+    "doi": "10.1007/978-3-030-78818-6_5",
+    "url": "https://arxiv.org/abs/2106.14072",
+    "contribution": "Audits six search engines across race and gender representation, finding white-male over-representation in AI imagery — illustrating search-engine representational bias that LLM agents inherit when using web search as a tool.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — adjacent: search-engine bias inherited by agents using web search tools"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "makhortykh2021detecting"
+  },
+  {
+    "title": "Feedback Loop and Bias Amplification in Recommender Systems",
+    "authors": "Mansoury et al.",
+    "year": 2020,
+    "venue": "CIKM 2020",
+    "arxiv_id": "2007.13019",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2007.13019",
+    "contribution": "Provides foundational simulation-based evidence that recommender feedback loops iteratively amplify popularity bias, reduce content diversity, and disproportionately harm minority-group users across successive interaction cycles.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Feedback-loop fairness / bias amplification over trajectory iterations (seminal)"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mansoury2020feedback"
+  },
+  {
+    "title": "A Survey on Bias and Fairness in Machine Learning",
+    "authors": "Mehrabi et al.",
+    "year": 2021,
+    "venue": "ACM Computing Surveys",
+    "arxiv_id": "1908.09635",
+    "doi": "10.1145/3457607",
+    "url": "https://arxiv.org/abs/1908.09635",
+    "contribution": "Foundational ML fairness survey cataloguing 23 types of bias, reviewing fairness definitions and mitigation strategies across domains, providing the pre-LLM baseline for this survey's related-work section.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / classical algorithmic fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mehrabi2021survey"
+  },
+  {
+    "title": "Rejected Dialects: Biases Against African American Language in Reward Models",
+    "authors": "Mire et al.",
+    "year": 2025,
+    "venue": "NAACL Findings 2025",
+    "arxiv_id": "2502.12858",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.12858",
+    "contribution": "Reveals that RLHF reward models score African American Language texts ~4% lower accuracy than White Mainstream English equivalents and steer conversations toward WME, embedding dialect discrimination into alignment.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "dialect-sociolect-bias / fairness-in-conversational-agents"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mire2025rejected"
+  },
+  {
+    "title": "MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered",
+    "authors": "Mirza et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2507.01019",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2507.01019",
+    "contribution": "Introduces MALIBU, a benchmark measuring implicit bias in multi-agent LLM systems using a two-phase demographic persona evaluation; finds that standard bias mitigation methods can overcorrect by favoring marginalized personas rather than achieving neutrality.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "multi-agent bias benchmarking / evaluation methodology"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mirza2025malibu"
+  },
+  {
+    "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
+    "authors": "Mohammadi et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2507.21504",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2507.21504",
+    "contribution": "Proposes a two-dimensional evaluation framework for LLM agents covering assessment targets (behavior, capabilities, dependability, safety) and methodology, with emphasis on enterprise deployment concerns.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent evaluation / benchmarking survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "mohammadi2025evaluation"
+  },
+  {
+    "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
+    "authors": "Moher et al.",
+    "year": 2009,
+    "venue": "PLoS Medicine",
+    "arxiv_id": "",
+    "doi": "10.1371/journal.pmed.1000097",
+    "url": "https://doi.org/10.1371/journal.pmed.1000097",
+    "contribution": "The PRISMA statement; standard protocol for systematic review reporting.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "methodology / PRISMA"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "moher2009preferred"
+  },
+  {
+    "title": "CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models",
+    "authors": "Nangia et al.",
+    "year": 2020,
+    "venue": "Proceedings of EMNLP 2020",
+    "arxiv_id": "2010.00133",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2010.00133",
+    "contribution": "Presents 1,508 crowdsourced sentence pairs covering nine bias types to benchmark stereotypical bias in masked language models, finding all tested MLMs substantially favor stereotyping sentences.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias benchmark"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "nangia2020crows"
+  },
+  {
+    "title": "Biases in Large Language Models: Origins, Inventory, and Discussion",
+    "authors": "Navigli et al.",
+    "year": 2023,
+    "venue": "ACM JDIQ",
+    "arxiv_id": "",
+    "doi": "10.1145/3597307",
+    "url": "",
+    "contribution": "ACM-published taxonomy of LLM bias types; CSUR reviewers note its omission.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias taxonomy (ACM)"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "navigli2023biases"
+  },
+  {
+    "title": "\"You Gotta be a Doctor, Lin\": An Investigation of Name-Based Bias of Large Language Models in Employment Recommendations",
+    "authors": "Nghiem et al.",
+    "year": 2024,
+    "venue": "EMNLP 2024",
+    "arxiv_id": "2406.12232",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2406.12232",
+    "contribution": "Over 750,000 prompts with 320 demographically coded names reveal LLMs prefer White female candidates for hiring while recommending salaries up to 5% lower for women vs. men.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / hiring-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "nghiem2024you"
+  },
+  {
+    "title": "The Social Cost of Intelligence: Emergence, Propagation, and Amplification of Stereotypical Bias in Multi-Agent Systems",
+    "authors": "Nguyen et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2510.10943",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.10943",
+    "contribution": "Establishes that inter-agent communication can trigger up to 70% new bias emergence, propagate bias to over 80% of agents, and amplify stereotypes by more than 3x; also reveals that multi-agent systems are highly vulnerable to bias injection attacks.",
+    "branches": [
+      "multiagent-delegation-bias"
+    ],
+    "taxonomy_cells": [
+      "bias propagation and amplification in multi-agent systems"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "nguyen2025social"
+  },
+  {
+    "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+    "authors": "NIST",
+    "year": 2023,
+    "venue": "NIST AI 100-1",
+    "arxiv_id": "",
+    "doi": "10.6028/NIST.AI.100-1",
+    "url": "",
+    "contribution": "Standard US AI governance/risk framework; expected for governance anchoring.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "governance / framework"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "nist2023artificial"
+  },
+  {
+    "title": "Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations",
+    "authors": "Obermeyer et al.",
+    "year": 2019,
+    "venue": "Science",
+    "arxiv_id": "",
+    "doi": "10.1126/science.aax2342",
+    "url": "",
+    "contribution": "Landmark real-world healthcare algorithmic-bias audit.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "high-stakes / healthcare audit"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "obermeyer2019dissecting"
+  },
+  {
+    "title": "Sociodemographic biases in medical decision making by large language models",
+    "authors": "Omar et al.",
+    "year": 2025,
+    "venue": "Nature Medicine",
+    "arxiv_id": "",
+    "doi": "10.1038/s41591-025-03626-6",
+    "url": "https://www.nature.com/articles/s41591-025-03626-6",
+    "contribution": "Analyzes 1.7 million LLM outputs from 1,000 ED cases across 32 sociodemographic variations, showing Black, unhoused, and LGBTQIA+ patients are systematically over-triaged and low-income patients denied advanced testing.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / healthcare-domain / empirical-bias-audit"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "omar2025sociodemographic"
+  },
+  {
+    "title": "Training language models to follow instructions with human feedback",
+    "authors": "Ouyang et al.",
+    "year": 2022,
+    "venue": "NeurIPS 2022",
+    "arxiv_id": "2203.02155",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2203.02155",
+    "contribution": "Introduces InstructGPT, showing RLHF fine-tuning reduces toxic and biased outputs of GPT-3 while improving instruction-following; foundational RLHF-for-fairness reference.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / RLHF fine-tuning for alignment and debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "ouyang2022training"
+  },
+  {
+    "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+    "authors": "European Parliament and Council",
+    "year": 2024,
+    "venue": "Official Journal of the EU",
+    "arxiv_id": "",
+    "doi": "",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+    "contribution": "First comprehensive AI regulation; regulates high-stakes bias domains.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "governance / regulation"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "parliament2024regulation"
+  },
+  {
+    "title": "Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework",
+    "authors": "Parziale et al.",
+    "year": 2025,
+    "venue": "ICSE 2026",
+    "arxiv_id": "2512.16816",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2512.16816",
+    "contribution": "Proposes CAFFE, a structured intent-aware framework that formalizes LLM fairness test cases, auto-generates counterfactual test data, and uses semantic-similarity metrics to detect bias, improving fairness-bug detection by up to 60% over metamorphic approaches.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / counterfactual-fairness-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "parziale2025systematic"
+  },
+  {
+    "title": "Once Upon a Team: Investigating Bias in LLM-Driven Software Team Composition and Task Allocation",
+    "authors": "Parziale et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2601.03857",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2601.03857",
+    "contribution": "Across 3,000 simulated team-composition decisions, demonstrates that LLM agents allocate technical and leadership roles unevenly by candidate nationality and gender pronouns, reflecting stereotypes in agent-driven task planning.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / planning quality disparities across demographic groups"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "parziale2026once"
+  },
+  {
+    "title": "SCOPE: A Dataset of Stereotyped Prompts for Counterfactual Fairness Assessment of LLMs",
+    "authors": "Parziale et al.",
+    "year": 2026,
+    "venue": "IEEE (ICSE 2026 proceedings)",
+    "arxiv_id": "2604.05555",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2604.05555",
+    "contribution": "Releases 241,280 counterfactual prompt pairs across 9 bias dimensions, 1,536 demographic groups, and 4 communicative intents to enable systematic intent-aware counterfactual fairness evaluation of LLMs.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / counterfactual-fairness-benchmarks"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "parziale2026scope"
+  },
+  {
+    "title": "Presumed Cultural Identity: How Names Shape LLM Responses",
+    "authors": "Pawar et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2502.11995",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.11995",
+    "contribution": "Shows that LLMs make strong cultural-stereotype assumptions from user names across multiple languages and cultures, triggering biased suggestions even in ostensibly neutral suggestion-seeking queries.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "name-based-disparities / demographic-stereotyping-in-personalized-responses"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "pawar2025presumed"
+  },
+  {
+    "title": "A Review on Fairness in Machine Learning",
+    "authors": "Dana Pessach, Eytan Shmueli",
+    "year": 2022,
+    "venue": "ACM Computing Surveys, vol. 55, no. 3, Article 51",
+    "arxiv_id": "",
+    "doi": "10.1145/3494672",
+    "url": "",
+    "contribution": "Another CSUR fairness-in-ML survey covering causes of algorithmic bias and common group/individual fairness measures, focusing on classification tasks. CSUR reviewers will expect engagement with this survey as prior CSUR art. | DIFF: Pessach and Shmueli scope to classification and prediction, not to generation or agency. The agent-pipeline loci we taxonomize (tool selection, multi-agent delegation",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "pessach2022review"
+  },
+  {
+    "title": "Large Language Models Sensitivity to The Order of Options in Multiple-Choice Questions",
+    "authors": "Pezeshkpour et al.",
+    "year": 2023,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2308.11483",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2308.11483",
+    "contribution": "Quantifies LLM positional selection bias (13–75% performance gap under reordering), demonstrating that when agents choose tools from ordered lists, earlier-appearing options gain a systematic unfair advantage.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — positional/order bias in LLM selection affecting tool choice"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "pezeshkpour2023large"
+  },
+  {
+    "title": "A Toolbox for Surfacing Health Equity Harms and Biases in Large Language Models",
+    "authors": "Pfohl et al.",
+    "year": 2024,
+    "venue": "Nature Medicine",
+    "arxiv_id": "2403.12025",
+    "doi": "10.1038/s41591-024-03258-2",
+    "url": "https://arxiv.org/abs/2403.12025",
+    "contribution": "Introduces EquityMedQA, a collection of seven QA-level adversarial datasets (4,619 examples) plus a multifactorial human-assessment framework for surfacing health-equity harms in LLM-generated medical answers.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / clinical-medical-fairness"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "pfohl2024toolbox"
+  },
+  {
+    "title": "Bias patterns in the application of LLMs for clinical decision support: A comprehensive study",
+    "authors": "Poulain et al.",
+    "year": 2024,
+    "venue": "arXiv",
+    "arxiv_id": "2404.15149",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2404.15149",
+    "contribution": "Evaluates eight LLMs on standardized clinical vignettes via red-teaming, finding disparities across protected patient attributes and that Chain-of-Thought prompting reduces but does not eliminate clinical bias.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / healthcare-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "poulain2024bias"
+  },
+  {
+    "title": "Towards a framework for Bias Evaluation of AI Agents in Agentic Workflows",
+    "authors": "Unknown (ACM proceedings)",
+    "year": 2026,
+    "venue": "Proceedings of the 2026 Conference on Human Centred Artificial Intelligence — Education and Practice (ACM DL DOI: 10.1145/3777490.3777504)",
+    "arxiv_id": "",
+    "doi": "10.1145/3777490.3777504",
+    "url": "",
+    "contribution": "Proposes an evaluation framework for bias in agentic workflows using demographic swapping, contamination prevention, and statistical analysis for multi-agent workflows. Reports bias amplification factors up to 1.51x in sequential agent interactions. Addresses EU AI Act Article 10 compliance. | DIFF: Framework paper focused on evaluation methodology for multi-stage agentic bias (amplification in wo",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / empirical"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "proceedings2026framework"
+  },
+  {
+    "title": "Towards trustworthy agentic AI: a comprehensive survey of safety, robustness, privacy, and system security",
+    "authors": "Jinhu Qi, Muzhi Li, Jiahong Liu, Yuqin Shu, Dianzhi Yu, Shicheng Ma, Wenqian Cui, Yiyang Zhao, Yiyi Chen, Ruoxi Jiang, Irwin King, Zenglin Xu",
+    "year": 2026,
+    "venue": "arXiv preprint arXiv:2605.23989",
+    "arxiv_id": "2605.23989",
+    "doi": "",
+    "url": "",
+    "contribution": "Comprehensive survey of trustworthy agentic AI through two core pillars: Safety/Robustness and Privacy/System Security. Mentions fairness and accountability explicitly as 'relevant context rather than parallel chapters.' | DIFF: Fairness is explicitly secondary — the authors themselves state fairness is discussed as context, not a parallel chapter. The organizing axis is safety + privacy/security ",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "qi2026trustworthy"
+  },
+  {
+    "title": "ChatDev: Communicative Agents for Software Development",
+    "authors": "Qian et al.",
+    "year": 2024,
+    "venue": "ACL",
+    "arxiv_id": "2307.07924",
+    "doi": "",
+    "url": "",
+    "contribution": "Multi-agent software-development pipeline; relevant to delegation/task allocation.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / multi-agent framework"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "qian2024chatdev"
+  },
+  {
+    "title": "Tool Learning with Large Language Models: A Survey",
+    "authors": "Qu et al.",
+    "year": 2024,
+    "venue": "Frontiers of Computer Science",
+    "arxiv_id": "2405.17935",
+    "doi": "",
+    "url": "",
+    "contribution": "Comprehensive tool-learning survey; expected in tool-selection section.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / tool-learning survey"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "qu2024tool"
+  },
+  {
+    "title": "Mitigating Bias in Algorithmic Hiring: Evaluating Claims and Practices",
+    "authors": "Raghavan et al.",
+    "year": 2020,
+    "venue": "ACM FAccT",
+    "arxiv_id": "",
+    "doi": "10.1145/3351095.3372828",
+    "url": "",
+    "contribution": "Standard reference for algorithmic hiring bias claims and practices.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "high-stakes / hiring"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "raghavan2020mitigating"
+  },
+  {
+    "title": "Fairness in Agentic AI: A Unified Framework for Ethical and Equitable Multi-Agent System",
+    "authors": "Rajesh Ranjan, Shailja Gupta, Surya Narayan Singh",
+    "year": 2025,
+    "venue": "arXiv preprint arXiv:2502.07254",
+    "arxiv_id": "2502.07254",
+    "doi": "",
+    "url": "",
+    "contribution": "Self-described as 'a comprehensive survey of fairness in multi-agent AI' with a unified framework treating fairness as an emergent property of agent interactions. Addresses emergent biases, systemic inefficiencies, conflicting incentives, fairness constraints, and bias mitigation strategies in multi-agent systems. | DIFF: This is only 12 pages (4 figures, 1 table) — a short position/framework pape",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "ranjan2025fairness"
+  },
+  {
+    "title": "Responsible Agentic Reasoning and AI Agents: A Critical Survey",
+    "authors": "Shaina Raza, Ranjan Sapkota, Manoj Karkee, Christos Emmanouilidis",
+    "year": 2025,
+    "venue": "TechRxiv / IEEE preprint (DOI: 10.36227/techrxiv.175735299.97215847)",
+    "arxiv_id": "",
+    "doi": "10.36227/techrxiv.175735299.97215847",
+    "url": "",
+    "contribution": "Surveys responsible agentic AI (R2A2 framework) covering reasoning methods (CoT, ReAct, tree-of-thought, tool use, memory, RAG, agentic browsing) and responsible AI principles (fairness, privacy, transparency, accountability). Covers studies from January 2023 to November 2025. | DIFF: Organizing axis is responsible reasoning (fairness + privacy + safety + transparency + accountability together), n",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "raza2025responsible"
+  },
+  {
+    "title": "TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
+    "authors": "Shaina Raza, Ranjan Sapkota, Manoj Karkee, Christos Emmanouilidis",
+    "year": 2025,
+    "venue": "arXiv preprint arXiv:2506.04133",
+    "arxiv_id": "2506.04133",
+    "doi": "",
+    "url": "",
+    "contribution": "Reviews Trust, Risk, and Security Management in LLM-based multi-agent systems, with five pillars: Explainability, ModelOps, Security, Privacy, Lifecycle Governance. Proposes two novel metrics (Component Synergy Score, Tool Utilization Efficacy). | DIFF: Does not cover fairness/equity/bias as a dedicated topic — fairness is absent from the five TRiSM pillars. The organizing axis is security/risk ma",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "raza2025trism"
+  },
+  {
+    "title": "Gender Bias in Coreference Resolution (WinoGender)",
+    "authors": "Rudinger et al.",
+    "year": 2018,
+    "venue": "NAACL",
+    "arxiv_id": "1804.09301",
+    "doi": "",
+    "url": "",
+    "contribution": "WinoGender schemas; companion gender-bias benchmark.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / gender-bias benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "rudinger2018gender"
+  },
+  {
+    "title": "Whose Opinions Do Language Models Reflect?",
+    "authors": "Santurkar et al.",
+    "year": 2023,
+    "venue": "ICML",
+    "arxiv_id": "2303.17548",
+    "doi": "",
+    "url": "",
+    "contribution": "Shows LMs misrepresent demographic group opinions; relevant to personalization fairness.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "user modeling / opinion representation"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "santurkar2023whose"
+  },
+  {
+    "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+    "authors": "Schick et al.",
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "arxiv_id": "2302.04761",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2302.04761",
+    "contribution": "Trains LMs to self-supervisedly learn when and how to call external APIs (calculator, search, calendar) with minimal demonstrations, enabling zero-shot tool use without sacrificing language modeling.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / tool use"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "schick2023toolformer"
+  },
+  {
+    "title": "Fairness and Abstraction in Sociotechnical Systems",
+    "authors": "Selbst et al.",
+    "year": 2019,
+    "venue": "ACM FAccT",
+    "arxiv_id": "",
+    "doi": "10.1145/3287560.3287598",
+    "url": "",
+    "contribution": "Gold-standard critique of abstraction traps in fair ML; required for sociotechnical scope.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / sociotechnical"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "selbst2019fairness"
+  },
+  {
+    "title": "Towards Understanding Sycophancy in Language Models",
+    "authors": "Sharma et al.",
+    "year": 2024,
+    "venue": "ICLR",
+    "arxiv_id": "2310.13548",
+    "doi": "",
+    "url": "",
+    "contribution": "Definitive sycophancy study; sycophancy is a long-horizon fairness failure.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "long-horizon / sycophancy"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "sharma2024understanding"
+  },
+  {
+    "title": "FairSense: Long-Term Fairness Analysis of ML-Enabled Systems",
+    "authors": "She et al.",
+    "year": 2025,
+    "venue": "ICSE 2025",
+    "arxiv_id": "2501.01665",
+    "doi": "10.1109/ICSE55347.2025.00159",
+    "url": "https://arxiv.org/abs/2501.01665",
+    "contribution": "Proposes a Monte-Carlo simulation framework that detects long-term fairness violations caused by self-reinforcing feedback loops in deployed ML systems, validated on loan lending, opioid risk scoring, and predictive policing.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Long-horizon fairness analysis / feedback-loop-induced fairness drift in deployed systems"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "she2025fairsense"
+  },
+  {
+    "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
+    "authors": "Shen et al.",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "arxiv_id": "2303.17580",
+    "doi": "",
+    "url": "",
+    "contribution": "Canonical tool-orchestration agent; relevant to tool-selection.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / tool orchestration"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "shen2023hugginggpt"
+  },
+  {
+    "title": "The Woman Worked as a Babysitter: On Biases in Language Generation",
+    "authors": "Sheng et al.",
+    "year": 2019,
+    "venue": "EMNLP",
+    "arxiv_id": "1909.01326",
+    "doi": "",
+    "url": "",
+    "contribution": "Introduces the regard metric for NLG bias.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / regard metric"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "sheng2019woman"
+  },
+  {
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "authors": "Shinn et al.",
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "arxiv_id": "2303.11366",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "contribution": "Proposes Reflexion, a framework enabling agents to improve via verbal self-reflection stored in episodic memory, avoiding weight updates and achieving 91% on HumanEval.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / memory and self-improvement"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "shinn2023reflexion"
+  },
+  {
+    "title": "Old Habits Die Hard: How Conversational History Geometrically Traps LLMs",
+    "authors": "Simhi et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2603.03308",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2603.03308",
+    "contribution": "Uses Markov chain modelling and geometric analysis of latent representations to show that prior biased interactions create geometric traps in LLM hidden space that persist into future turns.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / context-window history effects / bias persistence"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "simhi2026old"
+  },
+  {
+    "title": "Bias-Aware Agent: Enhancing Fairness in AI-Driven Knowledge Retrieval",
+    "authors": "Singh et al.",
+    "year": 2025,
+    "venue": "Companion Proceedings of the ACM Web Conference 2025 (WWW '25)",
+    "arxiv_id": "2503.21237",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2503.21237",
+    "contribution": "Integrates bias detectors as tools within an agentic retrieval framework to surface and mitigate embedded biases in retrieved content, promoting equitable information access.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — bias-aware tool integration for fair retrieval"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "singh2025bias"
+  },
+  {
+    "title": "Bias Mitigation Agent: Optimizing Source Selection for Fair and Balanced Knowledge Retrieval",
+    "authors": "Singh et al.",
+    "year": 2025,
+    "venue": "KDD 2025 Agent4IR Workshop",
+    "arxiv_id": "2508.18724",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2508.18724",
+    "contribution": "Presents a multi-agent system that optimizes knowledge source selection to minimize bias, achieving an 81.82% reduction in biased content versus baseline retrieval approaches.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — source selection optimization for fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "singh2025biasb"
+  },
+  {
+    "title": "\"I'm sorry to hear that\": Finding New Biases in Language Models with a Holistic Descriptor Dataset",
+    "authors": "Smith et al.",
+    "year": 2022,
+    "venue": "Proceedings of EMNLP 2022",
+    "arxiv_id": "2205.09209",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2205.09209",
+    "contribution": "Introduces HolisticBias, a dataset of ~600 demographic descriptors across 13 axes generating 450,000+ sentence prompts, enabling broad-coverage bias evaluation in generative LLMs.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / bias benchmark"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "smith2022sorry"
+  },
+  {
+    "title": "ToolTweak: An Attack on Tool Selection in LLM-based Agents",
+    "authors": "Sneh et al.",
+    "year": 2025,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2510.02554",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2510.02554",
+    "contribution": "Demonstrates that iterative manipulation of tool names and descriptions biases agents toward specific tools (baseline 20% → 81% selection rate), creating unfair provider advantage and distributional shifts in tool ecosystems.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — adversarial tool description manipulation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "sneh2025tooltweak"
+  },
+  {
+    "title": "Towards Large Language Models that Benefit for All: Benchmarking Group Fairness in Reward Models",
+    "authors": "Song et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2503.07806",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2503.07806",
+    "contribution": "Benchmarks group fairness in LLM reward models, showing all evaluated reward models exhibit statistically significant group unfairness, and disentangles bias contributions from pre-training vs. RLHF fine-tuning stages.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / reward-model-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "song2025large"
+  },
+  {
+    "title": "Software Fairness: An Analysis and Survey",
+    "authors": "Ezekiel Soremekun, Mike Papadakis, Maxime Cordy, Yves Le Traon",
+    "year": 2025,
+    "venue": "ACM Computing Surveys, vol. 58, no. 3 (October 2025)",
+    "arxiv_id": "2205.08809",
+    "doi": "10.1145/3762170",
+    "url": "",
+    "contribution": "CSUR survey analysing 164 publications on fairness as a software engineering property, covering specification, testing, and mitigation of bias in learning-based software. Mentions intersectional and sequential fairness as open challenges. | DIFF: Soremekun et al. treat fairness as a software property of ML systems in general, with emphasis on testing and verification methods. They do not cover LLM",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "soremekun2025software"
+  },
+  {
+    "title": "Beyond Memorization: Violating Privacy Via Inference with Large Language Models",
+    "authors": "Staab et al.",
+    "year": 2023,
+    "venue": "arXiv preprint (ICLR 2024 submission)",
+    "arxiv_id": "2310.07298",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2310.07298",
+    "contribution": "Demonstrates that LLMs can infer sensitive personal attributes (location, income, sex) from innocuous user text with up to 85% accuracy, and that anonymization and alignment fail as defenses.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "user-attribute-inference / privacy-harms"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "staab2023memorization"
+  },
+  {
+    "title": "Cognitive Architectures for Language Agents",
+    "authors": "Sumers et al.",
+    "year": 2024,
+    "venue": "Transactions on Machine Learning Research (TMLR)",
+    "arxiv_id": "2309.02427",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2309.02427",
+    "contribution": "Proposes CoALA, a systematic framework organizing language agents around modular memory types, a structured action space, and a generalized decision-making process, grounded in cognitive science.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / taxonomy and cognitive foundations"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "sumers2024cognitive"
+  },
+  {
+    "title": "What-is and How-to for Fairness in Machine Learning: A Survey, Reflection, and Perspective",
+    "authors": "Zeyu Tang, Jiji Zhang, Kun Zhang",
+    "year": 2023,
+    "venue": "ACM Computing Surveys, vol. 55, no. 13s, Article 299",
+    "arxiv_id": "2206.04101",
+    "doi": "10.1145/3597199",
+    "url": "",
+    "contribution": "CSUR survey linking ML fairness notions to moral/political philosophy (theories of justice) and addressing long-term impact of decisions. The long-term fairness angle touches our §3.6 on long-horizon drift. | DIFF: Tang et al. discuss long-term impact abstractly in a classical ML framing. We operationalize long-term fairness in LLM agents empirically — multi-turn degradation (FairMT-Bench), sycoph",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "tang2023what"
+  },
+  {
+    "title": "Is Your LLM-as-a-Recommender Agent Trustable? LLMs' Recommendation is Easily Hacked by Biases (Preferences)",
+    "authors": "Tang et al.",
+    "year": 2026,
+    "venue": "ArXiv preprint",
+    "arxiv_id": "2603.17417",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2603.17417",
+    "contribution": "Introduces BiasRecBench covering paper review, e-commerce, and job recruitment, showing that even state-of-the-art LLM agents (GPT-4o, Gemini-2.5-Pro) are systematically biased toward contextual cues rather than quality when acting as recommender agents.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — LLM-as-recommender agent bias and trustworthiness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "tang2026your"
+  },
+  {
+    "title": "Different Demographic Cues Yield Inconsistent Conclusions About LLM Personalization and Bias",
+    "authors": "Tonneau et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2601.18486",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2601.18486",
+    "contribution": "Analyzes 14.8M prompts showing that different demographic markers (names vs. other cues) for the same group trigger only partially overlapping response changes in LLMs, calling for multi-cue evaluations.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "user-attribute-inference / demographic-stereotyping-in-personalized-responses"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "tonneau2026different"
+  },
+  {
+    "title": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+    "authors": "Turpin et al.",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "arxiv_id": "2305.04388",
+    "doi": "",
+    "url": "",
+    "contribution": "CoT can reinforce social stereotypes without stating them; key for planning-bias section.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "planning / reasoning faithfulness"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "turpin2023language"
+  },
+  {
+    "title": "Algorithms of Oppression: How Search Engines Reinforce Racism",
+    "authors": "Noble S. U.",
+    "year": 2018,
+    "venue": "NYU Press",
+    "arxiv_id": "",
+    "doi": "10.2307/j.ctt1pwt9w5",
+    "url": "https://nyupress.org/9781479837243/algorithms-of-oppression/",
+    "contribution": "Seminal book demonstrating that commercial search engine result curation systematically disadvantages people of color, providing foundational evidence that agents relying on web search APIs inherit structural racial biases.",
+    "branches": [
+      "tool-api-selection-bias"
+    ],
+    "taxonomy_cells": [
+      "Tool/API Selection Bias — adjacent: seminal work on search-engine racial bias propagated through agent tool use"
+    ],
+    "verified": "web-multiple-sources",
+    "bibkey": "u2018algorithms"
+  },
+  {
+    "title": "Agentic AI in Healthcare & Medicine: A Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-based Agents",
+    "authors": "Vatsal et al.",
+    "year": 2026,
+    "venue": "IEEE Access",
+    "arxiv_id": "2602.04813",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2602.04813",
+    "contribution": "Reviews 49 healthcare LLM-agent studies across a seven-dimensional taxonomy revealing critical implementation gaps in event-triggered activation, drift detection, and action-oriented tasks.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Domain-specific agent taxonomy / healthcare"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "vatsal2026agentic"
+  },
+  {
+    "title": "Are Emily and Greg Still More Employable than Lakisha and Jamal? Investigating Algorithmic Hiring Bias in the Era of ChatGPT",
+    "authors": "Veldanda et al.",
+    "year": 2023,
+    "venue": "EMNLP 2024 (arXiv preprint 2023)",
+    "arxiv_id": "2310.05135",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2310.05135",
+    "contribution": "Replicates the Bertrand-Mullainathan audit on GPT-3.5, Bard, Claude, and Llama for resume-job matching and summarization, finding models are largely robust on race/gender but biased on pregnancy and political affiliation.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / hiring-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "veldanda2023emily"
+  },
+  {
+    "title": "Exploring Safety-Utility Trade-Offs in Personalized Language Models",
+    "authors": "Vijjini et al.",
+    "year": 2024,
+    "venue": "NAACL 2025",
+    "arxiv_id": "2406.11107",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2406.11107",
+    "contribution": "Systematically documents personalization bias across Llama, Mistral, GPT-3.5, and GPT-4o — user identity affects both safety (harmful-prompt compliance) and utility (knowledge, math, coding) performance.",
+    "branches": [
+      "user-modeling-personalization-harms"
+    ],
+    "taxonomy_cells": [
+      "personalization-bias / fairness-in-conversational-agents"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "vijjini2024exploring"
+  },
+  {
+    "title": "Kelly is a Warm Person, Joseph is a Role Model: Gender Biases in LLM-Generated Reference Letters",
+    "authors": "Wan et al.",
+    "year": 2023,
+    "venue": "EMNLP Findings",
+    "arxiv_id": "2310.09219",
+    "doi": "",
+    "url": "",
+    "contribution": "LLM-generated professional documents perpetuate gender stereotypes.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "high-stakes / hiring documents"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "wan2023kelly"
+  },
+  {
+    "title": "White Men Lead, Black Women Help? Benchmarking and Mitigating Language Agency Social Biases in LLMs",
+    "authors": "Wan and Chang",
+    "year": 2025,
+    "venue": "ACL",
+    "arxiv_id": "2404.10508",
+    "doi": "",
+    "url": "",
+    "contribution": "LABE benchmark; intersectional language-agency bias in LLM-generated texts.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "foundations / intersectional agency bias"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "wan2025white"
+  },
+  {
+    "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
+    "authors": "Wang et al.",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "arxiv_id": "2306.11698",
+    "doi": "",
+    "url": "",
+    "contribution": "NeurIPS Outstanding Paper; comprehensive trustworthiness+fairness assessment of GPT models.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / trustworthiness benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "wang2023decodingtrust"
+  },
+  {
+    "title": "A Survey on the Fairness of Recommender Systems",
+    "authors": "Yifan Wang, Weizhi Ma, Min Zhang, Yiqun Liu, Shaoping Ma",
+    "year": 2023,
+    "venue": "ACM Transactions on Information Systems, vol. 41, no. 2, Article 38",
+    "arxiv_id": "2206.03761",
+    "doi": "10.1145/3547333",
+    "url": "",
+    "contribution": "ACM TOIS survey on fairness across consumer, provider, and platform stakeholders in recommender systems. Relevant to §3.5 (personalization harms) and the CFaiRLLM paper we cite. | DIFF: Wang et al. cover classical recommender systems without LLM backbone. We cover LLM-based agents whose 'recommendation' is embedded in a broader action pipeline with tool use, memory, and multi-agent coordination. T",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "wang2023survey"
+  },
+  {
+    "title": "CEB: Compositional Evaluation Benchmark for Fairness in Large Language Models",
+    "authors": "Wang et al.",
+    "year": 2024,
+    "venue": "ICLR 2025 Spotlight",
+    "arxiv_id": "2407.02408",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2407.02408",
+    "contribution": "Introduces a compositional taxonomy organizing bias datasets along three dimensions (bias type, social group, task), unifying evaluation across inconsistent prior benchmarks and showing that bias levels vary significantly across dimensions.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / composite-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wang2024ceb"
+  },
+  {
+    "title": "Observations and Remedies for Large Language Model Bias in Self-Consuming Performative Loop",
+    "authors": "Wang et al.",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2601.05184",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2601.05184",
+    "contribution": "Introduces the Self-Consuming Performative Loop (SCPL) framework for LLMs and shows that iterative fine-tuning on self-generated data amplifies preference bias and degrades fairness for underserved groups; proposes reward-based rejection sampling as mitigation.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Iterative LLM self-training bias drift / feedback-loop fairness degradation"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wang2026observations"
+  },
+  {
+    "title": "Ethical and Social Risks of Harm from Language Models",
+    "authors": "Weidinger et al.",
+    "year": 2021,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2112.04359",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2112.04359",
+    "contribution": "Provides a structured taxonomy of 21 risks from LLMs across six areas including discrimination and exclusion, forming a widely-cited harm framework for LLM safety and fairness research.",
+    "branches": [
+      "foundations"
+    ],
+    "taxonomy_cells": [
+      "foundations / LLM risks taxonomy"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "weidinger2021ethical"
+  },
+  {
+    "title": "Gender, Race, and Intersectional Bias in Resume Screening via Language Model Retrieval",
+    "authors": "Wilson et al.",
+    "year": 2024,
+    "venue": "arXiv",
+    "arxiv_id": "2407.20371",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2407.20371",
+    "contribution": "Audits Massive Text Embedding models on 500+ resumes across nine occupations, finding White-associated names favoured in 85% of cases and Black males disadvantaged in up to 100% of cases.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / hiring-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wilson2024gender"
+  },
+  {
+    "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+    "authors": "Wu et al.",
+    "year": 2023,
+    "venue": "arXiv preprint (ICLR 2024 workshop)",
+    "arxiv_id": "2308.08155",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2308.08155",
+    "contribution": "Presents an open-source framework for building multi-agent systems where customizable, conversable agents collaborate via natural language and code across diverse tasks.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / multi-agent coordination"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wu2023autogen"
+  },
+  {
+    "title": "FMBench: Benchmarking Fairness in Multimodal Large Language Models on Medical Tasks",
+    "authors": "Wu et al.",
+    "year": 2024,
+    "venue": "arXiv preprint (ICLR 2025 workshop)",
+    "arxiv_id": "2410.01089",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2410.01089",
+    "contribution": "First benchmark for multimodal LLM fairness on medical VQA and report generation, covering 40,000 annotated instances across race, ethnicity, language, and gender, with a novel Fairness-Aware Performance (FAP) metric.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / clinical-medical-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wu2024fmbench"
+  },
+  {
+    "title": "Does Reasoning Introduce Bias? A Study of Social Bias Evaluation and Mitigation in LLM Reasoning",
+    "authors": "Wu et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2502.15361",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.15361",
+    "contribution": "Demonstrates that chain-of-thought reasoning steps in models like DeepSeek-R1 and o1 correlate with stereotypical outputs; proposes ADBP to detect bias by monitoring prediction shifts across reasoning stages.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / chain-of-thought reasoning fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wu2025reasoning"
+  },
+  {
+    "title": "Fairness Feedback Loops: Training on Synthetic Data Amplifies Bias",
+    "authors": "Wyllie et al.",
+    "year": 2024,
+    "venue": "ACM FAccT 2024",
+    "arxiv_id": "2403.07857",
+    "doi": "10.1145/3630106.3659029",
+    "url": "https://arxiv.org/abs/2403.07857",
+    "contribution": "Formalizes model-induced distribution shift (MIDS) where model outputs pollute future training sets, degrading fairness and minority representation through successive retraining iterations; introduces algorithmic reparation as a remedy.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Feedback-loop fairness degradation / iterative training bias amplification"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "wyllie2024fairness"
+  },
+  {
+    "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
+    "authors": "Xiao et al.",
+    "year": 2024,
+    "venue": "Journal of the American Statistical Association 2025",
+    "arxiv_id": "2405.16455",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2405.16455",
+    "contribution": "Identifies that KL-regularized RLHF causes preference collapse for minority groups and proposes Preference Matching RLHF with a novel regularizer that achieves 29-41% improvement in alignment with diverse human preferences.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / RLHF fairness / post-hoc calibration"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xiao2024algorithmic"
+  },
+  {
+    "title": "FairMedQA: Benchmarking Bias in Large Language Models for Medical Question Answering",
+    "authors": "Xiao et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2505.19562",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2505.19562",
+    "contribution": "Introduces a QA-level medical fairness benchmark of 4,806 counterfactual USMLE vignette pairs varying race, sex, and SES, finding accuracy disparities of 3–19 pp across 12 LLMs and exposing biases ≥12 pp larger than prior CPV benchmark.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / clinical-medical-fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xiao2025fairmedqa"
+  },
+  {
+    "title": "Adapting Static Fairness to Sequential Decision-Making: Bias Mitigation Strategies towards Equal Long-term Benefit Rate",
+    "authors": "Xu et al.",
+    "year": 2024,
+    "venue": "ICML 2024",
+    "arxiv_id": "2309.03426",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2309.03426",
+    "contribution": "Demonstrates that applying static fairness criteria in sequential MDP settings paradoxically increases temporal bias; introduces ELBERT fairness constraint and policy-gradient method to mitigate long-horizon discriminatory effects.",
+    "branches": [
+      "longhorizon-fairness-drift"
+    ],
+    "taxonomy_cells": [
+      "Sequential decision fairness / temporal drift from static-to-dynamic fairness mismatch"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xu2024adapting"
+  },
+  {
+    "title": "Mitigating Social Bias in Large Language Models: A Multi-Objective Approach within a Multi-Agent Framework",
+    "authors": "Xu et al.",
+    "year": 2024,
+    "venue": "AAAI 2025",
+    "arxiv_id": "2412.15504",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2412.15504",
+    "contribution": "Proposes MOMA, a multi-agent framework using causal interventions on bias-related inputs, reducing bias scores by up to 87.7% on BBQ while maintaining task accuracy with only marginal degradation.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / multi-agent debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xu2024mitigating"
+  },
+  {
+    "title": "Quantifying Fairness in LLMs Beyond Tokens: A Semantic and Statistical Perspective",
+    "authors": "Xu et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2506.19028",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2506.19028",
+    "contribution": "Introduces FiSCo, a claim-level statistical framework formalizing group counterfactual fairness that applies entailment-based hypothesis testing to detect subtle semantic disparities in long-form LLM outputs across demographic groups.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-metrics / semantic-fairness-metrics"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "xu2025quantifying"
+  },
+  {
+    "title": "Does the Prompt-based Large Language Model Recognize Students' Demographics and Introduce Bias in Essay Scoring?",
+    "authors": "Yang et al.",
+    "year": 2025,
+    "venue": "arXiv",
+    "arxiv_id": "2504.21330",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2504.21330",
+    "contribution": "Shows GPT-4o infers students' first-language background from 25,000+ essays and produces larger scoring errors for non-native English writers when demographic identity is correctly inferred.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / education-domain / empirical-bias-audit"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "yang2025prompt"
+  },
+  {
+    "title": "Fairness in Multi-Agent Systems for Software Engineering: An SDLC-Oriented Rapid Review",
+    "authors": "Corey Yang-Smith, Ronnie de Souza Santos, Ahmad Abdellatif",
+    "year": 2026,
+    "venue": "LLMTrust Workshop at FSE Companion 2026 (arXiv:2604.13103)",
+    "arxiv_id": "2604.13103",
+    "doi": "",
+    "url": "",
+    "contribution": "Rapid review (18 retained from 350) of fairness in LLM multi-agent systems for software development. Characterizes fairness through trustworthy AI principles, bias reduction, and interactional dynamics. Identifies gaps: fragmented evaluation, limited generalization, scarce governance. | DIFF: Domain-restricted to software engineering; rapid review methodology (only 18 papers); does not organize by",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "yangsmith2026fairness"
+  },
+  {
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "authors": "Yao et al.",
+    "year": 2023,
+    "venue": "ICLR 2023",
+    "arxiv_id": "2210.03629",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "contribution": "Introduces the ReAct prompting paradigm that interleaves reasoning traces with task-specific actions, enabling agents to query external knowledge sources and handle multi-step decision-making.",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent architecture / planning-action loop"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "yao2023react"
+  },
+  {
+    "title": "A Survey on Evaluation of LLM-based Agents",
+    "authors": "Asaf Yehudai, Lilach Eden, Alan Li, Guy Uziel, Yilun Zhao, Roy Bar-Haim, Arman Cohan, Michal Shmueli-Scheuer",
+    "year": 2025,
+    "venue": "arXiv preprint arXiv:2503.16416 (revised April 2026)",
+    "arxiv_id": "2503.16416",
+    "doi": "",
+    "url": "",
+    "contribution": "Comprehensive survey of LLM agent evaluation through five perspectives: core capabilities, application-specific benchmarks, generalist evaluation, benchmark dimensions, and evaluation frameworks. Mentions bias mitigation as a gap in current benchmarks. | DIFF: Not focused on fairness at all — fairness/bias appears as an explicitly identified gap ('evaluations still lack comprehensive tests for bia",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "yehudai2025survey"
+  },
+  {
+    "title": "A Survey on Trustworthy LLM Agents: Threats and Countermeasures",
+    "authors": "Yu et al.",
+    "year": 2025,
+    "venue": "ACM SIGKDD 2025",
+    "arxiv_id": "2503.09648",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2503.09648",
+    "contribution": "Proposes TrustAgent framework examining threats and defenses for LLM agents across intrinsic dimensions (brain, memory, tool) and extrinsic aspects (user, agent, environment).",
+    "branches": [
+      "llm-agents-general"
+    ],
+    "taxonomy_cells": [
+      "Agent safety / trustworthiness and robustness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "yu2025survey"
+  },
+  {
+    "title": "Coding Inequity: Assessing GPT-4's Potential for Perpetuating Racial and Gender Biases in Healthcare",
+    "authors": "Zack et al.",
+    "year": 2024,
+    "venue": "The Lancet Digital Health",
+    "arxiv_id": "",
+    "doi": "10.1016/S2589-7500(23)00225-X",
+    "url": "https://www.thelancet.com/journals/landig/article/PIIS2589-7500(23)00225-X/fulltext",
+    "contribution": "Demonstrates that GPT-4 produces systematically biased diagnostic and treatment recommendations across race and gender in four clinical use cases including medical education and plan generation.",
+    "branches": [
+      "high-stakes-domains"
+    ],
+    "taxonomy_cells": [
+      "agent-deployment / healthcare-domain / empirical-bias-audit"
+    ],
+    "verified": "doi-resolved",
+    "bibkey": "zack2024coding"
+  },
+  {
+    "title": "Fairness in Ranking: A Survey",
+    "authors": "Zehlike et al.",
+    "year": 2022,
+    "venue": "ACM Computing Surveys, vol. 55, no. 6, Article 118",
+    "arxiv_id": "2103.14000",
+    "doi": "10.1145/3533379",
+    "url": "",
+    "contribution": "CSUR survey on fairness in score-based ranking algorithms. Directly relevant to our §3.1 (tool/API selection bias) and §3.2 (retrieval bias), where ranking fairness determines which tools or documents are prioritized. CSUR reviewers will expect engagement. | DIFF: Zehlike et al. treat fairness as a property of a static ranking algorithm. We situate retrieval and tool ranking inside an agent pipeli",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "zehlike2022fairness"
+  },
+  {
+    "title": "Causal Prompting: Debiasing Large Language Model Prompting based on Front-Door Adjustment",
+    "authors": "Zhang et al.",
+    "year": 2024,
+    "venue": "AAAI 2025",
+    "arxiv_id": "2403.02738",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2403.02738",
+    "contribution": "First work applying front-door causal adjustment to LLM prompting for debiasing, using chain-of-thought as a mediating variable to mitigate bias across seven NLP datasets without accessing model parameters.",
+    "branches": [
+      "mitigation"
+    ],
+    "taxonomy_cells": [
+      "mitigation / prompting-based / causal debiasing"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "zhang2024causal"
+  },
+  {
+    "title": "Datasets for Fairness in Language Models: An In-Depth Survey",
+    "authors": "Zhang et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2506.23411",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2506.23411",
+    "contribution": "Surveys and characterizes 16 popular fairness datasets across provenance, demographic scope, annotation design, and intended use, proposing a unified evaluation framework that uncovers overlooked demographic biases distorting benchmark conclusions.",
+    "branches": [
+      "evaluation-metrics-benchmarks"
+    ],
+    "taxonomy_cells": [
+      "evaluation-benchmarks / fairness-dataset-survey"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "zhang2025datasets"
+  },
+  {
+    "title": "Evaluating the Effect of Retrieval Augmentation on Social Biases",
+    "authors": "Zhang et al.",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2502.17611",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2502.17611",
+    "contribution": "Demonstrates across English, Japanese, and Chinese that biases in retrieved document collections are systematically amplified in RAG-generated responses even when the base LLM exhibits low baseline bias.",
+    "branches": [
+      "memory-retrieval-bias"
+    ],
+    "taxonomy_cells": [
+      "memory-retrieval-bias / retrieval bias amplification"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "zhang2025evaluating"
+  },
+  {
+    "title": "Generalizability of Large Language Model-Based Agents: A Comprehensive Survey",
+    "authors": "Minxing Zhang, Yi Yang, Roy Xie, Bhuwan Dhingra, Shuyan Zhou, Jian Pei",
+    "year": 2026,
+    "venue": "ACM Computing Surveys, vol. 58, no. 10, Article 263",
+    "arxiv_id": "2509.16330",
+    "doi": "10.1145/3794858",
+    "url": "",
+    "contribution": "CSUR survey on LLM agent generalizability — consistent performance across varied instructions, tasks, environments, and domains. Categorizes methods targeting the LLM backbone, agent components, or LLM-component interaction. No fairness content. | DIFF: Zhang et al. define generalizability as performance consistency; we define fairness as outcome parity across demographic groups. These are orthogo",
+    "branches": [
+      "prior-art-additions"
+    ],
+    "taxonomy_cells": [
+      "prior-art / survey"
+    ],
+    "verified": "acm-dl",
+    "bibkey": "zhang2026generalizability"
+  },
+  {
+    "title": "Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods (WinoBias)",
+    "authors": "Zhao et al.",
+    "year": 2018,
+    "venue": "NAACL",
+    "arxiv_id": "1804.06876",
+    "doi": "",
+    "url": "",
+    "contribution": "WinoBias dataset; widely used gender-bias coreference benchmark.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "evaluation / gender-bias benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "zhao2018gender"
+  },
+  {
+    "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+    "authors": "Zhou et al.",
+    "year": 2024,
+    "venue": "ICLR",
+    "arxiv_id": "2307.13854",
+    "doi": "",
+    "url": "",
+    "contribution": "Standard web-agent benchmark; relevant to trajectory-level evaluation gap.",
+    "branches": [
+      "foundational-must-cite"
+    ],
+    "taxonomy_cells": [
+      "agent foundations / web-agent benchmark"
+    ],
+    "verified": "agent-verified",
+    "bibkey": "zhou2024webarena"
+  },
+  {
+    "title": "Veracity Bias and Beyond: Uncovering LLMs' Hidden Beliefs in Problem-Solving Reasoning",
+    "authors": "Zhou et al.",
+    "year": 2025,
+    "venue": "ACL 2025 (Main)",
+    "arxiv_id": "2505.16128",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2505.16128",
+    "contribution": "Identifies attribution and evaluation biases in LLM problem-solving reasoning, finding models disproportionately assign correct math/coding solutions to non-African-American groups; biases are embedded in reasoning processes not just surface outputs.",
+    "branches": [
+      "planning-decomposition-bias"
+    ],
+    "taxonomy_cells": [
+      "planning-decomposition-bias / chain-of-thought reasoning fairness"
+    ],
+    "verified": "arxiv-id-resolved",
+    "bibkey": "zhou2025veracity"
+  }
+]
