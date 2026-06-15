@@ -1,4 +1,4 @@
-\documentclass[acmsmall]{acmart}
+\documentclass[acmsmall,nonacm]{acmart}
 
 %% ACM journal metadata
 \acmJournal{CSUR}
@@ -7,12 +7,13 @@
 \acmNumber{1}
 \acmArticle{1}
 \acmMonth{6}
-\settopmatter{printacmref=true}
+\settopmatter{printacmref=false}
 
 %% Extra packages (acmart loads hyperref and amsmath automatically)
 %% Do NOT load amsmath/amssymb here: acmart already loads them,
 %% and a second load causes \Bbbk conflict with MiKTeX's amssymb.
 \usepackage{booktabs}
+\usepackage{makecell}
 \usepackage{longtable}
 \usepackage{forest}
 \usepackage{tikz}
@@ -179,14 +180,15 @@ Among all surveyed works, this survey is the first to simultaneously: (a) dedica
 \centering\footnotesize
 \caption{Survey comparison: eight near-neighbor surveys against this survey on nine dimensions.}
 \label{tab:survey-comparison}
+{\setlength{\tabcolsep}{3pt}%
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{|p{0.110\textwidth}|p{0.060\textwidth}|p{0.115\textwidth}|p{0.105\textwidth}|p{0.085\textwidth}|p{0.075\textwidth}|p{0.070\textwidth}|p{0.070\textwidth}|p{0.085\textwidth}|p{0.080\textwidth}|}
+\begin{tabular}{|p{0.105\textwidth}|p{0.045\textwidth}|p{0.105\textwidth}|p{0.110\textwidth}|p{0.085\textwidth}|p{0.080\textwidth}|p{0.095\textwidth}|p{0.072\textwidth}|p{0.085\textwidth}|p{0.100\textwidth}|}
 \toprule
-\textbf{Survey} & \textbf{Year} & \textbf{Venue} & \textbf{Organizing axis} & \textbf{Agent coverage} & \textbf{\shortstack[l]{Fairness-\\dedicated}} & \textbf{\shortstack[l]{Component-\\level}} & \textbf{\shortstack[l]{Corpus\\size}} & \textbf{\shortstack[l]{Original\\results}} & \textbf{\shortstack[l]{Audit/executable\\metric?}} \\
+\textbf{Survey} & \textbf{Year} & \textbf{Venue} & \textbf{\makecell[l]{Organizing\\axis}} & \textbf{\makecell[l]{Agent\\coverage}} & \textbf{\makecell[l]{Fairness-\\dedicated}} & \textbf{\makecell[l]{Compo-\\nent\\level}} & \textbf{\makecell[l]{Corpus\\size}} & \textbf{\makecell[l]{Original\\results}} & \textbf{\makecell[l]{Audit /\\exec.\\metric?}} \\
 \midrule
-Mehrabi et al. \cite{mehrabi2021survey} & 2021 & ACM CSUR & Bias source $\times$ ML stage & None & Yes & No & ~150 & No & No \\
-Gallegos et al. \cite{gallegos2024bias} & 2024 & \emph{Computational Lin\-guis\-tics} & Bias type $\times$ LLM task & Peripheral & Yes & No & ~250 & Partial & No \\
-Chu et al. \cite{chu2024fairness} & 2024 & ACM SIGKDD Expl. & Fairness definition $\times$ LLM task & None & Yes & No & ~100 & No & No \\
+Mehrabi et al. \cite{mehrabi2021survey} & 2021 & ACM CSUR & Bias source $\times$\allowbreak{} ML stage & None & Yes & No & ~150 & No & No \\
+Gallegos et al. \cite{gallegos2024bias} & 2024 & \emph{Computational Lin\-guis\-tics} & Bias type $\times$\allowbreak{} LLM task & Peripheral & Yes & No & ~250 & Partial & No \\
+Chu et al. \cite{chu2024fairness} & 2024 & ACM SIGKDD Expl. & Fairness definition $\times$\allowbreak{} LLM task & None & Yes & No & ~100 & No & No \\
 Mohammadi et al. \cite{mohammadi2025evaluation} & 2025 & arXiv & Evaluation dimension & Full & No & No & ~200 & No & No \\
 Ranjan et al. \cite{ranjan2025fairness} & 2025 & arXiv (position) & MAS ethical pillars & Classical MAS only & Yes & No & ~30 & No & No \\
 Ebrahimi \& Asudeh \cite{ebrahimi2025survey} & 2025 & Preprint (RTAF) & Trust pillars (RTAF) & LLM-MAS & Partial (1 of 4) & No & ~100 & No & No \\
@@ -196,9 +198,10 @@ Yu et al. \cite{yu2025survey} & 2025 & ACM SIGKDD & Trust\-worthy AI threats & F
 Mayil\-vaghanan et al. \cite{mayilvaghanan2026counterfactual} & 2026 & arXiv & CFR/MASD metric & Single domain & Yes & No & N/A & Yes & Single-domain \\
 \textbf{This survey} & \textbf{2026} & \textbf{ACM CSUR (target)} & \textbf{BCF locus $\times$ operator} & \textbf{Full (all 6 comp.)} & \textbf{Yes} & \textbf{Yes} & \textbf{202} & \textbf{Protocol specified} & \textbf{Action-level (tool, esc., plan)} \\
 \bottomrule
-\end{tabular}%
+\end{tabular}}%
 }
-\end{table*}
+\end{table*}%
+%% (table*, makecell-wrapped headers, tabcolsep 4pt; no resizebox so column widths bind)
 
 \emph{Takeaway: this survey is the only work combining whole-survey fairness dedication, agent-component organization, a named formal framework (BCF), action-level executable metrics, and a $\geq$200-paper corpus, the (AMPLIFY, GENERATE) quadrant of the BCF has no coverage in any prior survey.}
 
