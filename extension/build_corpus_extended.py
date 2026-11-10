@@ -5,6 +5,12 @@ screen2_final.jsonl), plus 4 admitted on re-screening under the eligibility amen
 2026-11-10 (CODEBOOK.md Part F; eligibility_amended = true in screen_final.jsonl). The 4 carry no
 locus tag and enter neither coverage figure.
 
+Every record carries a `category` (CODEBOOK.md Part G, strict rule of 2026-11-10): topical, prior-art,
+contextual or contextual-mechanism-precursor. It is taken from the paper lines of strict_rule.jsonl
+(`category_after`); an original record with no paper line is a contextual work (first branch neither
+prior-art nor a topical branch). A record whose category changed under Part G also carries
+`pre_strict_category`.
+
 Inputs : ../corpus/corpus_master.json, screen_final.jsonl and screen2_final.jsonl (verdicts, branches,
          locus tags), pool.jsonl and pool2.jsonl (title, authors, date, source),
          bibkeys.json (arXiv id or DOI -> bib key),
@@ -55,8 +61,20 @@ original = json.load(open(CORPUS / "corpus_master.json", encoding="utf-8"))
 screen = {r["id"]: r for r in jl("screen_final.jsonl") + jl("screen2_final.jsonl")}
 pool = {r["id"]: r for r in jl("pool.jsonl") + jl("pool2.jsonl")}
 keys = json.load(open(HERE / "bibkeys.json", encoding="utf-8"))
+strict = {r["key"]: r for r in jl("strict_rule.jsonl") if r["record"] == "paper"}
 
-out = [{**r, **METADATA_FIXES.get(r.get("bibkey"), {}), "extension": False} for r in original]
+
+def category(key):
+    r = strict.get(key)
+    if r is None:
+        return {"category": "contextual"}
+    c = {"category": r["category_after"]}
+    if r["category_after"] != r["category_before"]:
+        c["pre_strict_category"] = r["category_before"]
+    return c
+
+
+out = [{**r, **METADATA_FIXES.get(r.get("bibkey"), {}), "extension": False, **category(r["bibkey"])} for r in original]
 for pid, s in screen.items():
     if not s["verdict"].startswith("INCLUDE"):
         continue
@@ -78,10 +96,14 @@ for pid, s in screen.items():
         "contribution": None, "branches": branches, "taxonomy_cells": [],
         "verified": "extension:" + k["source"], "bibkey": key, "extension": True,
         "screening_verdict": s["verdict"], "primary_branch": s["primary_branch"], "locus_tags": s["locus_tags"],
-        "secondary_branches": s["secondary_branches"], "pool_source": p["source"],
+        "secondary_branches": s["secondary_branches"], "pool_source": p["source"], **category(pid),
     })
 
 json.dump(out, open(CORPUS / "corpus_master_extended.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 ext = [r for r in out if r["extension"]]
 print(f"{len(out)} records ({len(original)} original + {len(ext)} extension); "
       f"locus-tagged extension papers: {sum(bool(r['locus_tags']) for r in ext)}")
+cats = {}
+for r in out:
+    cats[r["category"]] = cats.get(r["category"], 0) + 1
+print("categories:", cats)

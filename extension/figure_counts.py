@@ -2,8 +2,12 @@
 operator grid (Fig. 9: locus x conduction operator) from the released, dual-coded entries.
 
 Inputs : code_existing_final.jsonl (59 original locus-tagged papers, 68 entries)
-         code_new_final.jsonl      (papers added by the 2026 extension)
+         code_new_final.jsonl, code_new2_final.jsonl (papers added by the 2026 extension)
 Output : figure_counts.json and a printed summary. One entry = one (paper, locus) pair.
+
+The figures count only entries with grid_eligible = true (CODEBOOK.md Part G (b), strict rule of
+2026-11-10; one row per decision in strict_rule.jsonl). The unfiltered grids over all coded entries are
+printed first and written under the "unfiltered_*" keys, for transparency.
 """
 import json, pathlib, collections
 
@@ -36,7 +40,9 @@ def show(title, g, cols):
 
 existing, new = load("code_existing_final.jsonl"), load("code_new_final.jsonl") + load("code_new2_final.jsonl")
 out = {}
-for name, ents in (("original_corpus", existing), ("extended_corpus", existing + new)):
+elig = lambda es: [e for e in es if e.get("grid_eligible") is True]
+for name, ents in (("unfiltered_original_corpus", existing), ("unfiltered_extended_corpus", existing + new),
+                   ("original_corpus", elig(existing)), ("extended_corpus", elig(existing + new))):
     papers = {e["key"] for e in ents}
     d, o = grid(ents, "fairness_dimension", DIMS), grid(ents, "operator", OPS)
     sec = collections.Counter(e["operator_secondary"] for e in ents if e.get("operator_secondary") not in (None, "", "NONE"))

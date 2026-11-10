@@ -22,7 +22,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "gallegos2024bias",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Towards Implicit Bias Detection and Mitigation in Multi-Agent LLM Interactions",
@@ -45,7 +46,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "borah2024implicit",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "FairMT-Bench: Benchmarking Fairness for Multi-turn Dialogue in Conversational LLMs",
@@ -68,7 +70,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "fan2024fairmt",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Bias Runs Deep: Implicit Reasoning Biases in Persona-Assigned LLMs",
@@ -91,7 +94,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "gupta2023bias",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Emergent Bias and Fairness in Multi-Agent Decision Systems",
@@ -114,7 +118,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "madigan2025emergent",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models",
@@ -135,7 +140,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "blankenstein2025biasbusters",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness",
@@ -156,7 +163,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "cao2026from",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Fairness in Large Language Models: A Taxonomic Survey",
@@ -177,7 +185,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "chu2024fairness",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "BOLD: Dataset and Metrics for Measuring Biases in Open-Ended Language Generation",
@@ -198,7 +207,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "dhamala2021bold",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Counterfactual Fairness",
@@ -219,7 +229,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "kusner2017counterfactual",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Counterfactual Fairness Evaluation of LLM-Based Contact Center Agent Quality Assurance System",
@@ -240,7 +251,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mayilvaghanan2026counterfactual",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "StereoSet: Measuring Stereotypical Bias in Pretrained Language Models",
@@ -261,7 +273,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "nadeem2021stereoset",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "A Multi-LLM Debiasing Framework",
@@ -282,7 +295,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "owens2024multi",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Generative Agents: Interactive Simulacra of Human Behavior",
@@ -303,7 +317,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "park2023generative",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "BBQ: A Hand-Built Bias Benchmark for Question Answering",
@@ -324,7 +339,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "parrish2022bbq",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "A Survey on Large Language Model based Autonomous Agents",
@@ -345,7 +361,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wang2024survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Bias Amplification in RAG: Poisoning Knowledge Retrieval to Steer LLMs",
@@ -366,7 +383,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wang2025bias",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "LLMs are Biased Teachers: Evaluating LLM Bias in Personalized Education",
@@ -387,7 +405,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "weissburg2024llms",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Does RAG Introduce Unfairness in LLMs? Evaluating Fairness in Retrieval-Augmented Generation Systems",
@@ -408,7 +427,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wu2024rag",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "The Rise and Potential of Large Language Model Based Agents: A Survey",
@@ -429,7 +449,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xi2023rise",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "DUCX: Decomposing Unfairness in Tool-Using Chest X-ray Agents",
@@ -450,7 +471,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xu2026ducx",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Persistent Anti-Muslim Bias in Large Language Models",
@@ -469,7 +491,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "abid2021persistent",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "mFARM: Towards Multi-Faceted Fairness Assessment based on HARMs in Clinical Decision Support",
@@ -488,7 +511,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "adappanavar2025mfarm",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "BiasDPO: Mitigating Bias in Language Models through Direct Preference Optimization",
@@ -507,7 +531,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "allam2024biasdpo",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Equal Access, Unequal Interaction: A Counterfactual Audit of LLM Fairness",
@@ -526,7 +551,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "amirimargavi2026equal",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Concrete Problems in AI Safety",
@@ -545,7 +571,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "amodei2016concrete",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Measuring gender and racial biases in large language models: Intersectional evidence from automated resume evaluation",
@@ -564,7 +591,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "an2025measuring",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Machine Bias (COMPAS investigation)",
@@ -583,7 +611,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "angwin2016machine",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Understanding Intrinsic Socioeconomic Biases in Large Language Models",
@@ -602,7 +631,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "arzaghi2024understanding",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Intrinsic Meets Extrinsic Fairness: Assessing the Downstream Impact of Bias Mitigation in Large Language Models",
@@ -621,7 +651,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "arzaghi2025intrinsic",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Accept or Deny? Evaluating LLM Fairness and Performance in Loan Approval across Table-to-Text Serialization Approaches",
@@ -640,7 +671,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "azime2025accept",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Constitutional AI: Harmlessness from AI Feedback",
@@ -659,7 +691,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "bai2022constitutional",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Fairness and Machine Learning: Limitations and Opportunities",
@@ -678,7 +712,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "barocas2023fairness",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Preserving the Fairness Guarantees of Classifiers in Changing Environments: A Survey",
@@ -697,7 +732,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "barrainkua2025preserving",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "When Names Change Verdicts: Intervention Consistency Reveals Systematic Bias in LLM Decision-Making",
@@ -716,7 +753,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "basu2026names",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?",
@@ -735,7 +773,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "bender2021dangers",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "How Can We Diagnose and Treat Bias in Large Language Models for Clinical Decision-Making?",
@@ -754,7 +793,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "benkirane2024diagnose",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Interactional Fairness in LLM Multi-Agent Systems: An Evaluation Framework",
@@ -773,7 +813,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "binkyte2025interactional",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "Language (Technology) is Power: A Critical Survey of Bias in NLP",
@@ -792,7 +833,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "blodgett2020language",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Stereotyping Norwegian Salmon: An Inventory of Pitfalls in Fairness Benchmark Datasets",
@@ -811,7 +853,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "blodgett2021stereotyping",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings",
@@ -830,7 +873,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "bolukbasi2016man",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "On the Opportunities and Risks of Foundation Models",
@@ -849,7 +893,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "bommasani2021opportunities",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Bring Your Own Prompts: Use-Case-Specific Bias and Fairness Evaluation for LLMs (LangFair)",
@@ -868,7 +913,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "bouchard2024bring",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Measuring and Mitigating Racial Disparities in LLMs: Evidence from a Mortgage Underwriting Experiment",
@@ -887,7 +933,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "bowen2024measuring",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification",
@@ -906,7 +953,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "buolamwini2018gender",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Semantics Derived Automatically from Language Corpora Contain Human-Like Biases",
@@ -925,7 +973,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "caliskan2017semantics",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "I Want to Break Free! Persuasion and Anti-Social Behavior of LLMs in Multi-Agent Settings with Social Hierarchy",
@@ -944,7 +993,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "campedelli2024want",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Fairness in Machine Learning: A Survey",
@@ -963,7 +1014,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "caton2024fairness",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "MaxMin-RLHF: Alignment with Diverse Human Preferences",
@@ -982,7 +1035,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "chakraborty2024maxmin",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Visibility into AI Agents",
@@ -1001,7 +1056,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "chan2024visibility",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "A Survey on Evaluation of Large Language Models",
@@ -1020,7 +1077,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "chang2024survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning",
@@ -1039,7 +1098,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "choi2025identity",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Fair Prediction with Disparate Impact: A Study of Bias in Recidivism Prediction Instruments",
@@ -1058,7 +1119,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "chouldechova2017fair",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Unmasking Conversational Bias in AI Multiagent Systems",
@@ -1077,7 +1139,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "coppolillo2025unmasking",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Bias and Unfairness in Information Retrieval Systems: New Challenges in the LLM Era",
@@ -1096,7 +1160,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "dai2024bias",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Trustworthy Information Retrieval in the LLM Era: Bias, Unfairness, and Hallucination",
@@ -1115,7 +1181,8 @@
   ],
   "verified": "acm-dl",
   "bibkey": "dai2025trustworthy",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "CFaiRLLM: Consumer Fairness Evaluation in Large-Language Model Recommender System",
@@ -1134,7 +1201,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "deldjoo2024cfairllm",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "A Normative Framework for Benchmarking Consumer Fairness in Large Language Model Recommender Systems",
@@ -1153,7 +1221,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "deldjoo2024normative",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Mind2Web: Towards a Generalist Agent for the Web",
@@ -1172,7 +1241,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "deng2023mind2web",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Toxicity in ChatGPT: Analyzing Persona-assigned Language Models",
@@ -1191,7 +1261,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "deshpande2023toxicity",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Building Guardrails for Large Language Models",
@@ -1210,7 +1281,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "dong2024building",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
@@ -1229,7 +1302,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "du2024causal",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "A Survey on the Optimization of Large Language Model-based Agents",
@@ -1248,7 +1323,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "du2026survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Agent AI: Surveying the Horizons of Multimodal Interaction",
@@ -1267,7 +1344,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "durante2024agent",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Fairness Through Awareness",
@@ -1286,7 +1364,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "dwork2012fairness",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "A Survey on Reliability, Transparency, Accountability, and Fairness in LLM-based Multi-Agent Systems through the Responsibility Lens",
@@ -1305,7 +1384,8 @@
   ],
   "verified": "web-multiple",
   "bibkey": "ebrahimi2025survey",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "Certifying and Removing Disparate Impact",
@@ -1324,7 +1404,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "feldman2015certifying",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Empowering Many, Biasing a Few: Generalist Credit Scoring through Large Language Models",
@@ -1343,7 +1424,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "feng2023empowering",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Towards Trustworthy AI: A Review of Ethical and Robust Large Language Models",
@@ -1362,7 +1444,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "ferdaus2026trustworthy",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Thinking Fair and Slow: On the Efficacy of Structured Prompts for Debiasing Language Models",
@@ -1381,7 +1465,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "furniturewala2024thinking",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Navigating the Risks: A Survey of Security, Privacy, and Ethics Threats in LLM-Based Agents",
@@ -1400,7 +1485,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "gan2024navigating",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models",
@@ -1419,7 +1505,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "gehman2020realtoxicityprompts",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Accumulating Context Changes the Beliefs of Language Models",
@@ -1438,7 +1525,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "geng2025accumulating",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "MEDEQUALQA: Evaluating Biases in LLMs with Counterfactual Reasoning",
@@ -1457,7 +1546,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "ghosh2025medequalqa",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges",
@@ -1476,7 +1566,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "guo2024large",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Guiding LLM Decision-Making with Fairness Reward Models",
@@ -1495,7 +1586,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hall2025guiding",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Equality of Opportunity in Supervised Learning",
@@ -1514,7 +1606,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hardt2016equality",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection",
@@ -1533,7 +1626,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "hartvigsen2022toxigen",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "The Emerged Security and Privacy of LLM Agent: A Survey with Case Studies",
@@ -1552,7 +1646,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "he2025emerged",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
@@ -1571,7 +1667,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "hong2024metagpt",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Measuring Sycophancy of Language Models in Multi-turn Dialogues",
@@ -1590,7 +1687,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hong2025measuring",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Achieving Long-Term Fairness in Sequential Decision Making",
@@ -1609,7 +1708,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hu2022achieving",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "No Free Lunch: Retrieval-Augmented Generation Undermines Fairness in LLMs, Even for Vigilant Users",
@@ -1628,7 +1728,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hu2024free",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "LLMs on Trial: Evaluating Judicial Fairness for Large Language Models",
@@ -1647,7 +1748,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "hu2025llms",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "TrustGPT: A Benchmark for Trustworthy and Responsible Large Language Models",
@@ -1666,7 +1768,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "huang2023trustgpt",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Collective Constitutional AI: Aligning a Language Model with Public Input",
@@ -1685,7 +1788,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "huang2024collective",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "TrustLLM: Trustworthiness in Large Language Models",
@@ -1704,7 +1808,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "huang2024trustllm",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
@@ -1723,7 +1828,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "jimenez2024swe",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Reasoning Towards Fairness: Mitigating Bias in Language Models through Reasoning-Guided Fine-Tuning",
@@ -1742,7 +1848,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "kabra2025reasoning",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Can Large Language Models Reason and Plan?",
@@ -1761,7 +1868,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "kambhampati2024large",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Stereotype or Personalization? User Identity Biases Chatbot Recommendations",
@@ -1780,7 +1888,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "kantharuban2024stereotype",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Trustworthy Artificial Intelligence: A Review",
@@ -1799,7 +1908,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "kaur2022trustworthy",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Towards a Better Understanding of Evaluating Trustworthiness in AI Systems",
@@ -1818,7 +1929,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "kemmerzell2025better",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Multiple LLM Agents Debate for Equitable Cultural Alignment",
@@ -1837,7 +1950,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "ki2025multiple",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Towards Fair RAG: On the Impact of Fair Ranking in Retrieval-Augmented Generation",
@@ -1856,7 +1970,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "kim2024fair",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Mitigating Bias in RAG: Controlling the Embedder",
@@ -1875,7 +1991,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "kim2025mitigating",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Inherent Trade-Offs in the Fair Determination of Risk Scores",
@@ -1894,7 +2011,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "kleinberg2017inherent",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "LLLMs: A Data-Driven Survey of Evolving Research on Limitations of Large Language Models",
@@ -1913,7 +2031,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "kostikova2026lllms",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
@@ -1932,7 +2052,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "lewis2020retrieval",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "CAMEL: Communicative Agents for Mind Exploration of Large Language Model Society",
@@ -1951,7 +2072,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "li2023camel",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Fairness of ChatGPT",
@@ -1970,7 +2092,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "li2023fairness",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Trustworthy AI: From Principles to Practices",
@@ -1989,7 +2112,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "li2023trustworthy",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Prompting Fairness: Integrating Causality to Debias Large Language Models",
@@ -2008,7 +2133,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "li2024prompting",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Actions Speak Louder than Words: Agent Decisions Reveal Implicit Biases in Language Models",
@@ -2027,7 +2153,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "li2025actions",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering",
@@ -2046,7 +2173,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "li2025fairsteer",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions",
@@ -2065,7 +2193,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "li2025from",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Triangular Trade-off between Robustness, Accuracy, and Fairness in Deep Neural Networks: A Survey",
@@ -2084,7 +2213,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "li2025triangular",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Holistic Evaluation of Language Models",
@@ -2103,7 +2234,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "liang2023holistic",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks",
@@ -2122,7 +2254,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "lin2024assessing",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Lost in the Middle: How Language Models Use Long Contexts",
@@ -2141,7 +2274,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "liu2023lost",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "AgentBench: Evaluating LLMs as Agents",
@@ -2160,7 +2295,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "liu2024agentbench",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Truth Decay: Quantifying Multi-Turn Sycophancy in Language Models",
@@ -2179,7 +2315,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "liu2025truth",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "How Implicit Bias Accumulates and Propagates in LLM Long-term Memory",
@@ -2198,7 +2336,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "ma2026implicit",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Detecting race and gender bias in visual representation of AI on web search engines",
@@ -2217,7 +2356,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "makhortykh2021detecting",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Feedback Loop and Bias Amplification in Recommender Systems",
@@ -2236,7 +2376,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mansoury2020feedback",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "A Survey on Bias and Fairness in Machine Learning",
@@ -2255,7 +2396,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mehrabi2021survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Rejected Dialects: Biases Against African American Language in Reward Models",
@@ -2274,7 +2416,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mire2025rejected",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "MALIBU Benchmark: Multi-Agent LLM Implicit Bias Uncovered",
@@ -2293,7 +2436,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mirza2025malibu",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
@@ -2312,7 +2456,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "mohammadi2025evaluation",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Preferred Reporting Items for Systematic Reviews and Meta-Analyses: The PRISMA Statement",
@@ -2331,7 +2476,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "moher2009preferred",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "CrowS-Pairs: A Challenge Dataset for Measuring Social Biases in Masked Language Models",
@@ -2350,7 +2496,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "nangia2020crows",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Biases in Large Language Models: Origins, Inventory, and Discussion",
@@ -2369,7 +2516,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "navigli2023biases",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "\"You Gotta be a Doctor, Lin\": An Investigation of Name-Based Bias of Large Language Models in Employment Recommendations",
@@ -2388,7 +2536,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "nghiem2024you",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "The Social Cost of Intelligence: Emergence, Propagation, and Amplification of Stereotypical Bias in Multi-Agent Systems",
@@ -2407,7 +2556,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "nguyen2025social",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
@@ -2426,7 +2576,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "nist2023artificial",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations",
@@ -2445,7 +2596,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "obermeyer2019dissecting",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Sociodemographic biases in medical decision making by large language models",
@@ -2464,7 +2616,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "omar2025sociodemographic",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Training language models to follow instructions with human feedback",
@@ -2483,7 +2636,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "ouyang2022training",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
@@ -2502,7 +2657,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "parliament2024regulation",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Toward Systematic Counterfactual Fairness Evaluation of Large Language Models: The CAFFE Framework",
@@ -2521,7 +2677,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "parziale2025systematic",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Once Upon a Team: Investigating Bias in LLM-Driven Software Team Composition and Task Allocation",
@@ -2540,7 +2697,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "parziale2026once",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "SCOPE: A Dataset of Stereotyped Prompts for Counterfactual Fairness Assessment of LLMs",
@@ -2559,7 +2717,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "parziale2026scope",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Presumed Cultural Identity: How Names Shape LLM Responses",
@@ -2578,7 +2737,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "pawar2025presumed",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "A Review on Fairness in Machine Learning",
@@ -2597,7 +2757,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "pessach2022review",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Large Language Models Sensitivity to The Order of Options in Multiple-Choice Questions",
@@ -2616,7 +2778,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "pezeshkpour2023large",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "A Toolbox for Surfacing Health Equity Harms and Biases in Large Language Models",
@@ -2635,7 +2799,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "pfohl2024toolbox",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Bias patterns in the application of LLMs for clinical decision support: A comprehensive study",
@@ -2654,7 +2819,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "poulain2024bias",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Towards a framework for Bias Evaluation of AI Agents in Agentic Workflows",
@@ -2675,7 +2841,9 @@
   "bibkey": "condon2026towards",
   "previous_bibkey": "proceedings2026framework",
   "metadata_corrected": "2026-11-10: authors, venue and bib key synchronized with the cited bibliography entry",
-  "extension": false
+  "extension": false,
+  "category": "topical",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Towards trustworthy agentic AI: a comprehensive survey of safety, robustness, privacy, and system security",
@@ -2694,7 +2862,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "qi2026trustworthy",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "ChatDev: Communicative Agents for Software Development",
@@ -2713,7 +2883,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "qian2024chatdev",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Tool Learning with Large Language Models: A Survey",
@@ -2732,7 +2903,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "qu2024tool",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Mitigating Bias in Algorithmic Hiring: Evaluating Claims and Practices",
@@ -2751,7 +2923,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "raghavan2020mitigating",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Fairness in Agentic AI: A Unified Framework for Ethical and Equitable Multi-Agent System",
@@ -2770,7 +2943,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "ranjan2025fairness",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "Responsible Agentic Reasoning and AI Agents: A Critical Survey",
@@ -2789,7 +2963,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "raza2025responsible",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "TRiSM for Agentic AI: A Review of Trust, Risk, and Security Management in LLM-based Agentic Multi-Agent Systems",
@@ -2808,7 +2983,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "raza2025trism",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Gender Bias in Coreference Resolution (WinoGender)",
@@ -2827,7 +3004,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "rudinger2018gender",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Whose Opinions Do Language Models Reflect?",
@@ -2846,7 +3024,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "santurkar2023whose",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
@@ -2865,7 +3044,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "schick2023toolformer",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Fairness and Abstraction in Sociotechnical Systems",
@@ -2884,7 +3064,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "selbst2019fairness",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Towards Understanding Sycophancy in Language Models",
@@ -2903,7 +3084,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "sharma2024understanding",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "FairSense: Long-Term Fairness Analysis of ML-Enabled Systems",
@@ -2922,7 +3104,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "she2025fairsense",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face",
@@ -2941,7 +3124,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "shen2023hugginggpt",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "The Woman Worked as a Babysitter: On Biases in Language Generation",
@@ -2960,7 +3144,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "sheng2019woman",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
@@ -2979,7 +3164,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "shinn2023reflexion",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Old Habits Die Hard: How Conversational History Geometrically Traps LLMs",
@@ -2998,7 +3184,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "simhi2026old",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Bias-Aware Agent: Enhancing Fairness in AI-Driven Knowledge Retrieval",
@@ -3017,7 +3205,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "singh2025bias",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Bias Mitigation Agent: Optimizing Source Selection for Fair and Balanced Knowledge Retrieval",
@@ -3036,7 +3226,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "singh2025biasb",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "\"I'm sorry to hear that\": Finding New Biases in Language Models with a Holistic Descriptor Dataset",
@@ -3055,7 +3247,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "smith2022sorry",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "ToolTweak: An Attack on Tool Selection in LLM-based Agents",
@@ -3074,7 +3267,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "sneh2025tooltweak",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Towards Large Language Models that Benefit for All: Benchmarking Group Fairness in Reward Models",
@@ -3093,7 +3288,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "song2025large",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Software Fairness: An Analysis and Survey",
@@ -3112,7 +3308,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "soremekun2025software",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Beyond Memorization: Violating Privacy Via Inference with Large Language Models",
@@ -3131,7 +3329,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "staab2023memorization",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Cognitive Architectures for Language Agents",
@@ -3150,7 +3350,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "sumers2024cognitive",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "What-is and How-to for Fairness in Machine Learning: A Survey, Reflection, and Perspective",
@@ -3169,7 +3370,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "tang2023what",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Is Your LLM-as-a-Recommender Agent Trustable? LLMs' Recommendation is Easily Hacked by Biases (Preferences)",
@@ -3188,7 +3391,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "tang2026your",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Different Demographic Cues Yield Inconsistent Conclusions About LLM Personalization and Bias",
@@ -3207,7 +3412,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "tonneau2026different",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
@@ -3226,7 +3432,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "turpin2023language",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Algorithms of Oppression: How Search Engines Reinforce Racism",
@@ -3245,7 +3452,8 @@
   ],
   "verified": "web-multiple-sources",
   "bibkey": "u2018algorithms",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Agentic AI in Healthcare & Medicine: A Seven-Dimensional Taxonomy for Empirical Evaluation of LLM-based Agents",
@@ -3264,7 +3472,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "vatsal2026agentic",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Are Emily and Greg Still More Employable than Lakisha and Jamal? Investigating Algorithmic Hiring Bias in the Era of ChatGPT",
@@ -3283,7 +3492,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "veldanda2023emily",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Exploring Safety-Utility Trade-Offs in Personalized Language Models",
@@ -3302,7 +3512,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "vijjini2024exploring",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Kelly is a Warm Person, Joseph is a Role Model: Gender Biases in LLM-Generated Reference Letters",
@@ -3321,7 +3532,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "wan2023kelly",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "White Men Lead, Black Women Help? Benchmarking and Mitigating Language Agency Social Biases in LLMs",
@@ -3340,7 +3552,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "wan2025white",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models",
@@ -3359,7 +3572,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "wang2023decodingtrust",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "A Survey on the Fairness of Recommender Systems",
@@ -3378,7 +3592,8 @@
   ],
   "verified": "acm-dl",
   "bibkey": "wang2023survey",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "CEB: Compositional Evaluation Benchmark for Fairness in Large Language Models",
@@ -3397,7 +3612,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wang2024ceb",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Observations and Remedies for Large Language Model Bias in Self-Consuming Performative Loop",
@@ -3416,7 +3632,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wang2026observations",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Ethical and Social Risks of Harm from Language Models",
@@ -3435,7 +3652,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "weidinger2021ethical",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Gender, Race, and Intersectional Bias in Resume Screening via Language Model Retrieval",
@@ -3454,7 +3672,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wilson2024gender",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
@@ -3473,7 +3692,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wu2023autogen",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "FMBench: Benchmarking Fairness in Multimodal Large Language Models on Medical Tasks",
@@ -3492,7 +3712,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wu2024fmbench",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Does Reasoning Introduce Bias? A Study of Social Bias Evaluation and Mitigation in LLM Reasoning",
@@ -3511,7 +3732,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wu2025reasoning",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Fairness Feedback Loops: Training on Synthetic Data Amplifies Bias",
@@ -3530,7 +3752,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "wyllie2024fairness",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
@@ -3549,7 +3772,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xiao2024algorithmic",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "FairMedQA: Benchmarking Bias in Large Language Models for Medical Question Answering",
@@ -3568,7 +3793,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xiao2025fairmedqa",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Adapting Static Fairness to Sequential Decision-Making: Bias Mitigation Strategies towards Equal Long-term Benefit Rate",
@@ -3587,7 +3813,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xu2024adapting",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Mitigating Social Bias in Large Language Models: A Multi-Objective Approach within a Multi-Agent Framework",
@@ -3606,7 +3833,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xu2024mitigating",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Quantifying Fairness in LLMs Beyond Tokens: A Semantic and Statistical Perspective",
@@ -3625,7 +3853,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "xu2025quantifying",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Does the Prompt-based Large Language Model Recognize Students' Demographics and Introduce Bias in Essay Scoring?",
@@ -3644,7 +3873,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "yang2025prompt",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Fairness in Multi-Agent Systems for Software Engineering: An SDLC-Oriented Rapid Review",
@@ -3663,7 +3893,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "yangsmith2026fairness",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
@@ -3682,7 +3913,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "yao2023react",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "A Survey on Evaluation of LLM-based Agents",
@@ -3701,7 +3933,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "yehudai2025survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "A Survey on Trustworthy LLM Agents: Threats and Countermeasures",
@@ -3720,7 +3954,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "yu2025survey",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Coding Inequity: Assessing GPT-4's Potential for Perpetuating Racial and Gender Biases in Healthcare",
@@ -3739,7 +3974,8 @@
   ],
   "verified": "doi-resolved",
   "bibkey": "zack2024coding",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Fairness in Ranking: A Survey",
@@ -3758,7 +3994,8 @@
   ],
   "verified": "acm-dl",
   "bibkey": "zehlike2022fairness",
-  "extension": false
+  "extension": false,
+  "category": "prior-art"
  },
  {
   "title": "Causal Prompting: Debiasing Large Language Model Prompting based on Front-Door Adjustment",
@@ -3777,7 +4014,9 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "zhang2024causal",
-  "extension": false
+  "extension": false,
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Datasets for Fairness in Language Models: An In-Depth Survey",
@@ -3796,7 +4035,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "zhang2025datasets",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Evaluating the Effect of Retrieval Augmentation on Social Biases",
@@ -3815,7 +4055,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "zhang2025evaluating",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Generalizability of Large Language Model-Based Agents: A Comprehensive Survey",
@@ -3834,7 +4075,9 @@
   ],
   "verified": "acm-dl",
   "bibkey": "zhang2026generalizability",
-  "extension": false
+  "extension": false,
+  "category": "contextual",
+  "pre_strict_category": "prior-art"
  },
  {
   "title": "Gender Bias in Coreference Resolution: Evaluation and Debiasing Methods (WinoBias)",
@@ -3853,7 +4096,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "zhao2018gender",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
@@ -3872,7 +4116,8 @@
   ],
   "verified": "agent-verified",
   "bibkey": "zhou2024webarena",
-  "extension": false
+  "extension": false,
+  "category": "contextual"
  },
  {
   "title": "Veracity Bias and Beyond: Uncovering LLMs' Hidden Beliefs in Problem-Solving Reasoning",
@@ -3891,7 +4136,8 @@
   ],
   "verified": "arxiv-id-resolved",
   "bibkey": "zhou2025veracity",
-  "extension": false
+  "extension": false,
+  "category": "topical"
  },
  {
   "title": "Is ChatGPT Fair for Recommendation? Evaluating Fairness in Large Language Model Recommendation",
@@ -3920,7 +4166,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Evaluating and Mitigating Discrimination in Language Model Decisions",
@@ -3949,7 +4196,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Unveiling Bias in Fairness Evaluations of Large Language Models: A Critical Literature Review of Music and Movie Recommendation Systems",
@@ -3973,7 +4221,8 @@
   "secondary_branches": [],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "prior-art"
  },
  {
   "title": "Dialect prejudice predicts AI decisions about people's character, employability, and criminality",
@@ -3997,7 +4246,8 @@
   "secondary_branches": [],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "The Silicon Ceiling: Auditing GPT's Race and Gender Biases in Hiring",
@@ -4021,7 +4271,8 @@
   "secondary_branches": [],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "JobFair: A Framework for Benchmarking Gender Hiring Bias in Large Language Models",
@@ -4048,7 +4299,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "ChatGPT Doesn't Trust Chargers Fans: Guardrail Sensitivity in Context",
@@ -4074,7 +4326,8 @@
   "secondary_branches": [],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "First-Person Fairness in Chatbots",
@@ -4104,7 +4357,8 @@
   "pool_source": [
    "adjudication",
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Mitigating Bias in Queer Representation within Large Language Models: A Collaborative Agent Approach",
@@ -4133,7 +4387,8 @@
   ],
   "pool_source": [
    "targeted-search"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Small Changes, Large Consequences: Analyzing the Allocational Fairness of LLMs in Hiring Contexts",
@@ -4162,7 +4417,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "FairCoder: Probing LLM Bias in High-Stakes Decision Making via Coding Tasks",
@@ -4193,7 +4449,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Assessing Agentic Large Language Models in Multilingual National Bias",
@@ -4219,7 +4476,8 @@
   "secondary_branches": [],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Bias Evaluation and Mitigation in Retrieval-Augmented Medical Question-Answering Systems",
@@ -4252,7 +4510,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "FairEval: Evaluating Fairness in LLM-Based Recommendations with Personality Awareness",
@@ -4281,7 +4540,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Evaluating the Bias in LLMs for Surveying Opinion and Decision Making in Healthcare",
@@ -4310,7 +4570,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "A Framework for Auditing Chatbots for Dialect-Based Quality-of-Service Harms",
@@ -4340,7 +4601,8 @@
   "pool_source": [
    "adjudication",
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "A Game-Theoretic Negotiation Framework for Cross-Cultural Consensus in LLMs",
@@ -4371,7 +4633,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "PersonaTwin: A Multi-Tier Prompt Conditioning Framework for Generating and Evaluating Personalized Digital Twins",
@@ -4400,7 +4663,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "PerFairX: Is There a Balance Between Fairness and Personality in Large Language Model Recommendations?",
@@ -4429,7 +4693,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "InsideOut: Measuring and Mitigating Insider-Outsider Bias in Interview Script Generation",
@@ -4461,7 +4726,8 @@
   "pool_source": [
    "adjudication",
    "targeted-search"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Fairness Testing in Retrieval-Augmented Generation: How Small Perturbations Reveal Bias in Small Language Models",
@@ -4490,7 +4756,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Social Welfare Function Leaderboard: When LLM Agents Allocate Social Welfare",
@@ -4521,7 +4788,9 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "Evaluating Bias in Spoken Dialogue LLMs for Real-World Decisions and Recommendations",
@@ -4552,7 +4821,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "The Personalization Trap: How User Memory Alters Emotional Reasoning in LLMs",
@@ -4583,7 +4853,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Large Language Models Develop Novel Social Biases Through Adaptive Exploration",
@@ -4614,7 +4885,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents",
@@ -4646,7 +4918,9 @@
   "pool_source": [
    "adjudication",
    "targeted-search"
-  ]
+  ],
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "From Personalization to Prejudice: Bias and Discrimination in Memory-Enhanced AI Agents for Recruitment",
@@ -4676,7 +4950,8 @@
   "pool_source": [
    "adjudication",
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Improving Fairness of Large Language Model-Based ICU Mortality Prediction via Case-Based Prompting",
@@ -4709,7 +4984,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Lost in Simulation: LLM-Simulated Users are Unreliable Proxies for Human Users in Agentic Evaluations",
@@ -4738,7 +5014,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Uncertainty and Fairness Awareness in LLM-Based Recommendation Systems",
@@ -4767,7 +5044,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Analysis Of Linguistic Stereotypes in Single and Multi-Agent Generative AI Architectures",
@@ -4796,7 +5074,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "LLM Nepotism in Organizational Governance",
@@ -4829,7 +5108,9 @@
   ],
   "pool_source": [
    "targeted-search"
-  ]
+  ],
+  "category": "contextual-mechanism-precursor",
+  "pre_strict_category": "topical"
  },
  {
   "title": "VIBE: Voice-Induced open-ended Bias Evaluation for Large Audio-Language Models via Real-World Speech",
@@ -4858,7 +5139,8 @@
   ],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Social Bias in LLM-Generated Code: Benchmark and Mitigation",
@@ -4890,7 +5172,8 @@
   "pool_source": [
    "adjudication",
    "targeted-search"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Fair Agents: Balancing Multistakeholder Alignment in Multi-Agent Personalization Systems",
@@ -4914,7 +5197,8 @@
   "secondary_branches": [],
   "pool_source": [
    "adjudication"
-  ]
+  ],
+  "category": "prior-art"
  },
  {
   "title": "In-Situ Behavioral Evaluation for LLM Fairness, Not Standardized-Test Scores",
@@ -4943,7 +5227,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Evaluating Fairness in LLM Negotiator Agents via Economic Games Using Multi-Agent Systems",
@@ -4972,7 +5257,8 @@
   ],
   "pool_source": [
    "review"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "Personality as a Probe for LLM Evaluation: Method Trade-offs and Downstream Effects",
@@ -5001,7 +5287,8 @@
   ],
   "pool_source": [
    "targeted-search-round2"
-  ]
+  ],
+  "category": "topical"
  },
  {
   "title": "First, Do No Harm (With LLMs): Mitigating Racial Bias via Agentic Workflows",
@@ -5032,6 +5319,7 @@
   ],
   "pool_source": [
    "targeted-search-round2"
-  ]
+  ],
+  "category": "topical"
  }
 ]

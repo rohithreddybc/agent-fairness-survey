@@ -1,6 +1,7 @@
 # Codebook: corpus extension and dual-coded extraction
 
-Version 1.0, 2026-11-09; eligibility rule amended 2026-11-10 (Part F). Applies to three tasks: screening candidate papers (Part A), coding
+Version 1.0, 2026-11-09; eligibility rule amended 2026-11-10 (Part F); strict rule applied to both
+cohorts 2026-11-10 (Part G, which takes precedence over earlier parts where they differ). Applies to three tasks: screening candidate papers (Part A), coding
 locus entries for the coverage figures (Part B), and extracting mitigation results for the
 papers cited in the mitigation map (Part C). Every rule cites the place in the survey it comes
 from. `main` is `submit/main.tex`, `supp` is `submit/supplement.tex`. A rule marked
@@ -239,8 +240,11 @@ and are not re-decided. For newly admitted papers the tags are the adjudicated o
 and are equally given at this stage.
 
 Code each entry from the finding that concerns that locus's emission. When the abstract reports
-one undifferentiated finding, every entry of the paper receives the same codes.
-**[codebook rule]**
+one undifferentiated finding, every entry of the paper receives the same `fairness_dimension`,
+`evidence_type` and `demographic` codes. An undifferentiated finding does not establish an operator
+at every tagged locus: an entry takes a substantive operator only from a comparison located at its
+own locus (Part G3). **[codebook rule; amended 2026-11-10, Part G. The earlier text, "every entry of
+the paper receives the same codes", also copied the operator.]**
 
 ### B2. `fairness_dimension` and `fairness_basis`
 
@@ -483,6 +487,10 @@ Listed so that a reader can separate the protocol's choices from the survey's pu
 11. The four-route operationalization of criterion iii and the split between corpus eligibility
     and locus-grid eligibility (Part F, 2026-11-10). The survey states criterion iii (main §2.3)
     but not these routes.
+12. The strict rule of Part G (2026-11-10): one reading of criterion ii for both cohorts, the
+    `contextual-mechanism-precursor` category, entry-level locus-grid eligibility, and the
+    comparable-upstream requirement for `GENERATE`. The survey states criterion ii (main §2.3) but
+    not these operationalizations.
 
 ---
 
@@ -578,10 +586,11 @@ Anything else is `UNCHARACTERIZED`. In particular, the following do not license 
 5. `GENERATE` where the upstream condition is not reported as unbiased. If disparity is larger
    downstream than a biased upstream condition, the entry is `AMPLIFY` (B3 step 5).
 
-A demographically clean condition (no persona, no identity cue, blind negotiation, no
-personalization) that the same design measures still counts as "absent upstream" for
-`GENERATE`, as in B3. Persona or identity assignment is a component (C3, C5), not an input
-perturbation.
+**Superseded 2026-11-10 by Part G3.** This paragraph read: "A demographically clean condition (no
+persona, no identity cue, blind negotiation, no personalization) that the same design measures still
+counts as 'absent upstream' for `GENERATE`, as in B3." Under G3 such a condition measures no
+disparity and is not comparable upstream evidence. Persona or identity assignment remains a
+component (C3, C5), not an input perturbation.
 
 **Ambiguous abstracts.** When the abstract is ambiguous or truncated, the coder may read the
 paper's own abstract or full text (arXiv or the publisher's page only) and must cite the URL
@@ -605,3 +614,83 @@ Audit trail: `operator_validation.jsonl` has one row per validated entry (key, l
 old_operator, new_operator, changed, rule_clause, evidence_quote, and source_url when used).
 Pre-amendment files are kept as `*_final.prevalidation.jsonl`. Changes are listed in
 `ADJUDICATION_LOG.md`, Round 4.
+
+---
+
+## Part G: Strict rule applied to both cohorts, 2026-11-10
+
+**Why.** Author decision of 2026-11-10, answering the round-6 review (§3A, §3B). Part F made
+criterion iii consistent across the cohorts but not criterion ii: the original cohort kept topical
+papers with no group of people as the object, prior-art surveys with no agent scope and locus tags
+whose findings fail the grid test, while the extension excluded comparable records (for example
+2305.17926, position bias in an LLM judge). Part G applies one rule to both cohorts and to every
+locus entry. Criteria i, iv and v, the routes of F1 and Parts A to E are unchanged except where this
+part says otherwise (B1 and the operator evidence requirement are amended). **[codebook rule]**
+
+**G1. (a) Topical corpus.** A paper is topical when it is a primary study (A2) whose fairness finding
+is about people, with a demographic, protected or social group as the object (criterion ii as in A1
+and A5), on LLM decisions or behavior that bear on agents directly or through the
+transferable-mechanism clause (criterion iii as in F1; a non-LLM study enters only through the
+clause, A4). The test is applied per paper. A paper whose abstract names no group can pass when
+its object is the fairness of decisions about people (bail, lending, hiring, long-term fairness of
+sequential decisions), but its entries then carry `demographic` = `no` and fail G2.
+
+- An original-cohort topical paper that fails (a) moves to the category
+  `contextual-mechanism-precursor`. It stays in the corpus and may be cited as a mechanism
+  precursor, but it is not counted as a topical study and enters neither coverage figure.
+- The same test is applied to the extension's topical admissions. A failing record takes the same
+  category, so both cohorts treat a failure alike. Records the extension excluded on criterion ii are
+  not re-admitted as precursors: contextual works enter only by backward citation chase (A2).
+- Prior-art works are tested on the prior-art reading of (a): secondary work on bias or fairness
+  toward people with LLM-agent or agent-component scope (A2). An original prior-art work that fails
+  it moves to `contextual`. A prior-art record that reports measurements of its own is a primary study
+  (A2) and becomes topical if it passes (a).
+- The 74 original contextual works are not re-screened. The two that carry locus tags keep the
+  category `contextual` and leave the figures under G2.
+
+Every corpus record carries one `category`: `topical`, `prior-art`, `contextual` or
+`contextual-mechanism-precursor` (`corpus/corpus_master_extended.json`).
+
+**G2. (b) Locus-grid entry.** An entry (paper, locus) is counted in Figures 8 and 9 only when all
+three hold:
+
+1. the paper is topical under G1;
+2. the finding is measured at the entry's own locus: the A4 row of that locus names the emission in
+   which the disparity is measured, with R1 to R3 deciding between rows. A disparity caused by the
+   persona or identity assigned to an agent is C3 (R2), not C4; a C5 entry needs a model of the
+   interacting user (R3), not a persona given to the model; the A7 rule for a single final decision
+   with the cue in the prompt still gives no locus;
+3. `demographic` = `yes` (B5).
+
+Entries that fail stay in the coding files with `grid_eligible` = `false`. Author locus tags are not
+re-decided (B1): an entry whose finding would qualify at another locus is removed, not moved.
+
+**G3. (c) Operators.** `GENERATE` requires comparable upstream evidence specific to the entry's
+locus: the same disparity measure reported absent (zero, non-significant or negligible) at the
+upstream point of the same design, or disparity emerging among parts each measured unbiased. The
+following are not comparable upstream evidence:
+
+- a cue-free condition (no persona, no identity cue, no personalization, blind negotiation). It
+  measures no disparity; the effect of adding the cue is the fairness measurement itself, not
+  generation at a locus;
+- an upstream measurement on a different task or outcome (for example, explicit stereotype questions
+  against persona-conditioned task accuracy);
+- external statistics such as survey or real-world rates (operator amendment, item 3).
+
+An undifferentiated finding does not establish an operator at every tagged locus (B1 as amended):
+any operator other than `UNCHARACTERIZED` needs a comparison located at the entry's own locus. An
+entry that fails becomes `UNCHARACTERIZED`, or takes its `operator_secondary` under B3 precedence
+when that finding meets the requirement at the locus. Every remaining `GENERATE` entry, and every
+substantive operator copied across the loci of one paper, was re-checked.
+
+**G4. Records.** `strict_rule.jsonl` has one line per original topical or prior-art paper, per
+original locus-tagged contextual work, per extension admission (`record` = `paper`: `category_before`,
+`category_after`, `topical_ok`, `grid_ok` = whether any of its entries is counted) and per locus
+entry (`record` = `entry`: `topical_ok`, `grid_ok`, `operator_before`, `operator_after`, and
+`operator_reason` where the operator was changed or re-confirmed). Each line has a `reason` and a
+verbatim `quote` of at most 25 words from the abstract (prefixed `SUMMARY: ` when only the authors'
+contribution summary is available). The three `*_final.jsonl` files carry `grid_eligible` on every
+entry, and `operator_prestrict` and `strict_rule_note` on recoded entries; the earlier files are kept
+as `*_final.prestrict.jsonl`. `figure_counts.py` counts only `grid_eligible` entries and also prints
+the unfiltered grids. Per-paper results are in `ADJUDICATION_LOG.md`, "Round 6 (strict rule, both
+cohorts)".

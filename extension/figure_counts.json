@@ -1,5 +1,5 @@
 {
- "original_corpus": {
+ "unfiltered_original_corpus": {
   "papers": 59,
   "entries": 68,
   "dimension_grid": {
@@ -44,37 +44,37 @@
    "C1": {
     "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 2,
+    "AMPLIFY": 1,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 8
+    "UNCHARACTERIZED": 9
    },
    "C2": {
     "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 6,
+    "AMPLIFY": 5,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 4
+    "UNCHARACTERIZED": 5
    },
    "C3": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
     "AMPLIFY": 1,
-    "GENERATE": 3,
-    "UNCHARACTERIZED": 5
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 7
    },
    "C4": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
     "AMPLIFY": 0,
-    "GENERATE": 2,
-    "UNCHARACTERIZED": 5
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 7
    },
    "C5": {
     "ATTENUATE": 0,
     "PRESERVE": 0,
     "AMPLIFY": 1,
-    "GENERATE": 2,
-    "UNCHARACTERIZED": 9
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 11
    },
    "T": {
     "ATTENUATE": 1,
@@ -85,7 +85,7 @@
    }
   },
   "operator_secondary": {
-   "ATTENUATE": 8,
+   "ATTENUATE": 6,
    "PRESERVE": 1
   },
   "evidence_type": {
@@ -98,7 +98,7 @@
    "no": 27
   }
  },
- "extended_corpus": {
+ "unfiltered_extended_corpus": {
   "papers": 92,
   "entries": 104,
   "dimension_grid": {
@@ -143,37 +143,37 @@
    "C1": {
     "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 2,
+    "AMPLIFY": 1,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 8
+    "UNCHARACTERIZED": 9
    },
    "C2": {
     "ATTENUATE": 5,
     "PRESERVE": 0,
-    "AMPLIFY": 7,
+    "AMPLIFY": 6,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 7
+    "UNCHARACTERIZED": 8
    },
    "C3": {
-    "ATTENUATE": 6,
+    "ATTENUATE": 7,
     "PRESERVE": 0,
     "AMPLIFY": 2,
-    "GENERATE": 5,
-    "UNCHARACTERIZED": 11
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 14
    },
    "C4": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
     "AMPLIFY": 0,
-    "GENERATE": 3,
-    "UNCHARACTERIZED": 7
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 9
    },
    "C5": {
     "ATTENUATE": 1,
     "PRESERVE": 0,
     "AMPLIFY": 2,
-    "GENERATE": 2,
-    "UNCHARACTERIZED": 19
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 21
    },
    "T": {
     "ATTENUATE": 1,
@@ -184,7 +184,7 @@
    }
   },
   "operator_secondary": {
-   "ATTENUATE": 12,
+   "ATTENUATE": 9,
    "PRESERVE": 1
   },
   "evidence_type": {
@@ -195,6 +195,202 @@
   "demographic": {
    "yes": 71,
    "no": 33
+  }
+ },
+ "original_corpus": {
+  "papers": 29,
+  "entries": 34,
+  "dimension_grid": {
+   "C1": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 4
+   },
+   "C2": {
+    "group": 0,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 6
+   },
+   "C3": {
+    "group": 5,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 3
+   },
+   "C4": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 2
+   },
+   "C5": {
+    "group": 3,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 6
+   },
+   "T": {
+    "group": 0,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 3
+   }
+  },
+  "operator_grid": {
+   "C1": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 0,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 5
+   },
+   "C2": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 3,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 2
+   },
+   "C3": {
+    "ATTENUATE": 2,
+    "PRESERVE": 0,
+    "AMPLIFY": 1,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 4
+   },
+   "C4": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 0,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 2
+   },
+   "C5": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 1,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 8
+   },
+   "T": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 0
+   }
+  },
+  "operator_secondary": {
+   "ATTENUATE": 3,
+   "PRESERVE": 1
+  },
+  "evidence_type": {
+   "direct_llm_agent": 21,
+   "llm_non_agentic_transferred": 10,
+   "non_llm_transferred": 3
+  },
+  "demographic": {
+   "yes": 34
+  }
+ },
+ "extended_corpus": {
+  "papers": 57,
+  "entries": 64,
+  "dimension_grid": {
+   "C1": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 4
+   },
+   "C2": {
+    "group": 3,
+    "individual": 0,
+    "counterfactual": 2,
+    "unspecified": 7
+   },
+   "C3": {
+    "group": 8,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 10
+   },
+   "C4": {
+    "group": 2,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 2
+   },
+   "C5": {
+    "group": 10,
+    "individual": 0,
+    "counterfactual": 1,
+    "unspecified": 10
+   },
+   "T": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 3
+   }
+  },
+  "operator_grid": {
+   "C1": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 0,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 5
+   },
+   "C2": {
+    "ATTENUATE": 4,
+    "PRESERVE": 0,
+    "AMPLIFY": 3,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 5
+   },
+   "C3": {
+    "ATTENUATE": 5,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 10
+   },
+   "C4": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 0,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 3
+   },
+   "C5": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 18
+   },
+   "T": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 1
+   }
+  },
+  "operator_secondary": {
+   "ATTENUATE": 4,
+   "PRESERVE": 1
+  },
+  "evidence_type": {
+   "direct_llm_agent": 37,
+   "llm_non_agentic_transferred": 24,
+   "non_llm_transferred": 3
+  },
+  "demographic": {
+   "yes": 64
   }
  }
 }

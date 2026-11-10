@@ -12,11 +12,21 @@ Notes added 2026-11-09:
   the paper reports both.
 - C2 and C3 are prompt-scaffold conditions. The harness asks for a JSON decision with a 200-token output
   budget and keeps only the parsed decision and score, so it does not record whether deliberation occurred.
-- `run_audit.py` converts the decision field with `bool()` and does not validate the schema or the score
-  range; a string such as "false" would be read as true. The committed decisions are already parsed, so this
-  cannot be checked after the fact; a re-run should validate the output and keep the raw responses.
+- The `run_audit.py` that produced the committed decisions converted the decision field with `bool()` and did not
+  validate the schema or the score range (a string such as "false" would be read as true). The committed
+  decisions are already parsed, so this cannot be checked after the fact (see the parser correction below); the
+  harness now validates both fields, but a re-run should still keep the raw responses.
 - `recompute_masd.py` describes an earlier version of `analyze.py`; the current `analyze.py` computes both the
   pairwise MASD reported in the paper and the per-profile score range.
+
+## Requirements
+
+Verifiable from the code, not from a recorded environment: `analyze.py` and `recompute_masd.py` import only the
+Python standard library (`json`, `random`, `itertools`, `pathlib`, `statistics`). `run_audit.py` imports `json`,
+`os`, `re`, `decimal` and `pathlib` from the standard library and, lazily inside `call_model`, `Anthropic` from the
+third-party `anthropic` package (`Anthropic(...)`, `client.messages.create(...)` with `model`, `max_tokens`,
+`temperature` and `messages`). The code uses f-strings, so it needs Python 3.6 or later. The Python and `anthropic`
+versions used for the committed run were not recorded, and no tested version is claimed here.
 
 ## Pipeline
 
@@ -53,7 +63,9 @@ canonical run; provider-side nondeterminism may produce small variation on re-ru
 
 **Parser correction (2026-11-10).** The original `run_audit.py` converted the model's `advance`
 field with `bool()`, which would have turned a string `"false"` into `True`. The harness now
-accepts only a JSON boolean or the strings `"true"`/`"false"` and rejects scores outside 0-100.
+accepts only a JSON boolean or the strings `"true"`/`"false"` for `advance`, and a `score` only if it is an
+integer or an integral numeric string (for example `85` or `"85"`) in 0-100; booleans, scores with a fractional
+part (`85.7`) and out-of-range values are recorded as unparseable (`null`) rather than coerced.
 The committed run shows no sign that the old conversion fired: every decision recorded as
 `advance = true` carries a score of 52 or higher, and every `advance = false` a score of 48 or
 lower. The raw model replies were not retained, so this check is indirect.

@@ -260,3 +260,78 @@ Checked, not changed. (a) was applied to the 99 topical papers and, in its prior
 ### Open decision (not settled by this round)
 
 Part F makes criterion iii consistent across cohorts. Criterion ii is not consistent: the original cohort keeps 17 locus-tagged non-demographic or technical-bias papers (shown as non-demographic [dagger] entries) and 19 prior-art surveys outside agent scope, while the extension excludes comparable records on ii or iii (for example 2305.17926, position bias in an LLM judge). Either A1 ii is widened to admit non-demographic mechanism evidence and the extension's ii exclusions are re-screened, or the original exceptions are stated as such in main §2.3 and supp §S6 and the "screened under the same criteria" wording for prior-art works (main Table 2) is corrected. This needs an author decision.
+
+**Settled 2026-11-10:** the author chose one strict rule for both cohorts (`CODEBOOK.md` Part G); see Round 6.
+
+
+## Round 6 (strict rule, both cohorts)
+
+Adjudicator: Claude Opus, 2026-11-10, from title, abstract and date (author contribution summary where no abstract is held) plus `CODEBOOK.md` Part G. Trigger: author decision of 2026-11-10 on the open decision of Round 5, and external review round 6, §3A and §3B. One line per decision in `strict_rule.jsonl` (273 lines: 169 papers, 104 entries), each with a reason and a verbatim quote. Coding-file backups: `*_final.prestrict.jsonl`. No record left the corpus (241).
+
+### (a) Papers moved
+
+**Original topical to `contextual-mechanism-precursor`** (24; the Round 5 list, confirmed). All fail criterion ii: no demographic, protected or social group of people is the object.
+- Locus-tagged (17): `blankenstein2025biasbusters`, `sneh2025tooltweak`, `kim2024fair` (provider- or source-side fairness); `pezeshkpour2023large`, `liu2023lost` (option order, context position); `liu2025truth`, `hong2025measuring`, `choi2025identity` (sycophancy, agent identity); `geng2025accumulating`, `simhi2026old` (context or history effects on beliefs and performance); `coppolillo2025unmasking` (political stance, A5); `tang2026your`, `singh2025bias`, `singh2025biasb` (no group named); `campedelli2024want` (anti-social conduct), `staab2023memorization` (attribute inference for privacy); `dai2024bias` (secondary work in a topical branch).
+- Not locus-tagged (7): `zhang2024causal`, `du2024causal` (dataset or spurious-feature bias); `ouyang2022training`, `bai2022constitutional` (toxicity, harmlessness); `dong2024building` (bias listed, not studied); `chakraborty2024maxmin`, `xiao2024algorithmic` (preference minorities, not protected or social groups; borderline).
+
+**Extension topical to `contextual-mechanism-precursor`** (3), same test: `2510.01164` (inequality, measured by the Gini coefficient, among anonymous recipients), `2511.11772` (equity across lower- and higher-scoring learners, a performance stratum), `2604.09620` (bias toward candidates' attitudes to AI, which the abstract sets apart from demographic bias). They were admitted at screening; under Part G they are not topical.
+
+**Original prior-art to `contextual`** (19; the Round 5 list, confirmed): `barrainkua2025preserving`, `caton2024fairness`, `chan2024visibility`, `chang2024survey`, `du2026survey`, `ferdaus2026trustworthy`, `he2025emerged`, `kaur2022trustworthy`, `kemmerzell2025better`, `kostikova2026lllms`, `li2023trustworthy`, `li2025triangular`, `pessach2022review`, `qi2026trustworthy`, `raza2025trism`, `soremekun2025software`, `tang2023what`, `yehudai2025survey`, `zhang2026generalizability`. Each is a survey or position paper with no LLM-agent or agent-component scope, or one that lists fairness without studying it.
+
+**Original prior-art to `topical`** (1): `proceedings2026framework` (`condon2026towards`) reports its own measurements (bias amplification factors from demographic swapping in agentic workflows), so A2 makes it a primary study, and it passes (a). It carries no locus tag.
+
+**Passed (a) although the abstract names no group** (10): `hall2025guiding`, `hu2022achieving`, `hu2024free`, `kabra2025reasoning`, `ma2026implicit`, `mansoury2020feedback`, `she2025fairsense`, `xu2024adapting`, `2511.06148` (artificial demographic groups), `2512.16532`. Their object is fairness of decisions or outputs about people. They stay topical, and their entries, coded `demographic` = `no`, leave the grids under (b). The `demographic` codes were not re-opened.
+
+Unchanged: 75 original topical, 9 original prior-art (`binkyte2025interactional`, `dai2025trustworthy`, `ebrahimi2025survey`, `gan2024navigating`, `ranjan2025fairness`, `raza2025responsible`, `wang2023survey`, `yangsmith2026fairness`, `zehlike2022fairness`), 34 extension topical, 2 extension prior-art. The 74 original contextual works were not re-screened; the two with locus tags (`park2023generative`, `madigan2025emergent`) stay contextual.
+
+**Corpus categories** (`corpus_master_extended.json`, field `category`): 241 = **110 topical + 11 prior-art + 93 contextual + 27 contextual-mechanism-precursor** (was 136 + 31 + 74, no precursor category). Original 202 = 76 + 9 + 93 + 24; extension 39 = 34 + 2 + 0 + 3.
+
+### (b) Entries removed from Figures 8 and 9 (40 of 104)
+
+- Paper not topical (23): `blankenstein2025biasbusters` C1, `sneh2025tooltweak` C1, `pezeshkpour2023large` C1, `tang2026your` C1, `singh2025bias` C1, `singh2025biasb` C1, `dai2024bias` C1, `kim2024fair` C2, `liu2023lost` C2, `geng2025accumulating` C2, `simhi2026old` C2, `coppolillo2025unmasking` C2, `choi2025identity` C3, `campedelli2024want` C3, `staab2023memorization` C5, `liu2025truth` T, `hong2025measuring` T, `2510.01164` C4, `2511.11772` C3, `2604.09620` C3 (papers that fail (a)); `park2023generative` C3, `madigan2025emergent` C3 and C4 (contextual works; `madigan2025emergent` is also `demographic` = `no`).
+- Finding not measured at the entry's locus (6): `arzaghi2024understanding` C5 (sentence associations in one response; no interacting user); `zhou2025veracity` C4 (cue in the prompt; no reasoning trace measured); `gupta2023bias` C4 (persona-caused accuracy gap, C3 by R2; no plan or trace measured); `gupta2023bias` C5 (the persona is the model's, not a model of the user, R3); `cao2026from` C4 (persona-caused performance gap, C3 by R2); `li2025actions` C4 (disparities keyed to the agents' assigned personas, C3 by R2; it would qualify at C3, but author tags are not re-decided, so the paper leaves the grids).
+- `demographic` = `no` (11): `hall2025guiding` C4, `kabra2025reasoning` C4, `hu2024free` C2, `hu2022achieving` T, `ma2026implicit` T, `mansoury2020feedback` T, `she2025fairsense` T, `xu2024adapting` T, `2511.06148` C4 and T, `2512.16532` C2.
+
+Of the six locus tags Round 5 flagged, all six are now out of the grids: `park2023generative`, `dai2024bias`, `pezeshkpour2023large` and `tang2026your` as non-topical papers, `arzaghi2024understanding` and `zhou2025veracity` on the locus test.
+
+**Grid after (b):** 57 papers (29 original, 28 extension), 64 entries (34 original, 30 extension); every counted entry has `demographic` = `yes`.
+
+### (c) Operators recoded (10) and confirmed (4)
+
+| Entry | Old | New | Rationale |
+|---|---|---|---|
+| gupta2023bias / C3 | GENERATE | UNCHARACTERIZED | Explicit stereotype questions and persona-conditioned reasoning accuracy are different tasks and outcomes; a no-persona condition measures no disparity (round-6 review B). |
+| gupta2023bias / C4 | GENERATE | UNCHARACTERIZED | As C3; no planning-specific comparison. Entry also fails (b). |
+| gupta2023bias / C5 | GENERATE | UNCHARACTERIZED | As C3; no user-model comparison. Entry also fails (b). |
+| cao2026from / C3 | GENERATE | UNCHARACTERIZED | Task-success variation across demographic personas has no comparable upstream disparity; a no-persona condition measures none. |
+| cao2026from / C4 | GENERATE | UNCHARACTERIZED | Copied persona finding; no generation isolated at planning (round-6 review B). Entry also fails (b). |
+| vijjini2024exploring / C5 | GENERATE | UNCHARACTERIZED | "With and without personalization" compares conditions; the unpersonalized condition has no group comparison. |
+| 2504.08260 / C3 | GENERATE | UNCHARACTERIZED | The reference, UAS survey data, is an external statistic, not an upstream stage (operator amendment, item 3). |
+| doi:10.3390/math14030458 / C3 | GENERATE | ATTENUATE | Blind negotiation is a cue-free condition with no measured zero disparity on the same outcome; the persona-conditioning result ("such conditioning can mitigate LLM-based agents' biases") meets ATTENUATE and is promoted from `operator_secondary` (B3 precedence). |
+| borah2024implicit / C2 | AMPLIFY | UNCHARACTERIZED | Escalation is measured across multi-agent interaction (C3); nothing specific to C2. B1 as amended. |
+| wang2025bias / C1 | AMPLIFY | UNCHARACTERIZED | Amplification runs through manipulated retrieval results, which R1 places at C2; no comparison of which retriever, tool or source is invoked. B1 as amended. |
+
+`operator_secondary` was set to null on every entry recoded to UNCHARACTERIZED, and on the promoted entry; superseded `operator_evidence` is kept except on the promoted entry. Confirmed as GENERATE: `nguyen2025social` C3 (bias emergence counts agents measured unbiased on the same benchmark before communication), `wyllie2024fairness` T (fairness and group representation tracked across generations from an initially unbiased dataset), `2511.06148` C4 and T (no inherent group differences; stratification develops through exploration; both entries leave the grids on `demographic` = `no`). Other multi-locus papers with a substantive operator: `fan2024fairmt` C2 and T keep AMPLIFY on distinct full-text comparisons (Round 4).
+
+### Figure totals
+
+| | Fig. 8: group / individual / counterfactual / unspecified | Fig. 9: ATT / PRE / AMP / GEN / uncharacterized | Entries |
+|---|---|---|---|
+| Before Round 6 (all entries) | 34 / 0 / 3 / 67 | 18 / 0 / 18 / 12 / 56 | 104 |
+| All entries, operators recoded (unfiltered) | 34 / 0 / 3 / 67 | 19 / 0 / 16 / 4 / 65 | 104 |
+| **Grid-eligible (published figures)** | **25 / 0 / 3 / 36** | **11 / 0 / 9 / 2 / 42** | **64** |
+
+Per locus, grid-eligible (`figure_counts.json`, `extended_corpus`):
+
+| Locus | Fig. 8: group / indiv. / counterf. / unspec. | Fig. 9: ATT / PRE / AMP / GEN / unchar. | Total |
+|---|---|---|---|
+| C1 | 1 / 0 / 0 / 4 | 0 / 0 / 0 / 0 / 5 | 5 |
+| C2 | 3 / 0 / 2 / 7 | 4 / 0 / 3 / 0 / 5 | 12 |
+| C3 | 8 / 0 / 0 / 10 | 5 / 0 / 2 / 1 / 10 | 18 |
+| C4 | 2 / 0 / 0 / 2 | 1 / 0 / 0 / 0 / 3 | 4 |
+| C5 | 10 / 0 / 1 / 10 | 1 / 0 / 2 / 0 / 18 | 21 |
+| T | 1 / 0 / 0 / 3 | 0 / 0 / 2 / 1 / 1 | 4 |
+
+The two remaining GENERATE entries are `nguyen2025social` C3 and `wyllie2024fairness` T. Planning (C4) has no GENERATE entry.
+
+Not done in this round: the article and supplement (counts, Figures 8 and 9, the "screened under the same criteria" wording, Tables 5 and 6) were not edited, and the evaluation and mitigation inventories were not re-assessed against the new topical set.

@@ -26,6 +26,7 @@ audit_v2_raw.json is the exact run reported in the paper.
 import json
 import os
 import re
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -40,6 +41,31 @@ def build_prompt(profile, config, condition):
         resume=profile["resume"],
         scaffold=config["scaffold"],
     )
+
+
+def parse_score(value):
+    """Accept only an integer, an integral float (85.0) or an integral numeric string ("85") in 0-100.
+    Booleans (an int subclass in Python) and values with a fractional part are rejected as None;
+    int() would silently truncate 85.7 to 85 and turn True into 1."""
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        n = value
+    elif isinstance(value, float):
+        if not value.is_integer():
+            return None
+        n = int(value)
+    elif isinstance(value, str):
+        try:
+            d = Decimal(value.strip())
+        except InvalidOperation:
+            return None
+        if not d.is_finite() or not 0 <= d <= 100 or d != d.to_integral_value():
+            return None
+        n = int(d)
+    else:
+        return None
+    return n if 0 <= n <= 100 else None
 
 
 def call_model(prompt):
@@ -65,12 +91,7 @@ def call_model(prompt):
         adv = {"true": True, "false": False}.get(adv.strip().lower())
     elif not isinstance(adv, bool):
         adv = None
-    try:
-        score = int(score)
-    except (TypeError, ValueError):
-        score = None
-    if score is not None and not 0 <= score <= 100:
-        score = None
+    score = parse_score(score)
     return adv, score
 
 
