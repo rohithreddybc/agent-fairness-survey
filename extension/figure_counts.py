@@ -2,7 +2,8 @@
 operator grid (Fig. 9: locus x conduction operator) from the released, dual-coded entries.
 
 Inputs : code_existing_final.jsonl (59 original locus-tagged papers, 68 entries)
-         code_new_final.jsonl, code_new2_final.jsonl (papers added by the 2026 extension)
+         code_new_final.jsonl, code_new2_final.jsonl, code_new4_final.jsonl (papers added by the 2026
+         extension; round 8 adds code_new4)
 Output : figure_counts.json and a printed summary. One entry = one (paper, locus) pair.
 
 The figures count only entries with grid_eligible = true (CODEBOOK.md Part G (b), strict rule of
@@ -38,7 +39,7 @@ def show(title, g, cols):
           + f"  {sum(sum(r.values()) for r in g.values()):7d}\n")
 
 
-existing, new = load("code_existing_final.jsonl"), load("code_new_final.jsonl") + load("code_new2_final.jsonl")
+existing, new = load("code_existing_final.jsonl"), load("code_new_final.jsonl") + load("code_new2_final.jsonl") + load("code_new4_final.jsonl")
 out = {}
 elig = lambda es: [e for e in es if e.get("grid_eligible") is True]
 for name, ents in (("unfiltered_original_corpus", existing), ("unfiltered_extended_corpus", existing + new),

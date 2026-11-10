@@ -5321,5 +5321,67 @@
    "targeted-search-round2"
   ],
   "category": "topical"
+ },
+ {
+  "title": "Beyond Arrow's Impossibility: Fairness as an Emergent Property of Multi-Agent Collaboration",
+  "authors": "Sayan Kumar Chaki, Antoine Gourru, Julien Velcin",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "arxiv_id": "2604.13705",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2604.13705",
+  "contribution": null,
+  "branches": [
+   "multiagent-delegation-bias",
+   "mitigation",
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:reused",
+  "bibkey": "chaki2026beyond",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "C3",
+  "locus_tags": [
+   "C3"
+  ],
+  "secondary_branches": [
+   "mitigation",
+   "high-stakes"
+  ],
+  "pool_source": [
+   "review-round8"
+  ],
+  "category": "topical"
+ },
+ {
+  "title": "Examining Agents' Bias Amplification versus Suppression in Multi-Agent Systems",
+  "authors": "Zejian Eric Wu, Zhongyi Jiang, Yuan Zhuang, Paul Jen-Hwa Hu",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "arxiv_id": "2605.28098",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2605.28098",
+  "contribution": null,
+  "branches": [
+   "multiagent-delegation-bias",
+   "evaluation-metrics-benchmarks"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:reused",
+  "bibkey": "wu2026examining",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "C3",
+  "locus_tags": [
+   "C3"
+  ],
+  "secondary_branches": [
+   "evaluation"
+  ],
+  "pool_source": [
+   "review-round8"
+  ],
+  "category": "topical"
  }
 ]

@@ -1,9 +1,9 @@
 """Write ../corpus/corpus_master_extended.json: the 202 original corpus records (unchanged apart from
-an added "extension": false and the metadata corrections in METADATA_FIXES) followed by the 39 papers
-admitted by the 2026-11 extension: 33 from screening round 1 and 2 from round 3 (screen_final.jsonl,
-screen2_final.jsonl), plus 4 admitted on re-screening under the eligibility amendment of
-2026-11-10 (CODEBOOK.md Part F; eligibility_amended = true in screen_final.jsonl). The 4 carry no
-locus tag and enter neither coverage figure.
+an added "extension": false and the metadata corrections in METADATA_FIXES) followed by the 41 papers
+admitted by the 2026-11 extension: 33 from screening round 1, 2 from round 3 and 2 from round 8
+(screen_final.jsonl, screen2_final.jsonl, screen4_final.jsonl), plus 4 admitted on re-screening under the
+eligibility amendment of 2026-11-10 (CODEBOOK.md Part F; eligibility_amended = true in screen_final.jsonl).
+The 4 carry no locus tag and enter neither coverage figure.
 
 Every record carries a `category` (CODEBOOK.md Part G, strict rule of 2026-11-10): topical, prior-art,
 contextual or contextual-mechanism-precursor. It is taken from the paper lines of strict_rule.jsonl
@@ -11,8 +11,8 @@ contextual or contextual-mechanism-precursor. It is taken from the paper lines o
 prior-art nor a topical branch). A record whose category changed under Part G also carries
 `pre_strict_category`.
 
-Inputs : ../corpus/corpus_master.json, screen_final.jsonl and screen2_final.jsonl (verdicts, branches,
-         locus tags), pool.jsonl and pool2.jsonl (title, authors, date, source),
+Inputs : ../corpus/corpus_master.json, screen_final.jsonl, screen2_final.jsonl and screen4_final.jsonl
+         (verdicts, branches, locus tags), pool.jsonl, pool2.jsonl and pool4.jsonl (title, authors, date, source),
          bibkeys.json (arXiv id or DOI -> bib key),
          a references.bib for year and venue, if one is found (--bib PATH, else ../../review/references.bib;
          otherwise date and "arXiv preprint" are used).
@@ -58,8 +58,8 @@ def bibfield(key, field):
 
 
 original = json.load(open(CORPUS / "corpus_master.json", encoding="utf-8"))
-screen = {r["id"]: r for r in jl("screen_final.jsonl") + jl("screen2_final.jsonl")}
-pool = {r["id"]: r for r in jl("pool.jsonl") + jl("pool2.jsonl")}
+screen = {r["id"]: r for r in jl("screen_final.jsonl") + jl("screen2_final.jsonl") + jl("screen4_final.jsonl")}
+pool = {r["id"]: r for r in jl("pool.jsonl") + jl("pool2.jsonl") + jl("pool4.jsonl")}
 keys = json.load(open(HERE / "bibkeys.json", encoding="utf-8"))
 strict = {r["key"]: r for r in jl("strict_rule.jsonl") if r["record"] == "paper"}
 

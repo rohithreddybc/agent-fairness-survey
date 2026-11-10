@@ -387,3 +387,86 @@ agents already show bias (Table 1). `strict_rule.jsonl` carries the corrected `o
 55 papers (27 original, 28 added) with 58 entries (29 and 29). Evidence: 33 direct agent, 24
 non-agentic LLM, 1 non-LLM. Fairness basis: 6 named, 21 instantiated, 31 none. Corpus categories are
 unchanged (no paper changed category), so `corpus_master_extended.json` was not regenerated.
+
+## Round 8 (two cited studies; review round 8)
+
+The round-8 review (§3A) identified two eligible studies, posted before the 10 June 2026 cutoff and already
+cited in the survey, that no candidate pool held (neither abstract matches the targeted query): 2605.28098
+(`wu2026examining`, posted 27 May 2026) and 2604.13705 (`chaki2026beyond`, posted 15 April 2026). Their pool
+records are `pool4.jsonl` (source `review-round8`); `bibkeys.json` maps them to the existing bib keys.
+
+**Procedure and coders.** Blind inputs (id, title, date, abstract) in `screen_input4.jsonl`; the coding input
+`code_new4_input.jsonl` follows the round-3 format (locus tags from the adjudicated screening, no venue, no
+summary). Coder B (GPT-6.1, `codex exec`, reasoning effort high, read-only sandbox) ran `PROMPT_SCREEN.md` and
+`PROMPT_CODE.md` unchanged, plus one line naming the input file: `screen4_B.jsonl`, `code_new4_B.jsonl`.
+**Coder A deviates from earlier rounds:** the Claude Sonnet command-line coder was not available (its session had
+expired: "OAuth session expired and could not be refreshed"), so coder A was Claude Opus, which coded
+`screen4_A.jsonl` and `code_new4_A.jsonl` strictly from the codebook and the inputs **before reading coder B's
+output**. The same model then adjudicated, so for these two papers coder A and the adjudicator are not
+independent.
+
+### Screening
+
+| Record | Field | A | B | Final | Rationale | Deciding quote |
+|---|---|---|---|---|---|---|
+| 2604.13705 | locus_tags | `["C3"]` | `["C3", "C4"]` | `["C3"]` | The allocation disparity is produced by the roles the agents are given (aligned to an ethical framework, or prompted to favor demographic groups) and by their negotiation. R2 places role-caused disparity at C3 and keeps C4 for allocation "independent of identity assignment"; G2 item 2 would remove a C4 entry whose disparity is caused by an agent's role. | "the other is either unaligned or adversarially prompted to favor demographic groups over clinical need" |
+| 2605.28098 | verdict | `"INCLUDE_TOPICAL"` | `"BORDERLINE"` | `"INCLUDE_TOPICAL"` | B left criterion ii unsettled because the abstract does not say that the favored and disfavored groups are groups of people. The adjudicator read the paper's full text (https://arxiv.org/html/2605.28098v1, Section 3, "Problem formulation"): each instance has a binary sensitive attribute "such as gender", and the task is student pass-or-fail prediction with gender as the focal sensitive attribute. Criterion ii is met (A5). CODEBOOK GAP: Part A gives no full-text route for an unsettled screening criterion; the "Ambiguous abstracts" rule of the operator amendment was applied by analogy. Record 2601.17492 (round 1, excluded on ii from its abstract) was not re-checked against its full text. | "We use prompts to expose individual agents to group-favoring bias, then assess downstream impacts at the system level." |
+| 2605.28098 | deciding_criterion | `"all_met"` | `"ii"` | `"all_met"` | Follows the verdict. | (as above) |
+
+Both records: `post_cutoff` false, primary branch C3, no transfer clause (agreed). Secondary branches agreed:
+2604.13705 `["mitigation", "high-stakes"]`, 2605.28098 `["evaluation"]`. Final file: `screen4_final.jsonl`
+(both `INCLUDE_TOPICAL`; `was_borderline` true for 2605.28098).
+
+### Entry coding
+
+| Record | Field | A | B | Final | Rationale | Deciding quote |
+|---|---|---|---|---|---|---|
+| 2604.13705 / C3 | fairness_dimension | `"group"` | `"unspecified"` | `"group"` | Access and allocation, a named decision, are compared for marginalized and demographic groups, so group by instantiation (B2 step 2; 2511.06148 and 2604.09620 precedents). | "acting as corrective patches that restore access for marginalized groups without fully converting a biased counterpart" |
+| 2604.13705 / C3 | fairness_basis | `"instantiated"` | `"none"` | `"instantiated"` | Follows group by instantiation. | (as above) |
+| 2605.28098 / C3 | fairness_dimension | `"group"` | `"unspecified"` | `"unspecified"` | Favored-group uplift and disfavored-group suppression are named, but no compared quantity (rate, score, decision); bias across groups with no quantity named does not instantiate a family (B2 step 2, last sentence). | (default value) |
+| 2605.28098 / C3 | fairness_basis | `"instantiated"` | `"none"` | `"none"` | Follows unspecified. | (default value) |
+
+Agreed and kept: 2604.13705 / C3 ATTENUATE (the negotiated joint allocation meets fairness criteria that neither
+agent's allocation meets alone, a reduction of an existing disparity at the C3 interaction, which meets the
+operator evidence requirement and G3), direct LLM-agent evidence, demographic yes. 2605.28098 / C3 AMPLIFY
+(system-wide bias exceeds the additive sum of the individual agents' biases after interaction), direct evidence,
+**demographic no**: the abstract names no protected attribute or proxy (B5; Part D). Agreed fields are kept, so
+the entry fails G2 item 3 and stays out of the grids, as for `gharat2026personalization`; the paper passes G1
+(fairness of decisions about people, established at screening). Coded from the full text, which names gender, it
+would add one C3 AMPLIFY entry; that recoding was not made, to keep the abstract-only protocol. Neither entry
+reports perturbation sensitivity. Final file: `code_new4_final.jsonl` (`grid_eligible` true for 2604.13705, false
+for 2605.28098 with a `strict_rule_note`); `strict_rule.jsonl` gains two paper lines and two entry lines.
+
+**Agreement.** Screening: the coders agreed on 1 of 2 verdicts and 1 of 2 locus-tag sets (too few for a kappa of
+their own). Pooled over rounds 1, 3 and 8 (228 records): four-way verdict kappa 0.854 (agreement 0.956), against
+0.863 (0.960) over the 226 of rounds 1 and 3. New entries pooled over rounds 1, 3 and 8 (38): fairness dimension
+0.555 (agreement 0.737), operator 0.761 (0.842), evidence type 0.883, demographic 0.558; against 0.621 and 0.740
+over 36. The pooled values mix two coder-A models and should be read with that caveat.
+
+**Mitigation and evaluation inventories** (one model pass, Claude Opus, from the abstracts and, for these two
+papers, the full text; `mitig_final.jsonl` lines 37-38, single-pass). 2604.13705: Table 5 no (a study, no reusable
+instrument stated); Table 6 multi-agent delegation, agent-roles row (agentic multi-step, partial reduction: an
+aligned agent partly corrects an adversarially prompted one). 2605.28098: Table 5 no (FBS is a metric applied to
+existing student datasets, not a reusable benchmark or dataset); Table 6 the same row (full text: disagreement-based
+arbitration by a calibrated ML predictor lowers FBS under single-agent bias exposure, and less when all agents are
+exposed). The row's representative evidence goes from 7 to 9 studies; its density stays High.
+
+**Mitigation-file provenance (review round 8, §3D).** Every `mitig_final.jsonl` record now carries `provenance`
+(24 dual-coded, 14 single-pass). Where the supplement's inventory tables record a value that differs from the
+abstract-based structured fields, the record carries `table6_setting`, `table6_effect` and `table6_note`, and those
+values are authoritative for Table 6: `wu2024rag` (effect reduces, from the full text; setting Q), `basu2026names`
+(mixed, from the full text), `wang2025bias` (setting Q) and `wu2026examining` (reduces, from the full text). For the
+two RAG studies the supplement's Q differs from Part C's first-match rule (agentic_multistep); under Part C the
+poisoning row of Table 6 would read Medium instead of Low. Not changed in this round; flagged for the authors.
+
+### Figure totals after Round 8
+
+| | Fig. 8: group / individual / counterfactual / unspecified | Fig. 9: ATT / PRE / AMP / GEN / uncharacterized | Entries |
+|---|---|---|---|
+| **Grid-eligible (published figures)** | **25 / 0 / 3 / 31** | **12 / 0 / 9 / 2 / 36** | **59** |
+
+Only the C3 row changes: Fig. 8 9 / 0 / 0 / 10, Fig. 9 6 / 0 / 2 / 1 / 10 (19 entries). 56 papers (27 original,
+29 added) with 59 entries (29 and 30). Evidence: 34 direct agent, 24 non-agentic LLM, 1 non-LLM. Fairness basis:
+6 named, 22 instantiated, 31 none. Unfiltered: 106 entries from 94 papers. Corpus (`build_corpus_extended.py`): 243
+records (202 original, 41 extension); 112 topical, 11 prior-art, 93 contextual, 27 contextual-mechanism-precursor;
+the extension cohort 36 / 2 / 0 / 3.
