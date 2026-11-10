@@ -1,0 +1,134 @@
+{
+ "2305.07609": {
+  "key": "zhang2023chatgpt",
+  "source": "venue+https://doi.org/10.1145/3604915.3608860"
+ },
+ "2401.04057": {
+  "key": "sah2024unveiling",
+  "source": "arxiv"
+ },
+ "2407.06866": {
+  "key": "li2024chatgpt",
+  "source": "venue+https://doi.org/10.18653/v1/2024.emnlp-main.363"
+ },
+ "2410.19803": {
+  "key": "eloundou2025firstperson",
+  "source": "reused"
+ },
+ "2411.07656": {
+  "key": "huang2024mitigating",
+  "source": "arxiv"
+ },
+ "2501.04316": {
+  "key": "seshadri2025small",
+  "source": "venue+https://doi.org/10.18653/v1/2025.ijcnlp-long.143"
+ },
+ "2501.05396": {
+  "key": "du2025faircoder",
+  "source": "arxiv"
+ },
+ "2502.17945": {
+  "key": "liu2025assessing",
+  "source": "venue+https://doi.org/10.18653/v1/2025.findings-acl.1355"
+ },
+ "2503.15454": {
+  "key": "ji2025bias",
+  "source": "arxiv"
+ },
+ "2504.07801": {
+  "key": "sah2025faireval",
+  "source": "arxiv"
+ },
+ "2504.08260": {
+  "key": "khaokaew2025evaluating",
+  "source": "arxiv"
+ },
+ "2506.04419": {
+  "key": "harvey2025framework",
+  "source": "venue+https://doi.org/10.1145/3715275.3732137"
+ },
+ "2506.13245": {
+  "key": "zhang2025game",
+  "source": "arxiv"
+ },
+ "2508.10906": {
+  "key": "chen2025personatwin",
+  "source": "arxiv"
+ },
+ "2509.08829": {
+  "key": "sah2025perfairx",
+  "source": "venue+https://doi.org/10.1109/iccvw69036.2025.00289"
+ },
+ "2509.21080": {
+  "key": "wan2026insideout",
+  "source": "venue+https://doi.org/10.18653/v1/2026.acl-long.1094"
+ },
+ "2509.26584": {
+  "key": "oliveira2025fairness",
+  "source": "venue+https://doi.org/10.5753/sbqs.2025.15552"
+ },
+ "2510.01164": {
+  "key": "shi2025social",
+  "source": "arxiv"
+ },
+ "2510.02352": {
+  "key": "wu2026evaluating",
+  "source": "venue+https://doi.org/10.1109/icassp55912.2026.11461562"
+ },
+ "2510.09905": {
+  "key": "fang2026personalization",
+  "source": "venue+https://doi.org/10.18653/v1/2026.acl-short.43"
+ },
+ "2511.06148": {
+  "key": "wu2025novel",
+  "source": "reused"
+ },
+ "2511.11772": {
+  "key": "zhang2026scaling",
+  "source": "venue+https://doi.org/10.1609/aaai.v40i46.41311"
+ },
+ "2512.16532": {
+  "key": "gharat2026personalization",
+  "source": "reused"
+ },
+ "2512.19735": {
+  "key": "zhang2026improving",
+  "source": "venue+https://doi.org/10.1016/j.artmed.2026.103541"
+ },
+ "2601.17087": {
+  "key": "seshadri2026lost",
+  "source": "reused"
+ },
+ "2602.02582": {
+  "key": "sah2026uncertainty",
+  "source": "venue+https://doi.org/10.1609/iaseai.v2i1.43060"
+ },
+ "2603.18729": {
+  "key": "ullasci2026analysis",
+  "source": "venue+https://doi.org/10.1145/3803437.3805544"
+ },
+ "2604.09620": {
+  "key": "mao2026llm",
+  "source": "arxiv"
+ },
+ "2604.17248": {
+  "key": "lin2026vibe",
+  "source": "arxiv"
+ },
+ "2605.00382": {
+  "key": "rabbi2026social",
+  "source": "arxiv"
+ },
+ "2605.02379": {
+  "key": "forster2026fair",
+  "source": "arxiv"
+ },
+ "2605.12530": {
+  "key": "tang2026insitu",
+  "source": "reused"
+ },
+ "doi:10.3390/math14030458": {
+  "key": "khaki2026evaluating",
+  "source": "venue+https://doi.org/10.3390/math14030458"
+ }
+}

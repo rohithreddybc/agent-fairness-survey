@@ -1,0 +1,17 @@
+{
+  "per_branch_unique": {
+    "B1": 40,
+    "B2": 449,
+    "B3": 355,
+    "B4": 299,
+    "B5": 361,
+    "B6": 165,
+    "B7": 533,
+    "B8": 159,
+    "B10": 340,
+    "B11": 87
+  },
+  "sum_with_multiplicity": 2788,
+  "unique_across_branches": 1778,
+  "cross_branch_duplicates": 1010
+}

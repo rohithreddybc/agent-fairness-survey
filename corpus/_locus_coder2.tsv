@@ -1,0 +1,57 @@
+1	borah2024implicit	multiagent-delegation-bias	high	Bias intensifies through agent-to-agent conversation; amplification across interacting agents
+2	fan2024fairmt	longhorizon-fairness-drift	medium	Bias significantly higher in multi-turn vs single-turn; degradation across turns is the distinguishing feature (borders context-accumulation C2)
+3	gupta2023bias	planning-decomposition-bias	high	Persona assignment triggers implicit reasoning-bias degradation across 24 reasoning datasets
+4	blankenstein2025biasbusters	tool-api-selection-bias	high	Direct tool-selection bias benchmark across functionally equivalent providers
+5	cao2026from	planning-decomposition-bias	high	Persona assignment degrades strategic reasoning and planning benchmarks via task-irrelevant identity cues
+6	owens2024multi	multiagent-delegation-bias	high	Centralized/decentralized multi-LLM dialogue debiasing strategy
+7	wang2025bias	memory-retrieval-bias	high	Poisoned retrieval corpus amplifies stereotypes in RAG
+8	weissburg2024llms	user-modeling-personalization-harms	high	Personalized educational explanations differ systematically by demographic
+9	wu2024rag	memory-retrieval-bias	high	Fairness issues in both retrieval and generation stages of RAG pipeline
+10	xu2026ducx	tool-api-selection-bias	high	Tool exposure and tool-routing bias are the dominant failure modes in tool-using medical agent
+11	arzaghi2024understanding	user-modeling-personalization-harms	high	LLMs extract demographic attributes from names and correlate with stereotypes
+12	campedelli2024want	multiagent-delegation-bias	high	Assigned hierarchical roles (guard/prisoner) among interacting agents shape behavior
+13	choi2025identity	multiagent-delegation-bias	high	Identity-driven sycophancy and self-bias among agents in multi-agent debate
+14	coppolillo2025unmasking	multiagent-delegation-bias	high	Echo-chamber stance shifts between paired interacting agents
+15	dai2024bias	memory-retrieval-bias	medium	Survey of bias in IR/retrieval systems with LLM integration (borders tool-selection C1)
+16	deldjoo2024cfairllm	user-modeling-personalization-harms	high	Distinguishes genuine personalization from demographic bias in LLM recommenders
+17	deldjoo2024normative	user-modeling-personalization-harms	high	Age-based fairness deviations in personalized LLM recommender output
+18	geng2025accumulating	memory-retrieval-bias	medium	Belief drift driven by accumulated conversational context (borders temporal drift T)
+19	hall2025guiding	planning-decomposition-bias	high	Naive CoT sampling amplifies bias; reward model reweights reasoning trajectories
+20	hong2025measuring	longhorizon-fairness-drift	high	Sycophantic stance-flip drift measured explicitly across multi-turn dialogue
+21	hu2022achieving	longhorizon-fairness-drift	high	Long-term fairness framework for sequential decision-making with drift over time
+22	hu2024free	memory-retrieval-bias	high	RAG undermines fairness alignment even with curated retrieval corpora
+23	kabra2025reasoning	planning-decomposition-bias	high	Reasoning capability/fine-tuning correlates with stereotypical bias level
+24	kantharuban2024stereotype	user-modeling-personalization-harms	high	Stereotyped chatbot recommendations from explicit/implicit user identity cues
+25	ki2025multiple	multiagent-delegation-bias	high	Two-agent debate framework for cross-cultural fairness alignment
+26	kim2024fair	memory-retrieval-bias	high	Fair ranking of retrieved sources in RAG pipeline
+27	kim2025mitigating	memory-retrieval-bias	high	Embedder-driven bias-conflict relationship in RAG retrieval component
+28	li2025actions	planning-decomposition-bias	medium	Persona-conditioned agent decision disparities reveal implicit reasoning bias
+29	li2025from	multiagent-delegation-bias	high	Persona-induced in-group favoritism and differential trust among interacting agents
+30	lin2024assessing	user-modeling-personalization-harms	high	Dialect (AAVE vs Standard English) cues drive unfair reasoning outcomes
+31	liu2023lost	memory-retrieval-bias	high	Positional bias in what long-context retrieval surfaces to the model
+32	liu2025truth	longhorizon-fairness-drift	high	Sycophancy compounds and accuracy decays across multi-turn conversation
+33	ma2026implicit	longhorizon-fairness-drift	medium	Bias intensifies and propagates specifically over long-term memory interactions (borders memory-mechanism C2)
+34	makhortykh2021detecting	memory-retrieval-bias	medium	Bias lies in content returned by search engines, not in engine selection (borders tool-selection C1)
+35	mansoury2020feedback	longhorizon-fairness-drift	high	Recommender feedback loop iteratively amplifies bias across interaction cycles
+36	mire2025rejected	user-modeling-personalization-harms	high	Reward models discriminate by dialect and steer users toward WME
+37	mirza2025malibu	multiagent-delegation-bias	high	Benchmark for implicit bias via persona roles in multi-agent systems
+38	nguyen2025social	multiagent-delegation-bias	high	Bias emergence, propagation, and amplification through inter-agent communication
+39	parziale2026once	planning-decomposition-bias	medium	Agent-driven task/role allocation over external candidates by nationality and gender (borders multi-agent C3 given team framing)
+40	pawar2025presumed	user-modeling-personalization-harms	high	Cultural-stereotype assumptions inferred directly from user names
+41	pezeshkpour2023large	tool-api-selection-bias	high	Positional selection bias reframed as unfair advantage to earlier-listed tool options
+42	she2025fairsense	longhorizon-fairness-drift	high	Long-term fairness violations from self-reinforcing feedback loops in deployed systems
+43	simhi2026old	longhorizon-fairness-drift	medium	Prior biased interactions geometrically trap and persist into future turns (borders memory-mechanism C2)
+44	singh2025bias	memory-retrieval-bias	medium	Bias surfaced/mitigated lives in retrieved content itself (borders tool-framing C1 given "bias detector tools")
+45	singh2025biasb	tool-api-selection-bias	medium	Multi-agent system explicitly optimizes knowledge-SOURCE selection to reduce bias (borders multi-agent C3)
+46	sneh2025tooltweak	tool-api-selection-bias	high	Direct manipulation of tool-selection rate via name/description changes
+47	staab2023memorization	user-modeling-personalization-harms	high	LLM infers sensitive personal attributes about the user from innocuous text
+48	tang2026your	planning-decomposition-bias	medium	Recommender-agent decisions over external subjects (papers/products/candidates) skewed by contextual cues rather than quality (borders selection-bias C1)
+49	tonneau2026different	user-modeling-personalization-harms	medium	Demographic cues (names vs. others) trigger inconsistent personalization/bias patterns
+50	u2018algorithms	memory-retrieval-bias	medium	Search-engine result curation bias is a content/retrieval bias inherited by agents (borders tool-selection C1)
+51	vijjini2024exploring	user-modeling-personalization-harms	high	User identity affects personalized safety and utility performance
+52	wang2026observations	longhorizon-fairness-drift	high	Self-consuming performative loop from iterative retraining on self-generated data
+53	wu2025reasoning	planning-decomposition-bias	high	Chain-of-thought reasoning steps correlate with stereotypical outputs
+54	wyllie2024fairness	longhorizon-fairness-drift	high	Fairness feedback loop via retraining on synthetic self-generated data (MIDS)
+55	xu2024adapting	longhorizon-fairness-drift	high	Long-horizon discriminatory effects in sequential MDP decision-making
+56	zhang2025evaluating	memory-retrieval-bias	high	Biases in retrieved document collections amplified in RAG-generated responses
+57	zhou2025veracity	planning-decomposition-bias	high	Attribution/evaluation bias embedded in the reasoning process itself

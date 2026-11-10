@@ -1,0 +1,62 @@
+[
+ {
+  "branch": "B1",
+  "name": "Tool / API selection",
+  "arxiv_query": "(abs:\"tool selection\" OR abs:\"tool use\" OR abs:\"function calling\" OR abs:\"API selection\") AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 38
+ },
+ {
+  "branch": "B2",
+  "name": "Memory & retrieval",
+  "arxiv_query": "(abs:\"retrieval-augmented\" OR abs:RAG OR abs:memory) AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 447
+ },
+ {
+  "branch": "B3",
+  "name": "Multi-agent delegation",
+  "arxiv_query": "(abs:\"multi-agent\" OR abs:persona OR abs:\"role assignment\") AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 348
+ },
+ {
+  "branch": "B4",
+  "name": "Planning / decomposition",
+  "arxiv_query": "(abs:planning OR abs:reasoning OR abs:\"chain-of-thought\") AND (abs:bias OR abs:fairness) AND abs:agent AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 298
+ },
+ {
+  "branch": "B5",
+  "name": "User modeling / personalization",
+  "arxiv_query": "(abs:personalization OR abs:\"user modeling\" OR abs:dialect) AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 360
+ },
+ {
+  "branch": "B6",
+  "name": "Long-horizon drift",
+  "arxiv_query": "(abs:\"long-term fairness\" OR abs:\"feedback loop\" OR abs:sycophancy OR abs:\"multi-turn\") AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 163
+ },
+ {
+  "branch": "B7",
+  "name": "Evaluation & benchmarks",
+  "arxiv_query": "(abs:benchmark OR abs:evaluation OR abs:audit) AND (abs:fairness OR abs:bias) AND abs:agent AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 523
+ },
+ {
+  "branch": "B8",
+  "name": "Mitigation",
+  "arxiv_query": "(abs:debiasing OR abs:mitigation) AND (abs:fairness OR abs:bias) AND abs:agent AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 158
+ },
+ {
+  "branch": "B10",
+  "name": "High-stakes domains",
+  "arxiv_query": "(abs:hiring OR abs:clinical OR abs:lending OR abs:judicial) AND (abs:bias OR abs:fairness) AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 332
+ },
+ {
+  "branch": "B11",
+  "name": "Prior-art / neighbour surveys",
+  "arxiv_query": "(abs:survey OR abs:review) AND (abs:fairness OR abs:bias) AND abs:agent AND (abs:\"language model\" OR abs:LLM)",
+  "arxiv_hits": 84
+ }
+]

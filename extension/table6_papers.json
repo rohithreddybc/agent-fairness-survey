@@ -1,0 +1,685 @@
+{
+ "source": "review/main.tex, Table tab:mitigation-map (identical rows in submit/main.tex)",
+ "built": "2026-11-09",
+ "note": "rows = Table 6 rows in printed order; papers = distinct cited keys (a key cited in two rows appears once, with both row numbers). Empty rows carry no keys.",
+ "rows": [
+  {
+   "row": 1,
+   "entry_locus": "Model / input preprocessing",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Pre-inference (prompt)",
+   "intervention_class": "Causal prompting",
+   "evidence_density": "Medium",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "li2024prompting",
+     "dagger_in_table": false
+    },
+    {
+     "key": "zhang2024causal",
+     "dagger_in_table": true
+    },
+    {
+     "key": "furniturewala2024thinking",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 2,
+   "entry_locus": "Model / input preprocessing",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Pre-inference (few-shot)",
+   "intervention_class": "Causal active learning",
+   "evidence_density": "Medium",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "du2024causal",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 3,
+   "entry_locus": "Model (weights)",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Training (RLHF)",
+   "intervention_class": "Alignment / MaxMin-RLHF [dagger]",
+   "evidence_density": "Low",
+   "intervention_class_dagger": true,
+   "keys": [
+    {
+     "key": "ouyang2022training",
+     "dagger_in_table": false
+    },
+    {
+     "key": "chakraborty2024maxmin",
+     "dagger_in_table": true,
+     "dagger_from": "intervention-class cell"
+    },
+    {
+     "key": "xiao2024algorithmic",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 4,
+   "entry_locus": "Model (weights)",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Training (DPO)",
+   "intervention_class": "BiasDPO / preference optimization",
+   "evidence_density": "Medium",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "allam2024biasdpo",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 5,
+   "entry_locus": "Model (weights)",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Training (SFT + CoT)",
+   "intervention_class": "Reasoning-guided fine-tuning",
+   "evidence_density": "Medium",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "kabra2025reasoning",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 6,
+   "entry_locus": "Model (weights)",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Training (constitutional)",
+   "intervention_class": "Constitutional / Collective AI",
+   "evidence_density": "Medium",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "bai2022constitutional",
+     "dagger_in_table": false
+    },
+    {
+     "key": "huang2024collective",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 7,
+   "entry_locus": "Model (activations)",
+   "operator_targeted": "PRESERVE -> ATTENUATE",
+   "pipeline_stage": "Inference (activation)",
+   "intervention_class": "FairSteer activation steering",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "li2025fairsteer",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 8,
+   "entry_locus": "All output boundaries",
+   "operator_targeted": "ATTENUATE (post-hoc filter)",
+   "pipeline_stage": "Inference (output gate)",
+   "intervention_class": "Guardrails",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "dong2024building",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 9,
+   "entry_locus": "Tool/API selection",
+   "operator_targeted": "ATTENUATE (source selection)",
+   "pipeline_stage": "Retrieval routing",
+   "intervention_class": "Bias-aware retrieval agent",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "singh2025bias",
+     "dagger_in_table": false
+    },
+    {
+     "key": "singh2025biasb",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 10,
+   "entry_locus": "Memory and retrieval",
+   "operator_targeted": "GENERATE -> ATTENUATE (embedder)",
+   "pipeline_stage": "Retrieval embedding",
+   "intervention_class": "RAG fairness / embedder control",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "kim2024fair",
+     "dagger_in_table": false
+    },
+    {
+     "key": "kim2025mitigating",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 11,
+   "entry_locus": "Memory and retrieval",
+   "operator_targeted": "AMPLIFY -> ATTENUATE (write-time constraint)",
+   "pipeline_stage": "Long-term memory",
+   "intervention_class": "Write-time fairness tagging",
+   "evidence_density": "Very low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "ma2026implicit",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 12,
+   "entry_locus": "Multi-agent delegation",
+   "operator_targeted": "AMPLIFY -> ATTENUATE (ensemble)",
+   "pipeline_stage": "Agent coordination",
+   "intervention_class": "Multi-LLM debiasing ensemble",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "owens2024multi",
+     "dagger_in_table": false
+    },
+    {
+     "key": "xu2024mitigating",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 13,
+   "entry_locus": "Multi-agent delegation",
+   "operator_targeted": "Cue removal before GENERATE (identity)",
+   "pipeline_stage": "Agent debate protocol",
+   "intervention_class": "Authorship-identity anonymization [dagger]",
+   "evidence_density": "Low",
+   "intervention_class_dagger": true,
+   "keys": [
+    {
+     "key": "choi2025identity",
+     "dagger_in_table": true,
+     "dagger_from": "intervention-class cell"
+    }
+   ]
+  },
+  {
+   "row": 14,
+   "entry_locus": "Multi-agent delegation",
+   "operator_targeted": "AMPLIFY -> ATTENUATE (debate)",
+   "pipeline_stage": "Agent debate protocol",
+   "intervention_class": "Cultural debate debiasing",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "ki2025multiple",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 15,
+   "entry_locus": "Multi-agent delegation",
+   "operator_targeted": "AMPLIFY -> ATTENUATE (recurrence)",
+   "pipeline_stage": "Interaction history",
+   "intervention_class": "Implicit bias detection pipeline",
+   "evidence_density": "Low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "borah2024implicit",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 16,
+   "entry_locus": "Planning/ decomposition",
+   "operator_targeted": "PRESERVE -> ATTENUATE (chain reweighting)",
+   "pipeline_stage": "Post-generation aggregation",
+   "intervention_class": "Fairness reward model: step-level bias scores weight sampled chains",
+   "evidence_density": "Very low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "hall2025guiding",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 17,
+   "entry_locus": "Planning/ decomposition",
+   "operator_targeted": "PRESERVE -> ATTENUATE (reasoning)",
+   "pipeline_stage": "Fine-tuning trace",
+   "intervention_class": "Reasoning-guided SFT",
+   "evidence_density": "Very low",
+   "intervention_class_dagger": false,
+   "keys": [
+    {
+     "key": "kabra2025reasoning",
+     "dagger_in_table": false
+    }
+   ]
+  },
+  {
+   "row": 18,
+   "entry_locus": "Tool/API selection: AMPLIFY",
+   "operator_targeted": "n/a",
+   "pipeline_stage": "n/a",
+   "intervention_class": "(No published intervention)",
+   "evidence_density": "Empty",
+   "intervention_class_dagger": false,
+   "keys": []
+  },
+  {
+   "row": 19,
+   "entry_locus": "Tool/API selection: GENERATE",
+   "operator_targeted": "n/a",
+   "pipeline_stage": "n/a",
+   "intervention_class": "(No published intervention)",
+   "evidence_density": "Empty",
+   "intervention_class_dagger": false,
+   "keys": []
+  },
+  {
+   "row": 20,
+   "entry_locus": "Memory and retrieval: AMPLIFY (poisoning)",
+   "operator_targeted": "n/a",
+   "pipeline_stage": "n/a",
+   "intervention_class": "(No published intervention)",
+   "evidence_density": "Empty",
+   "intervention_class_dagger": false,
+   "keys": []
+  },
+  {
+   "row": 21,
+   "entry_locus": "User modeling/personalization",
+   "operator_targeted": "n/a",
+   "pipeline_stage": "n/a",
+   "intervention_class": "(No published intervention at locus)",
+   "evidence_density": "Empty",
+   "intervention_class_dagger": false,
+   "keys": []
+  },
+  {
+   "row": 22,
+   "entry_locus": "Long-horizon drift : AMPLIFY (feedback loop)",
+   "operator_targeted": "n/a",
+   "pipeline_stage": "n/a",
+   "intervention_class": "(No intervention evaluated on the feedback gain; the write-time memory row acts on one path)",
+   "evidence_density": "Empty",
+   "intervention_class_dagger": false,
+   "keys": []
+  }
+ ],
+ "papers": [
+  {
+   "key": "li2024prompting",
+   "rows": [
+    1
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Prompting Fairness: Integrating Causality to Debias Large Language Models",
+   "year": 2024,
+   "venue": "ICLR 2025",
+   "arxiv_id": "2403.08743",
+   "abstract": "Large language models (LLMs), despite their remarkable capabilities, are susceptible to generating biased and discriminatory responses. As LLMs increasingly influence high-stakes decision-making (e.g., hiring and healthcare), mitigating these biases becomes critical. In this work, we propose a causality-guided debiasing framework to tackle social biases, aiming to reduce the objectionable dependence between LLMs' decisions and the social information in the input. Our framework introduces a novel perspective to identify how social information can affect an LLM's decision through different causal pathways. Leveraging these causal insights, we outline principled prompting strategies that regulate these pathways through selection mechanisms. This framework not only unifies existing prompting-based debiasing techniques, but also opens up new directions for reducing bias by encouraging the model to prioritize fact-based reasoning over reliance on biased social cues. We validate our framework through extensive experiments on real-world datasets across multiple domains, demonstrating its effectiveness in debiasing LLM decisions, even with only black-box access to the model.",
+   "abstract_source": "arXiv API 2403.08743"
+  },
+  {
+   "key": "zhang2024causal",
+   "rows": [
+    1
+   ],
+   "dagger_in_table": true,
+   "in_corpus": true,
+   "title": "Causal Prompting: Debiasing Large Language Model Prompting based on Front-Door Adjustment",
+   "year": 2024,
+   "venue": "AAAI 2025",
+   "arxiv_id": "2403.02738",
+   "abstract": "Despite the notable advancements of existing prompting methods, such as In-Context Learning and Chain-of-Thought for Large Language Models (LLMs), they still face challenges related to various biases. Traditional debiasing methods primarily focus on the model training stage, including approaches based on data augmentation and reweighting, yet they struggle with the complex biases inherent in LLMs. To address such limitations, the causal relationship behind the prompting methods is uncovered using a structural causal model, and a novel causal prompting method based on front-door adjustment is proposed to effectively mitigate LLMs biases. In specific, causal intervention is achieved by designing the prompts without accessing the parameters and logits of LLMs. The chain-of-thought generated by LLM is employed as the mediator variable and the causal effect between input prompts and output answers is calculated through front-door adjustment to mitigate model biases. Moreover, to accurately represent the chain-of-thoughts and estimate the causal effects, contrastive learning is used to fine-tune the encoder of chain-of-thought by aligning its space with that of the LLM. Experimental results show that the proposed causal prompting approach achieves excellent performance across seven natural language processing datasets on both open-source and closed-source LLMs.",
+   "abstract_source": "arXiv API 2403.02738"
+  },
+  {
+   "key": "furniturewala2024thinking",
+   "rows": [
+    1
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Thinking Fair and Slow: On the Efficacy of Structured Prompts for Debiasing Language Models",
+   "year": 2024,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2405.10431",
+   "abstract": "Existing debiasing techniques are typically training-based or require access to the model's internals and output distributions, so they are inaccessible to end-users looking to adapt LLM outputs for their particular needs. In this study, we examine whether structured prompting techniques can offer opportunities for fair text generation. We evaluate a comprehensive end-user-focused iterative framework of debiasing that applies System 2 thinking processes for prompts to induce logical, reflective, and critical text generation, with single, multi-step, instruction, and role-based variants. By systematically evaluating many LLMs across many datasets and different prompting strategies, we show that the more complex System 2-based Implicative Prompts significantly improve over other techniques demonstrating lower mean bias in the outputs with competitive performance on the downstream tasks. Our work offers research directions for the design and the potential of end-user-focused evaluative frameworks for LLM use.",
+   "abstract_source": "arXiv API 2405.10431"
+  },
+  {
+   "key": "du2024causal",
+   "rows": [
+    2
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Causal-Guided Active Learning for Debiasing Large Language Models",
+   "year": 2024,
+   "venue": "ACL 2024 (Outstanding Paper)",
+   "arxiv_id": "2408.12942",
+   "abstract": "Although achieving promising performance, recent analyses show that current generative large language models (LLMs) may still capture dataset biases and utilize them for generation, leading to poor generalizability and harmfulness of LLMs. However, due to the diversity of dataset biases and the over-optimization problem, previous prior-knowledge-based debiasing methods and fine-tuning-based debiasing methods may not be suitable for current LLMs. To address this issue, we explore combining active learning with the causal mechanisms and propose a casual-guided active learning (CAL) framework, which utilizes LLMs itself to automatically and autonomously identify informative biased samples and induce the bias patterns. Then a cost-effective and efficient in-context learning based method is employed to prevent LLMs from utilizing dataset biases during generation. Experimental results show that CAL can effectively recognize typical biased instances and induce various bias patterns for debiasing LLMs.",
+   "abstract_source": "arXiv API 2408.12942"
+  },
+  {
+   "key": "ouyang2022training",
+   "rows": [
+    3
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Training language models to follow instructions with human feedback",
+   "year": 2022,
+   "venue": "NeurIPS 2022",
+   "arxiv_id": "2203.02155",
+   "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.",
+   "abstract_source": "arXiv API 2203.02155"
+  },
+  {
+   "key": "chakraborty2024maxmin",
+   "rows": [
+    3
+   ],
+   "dagger_in_table": true,
+   "in_corpus": true,
+   "title": "MaxMin-RLHF: Alignment with Diverse Human Preferences",
+   "year": 2024,
+   "venue": "ICML 2024",
+   "arxiv_id": "2402.08925",
+   "abstract": "Reinforcement Learning from Human Feedback (RLHF) aligns language models to human preferences by employing a singular reward model derived from preference data. However, such an approach overlooks the rich diversity of human preferences inherent in data collected from multiple users. In this work, we first derive an impossibility result of alignment with single reward RLHF, thereby highlighting its insufficiency in representing diverse human preferences. To provide an equitable solution to the problem, we learn a mixture of preference distributions via an expectation-maximization algorithm and propose a MaxMin alignment objective for policy learning inspired by the Egalitarian principle in social choice theory to better represent diverse human preferences. We elucidate the connection of our proposed approach to distributionally robust optimization and general utility RL, thereby highlighting the generality and robustness of our proposed solution. We present comprehensive experimental results on small-scale (GPT-2) and large-scale language models (with Tulu2-7B) and show the efficacy of the proposed approach in the presence of diversity among human preferences. Our algorithm achieves an average improvement of more than 16% in win-rates over conventional RLHF algorithms and improves the win-rate (accuracy) for minority groups by over 33% without compromising the performance of majority groups, showcasing the robustness and fairness of our approach. We remark that our findings in this work are not only limited to language models but also extend to reinforcement learning in general.",
+   "abstract_source": "arXiv API 2402.08925"
+  },
+  {
+   "key": "xiao2024algorithmic",
+   "rows": [
+    3
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
+   "year": 2024,
+   "venue": "Journal of the American Statistical Association 2025",
+   "arxiv_id": "2405.16455",
+   "abstract": "Accurately aligning large language models (LLMs) with human preferences is crucial for informing fair, economically sound, and statistically efficient decision-making processes. However, we argue that the predominant approach for aligning LLMs with human preferences through a reward model -- reinforcement learning from human feedback (RLHF) -- suffers from an inherent algorithmic bias due to its Kullback--Leibler-based regularization in optimization. In extreme cases, this bias could lead to a phenomenon we term preference collapse, where minority preferences are virtually disregarded. To mitigate this algorithmic bias, we introduce preference matching (PM) RLHF, a novel approach that provably aligns LLMs with the preference distribution of the reward model under the Bradley--Terry--Luce/Plackett--Luce model. Central to our approach is a PM regularizer that takes the form of the negative logarithm of the LLM's policy probability distribution over responses, which helps the LLM balance response diversification and reward maximization. Notably, we obtain this regularizer by solving an ordinary differential equation that is necessary for the PM property. For practical implementation, we introduce a conditional variant of PM RLHF that is tailored to natural language generation. Finally, we empirically validate the effectiveness of conditional PM RLHF through experiments on the OPT and Llama-family models, demonstrating a 29% to 41% improvement in alignment with human preferences, as measured by a certain metric, compared to standard RLHF.",
+   "abstract_source": "arXiv API 2405.16455"
+  },
+  {
+   "key": "allam2024biasdpo",
+   "rows": [
+    4
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "BiasDPO: Mitigating Bias in Language Models through Direct Preference Optimization",
+   "year": 2024,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2407.13928",
+   "abstract": "Large Language Models (LLMs) have become pivotal in advancing natural language processing, yet their potential to perpetuate biases poses significant concerns. This paper introduces a new framework employing Direct Preference Optimization (DPO) to mitigate gender, racial, and religious biases in LLM-generated English text. By developing a loss function that favors less biased over biased completions, our approach cultivates a preference for respectful and non-discriminatory language in LLMs. We also contribute a manually designed dataset for training LLMs to recognize and correct biases. This dataset encompasses a diverse range of prompts paired with both biased and unbiased completions. Implementing this approach on the Microsoft Phi-2 model, we demonstrate substantial reductions in biased outputs as our model outperforms the baseline model on almost all bias benchmarks. Our model also achieves better performance compared to other open-source models on most benchmarks. By reducing biases in the language generated by the model, our study marks a significant step towards developing more ethical and socially responsible LLMs. We publicly release BiasDPO dataset on HuggingFace.",
+   "abstract_source": "arXiv API 2407.13928"
+  },
+  {
+   "key": "kabra2025reasoning",
+   "rows": [
+    5,
+    17
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Reasoning Towards Fairness: Mitigating Bias in Language Models through Reasoning-Guided Fine-Tuning",
+   "year": 2025,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2504.05632",
+   "abstract": "Recent advances in large-scale generative language models have shown that reasoning capabilities can significantly improve model performance across a variety of tasks. However, the impact of reasoning on a model's ability to mitigate stereotypical responses remains largely underexplored. In this work, we investigate the crucial relationship between a model's reasoning ability and fairness, and ask whether improved reasoning capabilities can mitigate harmful stereotypical responses, especially those arising due to shallow or flawed reasoning. We conduct a comprehensive evaluation of multiple open-source LLMs, and find that larger models with stronger reasoning abilities exhibit substantially lower stereotypical bias on existing fairness benchmarks. Building on this insight, we introduce ReGiFT -- Reasoning Guided Fine-Tuning, a novel approach that extracts structured reasoning traces from advanced reasoning models and infuses them into models that lack such capabilities. We use only general-purpose reasoning and do not require any fairness-specific supervision for bias mitigation. Notably, we see that models fine-tuned using ReGiFT not only improve fairness relative to their non-reasoning counterparts but also outperform advanced reasoning models on fairness benchmarks. We also analyze how variations in the correctness of the reasoning traces and their length influence model fairness and their overall performance. Our findings highlight that enhancing reasoning capabilities is an effective, fairness-agnostic strategy for mitigating stereotypical bias caused by reasoning flaws.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "bai2022constitutional",
+   "rows": [
+    6
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Constitutional AI: Harmlessness from AI Feedback",
+   "year": 2022,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2212.08073",
+   "abstract": "As AI systems become more capable, we would like to enlist their help to supervise other AIs. We experiment with methods for training a harmless AI assistant through self-improvement, without any human labels identifying harmful outputs. The only human oversight is provided through a list of rules or principles, and so we refer to the method as 'Constitutional AI'. The process involves both a supervised learning and a reinforcement learning phase. In the supervised phase we sample from an initial model, then generate self-critiques and revisions, and then finetune the original model on revised responses. In the RL phase, we sample from the finetuned model, use a model to evaluate which of the two samples is better, and then train a preference model from this dataset of AI preferences. We then train with RL using the preference model as the reward signal, i.e. we use 'RL from AI Feedback' (RLAIF). As a result we are able to train a harmless but non-evasive AI assistant that engages with harmful queries by explaining its objections to them. Both the SL and RL methods can leverage chain-of-thought style reasoning to improve the human-judged performance and transparency of AI decision making. These methods make it possible to control AI behavior more precisely and with far fewer human labels.",
+   "abstract_source": "arXiv API 2212.08073"
+  },
+  {
+   "key": "huang2024collective",
+   "rows": [
+    6
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Collective Constitutional AI: Aligning a Language Model with Public Input",
+   "year": 2024,
+   "venue": "FAccT 2024",
+   "arxiv_id": "2406.07814",
+   "abstract": "There is growing consensus that language model (LM) developers should not be the sole deciders of LM behavior, creating a need for methods that enable the broader public to collectively shape the behavior of LM systems that affect them. To address this need, we present Collective Constitutional AI (CCAI): a multi-stage process for sourcing and integrating public input into LMs-from identifying a target population to sourcing principles to training and evaluating a model. We demonstrate the real-world practicality of this approach by creating what is, to our knowledge, the first LM fine-tuned with collectively sourced public input and evaluating this model against a baseline model trained with established principles from a LM developer. Our quantitative evaluations demonstrate several benefits of our approach: the CCAI-trained model shows lower bias across nine social dimensions compared to the baseline model, while maintaining equivalent performance on language, math, and helpful-harmless evaluations. Qualitative comparisons of the models suggest that the models differ on the basis of their respective constitutions, e.g., when prompted with contentious topics, the CCAI-trained model tends to generate responses that reframe the matter positively instead of a refusal. These results demonstrate a promising, tractable pathway toward publicly informed development of language models.",
+   "abstract_source": "arXiv API 2406.07814"
+  },
+  {
+   "key": "li2025fairsteer",
+   "rows": [
+    7
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering",
+   "year": 2025,
+   "venue": "ACL 2025",
+   "arxiv_id": "2504.14492",
+   "abstract": "Large language models (LLMs) are prone to capturing biases from training corpus, leading to potential negative social impacts. Existing prompt-based debiasing methods exhibit instability due to their sensitivity to prompt changes, while fine-tuning-based techniques incur substantial computational overhead and catastrophic forgetting. In this paper, we propose FairSteer, a novel inference-time debiasing framework without requiring customized prompt design or model retraining. Motivated by the linear representation hypothesis, our preliminary investigation demonstrates that fairness-related features can be encoded into separable directions in the hidden activation space. FairSteer operates in three steps: biased activation detection, debiasing steering vector (DSV) computation, and dynamic activation steering. Specifically, it first trains a lightweight linear classifier to detect bias signatures in activations, and then computes DSVs as intervention directions derived from small contrastive prompt pairs. Subsequently, it performs debiasing by adjusting activations with DSVs in the inference stage. Comprehensive evaluation with six LLMs demonstrates the superiority of FairSteer across question-answering, counterfactual input evaluation and open-ended text generation tasks. Code will be released.",
+   "abstract_source": "arXiv API 2504.14492"
+  },
+  {
+   "key": "dong2024building",
+   "rows": [
+    8
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Building Guardrails for Large Language Models",
+   "year": 2024,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2402.01822",
+   "abstract": "As Large Language Models (LLMs) become more integrated into our daily lives, it is crucial to identify and mitigate their risks, especially when the risks can have profound impacts on human users and societies. Guardrails, which filter the inputs or outputs of LLMs, have emerged as a core safeguarding technology. This position paper takes a deep look at current open-source solutions (Llama Guard, Nvidia NeMo, Guardrails AI), and discusses the challenges and the road towards building more complete solutions. Drawing on robust evidence from previous research, we advocate for a systematic approach to construct guardrails for LLMs, based on comprehensive consideration of diverse contexts across various LLMs applications. We propose employing socio-technical methods through collaboration with a multi-disciplinary team to pinpoint precise technical requirements, exploring advanced neural-symbolic implementations to embrace the complexity of the requirements, and developing verification and testing to ensure the utmost quality of the final product.",
+   "abstract_source": "arXiv API 2402.01822"
+  },
+  {
+   "key": "singh2025bias",
+   "rows": [
+    9
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Bias-Aware Agent: Enhancing Fairness in AI-Driven Knowledge Retrieval",
+   "year": 2025,
+   "venue": "Companion Proceedings of the ACM Web Conference 2025 (WWW '25)",
+   "arxiv_id": "2503.21237",
+   "abstract": "Advancements in retrieving accessible information have evolved faster in the last few years compared to the decades since the internet's creation. Search engines, like Google, have been the number one way to find relevant data. They have always relied on the user's abilities to find the best information in its billions of links and sources at everybody's fingertips. The advent of large language models (LLMs) has completely transformed the field of information retrieval. The LLMs excel not only at retrieving relevant knowledge but also at summarizing it effectively, making information more accessible and consumable for users. On top of it, the rise of AI Agents has introduced another aspect to information retrieval i.e. dynamic information retrieval which enables the integration of real-time data such as weather forecasts, and financial data with the knowledge base to curate context-aware knowledge. However, despite these advancements the agents remain susceptible to issues of bias and fairness, challenges deeply rooted within the knowledge base and training of LLMs. This study introduces a novel approach to bias-aware knowledge retrieval by leveraging agentic framework and the innovative use of bias detectors as tools to identify and highlight inherent biases in the retrieved content. By empowering users with transparency and awareness, this approach aims to foster more equitable information systems and promote the development of responsible AI.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "singh2025biasb",
+   "rows": [
+    9
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Bias Mitigation Agent: Optimizing Source Selection for Fair and Balanced Knowledge Retrieval",
+   "year": 2025,
+   "venue": "KDD 2025 Agent4IR Workshop",
+   "arxiv_id": "2508.18724",
+   "abstract": "Large Language Models (LLMs) have transformed the field of artificial intelligence by unlocking the era of generative applications. Built on top of generative AI capabilities, Agentic AI represents a major shift toward autonomous, goal-driven systems that can reason, retrieve, and act. However, they also inherit the bias present in both internal and external information sources. This significantly affects the fairness and balance of retrieved information, and hence reduces user trust. To address this critical challenge, we introduce a novel Bias Mitigation Agent, a multi-agent system designed to orchestrate the workflow of bias mitigation through specialized agents that optimize the selection of sources to ensure that the retrieved content is both highly relevant and minimally biased to promote fair and balanced knowledge dissemination. The experimental results demonstrate an 81.82\\% reduction in bias compared to a baseline naive retrieval strategy.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "kim2024fair",
+   "rows": [
+    10
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Towards Fair RAG: On the Impact of Fair Ranking in Retrieval-Augmented Generation",
+   "year": 2024,
+   "venue": "arXiv preprint (ACM SIGIR ICTIR 2025)",
+   "arxiv_id": "2409.11598",
+   "abstract": "Despite the central role of retrieval in retrieval-augmented generation (RAG) systems, much of the existing research on RAG overlooks the well-established field of fair ranking and fails to account for the interests of all stakeholders involved. In this paper, we conduct the first systematic evaluation of RAG systems that integrate fairness-aware rankings, addressing both ranking fairness and attribution fairness, which ensures equitable exposure of the sources cited in the generated content. Our evaluation focuses on measuring item-side fairness, specifically the fair exposure of relevant items retrieved by RAG systems, and investigates how this fairness impacts both the effectiveness of the systems and the attribution of sources in the generated output that users ultimately see. By experimenting with twelve RAG models across seven distinct tasks, we show that incorporating fairness-aware retrieval often maintains or even enhances both ranking quality and generation quality, countering the common belief that fairness compromises system performance. Additionally, we demonstrate that fair retrieval practices lead to more balanced attribution in the final responses, ensuring that the generator fairly cites the sources it relies on. Our findings underscore the importance of item-side fairness in retrieval and generation, laying the foundation for responsible and equitable RAG systems and guiding future research in fair ranking and attribution.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "kim2025mitigating",
+   "rows": [
+    10
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Mitigating Bias in RAG: Controlling the Embedder",
+   "year": 2025,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2502.17390",
+   "abstract": "In retrieval augmented generation (RAG) systems, each individual component -- the LLM, embedder, and corpus -- could introduce biases in the form of skews towards outputting certain perspectives or identities. In this work, we study the conflict between biases of each component and their relationship to the overall bias of the RAG system, which we call bias conflict. Examining both gender and political biases as case studies, we show that bias conflict can be characterized through a linear relationship among components despite its complexity in 6 different LLMs. Through comprehensive fine-tuning experiments creating 120 differently biased embedders, we demonstrate how to control bias while maintaining utility and reveal the importance of reverse-biasing the embedder to mitigate bias in the overall system. Additionally, we find that LLMs and tasks exhibit varying sensitivities to the embedder bias, a crucial factor to consider for debiasing. Our results underscore that a fair RAG system can be better achieved by carefully controlling the bias of the embedder rather than increasing its fairness.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "ma2026implicit",
+   "rows": [
+    11
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "How Implicit Bias Accumulates and Propagates in LLM Long-term Memory",
+   "year": 2026,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2602.01558",
+   "abstract": "Long-term memory mechanisms enable Large Language Models (LLMs) to maintain continuity and personalization across extended interaction lifecycles, but they also introduce new and underexplored risks related to fairness. In this work, we study how implicit bias, defined as subtle statistical prejudice, accumulates and propagates within LLMs equipped with long-term memory. To support systematic analysis, we introduce the Decision-based Implicit Bias (DIB) Benchmark, a large-scale dataset comprising 3,776 decision-making scenarios across nine social domains, designed to quantify implicit bias in long-term decision processes. Using a realistic long-horizon simulation framework, we evaluate six state-of-the-art LLMs integrated with three representative memory architectures on DIB and demonstrate that LLMs' implicit bias does not remain static but intensifies over time and propagates across unrelated domains. We further analyze mitigation strategies and show that a static system-level prompting baseline provides limited and short-lived debiasing effects. To address this limitation, we propose Dynamic Memory Tagging (DMT), an agentic intervention that enforces fairness constraints at memory write time. Extensive experimental results show that DMT substantially reduces bias accumulation and effectively curtails cross-domain bias propagation.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "owens2024multi",
+   "rows": [
+    12
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "A Multi-LLM Debiasing Framework",
+   "year": 2024,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2409.13884",
+   "abstract": "Large Language Models (LLMs) are powerful tools with the potential to benefit society immensely, yet, they have demonstrated biases that perpetuate societal inequalities. Despite significant advancements in bias mitigation techniques using data augmentation, zero-shot prompting, and model fine-tuning, biases continuously persist, including subtle biases that may elude human detection. Recent research has shown a growing interest in multi-LLM approaches, which have been demonstrated to be effective in improving the quality of reasoning and factuality in LLMs. Building on this approach, we propose a novel multi-LLM debiasing framework aimed at reducing bias in LLMs. Our work is the first to introduce and evaluate two distinct approaches within this framework for debiasing LLMs: a centralized method, where the conversation is facilitated by a single central LLM, and a decentralized method, where all models communicate directly. Our findings reveal that our multi-LLM framework significantly reduces bias in LLMs, outperforming the baseline method across several social groups.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "xu2024mitigating",
+   "rows": [
+    12
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Mitigating Social Bias in Large Language Models: A Multi-Objective Approach within a Multi-Agent Framework",
+   "year": 2024,
+   "venue": "AAAI 2025",
+   "arxiv_id": "2412.15504",
+   "abstract": "Natural language processing (NLP) has seen remarkable advancements with the development of large language models (LLMs). Despite these advancements, LLMs often produce socially biased outputs. Recent studies have mainly addressed this problem by prompting LLMs to behave ethically, but this approach results in unacceptable performance degradation. In this paper, we propose a multi-objective approach within a multi-agent framework (MOMA) to mitigate social bias in LLMs without significantly compromising their performance. The key idea of MOMA involves deploying multiple agents to perform causal interventions on bias-related contents of the input questions, breaking the shortcut connection between these contents and the corresponding answers. Unlike traditional debiasing techniques leading to performance degradation, MOMA substantially reduces bias while maintaining accuracy in downstream tasks. Our experiments conducted on two datasets and two models demonstrate that MOMA reduces bias scores by up to 87.7%, with only a marginal performance degradation of up to 6.8% in the BBQ dataset. Additionally, it significantly enhances the multi-objective metric icat in the StereoSet dataset by up to 58.1%. Code will be made available at https://github.com/Cortantse/MOMA.",
+   "abstract_source": "arXiv API 2412.15504"
+  },
+  {
+   "key": "choi2025identity",
+   "rows": [
+    13
+   ],
+   "dagger_in_table": true,
+   "in_corpus": true,
+   "title": "When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning",
+   "year": 2025,
+   "venue": "ACL 2026",
+   "arxiv_id": "2510.07517",
+   "abstract": "Multi-agent debate (MAD) aims to improve large language model (LLM) reasoning by letting multiple agents exchange answers and then aggregate their opinions. Yet recent studies reveal that agents are not neutral: they are prone to identity-driven sycophancy and self-bias, uncritically adopting a peer's view or stubbornly adhering to their own prior output, undermining the reliability of debate. In this work, we present the first principled framework that joins sycophancy and self-bias to mitigate and quantify identity bias in MAD. First, we formalize the debate dynamics as an identity-weighted Bayesian update process. Second, we propose response anonymization: by removing identity markers from prompts, agents cannot distinguish \"self\" from \"peer\", which forces equal weights on agent identity, thereby reducing bias and improving trustworthiness. Third, we define the Identity Bias Coefficient (IBC), a principled bias metric that measures an agent's tendency to follow its peer versus itself. Empirical studies across multiple models and benchmarks confirm that identity bias is widespread, with sycophancy far more common than self-bias. Our findings highlight the need to ensure that MAD systems reason based on content rather than identity. Code is released in https://github.com/deeplearning-wisc/MAD-identity-bias.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "ki2025multiple",
+   "rows": [
+    14
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Multiple LLM Agents Debate for Equitable Cultural Alignment",
+   "year": 2025,
+   "venue": "ACL 2025 (Oral)",
+   "arxiv_id": "2505.24671",
+   "abstract": "Large Language Models (LLMs) need to adapt their predictions to diverse cultural contexts to benefit diverse communities across the world. While previous efforts have focused on single-LLM, single-turn approaches, we propose to exploit the complementary strengths of multiple LLMs to promote cultural adaptability. We introduce a Multi-Agent Debate framework, where two LLM-based agents debate over a cultural scenario and collaboratively reach a final decision. We propose two variants: one where either LLM agents exclusively debate and another where they dynamically choose between self-reflection and debate during their turns. We evaluate these approaches on 7 open-weight LLMs (and 21 LLM combinations) using the NormAd-ETI benchmark for social etiquette norms in 75 countries. Experiments show that debate improves both overall accuracy and cultural group parity over single-LLM baselines. Notably, multi-agent debate enables relatively small LLMs (7-9B) to achieve accuracies comparable to that of a much larger model (27B parameters).",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "borah2024implicit",
+   "rows": [
+    15
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Towards Implicit Bias Detection and Mitigation in Multi-Agent LLM Interactions",
+   "year": 2024,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2410.02584",
+   "abstract": "As Large Language Models (LLMs) continue to evolve, they are increasingly being employed in numerous studies to simulate societies and execute diverse social tasks. However, LLMs are susceptible to societal biases due to their exposure to human-generated data. Given that LLMs are being used to gain insights into various societal aspects, it is essential to mitigate these biases. To that end, our study investigates the presence of implicit gender biases in multi-agent LLM interactions and proposes two strategies to mitigate these biases. We begin by creating a dataset of scenarios where implicit gender biases might arise, and subsequently develop a metric to assess the presence of biases. Our empirical analysis reveals that LLMs generate outputs characterized by strong implicit bias associations (>= 50\\% of the time). Furthermore, these biases tend to escalate following multi-agent interactions. To mitigate them, we propose two strategies: self-reflection with in-context examples (ICE); and supervised fine-tuning. Our research demonstrates that both methods effectively mitigate implicit biases, with the ensemble of fine-tuning and self-reflection proving to be the most successful.",
+   "abstract_source": "code_input_existing.jsonl"
+  },
+  {
+   "key": "hall2025guiding",
+   "rows": [
+    16
+   ],
+   "dagger_in_table": false,
+   "in_corpus": true,
+   "title": "Guiding LLM Decision-Making with Fairness Reward Models",
+   "year": 2025,
+   "venue": "arXiv preprint",
+   "arxiv_id": "2507.11344",
+   "abstract": "Large language models are increasingly used to support high-stakes decisions, potentially influencing who is granted bail or receives a loan. Naive chain-of-thought sampling can improve average decision accuracy, but has also been shown to amplify unfair bias. To address this challenge and enable the trustworthy use of reasoning models in high-stakes decision-making, we propose a framework for training a generalizable Fairness Reward Model (FRM). Our model assigns a fairness score to LLM reasoning, enabling the system to down-weight biased trajectories and favor equitable ones when aggregating decisions across reasoning chains. We show that a single Fairness Reward Model, trained on weakly supervised, LLM-annotated examples of biased versus unbiased reasoning, transfers across tasks, domains, and model families without additional fine-tuning. Applied to real-world decision-making tasks including recidivism prediction and social media moderation, we show that our approach consistently improves fairness while matching, or even surpassing, baseline accuracy.",
+   "abstract_source": "code_input_existing.jsonl"
+  }
+ ]
+}

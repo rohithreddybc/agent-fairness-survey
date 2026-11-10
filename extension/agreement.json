@@ -1,0 +1,681 @@
+{
+ "screen": {
+  "n_A": 103,
+  "n_B": 103,
+  "n_matched": 103,
+  "fields": {
+   "verdict": {
+    "kappa": 0.844,
+    "agreement": 0.922,
+    "n": 103,
+    "dist_A": [
+     [
+      "EXCLUDE",
+      67
+     ],
+     [
+      "INCLUDE_TOPICAL",
+      29
+     ],
+     [
+      "BORDERLINE",
+      5
+     ],
+     [
+      "INCLUDE_PRIOR_ART",
+      2
+     ]
+    ],
+    "dist_B": [
+     [
+      "EXCLUDE",
+      65
+     ],
+     [
+      "INCLUDE_TOPICAL",
+      33
+     ],
+     [
+      "BORDERLINE",
+      3
+     ],
+     [
+      "INCLUDE_PRIOR_ART",
+      2
+     ]
+    ]
+   },
+   "primary_branch": {
+    "kappa": 0.89,
+    "agreement": 0.942,
+    "n": 103,
+    "dist_A": [
+     [
+      null,
+      69
+     ],
+     [
+      "C3",
+      13
+     ],
+     [
+      "C5",
+      12
+     ],
+     [
+      "C2",
+      6
+     ],
+     [
+      "C4",
+      3
+     ]
+    ],
+    "dist_B": [
+     [
+      null,
+      67
+     ],
+     [
+      "C3",
+      13
+     ],
+     [
+      "C5",
+      12
+     ],
+     [
+      "C4",
+      5
+     ],
+     [
+      "C2",
+      5
+     ],
+     [
+      "C1",
+      1
+     ]
+    ]
+   },
+   "locus_tags": {
+    "kappa": 0.855,
+    "agreement": 0.922,
+    "n": 103,
+    "dist_A": [
+     [
+      [],
+      69
+     ],
+     [
+      [
+       "C5"
+      ],
+      11
+     ],
+     [
+      [
+       "C3"
+      ],
+      11
+     ],
+     [
+      [
+       "C2"
+      ],
+      5
+     ],
+     [
+      [
+       "C4"
+      ],
+      2
+     ],
+     [
+      [
+       "C3",
+       "T"
+      ],
+      1
+     ],
+     [
+      [
+       "C5",
+       "T"
+      ],
+      1
+     ],
+     [
+      [
+       "C2",
+       "C5"
+      ],
+      1
+     ],
+     [
+      [
+       "C4",
+       "T"
+      ],
+      1
+     ],
+     [
+      [
+       "C3",
+       "C5"
+      ],
+      1
+     ]
+    ],
+    "dist_B": [
+     [
+      [],
+      67
+     ],
+     [
+      [
+       "C3"
+      ],
+      13
+     ],
+     [
+      [
+       "C5"
+      ],
+      11
+     ],
+     [
+      [
+       "C4"
+      ],
+      4
+     ],
+     [
+      [
+       "C2"
+      ],
+      4
+     ],
+     [
+      [
+       "C1",
+       "C2"
+      ],
+      1
+     ],
+     [
+      [
+       "C5",
+       "T"
+      ],
+      1
+     ],
+     [
+      [
+       "C2",
+       "C5"
+      ],
+      1
+     ],
+     [
+      [
+       "C3",
+       "C4"
+      ],
+      1
+     ]
+    ]
+   }
+  },
+  "n_disagreeing_records": 11
+ },
+ "screen_binary": {
+  "n_A": 103,
+  "n_B": 103,
+  "n_matched": 103,
+  "fields": {
+   "verdict": {
+    "kappa": 0.84,
+    "agreement": 0.922,
+    "n": 103,
+    "dist_A": [
+     [
+      "exclude",
+      67
+     ],
+     [
+      "include",
+      31
+     ],
+     [
+      "borderline",
+      5
+     ]
+    ],
+    "dist_B": [
+     [
+      "exclude",
+      65
+     ],
+     [
+      "include",
+      35
+     ],
+     [
+      "borderline",
+      3
+     ]
+    ]
+   }
+  },
+  "n_disagreeing_records": 8
+ },
+ "code_existing": {
+  "n_A": 68,
+  "n_B": 68,
+  "n_matched": 68,
+  "fields": {
+   "fairness_dimension": {
+    "kappa": 0.729,
+    "agreement": 0.897,
+    "n": 68,
+    "dist_A": [
+     [
+      "unspecified",
+      49
+     ],
+     [
+      "group",
+      18
+     ],
+     [
+      "counterfactual",
+      1
+     ]
+    ],
+    "dist_B": [
+     [
+      "unspecified",
+      53
+     ],
+     [
+      "group",
+      15
+     ]
+    ]
+   },
+   "operator": {
+    "kappa": 0.717,
+    "agreement": 0.809,
+    "n": 68,
+    "dist_A": [
+     [
+      "UNCHARACTERIZED",
+      29
+     ],
+     [
+      "AMPLIFY",
+      18
+     ],
+     [
+      "GENERATE",
+      11
+     ],
+     [
+      "ATTENUATE",
+      10
+     ]
+    ],
+    "dist_B": [
+     [
+      "UNCHARACTERIZED",
+      37
+     ],
+     [
+      "AMPLIFY",
+      17
+     ],
+     [
+      "ATTENUATE",
+      10
+     ],
+     [
+      "GENERATE",
+      2
+     ],
+     [
+      "PRESERVE",
+      2
+     ]
+    ]
+   },
+   "evidence_type": {
+    "kappa": 0.891,
+    "agreement": 0.941,
+    "n": 68,
+    "dist_A": [
+     [
+      "direct_llm_agent",
+      40
+     ],
+     [
+      "llm_non_agentic_transferred",
+      21
+     ],
+     [
+      "non_llm_transferred",
+      7
+     ]
+    ],
+    "dist_B": [
+     [
+      "direct_llm_agent",
+      42
+     ],
+     [
+      "llm_non_agentic_transferred",
+      19
+     ],
+     [
+      "non_llm_transferred",
+      7
+     ]
+    ]
+   },
+   "demographic": {
+    "kappa": 0.822,
+    "agreement": 0.912,
+    "n": 68,
+    "dist_A": [
+     [
+      "yes",
+      41
+     ],
+     [
+      "no",
+      27
+     ]
+    ],
+    "dist_B": [
+     [
+      "yes",
+      35
+     ],
+     [
+      "no",
+      33
+     ]
+    ]
+   }
+  },
+  "n_disagreeing_records": 29
+ },
+ "code_new": {
+  "n_A": 34,
+  "n_B": 34,
+  "n_matched": 34,
+  "fields": {
+   "fairness_dimension": {
+    "kappa": 0.649,
+    "agreement": 0.794,
+    "n": 34,
+    "dist_A": [
+     [
+      "group",
+      18
+     ],
+     [
+      "unspecified",
+      13
+     ],
+     [
+      "counterfactual",
+      3
+     ]
+    ],
+    "dist_B": [
+     [
+      "unspecified",
+      18
+     ],
+     [
+      "group",
+      13
+     ],
+     [
+      "counterfactual",
+      3
+     ]
+    ]
+   },
+   "operator": {
+    "kappa": 0.726,
+    "agreement": 0.824,
+    "n": 34,
+    "dist_A": [
+     [
+      "UNCHARACTERIZED",
+      20
+     ],
+     [
+      "ATTENUATE",
+      5
+     ],
+     [
+      "AMPLIFY",
+      4
+     ],
+     [
+      "GENERATE",
+      3
+     ],
+     [
+      "PRESERVE",
+      2
+     ]
+    ],
+    "dist_B": [
+     [
+      "UNCHARACTERIZED",
+      17
+     ],
+     [
+      "ATTENUATE",
+      9
+     ],
+     [
+      "AMPLIFY",
+      5
+     ],
+     [
+      "PRESERVE",
+      2
+     ],
+     [
+      "GENERATE",
+      1
+     ]
+    ]
+   },
+   "evidence_type": {
+    "kappa": 0.937,
+    "agreement": 0.971,
+    "n": 34,
+    "dist_A": [
+     [
+      "direct_llm_agent",
+      21
+     ],
+     [
+      "llm_non_agentic_transferred",
+      13
+     ]
+    ],
+    "dist_B": [
+     [
+      "direct_llm_agent",
+      22
+     ],
+     [
+      "llm_non_agentic_transferred",
+      12
+     ]
+    ]
+   },
+   "demographic": {
+    "kappa": 0.564,
+    "agreement": 0.824,
+    "n": 34,
+    "dist_A": [
+     [
+      "yes",
+      28
+     ],
+     [
+      "no",
+      6
+     ]
+    ],
+    "dist_B": [
+     [
+      "yes",
+      22
+     ],
+     [
+      "no",
+      12
+     ]
+    ]
+   }
+  },
+  "n_disagreeing_records": 14
+ },
+ "mitigation": {
+  "n_A": 24,
+  "n_B": 24,
+  "n_matched": 24,
+  "fields": {
+   "setting": {
+    "kappa": 0.878,
+    "agreement": 0.917,
+    "n": 24,
+    "dist_A": [
+     [
+      "agentic_multistep",
+      10
+     ],
+     [
+      "qa_generation",
+      8
+     ],
+     [
+      "other",
+      4
+     ],
+     [
+      "single_decision",
+      2
+     ]
+    ],
+    "dist_B": [
+     [
+      "qa_generation",
+      9
+     ],
+     [
+      "agentic_multistep",
+      9
+     ],
+     [
+      "other",
+      4
+     ],
+     [
+      "single_decision",
+      2
+     ]
+    ]
+   },
+   "effect_direction": {
+    "kappa": 0.694,
+    "agreement": 0.875,
+    "n": 24,
+    "dist_A": [
+     [
+      "reduces",
+      18
+     ],
+     [
+      "not_reported",
+      5
+     ],
+     [
+      "mixed",
+      1
+     ]
+    ],
+    "dist_B": [
+     [
+      "reduces",
+      17
+     ],
+     [
+      "not_reported",
+      7
+     ]
+    ]
+   },
+   "utility_cost_reported": {
+    "kappa": 1.0,
+    "agreement": 1.0,
+    "n": 24,
+    "dist_A": [
+     [
+      "no",
+      13
+     ],
+     [
+      "yes",
+      11
+     ]
+    ],
+    "dist_B": [
+     [
+      "no",
+      13
+     ],
+     [
+      "yes",
+      11
+     ]
+    ]
+   },
+   "demographic": {
+    "kappa": 0.571,
+    "agreement": 0.833,
+    "n": 24,
+    "dist_A": [
+     [
+      "no",
+      16
+     ],
+     [
+      "yes",
+      8
+     ]
+    ],
+    "dist_B": [
+     [
+      "no",
+      20
+     ],
+     [
+      "yes",
+      4
+     ]
+    ]
+   }
+  },
+  "n_disagreeing_records": 9
+ }
+}

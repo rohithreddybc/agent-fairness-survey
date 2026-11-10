@@ -1,0 +1,70 @@
+B3	2507.01019	INCLUDE	yes	high	Multi-agent system explicitly evaluated for implicit social bias/stereotype reinforcement.
+B3	2511.11789	INCLUDE	yes	medium	Multi-agent persona interactions studied for bias in trust/insistence dynamics; fairness framing is social-trait based rather than demographic, borderline.
+B3	2602.00044	EXCLUDE	no	medium	Persona generation bias audit but single-turn creative generation, no agent architecture or transfer argument stated.
+B3	2605.00382	EXCLUDE	no	medium	Code generation social bias benchmark; no agentic tool/retrieval/multi-agent component evident.
+B3	2510.19331	INCLUDE	no	medium	Persona-LLM hate speech detection uses RAG-based persona construction, satisfying the memory/retrieval locus.
+B3	2601.12091	INCLUDE	no	high	Multi-agent cultural debate framework (MAV) explicitly targets cultural bias mitigation.
+B3	2510.10943	INCLUDE	yes	high	Multi-agent systems studied for stereotype bias emergence, propagation, and amplification.
+B3	2510.15568	EXCLUDE	no	medium	Persona-conditioned multi-agent diversity engineering for creative brand output; no demographic/social fairness angle, purely output diversity.
+B3	2506.11825	INCLUDE	no	high	Structured multi-agent debate framework studies political and gender bias in agent interactions.
+B3	2311.04892	EXCLUDE	yes	medium	Persona-assigned single LLM reasoning bias study (e.g. "You are Yoda"); no agentic framework, single-turn testing, no transfer stated.
+B3	2505.10013	EXCLUDE	no	high	General implicit bias benchmark for LLMs; no agent-component relevance.
+B3	2503.00355	INCLUDE	no	medium	Multi-agent framework detects textual bias via specialized agent roles; agent-component satisfied via multi-agent delegation, fairness content is generic (NPOV-style) rather than clearly demographic.
+B3	2510.13931	EXCLUDE	no	medium	Persona-based socio-demographic bias in single-turn drug-safety predictions; no agent framework, purely a classification task.
+B3	2508.18724	INCLUDE	yes	high	Explicit agentic multi-agent system that orchestrates source selection for fair, balanced retrieval.
+B3	2505.21116	EXCLUDE	no	high	Survey of creativity in multi-agent systems; no fairness/bias content.
+B3	2410.22932	EXCLUDE	no	high	Multi-agent conversational task-solving evaluation; no fairness angle.
+B3	2506.08593	EXCLUDE	no	medium	Persona (MBTI) effects on hate speech classification; single LLM, no agent framework.
+B3	2507.14922	EXCLUDE	no	medium	Persona generation framework for social simulation; validity/alignment focus, no explicit fairness/bias content.
+B3	2605.28098	INCLUDE	no	high	Multi-agent systems studied for system-wide fairness via bias amplification vs. suppression (Favor Bias Strength metric).
+B3	2505.19477	EXCLUDE	no	medium	Multi-agent LLM-judge bias study, but the biases examined (position, verbosity, chain-of-thought, bandwagon) are non-demographic statistical biases with no protected-attribute link.
+B3	2510.25805	EXCLUDE	no	medium	Persona-ideology effects on content moderation fairness/neutrality; single-turn classification task, no agent architecture.
+B3	2606.07837	EXCLUDE	no	low	Persona-conditioned multi-agent chat simulation, but "bias" is used loosely for fan identity/style rather than demographic fairness; also June 2026 borderline date.
+B3	2512.13699	EXCLUDE	no	medium	Persona-conditioned ingroup/outgroup bias in single LLM outputs; no agent framework.
+B3	2408.09049	EXCLUDE	no	medium	Persona role-play bias study of moral/value judgments including a fairness dimension; single LLM, no agent framework.
+B3	2505.12001	INCLUDE	yes	high	Explicit interactional fairness framework for LLM multi-agent system communication.
+B3	2604.13103	INCLUDE	yes	high	Rapid review of fairness specifically in LLM-enabled multi-agent systems for software engineering.
+B3	2505.21112	EXCLUDE	no	medium	Multi-agent ethical-debate simulation on resource allocation; bias/fairness is not the central evaluated construct (focus is deliberation/ethical framework diversity).
+B3	2405.05080	EXCLUDE	no	low	Position paper on bias in synthetic personas for HCI; no agentic system described, abstract is thin/exploratory.
+B3	2411.08881	EXCLUDE	no	medium	Multi-agent system for AI-ethics trustworthiness techniques; bias mentioned only as background motivation, not the central fairness analysis.
+B3	2402.12649	EXCLUDE	no	medium	Gender-occupation bias benchmark for long-form LLM responses; no agentic framework despite "real-world use" framing.
+B3	2608.02827	POST_CUTOFF	no	high	arXiv id 2608.xxxxx = August 2026, after the 10 June 2026 cutoff.
+B3	2506.10491	EXCLUDE	no	medium	Persona-based bias comparison in single LLM grading/MMLU tasks; no agent framework.
+B3	2512.02058	EXCLUDE	no	medium	LLM persona vs. human response comparison in a low-resource setting; no agent framework.
+B3	2603.18300	INCLUDE	no	medium	Auditing framework for LLM-mediated brand/culture choices; fairness of market intermediation transfers to agentic recommendation/assistant deployments even though the study itself queries LLMs directly.
+B3	2509.10127	INCLUDE	no	medium	Persona generation bias for population representation in social simulation; mechanism transfers to multi-agent social-simulation frameworks that consume these personas.
+B5	2407.18376	EXCLUDE	no	high	Bengali religious dialect bias in single LLM outputs; no agent framework.
+B5	2601.17492	INCLUDE	no	high	LLM-based recommender system fairness/debiasing maps directly to the user modeling/personalization locus.
+B5	2606.25436	EXCLUDE	no	medium	Dialect robustness evaluation is capability/performance-focused, not fairness-framed; also June 2026 borderline date.
+B5	2410.11005	EXCLUDE	yes	medium	AAVE dialect fairness/robustness in reasoning benchmarks; single-turn evaluation, no agent framework.
+B5	2509.13835	EXCLUDE	no	high	German dialect discrimination study in a single LLM; no agent framework.
+B5	2511.19785	EXCLUDE	no	medium	Gender bias in emotion-recognition (theory of mind) task; single-turn evaluation, no agent framework.
+B5	2603.21359	EXCLUDE	no	medium	RAG is used only to construct the dialectal benchmark (translation), not as part of an evaluated agent's own retrieval behavior.
+B5	2506.04419	INCLUDE	no	medium	Framework specifically audits deployed LLM-based chatbot systems (distinct from base LLMs) for dialect-based quality-of-service fairness harms.
+B5	2502.14219	EXCLUDE	no	high	Cognitive biases studied (sunk cost, group attribution, etc.) are non-demographic with no protected-attribute or fairness link.
+B5	2605.24384	EXCLUDE	no	medium	AAVE covert dialect bias in side-by-side LLM comparisons; single-turn evaluation, no agent framework.
+B5	2504.07801	INCLUDE	no	high	Fairness evaluation framework (FairEval) for LLM-based recommendations across demographic attributes.
+B5	2602.02582	INCLUDE	no	high	Uncertainty and fairness evaluation benchmark for LLM-based recommendation systems.
+B5	2508.10906	INCLUDE	no	high	Personalized digital-twin framework with explicit demographic parity fairness assessment; user modeling locus.
+B5	2607.06845	POST_CUTOFF	no	high	arXiv id 2607.xxxxx = July 2026, after the 10 June 2026 cutoff.
+B5	2401.04057	INCLUDE	no	medium	Literature review of fairness evaluation frameworks specifically for LLM-based personalized recommendation systems.
+B5	2407.12344	EXCLUDE	no	medium	Personality-safety relationship study; fairness is only one of three safety facets and not the central focus, and there is no agent framework.
+B5	2502.11349	EXCLUDE	no	medium	Comparative bias analysis across edge/cloud/desktop deployment settings; no agentic component.
+B5	2603.15187	EXCLUDE	no	medium	English dialectal fairness improvement study; no agent framework, focuses on data quality/LLM-as-judge methodology.
+B5	2603.18729	INCLUDE	no	high	Explicitly compares single-agent vs. multi-agent (generate-critique-revise) generative architectures for dialect stereotype mitigation.
+B5	2606.07988	INCLUDE	no	medium	Personalized reward modeling fairness across user preference groups fits the user modeling/personalization locus; June 2026 borderline date.
+B5	2602.01558	INCLUDE	yes	high	Studies implicit bias accumulation/propagation in LLM long-term memory across decision scenarios; directly matches the memory and long-horizon temporal-drift loci.
+B5	2503.07377	INCLUDE	no	high	LLM recommender system fairness/diversity addressed via process-supervised fine-tuning; user modeling/personalization locus.
+B5	2406.00020	EXCLUDE	no	medium	Gender-queer dialect bias in harmful speech classification of reclaimed slurs; single-turn, no agent framework.
+B5	2510.00962	EXCLUDE	no	high	Dialectal bias in knowledge/reasoning benchmarks; no agent framework.
+B5	2602.09346	EXCLUDE	no	medium	Spanish lexical variation probing is capability/knowledge-focused rather than fairness-framed, despite "bias" in the title.
+B5	2402.12150	EXCLUDE	no	medium	Single-LLM prompting pipeline (FairThinking) generates roles for viewpoint diversity; not a persistent agentic system, no multi-agent/tool/memory component.
+B5	2502.10577	EXCLUDE	no	high	Masculine generics gender bias in single-turn LLM responses to generic instructions; no agent framework.
+B5	2210.15500	INCLUDE	no	high	Counterfactual fairness for personalized explanation generation in recommendation systems; user modeling/personalization locus.
+B5	2512.16532	INCLUDE	no	high	Memory-enhanced personalized AI agents for recruitment studied explicitly for bias/discrimination; directly matches memory and user modeling loci.
+B5	2603.13636	EXCLUDE	no	medium	Gender/pronoun bias in moral-judgment classification via counterfactual sentence variants; single-turn, no agent framework.
+B5	2406.11107	INCLUDE	yes	medium	Personalization bias tied directly to user identity in LLM systems (safety/utility trade-offs); user modeling/personalization locus.
+B5	2604.04204	EXCLUDE	no	medium	Structural dialectal bias (American vs. British English) alignment analysis; single-turn estimation method, no agent framework.
+B5	2504.06303	EXCLUDE	no	medium	Racial bias in high-stakes decision tasks (admissions/hiring); single-turn prediction on hypothetical profiles, no agent framework despite strong fairness relevance.
+B5	2507.19195	EXCLUDE	no	high	Data poisoning during instruction tuning affecting dialect-linked bias; training-level study, no agent framework.
+B5	2410.19803	INCLUDE	no	medium	First-person fairness toward chatbot users across open-ended interactive use-cases; user modeling/personalization locus.

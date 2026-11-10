@@ -1,0 +1,200 @@
+{
+ "original_corpus": {
+  "papers": 59,
+  "entries": 68,
+  "dimension_grid": {
+   "C1": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 11
+   },
+   "C2": {
+    "group": 0,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 12
+   },
+   "C3": {
+    "group": 5,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 7
+   },
+   "C4": {
+    "group": 5,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 5
+   },
+   "C5": {
+    "group": 4,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 8
+   },
+   "T": {
+    "group": 0,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 10
+   }
+  },
+  "operator_grid": {
+   "C1": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 4,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 7
+   },
+   "C2": {
+    "ATTENUATE": 2,
+    "PRESERVE": 0,
+    "AMPLIFY": 5,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 4
+   },
+   "C3": {
+    "ATTENUATE": 3,
+    "PRESERVE": 0,
+    "AMPLIFY": 1,
+    "GENERATE": 4,
+    "UNCHARACTERIZED": 4
+   },
+   "C4": {
+    "ATTENUATE": 3,
+    "PRESERVE": 0,
+    "AMPLIFY": 1,
+    "GENERATE": 3,
+    "UNCHARACTERIZED": 3
+   },
+   "C5": {
+    "ATTENUATE": 0,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 2,
+    "UNCHARACTERIZED": 8
+   },
+   "T": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 5,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 3
+   }
+  },
+  "operator_secondary": {
+   "ATTENUATE": 10,
+   "PRESERVE": 1
+  },
+  "evidence_type": {
+   "direct_llm_agent": 40,
+   "llm_non_agentic_transferred": 21,
+   "non_llm_transferred": 7
+  },
+  "demographic": {
+   "yes": 41,
+   "no": 27
+  }
+ },
+ "extended_corpus": {
+  "papers": 90,
+  "entries": 102,
+  "dimension_grid": {
+   "C1": {
+    "group": 1,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 11
+   },
+   "C2": {
+    "group": 2,
+    "individual": 0,
+    "counterfactual": 2,
+    "unspecified": 14
+   },
+   "C3": {
+    "group": 10,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 13
+   },
+   "C4": {
+    "group": 7,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 6
+   },
+   "C5": {
+    "group": 11,
+    "individual": 0,
+    "counterfactual": 1,
+    "unspecified": 12
+   },
+   "T": {
+    "group": 2,
+    "individual": 0,
+    "counterfactual": 0,
+    "unspecified": 10
+   }
+  },
+  "operator_grid": {
+   "C1": {
+    "ATTENUATE": 1,
+    "PRESERVE": 0,
+    "AMPLIFY": 4,
+    "GENERATE": 0,
+    "UNCHARACTERIZED": 7
+   },
+   "C2": {
+    "ATTENUATE": 4,
+    "PRESERVE": 0,
+    "AMPLIFY": 6,
+    "GENERATE": 1,
+    "UNCHARACTERIZED": 7
+   },
+   "C3": {
+    "ATTENUATE": 6,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
+    "GENERATE": 6,
+    "UNCHARACTERIZED": 9
+   },
+   "C4": {
+    "ATTENUATE": 3,
+    "PRESERVE": 0,
+    "AMPLIFY": 1,
+    "GENERATE": 4,
+    "UNCHARACTERIZED": 5
+   },
+   "C5": {
+    "ATTENUATE": 1,
+    "PRESERVE": 1,
+    "AMPLIFY": 4,
+    "GENERATE": 2,
+    "UNCHARACTERIZED": 16
+   },
+   "T": {
+    "ATTENUATE": 1,
+    "PRESERVE": 1,
+    "AMPLIFY": 5,
+    "GENERATE": 2,
+    "UNCHARACTERIZED": 3
+   }
+  },
+  "operator_secondary": {
+   "ATTENUATE": 14,
+   "PRESERVE": 1
+  },
+  "evidence_type": {
+   "direct_llm_agent": 61,
+   "llm_non_agentic_transferred": 34,
+   "non_llm_transferred": 7
+  },
+  "demographic": {
+   "yes": 69,
+   "no": 33
+  }
+ }
+}
