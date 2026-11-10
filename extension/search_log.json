@@ -30,5 +30,10 @@
   "doi:10.3390/math14030458"
  ],
  "pool_size": 106,
- "already_in_corpus": 3
+ "already_in_corpus": 3,
+ "round2": {
+  "total_results": 183,
+  "fetched": 183,
+  "new_unscreened": 123
+ }
 }

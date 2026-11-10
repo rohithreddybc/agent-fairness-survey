@@ -55,6 +55,10 @@
   "key": "chen2025personatwin",
   "source": "arxiv"
  },
+ "2509.04794": {
+  "key": "handa2025personality",
+  "source": "arxiv"
+ },
  "2509.08829": {
   "key": "sah2025perfairx",
   "source": "venue+https://doi.org/10.1109/iccvw69036.2025.00289"
@@ -113,6 +117,10 @@
  },
  "2604.17248": {
   "key": "lin2026vibe",
+  "source": "arxiv"
+ },
+ "2604.18038": {
+  "key": "xing2026first",
   "source": "arxiv"
  },
  "2605.00382": {

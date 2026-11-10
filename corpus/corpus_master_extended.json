@@ -4867,5 +4867,65 @@
   "pool_source": [
    "review"
   ]
+ },
+ {
+  "title": "Personality as a Probe for LLM Evaluation: Method Trade-offs and Downstream Effects",
+  "authors": "Gunmay Handa, Zekun Wu, Adriano Koshiyama, Philip Treleaven",
+  "year": 2025,
+  "venue": "arXiv preprint",
+  "arxiv_id": "2509.04794",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2509.04794",
+  "contribution": null,
+  "branches": [
+   "multiagent-delegation-bias",
+   "evaluation-metrics-benchmarks"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:arxiv",
+  "bibkey": "handa2025personality",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "C3",
+  "locus_tags": [
+   "C3"
+  ],
+  "secondary_branches": [
+   "evaluation"
+  ],
+  "pool_source": [
+   "targeted-search-round2"
+  ]
+ },
+ {
+  "title": "First, Do No Harm (With LLMs): Mitigating Racial Bias via Agentic Workflows",
+  "authors": "Sihao Xing, Zaur Gouliev",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "arxiv_id": "2604.18038",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2604.18038",
+  "contribution": null,
+  "branches": [
+   "memory-retrieval-bias",
+   "mitigation",
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:arxiv",
+  "bibkey": "xing2026first",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "C2",
+  "locus_tags": [
+   "C2"
+  ],
+  "secondary_branches": [
+   "mitigation",
+   "high-stakes"
+  ],
+  "pool_source": [
+   "targeted-search-round2"
+  ]
  }
 ]

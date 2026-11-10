@@ -1,8 +1,10 @@
 """Write ../corpus/corpus_master_extended.json: the 202 original corpus records (unchanged apart from
-an added "extension": false) followed by the 33 papers admitted by the 2026-11 extension.
+an added "extension": false) followed by the 35 papers admitted by the 2026-11 extension
+(33 from screening round 1, screen_final.jsonl; 2 from round 3, screen2_final.jsonl).
 
-Inputs : ../corpus/corpus_master.json, screen_final.jsonl (verdicts, branches, locus tags),
-         pool.jsonl (title, authors, date, source), bibkeys.json (arXiv id or DOI -> bib key),
+Inputs : ../corpus/corpus_master.json, screen_final.jsonl and screen2_final.jsonl (verdicts, branches,
+         locus tags), pool.jsonl and pool2.jsonl (title, authors, date, source),
+         bibkeys.json (arXiv id or DOI -> bib key),
          ../../review/references.bib if present (year and venue; otherwise date and "arXiv preprint").
 Usage  : python -I build_corpus_extended.py
 """
@@ -33,8 +35,8 @@ def bibfield(key, field):
 
 
 original = json.load(open(CORPUS / "corpus_master.json", encoding="utf-8"))
-screen = {r["id"]: r for r in jl("screen_final.jsonl")}
-pool = {r["id"]: r for r in jl("pool.jsonl")}
+screen = {r["id"]: r for r in jl("screen_final.jsonl") + jl("screen2_final.jsonl")}
+pool = {r["id"]: r for r in jl("pool.jsonl") + jl("pool2.jsonl")}
 keys = json.load(open(HERE / "bibkeys.json", encoding="utf-8"))
 
 out = [{**r, "extension": False} for r in original]

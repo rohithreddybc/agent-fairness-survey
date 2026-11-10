@@ -99,8 +99,8 @@
   }
  },
  "extended_corpus": {
-  "papers": 90,
-  "entries": 102,
+  "papers": 92,
+  "entries": 104,
   "dimension_grid": {
    "C1": {
     "group": 1,
@@ -109,7 +109,7 @@
     "unspecified": 11
    },
    "C2": {
-    "group": 2,
+    "group": 3,
     "individual": 0,
     "counterfactual": 2,
     "unspecified": 14
@@ -118,7 +118,7 @@
     "group": 10,
     "individual": 0,
     "counterfactual": 0,
-    "unspecified": 13
+    "unspecified": 14
    },
    "C4": {
     "group": 7,
@@ -148,7 +148,7 @@
     "UNCHARACTERIZED": 7
    },
    "C2": {
-    "ATTENUATE": 4,
+    "ATTENUATE": 5,
     "PRESERVE": 0,
     "AMPLIFY": 6,
     "GENERATE": 1,
@@ -159,7 +159,7 @@
     "PRESERVE": 0,
     "AMPLIFY": 2,
     "GENERATE": 6,
-    "UNCHARACTERIZED": 9
+    "UNCHARACTERIZED": 10
    },
    "C4": {
     "ATTENUATE": 3,
@@ -188,12 +188,12 @@
    "PRESERVE": 1
   },
   "evidence_type": {
-   "direct_llm_agent": 61,
-   "llm_non_agentic_transferred": 34,
+   "direct_llm_agent": 62,
+   "llm_non_agentic_transferred": 35,
    "non_llm_transferred": 7
   },
   "demographic": {
-   "yes": 69,
+   "yes": 71,
    "no": 33
   }
  }

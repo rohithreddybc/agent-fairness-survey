@@ -181,3 +181,7 @@ Entry coding of the 31 newly admitted papers (`code_new_input.jsonl`, 34 entries
 
 Round 2 totals: 14 of 34 entries adjudicated (31 field rows), decided for A on 25 rows and for B on 6. Two rows carry CODEBOOK GAP notes (2510.02352 / C5 operator; 2605.12530 / C3 fairness_dimension).
 
+
+## Round 3 (remaining 123 targeted-query hits)
+Coders agreed on 122 of 123 verdicts (binary agreement 0.992, kappa 0.663; includes are rare). Both included 2604.18038. One disagreement, 2509.04794: A = EXCLUDE (criterion ii), B = INCLUDE_TOPICAL (C3, transfer clause). Final = INCLUDE_TOPICAL: demographic bias is one of the three evaluated axes (BBQ), so criterion ii is met; persona and trait steering bears on role assignment (C3) through the transferable-mechanism clause.
+Coding of the two Round 3 papers: 2509.04794/C3 evidence_type A=direct_llm_agent, B=llm_non_agentic_transferred -> transferred (BBQ on non-agentic models); demographic A=yes, B=no -> yes (BBQ). 2604.18038/C2 fairness_dimension A=group, B=unspecified -> group (race-stratified distribution compared across groups). Operators agreed (UNCHARACTERIZED; ATTENUATE).

@@ -34,7 +34,7 @@ def show(title, g, cols):
           + f"  {sum(sum(r.values()) for r in g.values()):7d}\n")
 
 
-existing, new = load("code_existing_final.jsonl"), load("code_new_final.jsonl")
+existing, new = load("code_existing_final.jsonl"), load("code_new_final.jsonl") + load("code_new2_final.jsonl")
 out = {}
 for name, ents in (("original_corpus", existing), ("extended_corpus", existing + new)):
     papers = {e["key"] for e in ents}
