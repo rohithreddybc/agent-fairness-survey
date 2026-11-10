@@ -311,7 +311,7 @@ Of the six locus tags Round 5 flagged, all six are now out of the grids: `park20
 | borah2024implicit / C2 | AMPLIFY | UNCHARACTERIZED | Escalation is measured across multi-agent interaction (C3); nothing specific to C2. B1 as amended. |
 | wang2025bias / C1 | AMPLIFY | UNCHARACTERIZED | Amplification runs through manipulated retrieval results, which R1 places at C2; no comparison of which retriever, tool or source is invoked. B1 as amended. |
 
-`operator_secondary` was set to null on every entry recoded to UNCHARACTERIZED, and on the promoted entry; superseded `operator_evidence` is kept except on the promoted entry. Confirmed as GENERATE: `nguyen2025social` C3 (bias emergence counts agents measured unbiased on the same benchmark before communication), `wyllie2024fairness` T (fairness and group representation tracked across generations from an initially unbiased dataset), `2511.06148` C4 and T (no inherent group differences; stratification develops through exploration; both entries leave the grids on `demographic` = `no`). Other multi-locus papers with a substantive operator: `fan2024fairmt` C2 and T keep AMPLIFY on distinct full-text comparisons (Round 4).
+`operator_secondary` was set to null on every entry recoded to UNCHARACTERIZED, and on the promoted entry; superseded `operator_evidence` is kept except on the promoted entry. Confirmed as GENERATE: `nguyen2025social` C3 (bias emergence counts new stereotyped answers in conversations with no earlier stereotyped answer; wording corrected in Round 7, which see), `wyllie2024fairness` T (fairness and group representation tracked across generations from an initially unbiased dataset), `2511.06148` C4 and T (no inherent group differences; stratification develops through exploration; both entries leave the grids on `demographic` = `no`). Other multi-locus papers with a substantive operator: `fan2024fairmt` C2 and T keep AMPLIFY on distinct full-text comparisons (Round 4).
 
 ### Figure totals
 
@@ -335,3 +335,55 @@ Per locus, grid-eligible (`figure_counts.json`, `extended_corpus`):
 The two remaining GENERATE entries are `nguyen2025social` C3 and `wyllie2024fairness` T. Planning (C4) has no GENERATE entry.
 
 Not done in this round: the article and supplement (counts, Figures 8 and 9, the "screened under the same criteria" wording, Tables 5 and 6) were not edited, and the evaluation and mitigation inventories were not re-assessed against the new topical set.
+
+## Round 7 (entry's own locus; review round 7)
+
+One adjudication pass (Claude Opus), answering review round 7, §3A. Two rules were made to agree: the
+A4 row for C1 listed "search results", whereas R1 places what a search engine or retriever returns at
+C2. The A4 rows now follow R1 (`CODEBOOK.md` A4, amendment note), and G2 item 2 is read strictly: an
+entry stays in the grids only when a finding is measured at that locus itself, even when its operator
+was already `UNCHARACTERIZED`. All five C1 entries and every multi-locus grid entry were re-checked
+against the abstracts and, for `wu2024rag`, the full text (arXiv 2409.19804, Appendix A.4). Author
+locus tags are not re-decided (B1), so failing entries are removed, not moved. Backups:
+`*_final.preround7.jsonl`, `strict_rule.preround7.jsonl` (changed lines keep `reason_preround7`).
+
+### Entries removed from Figures 8 and 9 (6 of 64)
+
+| Entry | Reason |
+|---|---|
+| wang2025bias / C1 | The disparity runs through manipulated retrieval results (which documents the poisoned store returns): C2 under R1. No comparison of which resource is invoked. The C2 entry stays. |
+| wu2024rag / C1 | Retrieval-stage disparity is gold-document rank by group (MRR@K, Appendix A.4), returned content: C2. No disparity in which retriever is invoked or whether retrieval is triggered. The C2 entry stays. |
+| makhortykh2021detecting / C1 | Representation of people in returned image search results: C2 content. The paper leaves the grids. |
+| u2018algorithms / C1 | Curation of returned search results: C2 content. The paper leaves the grids. |
+| borah2024implicit / C2 | The escalation is measured across multi-agent interaction (C3, the A4 row for agent interaction); no separate finding on retrieved content, memory or history. The C3 entry stays. |
+| 2510.09905 / C2 | Disparity keyed to the interacting user's profile held in memory: C5 under R3; no separate finding on what memory stores or returns. The C5 entry stays. |
+
+Re-checked and kept: `xu2026ducx` C1 (subgroup differences in tool-routing patterns, i.e. which tool is
+invoked) and C4 (subgroup differences in reasoning traces); `fan2024fairmt` C2 and T (multi-turn
+history, indexed by turn under R4); `wang2025bias` C2; `wu2024rag` C2; `borah2024implicit` C3;
+`2510.02352` C5 (paralinguistic user attributes) and T (repeated negative feedback over turns).
+
+`nguyen2025social` C3 stays GENERATE, with its unit corrected: the emergence rate is the share of
+conversations in which an agent first gives a stereotyped answer at turn t with no stereotyped answer
+at any earlier turn of that conversation (full text, §3.1). This is the same measure absent upstream
+within the same design; it does not show that the constituent agents are unbiased, since standalone
+agents already show bias (Table 1). `strict_rule.jsonl` carries the corrected `operator_reason`.
+
+### Figure totals after Round 7
+
+| | Fig. 8: group / individual / counterfactual / unspecified | Fig. 9: ATT / PRE / AMP / GEN / uncharacterized | Entries |
+|---|---|---|---|
+| **Grid-eligible (published figures)** | **24 / 0 / 3 / 31** | **11 / 0 / 9 / 2 / 36** | **58** |
+
+| Locus | Fig. 8 | Fig. 9 | Total |
+|---|---|---|---|
+| C1 | 1 / 0 / 0 / 0 | 0 / 0 / 0 / 0 / 1 | 1 |
+| C2 | 2 / 0 / 2 / 6 | 4 / 0 / 3 / 0 / 3 | 10 |
+| C3 | 8 / 0 / 0 / 10 | 5 / 0 / 2 / 1 / 10 | 18 |
+| C4 | 2 / 0 / 0 / 2 | 1 / 0 / 0 / 0 / 3 | 4 |
+| C5 | 10 / 0 / 1 / 10 | 1 / 0 / 2 / 0 / 18 | 21 |
+| T | 1 / 0 / 0 / 3 | 0 / 0 / 2 / 1 / 1 | 4 |
+
+55 papers (27 original, 28 added) with 58 entries (29 and 29). Evidence: 33 direct agent, 24
+non-agentic LLM, 1 non-LLM. Fairness basis: 6 named, 21 instantiated, 31 none. Corpus categories are
+unchanged (no paper changed category), so `corpus_master_extended.json` was not regenerated.

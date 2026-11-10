@@ -123,12 +123,17 @@ paper's mechanism produces, using the consumes-to-emits column of supp `tab:locu
 
 | Locus | The paper's disparity lives in ... |
 |---|---|
-| C1 | a choice among tools, APIs, retrievers, sources or search results |
-| C2 | retrieved content, ranked passages, stored memory, or conversation history that conditions later output |
+| C1 | a choice among tools, APIs, retrievers or sources: which resource is invoked, or whether it is invoked |
+| C2 | content an invoked resource returns (retrieved or ranked passages, search results), stored memory, or conversation history that conditions later output |
 | C3 | a persona, role or identity attached to an agent, or interaction among two or more agents |
 | C4 | a plan, decomposition, ordering, reasoning trace or resource allocation over subjects |
 | C5 | a model of the interacting user (stated or inferred identity, preferences) that changes personalized output or recommendations |
 | T | outputs fed back over turns, sessions or deployment cycles (feedback loops, sycophancy over turns, long-term drift) |
+
+**Amended in Round 7 (Part G, G2 item 2).** The C1 row formerly also listed "search results". That
+conflicted with R1, under which what a search engine or retriever returns is content (C2), not a
+choice of resource (C1). The rows above follow R1; the effect on the grid is logged in
+`ADJUDICATION_LOG.md`, Round 7.
 
 If no row applies (a single prompt, a single response, a bias score on that response), the
 clause is not met and the paper fails iii. A non-LLM study (recommender, ranking, search
@@ -664,10 +669,16 @@ three hold:
 
 Entries that fail stay in the coding files with `grid_eligible` = `false`. Author locus tags are not
 re-decided (B1): an entry whose finding would qualify at another locus is removed, not moved.
+**Round 7 check of item 2.** An entry passes item 2 only when a finding is measured at that locus
+itself; an entry whose only reported comparison the coding note places at another locus fails, even
+when its operator was already set to `UNCHARACTERIZED`. Every C1 entry and every remaining
+multi-locus entry was re-checked against this reading and the A4 rows as amended in Round 7.
 
 **G3. (c) Operators.** `GENERATE` requires comparable upstream evidence specific to the entry's
 locus: the same disparity measure reported absent (zero, non-significant or negligible) at the
-upstream point of the same design, or disparity emerging among parts each measured unbiased. The
+upstream point of the same design, or disparity emerging among parts each measured unbiased, at the
+unit the source measures (Round 7: for example, new stereotyped answers in conversations with no
+earlier stereotyped answer; this does not establish that the constituent agents are unbiased). The
 following are not comparable upstream evidence:
 
 - a cue-free condition (no persona, no identity cue, no personalization, blind negotiation). It

@@ -198,20 +198,20 @@
   }
  },
  "original_corpus": {
-  "papers": 29,
-  "entries": 34,
+  "papers": 27,
+  "entries": 29,
   "dimension_grid": {
    "C1": {
     "group": 1,
     "individual": 0,
     "counterfactual": 0,
-    "unspecified": 4
+    "unspecified": 0
    },
    "C2": {
     "group": 0,
     "individual": 0,
     "counterfactual": 0,
-    "unspecified": 6
+    "unspecified": 5
    },
    "C3": {
     "group": 5,
@@ -244,14 +244,14 @@
     "PRESERVE": 0,
     "AMPLIFY": 0,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 5
+    "UNCHARACTERIZED": 1
    },
    "C2": {
     "ATTENUATE": 1,
     "PRESERVE": 0,
     "AMPLIFY": 3,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 2
+    "UNCHARACTERIZED": 1
    },
    "C3": {
     "ATTENUATE": 2,
@@ -287,29 +287,29 @@
    "PRESERVE": 1
   },
   "evidence_type": {
-   "direct_llm_agent": 21,
+   "direct_llm_agent": 18,
    "llm_non_agentic_transferred": 10,
-   "non_llm_transferred": 3
+   "non_llm_transferred": 1
   },
   "demographic": {
-   "yes": 34
+   "yes": 29
   }
  },
  "extended_corpus": {
-  "papers": 57,
-  "entries": 64,
+  "papers": 55,
+  "entries": 58,
   "dimension_grid": {
    "C1": {
     "group": 1,
     "individual": 0,
     "counterfactual": 0,
-    "unspecified": 4
+    "unspecified": 0
    },
    "C2": {
-    "group": 3,
+    "group": 2,
     "individual": 0,
     "counterfactual": 2,
-    "unspecified": 7
+    "unspecified": 6
    },
    "C3": {
     "group": 8,
@@ -342,14 +342,14 @@
     "PRESERVE": 0,
     "AMPLIFY": 0,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 5
+    "UNCHARACTERIZED": 1
    },
    "C2": {
     "ATTENUATE": 4,
     "PRESERVE": 0,
     "AMPLIFY": 3,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 5
+    "UNCHARACTERIZED": 3
    },
    "C3": {
     "ATTENUATE": 5,
@@ -385,12 +385,12 @@
    "PRESERVE": 1
   },
   "evidence_type": {
-   "direct_llm_agent": 37,
+   "direct_llm_agent": 33,
    "llm_non_agentic_transferred": 24,
-   "non_llm_transferred": 3
+   "non_llm_transferred": 1
   },
   "demographic": {
-   "yes": 64
+   "yes": 58
   }
  }
 }
