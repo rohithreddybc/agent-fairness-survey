@@ -42,39 +42,39 @@
   },
   "operator_grid": {
    "C1": {
-    "ATTENUATE": 1,
+    "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 4,
+    "AMPLIFY": 2,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 7
+    "UNCHARACTERIZED": 8
    },
    "C2": {
     "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 5,
-    "GENERATE": 1,
+    "AMPLIFY": 6,
+    "GENERATE": 0,
     "UNCHARACTERIZED": 4
    },
    "C3": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
     "AMPLIFY": 1,
-    "GENERATE": 4,
-    "UNCHARACTERIZED": 4
+    "GENERATE": 3,
+    "UNCHARACTERIZED": 5
    },
    "C4": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
-    "AMPLIFY": 1,
-    "GENERATE": 3,
-    "UNCHARACTERIZED": 3
+    "AMPLIFY": 0,
+    "GENERATE": 2,
+    "UNCHARACTERIZED": 5
    },
    "C5": {
     "ATTENUATE": 0,
     "PRESERVE": 0,
-    "AMPLIFY": 2,
+    "AMPLIFY": 1,
     "GENERATE": 2,
-    "UNCHARACTERIZED": 8
+    "UNCHARACTERIZED": 9
    },
    "T": {
     "ATTENUATE": 1,
@@ -85,7 +85,7 @@
    }
   },
   "operator_secondary": {
-   "ATTENUATE": 10,
+   "ATTENUATE": 8,
    "PRESERVE": 1
   },
   "evidence_type": {
@@ -141,50 +141,50 @@
   },
   "operator_grid": {
    "C1": {
-    "ATTENUATE": 1,
+    "ATTENUATE": 2,
     "PRESERVE": 0,
-    "AMPLIFY": 4,
+    "AMPLIFY": 2,
     "GENERATE": 0,
-    "UNCHARACTERIZED": 7
+    "UNCHARACTERIZED": 8
    },
    "C2": {
     "ATTENUATE": 5,
     "PRESERVE": 0,
-    "AMPLIFY": 6,
-    "GENERATE": 1,
+    "AMPLIFY": 7,
+    "GENERATE": 0,
     "UNCHARACTERIZED": 7
    },
    "C3": {
     "ATTENUATE": 6,
     "PRESERVE": 0,
     "AMPLIFY": 2,
-    "GENERATE": 6,
-    "UNCHARACTERIZED": 10
+    "GENERATE": 5,
+    "UNCHARACTERIZED": 11
    },
    "C4": {
     "ATTENUATE": 3,
     "PRESERVE": 0,
-    "AMPLIFY": 1,
-    "GENERATE": 4,
-    "UNCHARACTERIZED": 5
+    "AMPLIFY": 0,
+    "GENERATE": 3,
+    "UNCHARACTERIZED": 7
    },
    "C5": {
     "ATTENUATE": 1,
-    "PRESERVE": 1,
-    "AMPLIFY": 4,
+    "PRESERVE": 0,
+    "AMPLIFY": 2,
     "GENERATE": 2,
-    "UNCHARACTERIZED": 16
+    "UNCHARACTERIZED": 19
    },
    "T": {
     "ATTENUATE": 1,
-    "PRESERVE": 1,
+    "PRESERVE": 0,
     "AMPLIFY": 5,
     "GENERATE": 2,
-    "UNCHARACTERIZED": 3
+    "UNCHARACTERIZED": 4
    }
   },
   "operator_secondary": {
-   "ATTENUATE": 14,
+   "ATTENUATE": 12,
    "PRESERVE": 1
   },
   "evidence_type": {

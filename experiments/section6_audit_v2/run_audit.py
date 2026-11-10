@@ -59,8 +59,19 @@ def call_model(prompt):
     obj = json.loads(m.group(0))
     adv = obj.get("advance")
     score = obj.get("score")
-    return (bool(adv) if adv is not None else None,
-            int(score) if score is not None else None)
+    # Accept only a JSON boolean (or the strings "true"/"false"); anything else is unparseable.
+    # bool("false") would be True, so strings are mapped explicitly.
+    if isinstance(adv, str):
+        adv = {"true": True, "false": False}.get(adv.strip().lower())
+    elif not isinstance(adv, bool):
+        adv = None
+    try:
+        score = int(score)
+    except (TypeError, ValueError):
+        score = None
+    if score is not None and not 0 <= score <= 100:
+        score = None
+    return adv, score
 
 
 def main():

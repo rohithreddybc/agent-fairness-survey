@@ -138,5 +138,21 @@
  "doi:10.3390/math14030458": {
   "key": "khaki2026evaluating",
   "source": "venue+https://doi.org/10.3390/math14030458"
+ },
+ "2312.03689": {
+  "key": "tamkin2023evaluating",
+  "source": "reused"
+ },
+ "2403.00742": {
+  "key": "hofmann2024ai",
+  "source": "venue+https://doi.org/10.1038/s41586-024-07856-5"
+ },
+ "2405.04412": {
+  "key": "armstrong2024silicon",
+  "source": "venue+https://doi.org/10.1145/3689904.3694699"
+ },
+ "2406.15484": {
+  "key": "wang2024jobfair",
+  "source": "reused"
  }
 }

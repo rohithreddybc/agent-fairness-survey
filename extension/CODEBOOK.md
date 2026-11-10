@@ -1,6 +1,6 @@
 # Codebook: corpus extension and dual-coded extraction
 
-Version 1.0, 2026-11-09. Applies to three tasks: screening candidate papers (Part A), coding
+Version 1.0, 2026-11-09; eligibility rule amended 2026-11-10 (Part F). Applies to three tasks: screening candidate papers (Part A), coding
 locus entries for the coverage figures (Part B), and extracting mitigation results for the
 papers cited in the mitigation map (Part C). Every rule cites the place in the survey it comes
 from. `main` is `submit/main.tex`, `supp` is `submit/supplement.tex`. A rule marked
@@ -133,6 +133,10 @@ If no row applies (a single prompt, a single response, a bias score on that resp
 clause is not met and the paper fails iii. A non-LLM study (recommender, ranking, search
 engine, sequential decision-making, RL feedback loop) meets i through the clause only if one
 row applies; otherwise it fails i.
+
+**Amended 2026-11-10 (Part F).** For corpus admission this test is now one of four routes to
+criterion iii (F1, route iii-b). Failing it no longer excludes a single-decision demographic audit
+or an evaluation or mitigation contribution; it still decides locus-grid eligibility (F2).
 
 Example (meets): "An LLM recommends jobs to users whose stated gender varies; recommended
 salaries differ by gender." Row C5 applies; `transfer_clause_used` = true.
@@ -476,3 +480,128 @@ Listed so that a reader can separate the protocol's choices from the survey's pu
    when the compared quantity is named (B2).
 9. Single-turn persona or user-identity prompts are `llm_non_agentic_transferred` (B4).
 10. The protected-attribute list (B5) and the `setting` precedence (Part C).
+11. The four-route operationalization of criterion iii and the split between corpus eligibility
+    and locus-grid eligibility (Part F, 2026-11-10). The survey states criterion iii (main §2.3)
+    but not these routes.
+
+---
+
+## Part F. Amendment: Eligibility rule, 2026-11-10
+
+**Why.** As first written, A4 made a component emission a condition of corpus admission. Under
+it the extension excluded four single-decision demographic audits on criterion iii (2312.03689,
+2403.00742, 2405.04412, 2406.15484). The original cohort keeps audits of the same design in the
+high-stakes and evaluation branches with no locus tag, for example `an2025measuring`,
+`omar2025sociodemographic`, `nghiem2024you`, `bowen2024measuring` and `hu2025llms`; the
+contact-center judge study `mayilvaghanan2026counterfactual` is held as a contextual work. Main
+§2.3 (iii) admits a paper that "bears on a locus, the temporal axis, or their evaluation or
+mitigation", and A7 steps 2 to 4 already allow a topical paper with no locus tag. A component
+emission therefore cannot be a condition of corpus admission. This amendment separates two
+eligibilities and applies both to the original and the extension cohorts. It replaces the A1 row
+iii test and the A4 test as conditions of admission. Criteria i, ii, iv and v, the verdicts (A2),
+the branch precedence (A7) and Parts B to E are unchanged.
+
+**F1. (a) Corpus eligibility.** A primary study is `INCLUDE_TOPICAL` when i, ii, iv and v hold
+and criterion iii is met by at least one route:
+
+| Route | Criterion iii is met when ... |
+|---|---|
+| iii-a direct | the fairness finding is measured on an LLM-based system operating as an agent or agent component (an A4 row applies and the LLM is measured in that role) |
+| iii-b transferable mechanism | the finding is on a single-turn LLM or a non-LLM system and an A4 row names the component emission its mechanism produces (the A4 test, unchanged) |
+| iii-c decision audit | the study measures an LLM's decision, score, ranking, allocation or recommendation about a person (a decision subject) across a protected attribute or its proxy (B5) in a consequential domain (A7 step 4 list), even from one prompt and one response |
+| iii-d evaluation or mitigation | the study contributes a benchmark, dataset, metric or audit method for disparity in an LLM's decisions or behavior toward people, or an intervention evaluated as reducing such disparity in the LLM that serves as an agent's reasoning component |
+
+Criterion iii still fails, and the record is `EXCLUDE` (iii), when no route applies. Three
+typical cases: (1) the fairness finding concerns no LLM decision or behavior toward people, as
+when an LLM agent is used as a tool to audit a non-LLM model, or LLMs are scored as detectors of
+biased text; (2) a measurement of stereotype associations in single-turn generation that makes
+no decision about a person and contributes no benchmark, metric, method or intervention (the A4
+"fails" example stays `EXCLUDE`); (3) a general LLM-fairness survey with no agent or component
+scope (A2, unchanged). Routes iii-c and iii-d are the decision-audit and evaluation-or-mitigation
+readings of main §2.3 (iii); they do not widen criterion ii. A record admitted only by iii-c or
+iii-d records `transfer_clause_used` = `false` and names its route in `eligibility_route`.
+**[codebook rule]**
+
+**F2. (b) Locus-grid eligibility.** A topical paper carries `locus_tags` only when a reported
+finding is attributable to a named component C1 to C5 or the temporal axis T: an A4 row names
+the emission in which the disparity is measured. R1 to R5 then assign the tags. The A7 rule for
+a single final decision with the demographic cue in the prompt is the boundary of (b): such a
+finding carries no locus tag. A paper admitted only by iii-c or iii-d therefore has
+`locus_tags` = `[]` and takes its `primary_branch` from A7 steps 2 to 4 (`mitigation`,
+`evaluation`, `high-stakes`). It counts as a topical study (main Table 2) and is eligible for the
+evaluation, mitigation and high-stakes inventories, but it enters neither coverage figure.
+**[codebook rule]**
+
+**F3. Procedure.** A3 is unchanged except that criterion iii is checked by F1. A
+`deciding_criterion` of `iii` now means that none of iii-a to iii-d applies. Records whose
+verdict changed under this amendment carry `eligibility_amended: true`, the route in
+`eligibility_route` and the earlier verdict in `pre_amendment_verdict` (`screen_final.jsonl`,
+`screen2_final.jsonl`; earlier versions kept as `*.preelig.jsonl`). The re-screen is
+`eligibility_recheck.jsonl`.
+
+**F4. Both cohorts.** The amendment was applied to every extension record excluded on criterion
+iii or on the A4 test, and the original 202-paper corpus was checked against (a) and (b) without
+removing any record. Results and the per-paper lists are in `ADJUDICATION_LOG.md`, "Round 5
+(eligibility consistency)".
+
+---
+
+## Operator evidence requirement, 2026-11-10
+
+Amendment to B3, applied to every entry coded `ATTENUATE`, `PRESERVE`, `AMPLIFY` or `GENERATE`
+in the three `*_final.jsonl` files (56 entries). It answers the round-5 review (3B), which
+found that robustness across input perturbations had been read as conduction across a
+component, and that "persist" had been read as carried through at about the same magnitude.
+**[codebook rule]**
+
+**Requirement.** A substantive operator requires the abstract to report a comparison that
+locates the change at a component, an interaction or hand-off, a time step, or an
+intervention. Each operator needs the following:
+
+| Operator | The abstract must report ... |
+|---|---|
+| `ATTENUATE` | a measured reduction of an existing disparity by a component or an intervention |
+| `PRESERVE` | disparity measured before and after a stage and reported as carried through at similar magnitude |
+| `AMPLIFY` | disparity reported as larger after an interaction, an accumulation or a downstream stage than before it; an intervention applied to the system that increases disparity also counts (B3 step 3) |
+| `GENERATE` | disparity reported as emerging at a stage or interaction where it was measured absent upstream, or among individually unbiased parts |
+
+Anything else is `UNCHARACTERIZED`. In particular, the following do not license an operator:
+
+1. Sensitivity to task-irrelevant input perturbations (typos, multilingual input, option or
+   context order, edits to tool descriptions, cue wording, prompt framing), whether disparity
+   rises or persists under them. Record it in `perturbation_sensitivity` instead.
+2. "Persist" or "may persist" with no before and after measurement and no statement of similar
+   magnitude.
+3. A comparison with external statistics (real-world rates) or across model generations or
+   sizes, which is not a stage of the system studied.
+4. A change of grouping (single attribute vs intersectional), which is not a change of stage.
+5. `GENERATE` where the upstream condition is not reported as unbiased. If disparity is larger
+   downstream than a biased upstream condition, the entry is `AMPLIFY` (B3 step 5).
+
+A demographically clean condition (no persona, no identity cue, blind negotiation, no
+personalization) that the same design measures still counts as "absent upstream" for
+`GENERATE`, as in B3. Persona or identity assignment is a component (C3, C5), not an input
+perturbation.
+
+**Ambiguous abstracts.** When the abstract is ambiguous or truncated, the coder may read the
+paper's own abstract or full text (arXiv or the publisher's page only) and must cite the URL
+in `operator_validation.jsonl`.
+
+**Precedence.** B3 precedence still applies. If the descriptive finding fails the requirement
+and an intervention finding in `operator_secondary` meets it, the intervention finding becomes
+`operator`, and its evidence moves with it. If the entry becomes `UNCHARACTERIZED`,
+`operator_secondary` is set to `null`.
+
+**New fields (all 104 entries).**
+- `operator_validated`: `true` once the entry has been checked against this amendment.
+  `UNCHARACTERIZED` entries are unaffected by the requirement and are marked `true`.
+- `perturbation_sensitivity`: `yes` when the abstract reports how outputs or disparity respond
+  to a task-irrelevant input perturbation (item 1 above), whatever the direction of the result;
+  otherwise `no`. A swap of a demographic cue is the fairness measurement itself and is not a
+  perturbation. A swap of a component (for example a different user-simulator LLM) is not a
+  perturbation either.
+
+Audit trail: `operator_validation.jsonl` has one row per validated entry (key, locus,
+old_operator, new_operator, changed, rule_clause, evidence_quote, and source_url when used).
+Pre-amendment files are kept as `*_final.prevalidation.jsonl`. Changes are listed in
+`ADJUDICATION_LOG.md`, Round 4.

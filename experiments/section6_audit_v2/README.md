@@ -50,3 +50,10 @@ python analyze.py
 
 Model: `claude-haiku-4-5`, temperature 0. The committed `audit_v2_raw.json` is the
 canonical run; provider-side nondeterminism may produce small variation on re-runs.
+
+**Parser correction (2026-11-10).** The original `run_audit.py` converted the model's `advance`
+field with `bool()`, which would have turned a string `"false"` into `True`. The harness now
+accepts only a JSON boolean or the strings `"true"`/`"false"` and rejects scores outside 0-100.
+The committed run shows no sign that the old conversion fired: every decision recorded as
+`advance = true` carries a score of 52 or higher, and every `advance = false` a score of 48 or
+lower. The raw model replies were not retained, so this check is indirect.

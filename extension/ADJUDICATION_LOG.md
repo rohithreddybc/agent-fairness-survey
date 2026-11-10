@@ -185,3 +185,78 @@ Round 2 totals: 14 of 34 entries adjudicated (31 field rows), decided for A on 2
 ## Round 3 (remaining 123 targeted-query hits)
 Coders agreed on 122 of 123 verdicts (binary agreement 0.992, kappa 0.663; includes are rare). Both included 2604.18038. One disagreement, 2509.04794: A = EXCLUDE (criterion ii), B = INCLUDE_TOPICAL (C3, transfer clause). Final = INCLUDE_TOPICAL: demographic bias is one of the three evaluated axes (BBQ), so criterion ii is met; persona and trait steering bears on role assignment (C3) through the transferable-mechanism clause.
 Coding of the two Round 3 papers: 2509.04794/C3 evidence_type A=direct_llm_agent, B=llm_non_agentic_transferred -> transferred (BBQ on non-agentic models); demographic A=yes, B=no -> yes (BBQ). 2604.18038/C2 fairness_dimension A=group, B=unspecified -> group (race-stratified distribution compared across groups). Operators agreed (UNCHARACTERIZED; ATTENUATE).
+
+## Round 4 (operator validation)
+
+Date: 2026-11-10. Rule: CODEBOOK.md, "Operator evidence requirement, 2026-11-10". One adjudicator re-read all 56 entries coded ATTENUATE, PRESERVE, AMPLIFY or GENERATE against the abstract. For nine papers with an ambiguous or truncated abstract, the adjudicator also read the paper's own arXiv page (URLs in `operator_validation.jsonl`). 10 entries changed and 46 were confirmed. No field other than `operator` changed, with two exceptions forced by B3 precedence: `operator_secondary` and its evidence on pezeshkpour2023large and sneh2025tooltweak, and `operator_evidence` on sneh2025tooltweak. Entries recoded to UNCHARACTERIZED keep their superseded `operator_evidence` text for traceability. Backups: `*_final.prevalidation.jsonl`.
+
+| Record | Old | New | Rationale | Deciding quote / source |
+|---|---|---|---|---|
+| madigan2025emergent / C3 | GENERATE | UNCHARACTERIZED | The constituent agents are not reported unbiased. The full text compares each system with its constituent LLMs and finds a mixed direction: a small median reduction, with amplification of up to 10x in the tail. No single operator is licensed. | "emergent bias ... cannot be traced to individual agent components"; https://arxiv.org/html/2512.16433v1 |
+| madigan2025emergent / C4 | GENERATE | UNCHARACTERIZED | Same finding as C3 (B1). | as above |
+| arzaghi2024understanding / C5 | AMPLIFY | UNCHARACTERIZED | Single-attribute vs intersectional groups is a change of grouping, not of stage (amendment item 4). | "these biases are significantly amplified when considering intersectionality" |
+| hu2024free / C2 | GENERATE | AMPLIFY | The censored corpus is clean, but the no-RAG LLM is not reported unbiased. The full text (Sec. 4.4) reports fairness degrading from the no-RAG baseline after clean RAG, so the change is larger downstream of a biased upstream (amendment item 5). | "Even with fully censored and supposedly unbiased external datasets, RAG can lead to biased outputs"; https://arxiv.org/html/2410.07589 |
+| li2025actions / C4 | AMPLIFY | UNCHARACTERIZED | The amplification is relative to real-world empirical disparities, and "more advanced models" is a comparison across model generations. Neither is a stage of the system (amendment item 3). | "the biases we uncovered are directionally aligned but markedly amplified" |
+| pezeshkpour2023large / C1 | AMPLIFY | UNCHARACTERIZED | Option reordering is an input perturbation (item 1), so `perturbation_sensitivity` = yes. The secondary ATTENUATE (option-placement advice) is also a perturbation, and the calibration result reports accuracy, not disparity, so `operator_secondary` is set to null. | "a considerable performance gap of approximately 13% to 75% ... when answer options are reordered" |
+| sneh2025tooltweak / C1 | AMPLIFY | ATTENUATE | The attack edits tool names and descriptions at a single selection decision. That is an input perturbation with no downstream stage, so `perturbation_sensitivity` = yes. The defense result meets the ATTENUATE clause and is promoted from `operator_secondary` (B3 precedence), and `operator_secondary` is set to null. | "paraphrasing and perplexity filtering, which reduce bias and lead agents to select functionally similar tools more equally" |
+| 2506.04419 / C5 | AMPLIFY | UNCHARACTERIZED | Typos are an input perturbation (round-5 review 3B; item 1), so `perturbation_sensitivity` = yes. | "these quality-of-service harms are exacerbated by the presence of typos in prompts" |
+| 2510.02352 / T | PRESERVE | UNCHARACTERIZED | "May persist" reports neither a before and after measurement nor a similar magnitude (round-5 review 3B; item 2). The full abstract adds nothing further. | "We found that biased decisions may persist in multi-turn conversations"; https://arxiv.org/abs/2510.02352 |
+| 2602.02582 / C5 | PRESERVE | UNCHARACTERIZED | Persistence under typos and multilingual input is robustness to perturbation, not carriage across a stage (round-5 review 3B; item 1). `perturbation_sensitivity` = yes. | "These disparities persist under prompt perturbations such as typographical errors and multilingual inputs" |
+
+The full text confirmed the existing operator for six entries: fan2024fairmt C2 and T AMPLIFY (Sec. 3.3 compares multi-turn with single-turn, and Sec. 3.4 finds bias rising with turns); choi2025identity ATTENUATE (gap 0.608 to 0.024 under anonymization); 2506.13245 ATTENUATE ("compared to baselines"); 2512.16532 AMPLIFY (retrieval to re-ranking, Sec. 3.2.3); and 2512.19735 ATTENUATE ("CAP also reduced several subgroup disparities").
+
+`perturbation_sensitivity` = yes on 12 entries (11 papers): blankenstein2025biasbusters, cao2026from (C3, C4), pezeshkpour2023large, sneh2025tooltweak, liu2023lost, tonneau2026different, 2501.04316, 2506.04419, 2509.08829, 2510.01164, 2602.02582. All other entries = no.
+
+Flagged, not changed (outside the counted field):
+- nguyen2025social / C3 keeps `operator_secondary` = PRESERVE ("propagate bias across over 80% of agents"). Propagation to more agents does not state a similar magnitude, so it would fail the strict PRESERVE clause. Figure 9 does not count this field.
+- kabra2025reasoning / C4 `operator_evidence` still quotes the cross-model correlation, which does not qualify. ATTENUATE stands on the ReGiFT result, quoted in `operator_validation.jsonl`.
+
+Figure 9 totals (extended corpus, 104 entries), before and after validation:
+
+| | ATTENUATE | PRESERVE | AMPLIFY | GENERATE | UNCHARACTERIZED |
+|---|---|---|---|---|---|
+| Before | 17 | 2 | 22 | 15 | 48 |
+| After | 18 | 0 | 18 | 12 | 56 |
+
+The PRESERVE column is now empty.
+
+
+## Round 5 (eligibility consistency)
+
+Adjudicator: Claude Opus, 2026-11-10, from title, abstract and date plus `CODEBOOK.md` Part F only. Trigger: external review round 5, §3D (the extension excluded single-decision demographic audits on the component-emission test while the original cohort keeps them). Part F separates (a) corpus eligibility, criterion iii met by route iii-a direct, iii-b transferable mechanism (the A4 test), iii-c decision audit or iii-d evaluation or mitigation, from (b) locus-grid eligibility, which still requires a finding attributable to an emission of C1 to C5 or T.
+
+### Extension re-screen
+
+Every extension record whose final verdict was EXCLUDE on criterion iii (6) or on criterion i (1, because A4 also governed i) was re-screened. Output: `eligibility_recheck.jsonl`. The four changed records were updated in place in `screen_final.jsonl` (`eligibility_amended: true`, `eligibility_route`, `pre_amendment_verdict`; previous file kept as `screen_final.preelig.jsonl`). `screen2_final.jsonl` has no changed record and was not rewritten.
+
+| Record | Old | New | Primary branch | Locus tags | Rationale | Deciding quote |
+|---|---|---|---|---|---|---|
+| 2312.03689 | EXCLUDE (iii) | INCLUDE_TOPICAL (iii-c, iii-d) | evaluation; secondary mitigation, high-stakes | none | Single-prompt LM decisions about people in financing and housing, with demographics varied, plus an evaluation method and a prompt-based mitigation; no component emission is measured, and the title names evaluation first (A7). | "applying them to high-stakes societal decisions, such as determining financing or housing eligibility" |
+| 2403.00742 | EXCLUDE (iii) | INCLUDE_TOPICAL (iii-c) | high-stakes | none | Employment, conviction and sentencing decisions vary with dialect, a race proxy; the speaker is the decision subject in one response, not the interacting user, so no C5 (2603.18729 precedent). | "Language models are more likely to suggest that speakers of African American English be assigned less prestigious jobs, be convicted of crimes" |
+| 2405.04412 | EXCLUDE (iii) | INCLUDE_TOPICAL (iii-c) | high-stakes | none | GPT-3.5 scores resumes whose names signal race and gender, a hiring decision with the cue in the prompt. | "we ask GPT to score resumes with 32 different names" |
+| 2406.15484 | EXCLUDE (iii) | INCLUDE_TOPICAL (iii-c, iii-d) | evaluation; secondary high-stakes | none | A hiring-bias benchmark and metrics applied to resume-scoring decisions across gender; a single decision, so no locus. | "a novel framework for benchmarking hierarchical gender hiring bias in Large Language Models (LLMs) for resume scoring" |
+| 2603.17179 | EXCLUDE (iii) | EXCLUDE (iii) | | | The LLM agent audits a non-LLM clinical model and is scored on similarity to expert statements; no disparity in an LLM's decisions or behavior toward people (F1 case 1). | "evaluates whether an agentic AI system can support auditing biomedical machine learning models for fairness" |
+| 2410.08388 | EXCLUDE (iii) | EXCLUDE (iii) | | | LLMs are benchmarked as detectors of biased text spans, not measured for their own disparity (F1 case 1). | "We formulate bias detection as multi-label token-level classification and benchmark both encoder-based models ... and decoder-based large language models" |
+| 2410.09204 | EXCLUDE (i) | EXCLUDE (i) | | | No LLM and no fairness question; fails i and ii independently of the emission test. | "encoding them with a Transformer-based neural network architecture" |
+
+No new include carries a locus tag, so `code_new3_input.jsonl` is empty (0 records) and Figures 8 and 9 are unchanged (92 locus-tagged papers, 104 entries). The four new includes are eligible for the evaluation, mitigation and high-stakes inventories (main Tables 5 and 6), which this round did not edit.
+
+Corpus totals computed from the files (original split by first branch in `corpus/corpus_master.json`: prior-art branch, else a locus, evaluation, mitigation or high-stakes first branch = topical, else contextual): original 202 = 99 topical + 29 prior-art + 74 contextual; extension includes 39 = 37 topical + 2 prior-art (was 35 = 33 + 2). **Coded corpus 241 = 136 topical + 31 prior-art + 74 contextual** (was 237 = 132 + 31 + 74).
+
+Not done in this round: `corpus/corpus_master_extended.json` was not rebuilt, because `build_corpus_extended.py` needs `bibkeys.json` entries (bib keys) for the four new includes and no bib edits were made; it will raise `KeyError` on 2312.03689 until they exist. The article's counts (237, 132, 35 admitted) are not edited.
+
+### Original cohort against (a) and (b)
+
+Checked, not changed. (a) was applied to the 99 topical papers and, in its prior-art reading (A2: secondary work on fairness with agent or component scope), to the 29 prior-art papers; the 74 contextual works were admitted under a separate rule and are not subject to (a). (b) was applied to the 59 original papers that carry a locus tag (`code_input_existing.jsonl`). Sources: abstracts where `code_input_existing.jsonl` or `mitig_input.jsonl` has them, otherwise the `contribution` summary in `corpus_master.json` (all prior-art judgments and the non-locus topical papers outside Table 6 rest on summaries).
+
+**Locus-tagged papers that fail (b)** (6): `park2023generative` (contextual; reports no fairness finding), `dai2024bias` (survey; no finding of its own), `arzaghi2024understanding` (single-response sentence associations; no interacting user whose model changes output, so the C5 row does not apply), `pezeshkpour2023large` (option order within one multiple-choice response; options are not tools, so C1 holds by analogy only), `zhou2025veracity` (attribution and grading with the demographic-authorship cue in the prompt; the reasoning-process claim is inferred, no reasoning trace is measured), `tang2026your` (borderline: selection among candidate items in one call, not among tools or sources).
+
+**Topical papers that fail (a)** (24). All fail criterion ii as defined in A1 and A5 (no group of people as the object), not the new iii routes.
+- Locus-tagged (17): provider- or source-side fairness with no social group, `blankenstein2025biasbusters`, `sneh2025tooltweak`, `kim2024fair`; position or order bias, `pezeshkpour2023large`, `liu2023lost`; sycophancy or agent identity, `liu2025truth`, `hong2025measuring`, `choi2025identity`; belief or behavior persistence, `geng2025accumulating`, `simhi2026old`; political stance (A5), `coppolillo2025unmasking`; no group named in the abstract, `tang2026your`, `singh2025bias`, `singh2025biasb`; no fairness finding, `campedelli2024want` (anti-social conduct), `staab2023memorization` (attribute inference for privacy); secondary work in a topical branch, `dai2024bias`. All but `staab2023memorization` are coded `demographic` = `no` in `code_existing_final.jsonl`.
+- Not locus-tagged (7): dataset or spurious-feature bias, `zhang2024causal`, `du2024causal`; toxicity or harmlessness with no group, `ouyang2022training`, `bai2022constitutional`; guardrail position paper with bias listed, not studied, `dong2024building`; minority preference groups that are not protected or social groups (borderline), `chakraborty2024maxmin`, `xiao2024algorithmic`.
+
+**Prior-art papers that fail the prior-art reading of (a)** (19), each by its summary a survey with no LLM-agent or component scope, or one that lists fairness without studying it: `barrainkua2025preserving`, `caton2024fairness`, `chan2024visibility`, `chang2024survey`, `du2026survey`, `ferdaus2026trustworthy`, `he2025emerged`, `kaur2022trustworthy`, `kemmerzell2025better`, `kostikova2026lllms`, `li2023trustworthy`, `li2025triangular`, `pessach2022review`, `qi2026trustworthy`, `raza2025trism`, `soremekun2025software`, `tang2023what`, `yehudai2025survey`, `zhang2026generalizability`. Separately, `proceedings2026framework` reports its own measurements (bias amplification factors), so A2 would class it topical rather than prior-art; it passes (a).
+
+### Open decision (not settled by this round)
+
+Part F makes criterion iii consistent across cohorts. Criterion ii is not consistent: the original cohort keeps 17 locus-tagged non-demographic or technical-bias papers (shown as non-demographic [dagger] entries) and 19 prior-art surveys outside agent scope, while the extension excludes comparable records on ii or iii (for example 2305.17926, position bias in an LLM judge). Either A1 ii is widened to admit non-demographic mechanism evidence and the extension's ii exclusions are re-screened, or the original exceptions are stated as such in main §2.3 and supp §S6 and the "screened under the same criteria" wording for prior-art works (main Table 2) is corrected. This needs an author decision.

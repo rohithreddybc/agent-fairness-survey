@@ -2658,12 +2658,12 @@
  },
  {
   "title": "Towards a framework for Bias Evaluation of AI Agents in Agentic Workflows",
-  "authors": "Unknown (ACM proceedings)",
+  "authors": "Gary Condon, Musfira Jilani",
   "year": 2026,
-  "venue": "Proceedings of the 2026 Conference on Human Centred Artificial Intelligence — Education and Practice (ACM DL DOI: 10.1145/3777490.3777504)",
+  "venue": "Proceedings of the 2026 Conference on Human Centred Artificial Intelligence -- Education and Practice (ACM), pp. 46-52",
   "arxiv_id": "",
   "doi": "10.1145/3777490.3777504",
-  "url": "",
+  "url": "https://doi.org/10.1145/3777490.3777504",
   "contribution": "Proposes an evaluation framework for bias in agentic workflows using demographic swapping, contamination prevention, and statistical analysis for multi-agent workflows. Reports bias amplification factors up to 1.51x in sequential agent interactions. Addresses EU AI Act Article 10 compliance. | DIFF: Framework paper focused on evaluation methodology for multi-stage agentic bias (amplification in wo",
   "branches": [
    "prior-art-additions"
@@ -2672,7 +2672,9 @@
    "prior-art / empirical"
   ],
   "verified": "doi-resolved",
-  "bibkey": "proceedings2026framework",
+  "bibkey": "condon2026towards",
+  "previous_bibkey": "proceedings2026framework",
+  "metadata_corrected": "2026-11-10: authors, venue and bib key synchronized with the cited bibliography entry",
   "extension": false
  },
  {
@@ -3921,6 +3923,35 @@
   ]
  },
  {
+  "title": "Evaluating and Mitigating Discrimination in Language Model Decisions",
+  "authors": "Alex Tamkin, Amanda Askell, Liane Lovitt, Esin Durmus, Nicholas Joseph, Shauna Kravec, Karina Nguyen, Jared Kaplan, Deep Ganguli",
+  "year": 2023,
+  "venue": "arXiv preprint",
+  "arxiv_id": "2312.03689",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2312.03689",
+  "contribution": null,
+  "branches": [
+   "evaluation-metrics-benchmarks",
+   "mitigation",
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:reused",
+  "bibkey": "tamkin2023evaluating",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "evaluation",
+  "locus_tags": [],
+  "secondary_branches": [
+   "mitigation",
+   "high-stakes"
+  ],
+  "pool_source": [
+   "review"
+  ]
+ },
+ {
   "title": "Unveiling Bias in Fairness Evaluations of Large Language Models: A Critical Literature Review of Music and Movie Recommendation Systems",
   "authors": "Chandan Kumar Sah, Lian Xiaoli, Muhammad Mirajul Islam",
   "year": 2024,
@@ -3942,6 +3973,81 @@
   "secondary_branches": [],
   "pool_source": [
    "adjudication"
+  ]
+ },
+ {
+  "title": "Dialect prejudice predicts AI decisions about people's character, employability, and criminality",
+  "authors": "Valentin Hofmann, Pratyusha Ria Kalluri, Dan Jurafsky, Sharese King",
+  "year": 2024,
+  "venue": "Nature",
+  "arxiv_id": "2403.00742",
+  "doi": "10.1038/s41586-024-07856-5",
+  "url": "https://arxiv.org/abs/2403.00742",
+  "contribution": null,
+  "branches": [
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:venue+https://doi.org/10.1038/s41586-024-07856-5",
+  "bibkey": "hofmann2024ai",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "high-stakes",
+  "locus_tags": [],
+  "secondary_branches": [],
+  "pool_source": [
+   "review"
+  ]
+ },
+ {
+  "title": "The Silicon Ceiling: Auditing GPT's Race and Gender Biases in Hiring",
+  "authors": "Lena Armstrong, Abbey Liu, Stephen MacNeil, Danaë Metaxa",
+  "year": 2024,
+  "venue": "Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '24)",
+  "arxiv_id": "2405.04412",
+  "doi": "10.1145/3689904.3694699",
+  "url": "https://arxiv.org/abs/2405.04412",
+  "contribution": null,
+  "branches": [
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:venue+https://doi.org/10.1145/3689904.3694699",
+  "bibkey": "armstrong2024silicon",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "high-stakes",
+  "locus_tags": [],
+  "secondary_branches": [],
+  "pool_source": [
+   "review"
+  ]
+ },
+ {
+  "title": "JobFair: A Framework for Benchmarking Gender Hiring Bias in Large Language Models",
+  "authors": "Ze Wang, Zekun Wu, Xin Guan, Michael Thaler, Adriano Koshiyama, Skylar Lu, Sachin Beepath, Ediz Ertekin, Maria Perez-Ortiz",
+  "year": 2024,
+  "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+  "arxiv_id": "2406.15484",
+  "doi": "",
+  "url": "https://arxiv.org/abs/2406.15484",
+  "contribution": null,
+  "branches": [
+   "evaluation-metrics-benchmarks",
+   "high-stakes-domains"
+  ],
+  "taxonomy_cells": [],
+  "verified": "extension:reused",
+  "bibkey": "wang2024jobfair",
+  "extension": true,
+  "screening_verdict": "INCLUDE_TOPICAL",
+  "primary_branch": "evaluation",
+  "locus_tags": [],
+  "secondary_branches": [
+   "high-stakes"
+  ],
+  "pool_source": [
+   "review"
   ]
  },
  {

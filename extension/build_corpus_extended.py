@@ -1,18 +1,35 @@
 """Write ../corpus/corpus_master_extended.json: the 202 original corpus records (unchanged apart from
-an added "extension": false) followed by the 35 papers admitted by the 2026-11 extension
-(33 from screening round 1, screen_final.jsonl; 2 from round 3, screen2_final.jsonl).
+an added "extension": false and the metadata corrections in METADATA_FIXES) followed by the 39 papers
+admitted by the 2026-11 extension: 33 from screening round 1 and 2 from round 3 (screen_final.jsonl,
+screen2_final.jsonl), plus 4 admitted on re-screening under the eligibility amendment of
+2026-11-10 (CODEBOOK.md Part F; eligibility_amended = true in screen_final.jsonl). The 4 carry no
+locus tag and enter neither coverage figure.
 
 Inputs : ../corpus/corpus_master.json, screen_final.jsonl and screen2_final.jsonl (verdicts, branches,
          locus tags), pool.jsonl and pool2.jsonl (title, authors, date, source),
          bibkeys.json (arXiv id or DOI -> bib key),
-         ../../review/references.bib if present (year and venue; otherwise date and "arXiv preprint").
-Usage  : python -I build_corpus_extended.py
+         a references.bib for year and venue, if one is found (--bib PATH, else ../../review/references.bib;
+         otherwise date and "arXiv preprint" are used).
+Usage  : python -I build_corpus_extended.py [--bib PATH]
 """
-import json, pathlib, re
+import json, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 CORPUS = HERE.parent / "corpus"
-BIB = HERE.parent.parent / "review" / "references.bib"
+BIB = (pathlib.Path(sys.argv[sys.argv.index("--bib") + 1]) if "--bib" in sys.argv
+       else HERE.parent.parent / "review" / "references.bib")
+# Corrections to original records whose stored metadata is known to be stale (round-5 review, 3A).
+# Only descriptive metadata changes; branches, taxonomy cells and the primary branch are untouched.
+METADATA_FIXES = {
+    "proceedings2026framework": {
+        "authors": "Gary Condon, Musfira Jilani",
+        "venue": "Proceedings of the 2026 Conference on Human Centred Artificial Intelligence -- Education and Practice (ACM), pp. 46-52",
+        "url": "https://doi.org/10.1145/3777490.3777504",
+        "bibkey": "condon2026towards",
+        "previous_bibkey": "proceedings2026framework",
+        "metadata_corrected": "2026-11-10: authors, venue and bib key synchronized with the cited bibliography entry",
+    },
+}
 BRANCH = {"C1": "tool-api-selection-bias", "C2": "memory-retrieval-bias", "C3": "multiagent-delegation-bias",
           "C4": "planning-decomposition-bias", "C5": "user-modeling-personalization-harms",
           "T": "longhorizon-fairness-drift", "evaluation": "evaluation-metrics-benchmarks",
@@ -39,7 +56,7 @@ screen = {r["id"]: r for r in jl("screen_final.jsonl") + jl("screen2_final.jsonl
 pool = {r["id"]: r for r in jl("pool.jsonl") + jl("pool2.jsonl")}
 keys = json.load(open(HERE / "bibkeys.json", encoding="utf-8"))
 
-out = [{**r, "extension": False} for r in original]
+out = [{**r, **METADATA_FIXES.get(r.get("bibkey"), {}), "extension": False} for r in original]
 for pid, s in screen.items():
     if not s["verdict"].startswith("INCLUDE"):
         continue
